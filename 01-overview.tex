@@ -1,0 +1,894 @@
+\chapter{Modelling Rational Agents}\label{ch:overview}
+
+\section{Overview}
+
+\cmnt{%
+  Dan Ross: ``There is a dense and intricate web of connections associated with
+  ‘rationality’ in the Western cultural tradition, and the word has
+  often been used to normatively marginalize characteristics as normal
+  and important as emotion, femininity and empathy''.
+  
+  ``In this article, ‘economic rationality’ will be used in the
+  technical sense shared within game theory, microeconomics and formal
+  decision theory, as follows. An economically rational player is one
+  who can (i) assess outcomes, in the sense of rank-ordering them with
+  respect to their contributions to her welfare; (ii) calculate paths
+  to outcomes, in the sense of recognizing which sequences of actions
+  are probabilistically associated with which outcomes; and (iii)
+  select actions from sets of alternatives (which we'll describe as
+  ‘choosing’ actions) that yield her most-preferred outcomes, given
+  the actions of the other players. We might summarize the intuition
+  behind all this as follows: an entity is usefully modeled as an
+  economically rational agent to the extent that it has alternatives,
+  and chooses from amongst these in a way that is motivated, at least
+  more often than not, by what seems best for its purposes. (For
+  readers who are antecedently familiar with the work of the
+  philosopher Daniel Dennett, we could equate the idea of an
+  economically rational agent with the kind of entity Dennett
+  characterizes as intentional, and then say that we can usefully
+  predict an economically rational agent's behavior from ‘the
+  intentional stance’.)''
+} %
+
+In this course, we will study a general model of belief, desire, and
+rational choice. At the heart of the model lies a certain conception
+of how beliefs and desires combine to produce actions.
+
+Let's start with an example.
+%
+\begin{example}[The Miner Problem]\label{ex:miners}
+  Ten miners are trapped in a shaft and threatened by rising water.
+  You don't know whether the miners are in shaft $A$ or in shaft
+  $B$. You can block the water from entering one shaft, but you can't
+  block both. If you block the correct shaft, all ten will survive.
+  If you block the wrong shaft, all of them will die. If you do
+  nothing, one miner (the shortest of the ten) will die.
+\end{example}
+
+What should you do?
+
+There's a sense in which the answer depends on the location of the
+miners. If the miners are in shaft $A$, it's best to block shaft $A$;
+if they are in $B$, you should block $B$. The problem is that you need
+to make your choice without knowing where the miners are. You can't
+let your choice be guided by the unknown location of the miners. The
+question on which we will focus is therefore not what you should do
+\emph{in light of all the facts}, but what you should do \emph{in
+  light of your information}. In other words, we want to know what a
+rational agent would do in your state of uncertainty.
+
+A similar ambiguity arises for goals or values. Arguably, it is better
+to let one person die than to take a risk of ten people dying. But the
+matter isn't trivial, and many philosophers would disagree. Suppose
+you are one of these philosophers: you think it would be wrong to
+sacrifice the shortest miner. \emph{By your values}, it would be
+better to block either shaft $A$ or shaft $B$.
+
+When we ask what an agent should do in a given decision problem, we
+will always mean what they should do in light of whatever they believe
+about their situation and of whatever goals or values they happen to
+have. We will also ask whether those beliefs and goals are themselves
+reasonable. But it is best to treat these as separate questions.
+
+So we have three questions:
+\begin{enumerate}
+  \itemsep0em 
+\item How should you act so as to further your goals in the light of
+  your beliefs?
+\item What should you believe?
+\item What should you desire? What are rational goals or values?
+\end{enumerate}
+These are big questions. By the end of this course, we will not have
+found complete and definite answers, but we will at least have
+clarified the questions and made some progress towards an answer.
+
+To begin, let me introduce a standard format for thinking about
+decision problems.
+
+\begin{exercise}
+  A doctor recommends small pox vaccination for an infant, knowing
+  that around 1 in 1 million children dies from the vaccination. The
+  infant gets the vaccination and dies. Was the doctor's
+  recommendation wrong? Or was it wrong in one sense and right in
+  another? If so, can you explain these senses?
+\end{exercise}
+
+
+\section{Decision matrices}\label{sec:decision-matrices}
+
+In decision theory, decision problems are traditionally decomposed
+into three ingredients, called `acts', `states', and `outcomes'.
+
+The \textbf{acts} are the options between which the agent has to
+choose. In the Miner Problem, there are three acts: \emph{blocking
+  shaft $A$}, \emph{blocking shaft $B$}, and \emph{doing nothing}.
+(`Possible act' would be a better name: if, say, you decide to do
+nothing, then blocking shaft $A$ is not an actual act; it's not
+something you do, but it's something you could have done.)
+
+The \textbf{outcomes} are whatever might come about as a result of the
+agent's choice. In the Miner Problem, there are three relevant
+outcomes: all miners survive, all miners die, and all but one
+survive. (Again, only one of these will actually come about, the
+others are merely possible outcomes.)
+
+Each of the three acts leads to one of the outcomes. But you don't
+know how the outcomes are associated with the acts. For example, you
+don't know whether blocking shaft $A$ would lead to all miners
+surviving or to all miners dying. It depends on where the miners are.
+
+This dependency between acts and outcomes is captured by the states. A
+\textbf{state} is a possible circumstance on which the result of the
+agent's choice depends. In the Miner Problem, there are two relevant
+states: that the miners are in shaft $A$, and that the miners are in
+shaft $B$. (In real decision problems, there are often many more
+states, just as there are many more acts.)
+
+We can now summarize the Miner Problem in a table, called a
+\textbf{decision matrix}:
+%
+\begin{center}
+  \begin{tabular}{|r|c|c|}\hline
+    \gr & \gr Miners in $A$ & \gr Miners in $B$\\\hline
+    \gr Block shaft $A$ & all 10 live & all 10 die \\\hline
+    \gr Block shaft $B$ & all 10 die & all 10 live \\\hline
+    \gr Do nothing & 1 dies & 1 dies \\\hline
+  \end{tabular}
+\end{center}
+
+The rows in a decision matrix always represent the acts, the columns
+the states, and the cells the outcome of performing the relevant act
+in the relevant state.
+
+Let's do another example.
+\begin{example}[The mushroom problem]
+  You find a mushroom. You're not sure whether it's a delicious
+  \emph{paddy straw} or a poisonous \emph{death cap}. You wonder
+  whether you should eat it.
+\end{example}
+
+Here the decision matrix might look as follows. Make sure you
+understand how to read the matrix.
+
+\begin{center}
+  \begin{tabular}{|r|c|c|}\hline
+    \gr & \gr Paddy straw & \gr Death cap\\\hline
+    \gr Eat & satisfied & dead \\\hline
+    \gr Don't eat & hungry & hungry\\\hline
+  \end{tabular}
+\end{center}
+
+Sometimes the ``states'' are actions of other people, as in the next
+example.
+
+\begin{example}[The Prisoner Dilemma]\label{ex:pd}
+  You and your partner have been arrested for some crime and are
+  separately interrogated. If you both confess, you will both serve
+  five years in prison. If one of you confesses and the other remains
+  silent, the one who confesses is set free, the other has to serve
+  eight years. If you both remain silent, you can only be convicted of
+  obstruction of justice and will both serve one year.
+\end{example}
+
+The Prisoner Dilemma combines two decision problems: one for you and
+one for your partner. We could also think about a third problem which
+you face as a group. Let's focus on the decision you have to
+make. Your choice is between confessing and remaining silent. These
+are the acts. What are the possible outcomes? If you only care about
+your own prison term, the outcomes are 5 years, 8 years, 0 years, and
+1 year. Which act leads to which outcome depends on whether your
+partner confesses or remains silent. These are the states. In matrix
+form:
+
+\begin{center}
+  \begin{tabular}{|r|c|c|}\hline
+    \gr & \gr Partner confesses & \gr Partner silent\\\hline
+    \gr Confess & 5 years & 0 years \\\hline
+    \gr Remain silent & 8 years & 1 year \\\hline
+  \end{tabular}
+\end{center}
+
+Notice that if your goal is to minimize your prison term, then
+confessing leads to the better outcome no matter what your partner
+does. So that is what you should do.
+
+I've assumed you only care about your own prison term. What if you
+also care about the fate of your partner? Then your decision problem
+is not adequately summarized by the above matrix, as the cells in the
+matrix don't say what happens to your partner.
+
+The outcomes in a decision problem must always include everything that
+matters to the agent. So if you care about your partner's sentence,
+the matrix should look as follows.
+
+\begin{center}
+  \begin{tabular}{|r|c|c|}\hline
+    \gr & \gr Partner confesses & \gr Partner silent\\\hline
+    \gr Confess & you 5 years, partner 5 years & you 0 years, partner 8 years \\\hline
+    \gr Remain silent & you 8 years, partner 0  years & you 1 year, partner 1 years\\\hline
+  \end{tabular}
+\end{center}
+%
+Now confessing is no longer the obviously best choice. For example, if
+your goal is to minimize the combined prison term for you and your
+partner, then remaining silent is better no matter what your partner
+does.
+
+\begin{exercise}\label{e:rock}
+  Draw the decision matrix for the game \emph{Rock, Paper, Scissors},
+  assuming all you care about is whether you win.
+\end{exercise}
+
+\cmnt{%
+\begin{exercise}
+  In the \emph{Ultimatum Game}, two players are offered £100 on the
+  condition that they can agree how to divide the money. Player 1
+  begins by proposing a split; for example: ``£80 to me, £20 to
+  you''. Player 2 can then accept or reject the proposal. If she
+  rejects, both get nothing. 
+
+  Draw the decision matrix for player 2's choice, assuming player 1
+  suggested ``£80 to me, £20 to you'' and player 2 only cares about
+  how much money she gets.
+\end{exercise}
+
+\begin{exercise}
+  When people play the Ultimatum Game, unfair offers like ``£80 to me,
+  £20 to you'' are often rejected by the second player. What does this
+  tell us  about the second player's values? Can you draw a
+  decision matrix reflecting these values?
+\end{exercise}
+} %
+
+
+\section{Belief, desire, and degrees}
+
+To solve a decision problem we need to know the agent's goals and
+beliefs. Moreover, it is usually not enough just to know \emph{what}
+the agent believes and desires; we also need to know \emph{how strong}
+these attitudes are.
+
+Let's return to the mushroom problem. Suppose you like eating a
+delicious mushroom, and you dislike being hungry and being dead. We
+might therefore label the outcomes `good' or `bad', reflecting your
+desires:
+
+\begin{center}
+  \begin{tabular}{|r|c|c|}\hline
+    \gr & \gr Paddy straw & \gr Death cap\\\hline
+    \gr Eat & satisfied (good) & dead (bad) \\\hline
+    \gr Don't eat & hungry (bad) & hungry (bad) \\\hline
+  \end{tabular}
+\end{center}
+Now it looks like eating the mushroom is the better option: not
+eating is guaranteed to lead to a bad outcome, while eating at least
+gives you a shot at a good outcome.
+
+The problem is that you probably prefer being hungry to being
+dead. Both outcomes are bad, but one is much worse than the other. So
+we need to represent not only the \textbf{valence} of your desires --
+whether an outcome is something you'd like or dislike -- but also
+their \textbf{strength}. 
+
+An obvious way to represent both valence and strength is to label the
+outcomes with numbers, like so:
+
+\begin{center}
+  \begin{tabular}{|r|c|c|}\hline
+    \gr & \gr Paddy straw & \gr Death cap\\\hline
+    \gr Eat & satisfied (+1)  & dead (-100) \\\hline
+    \gr Don't eat & hungry (-1) & hungry (-1) \\\hline
+  \end{tabular}
+\end{center}
+The outcome of eating a paddy straw gets a value of +1, because it's
+moderately desirable. The other outcomes are negative, but death (-100)
+is rated much worse than hunger (-1).
+
+The numerical values assigned to outcomes are called
+\textbf{utilities} (or sometimes \textbf{desirabilities}). Utilities
+measure the relative strength and valence of desire. We will have a
+lot more to say on what that means in due course.
+
+We also need to represent the strength of your beliefs. Whether you
+should eat the mushroom arguably depends on how confident you are that
+it is a Paddy straw.
+
+Here again we will represent the valence and strength of beliefs by
+numbers, but this time we'll only use numbers between 0 and 1. If the
+agent is certain that a given state obtains, then her degree of belief
+is 1; if she is certain that the state does \emph{not} obtain, her
+degree of belief is 0; if she is completely undecided, her degree of
+belief is 1/2. These numbers are called \textbf{credences}.
+
+In classical decision theory, we are not interested in the agent's
+beliefs about the acts or the outcomes, but only in her beliefs about
+the states. The fully labelled mushroom matrix might therefore look as
+follows, assuming you are fairly confident, but by no means certain,
+that the mushroom is a paddy straw.
+%
+\label{mushroom-matrix}
+\begin{center}
+  \begin{tabular}{|r|c|c|}\hline
+    \gr & \gr Paddy straw (0.8) & \gr Death cap (0.2)\\\hline
+    \gr Eat & satisfied (+1)  & dead (-100) \\\hline
+    \gr Don't eat & hungry (-1) & hungry (-1) \\\hline
+  \end{tabular}
+\end{center}
+%
+The numbers $0.8$ and $0.2$ in the column headings specify your degree
+of belief in the two states.
+
+The idea that beliefs vary in strength has proved fruitful not just in
+decision theory, but also in epistemology, philosophy of science,
+artificial intelligence, statistics, and other areas. The keyword to
+look out for is \textbf{Bayesian}: if a theory or framework is called
+Bayesian, this usually means it involves degrees of belief. The name
+refers to the Thomas Bayes (1701--1761), who made an important
+contribution to the movement. We will look at some applications of
+``Bayesianism'' in later sessions.
+
+Much of the power of Bayesian models derives from the assumption that
+rational degrees of belief satisfy the mathematical conditions on a
+probability function. Among other things, this means that the
+credences assigned to the states in a decision problem must add up to
+1. For example, if you are 80 percent (0.8) confident that the
+mushroom is a paddy straw, then you can't be more than 20 percent
+confident that the mushroom is a paddy straw. It would be OK to
+reserve some credence for further possibilities, so that the credence
+in the paddy straw possibility and the death cap possibility add up to
+less than 1. But then our decision matrix should include further
+columns for the other possibilities.
+
+So rational degrees of belief have a certain formal structure.  What
+about degrees of desire? At first glance, these don't seem have much
+of a structure. For example, the fact that your utility for eating a
+paddy straw is +1 does not seem to entail anything about your utility
+for eating a death cap. Nonetheless, we will see that utilities also
+have a rich formal structure -- a structure that is entangled with the
+structure of belief.
+
+We will also discuss more substantive, non-formal constraints on
+belief and desire. Economists often assume that rational agents are
+self-interested, and so the term `utility' is often associated with
+personal wealth or welfare. That's not how we will use the term. Real
+people don't just care about themselves, and there is nothing wrong
+with that.
+
+\begin{exercise}
+  Add utilities and (reasonable) credences to your decision matrix for
+  \emph{Rock, Paper, Scissors}.
+\end{exercise}
+
+\section{Solving decision problems}\label{sec:solving}
+
+Suppose we have drawn up a decision matrix and filled in the credences
+and utilities. We then have all we need to solve the decision problem
+-- to say what the agent should do in light of her goals and beliefs.
+
+Sometimes the task is easy because some act is best in every
+state. We've already seen an example in the Prisoner Dilemma, given
+that all you care about is minimizing your own prison term. The fully
+labelled matrix might look like this:
+
+\begin{center}
+  \begin{tabular}{|r|c|c|}\hline
+    \gr & \gr Partner confesses (0.5) & \gr Partner silent (0.5)\\\hline
+    \gr Confess & 5 years (-5)& 0 years (0)\\\hline
+    \gr Remain silent & 8 years (-9)& 1 year (-1) \\\hline
+  \end{tabular}
+\end{center}
+
+In the lingo of decision theory, confessing \textbf{dominates}
+remaining silent. In general, an act $A$ dominates an act $B$ if $A$
+leads to an outcome with greater utility than $B$ in every possible
+state. An act is \textbf{dominant} if it dominates all other acts. If
+there's a dominant act, it is always the best choice (by the light of
+the agent).
+
+The Prisoner Dilemma is famous because it refutes the idea that good
+things will always come about if people only look after their own
+interests. If both parties in the Prisoner Dilemma only care about
+themselves, they end up 5 years in prison. If they had cared enough
+about each other, they could have gotten away with 1.
+
+Often there is no dominant act. Recall the mushroom problem.
+\begin{center}
+  \begin{tabular}{|r|c|c|}\hline
+    \gr & \gr Paddy straw (0.8) & \gr Death cap (0.2)\\\hline
+    \gr Eat & satisfied (+1)  & dead (-100) \\\hline
+    \gr Don't eat & hungry (-1) & hungry (-1) \\\hline
+  \end{tabular}
+\end{center}
+It is better to eat the mushroom if it's a paddy straw, but better not
+to eat it if it's a death cap. So neither option is dominant.
+
+You might say that it's best not to eat the mushroom because eating
+could lead to a really bad outcome, with utility -100, while not
+eating at worst leads to an outcome with utility -1. This is an
+instance of \textbf{worst-case reasoning}. The technical term is
+\textbf{maximin} because worst-case reasoning tells you to choose the
+option that \emph{max}imizes the \emph{min}imal utility.
+
+People sometimes appeal to worst-case reasoning when giving health
+advice or policy recommendations, and it works out OK in the mushroom
+problem. Nonetheless, as a general decision rule, worst-case reasoning
+is indefensible. 
+
+Imagine you have 100 sheep who have consumed water from a contaminated
+well and will die unless they're given an antidote. Statistically, one
+in a thousand sheep die even when given the antidote. According to
+worst-case reasoning there is consequently no point of giving your
+sheep the antidote: either way, the worst possible outcome is that all
+the sheep will die. In fact, if we take into account the cost of the
+antidote, then worst-case reasoning suggests you should not give the
+antidote (even if it is cheap).
+
+Worst-case reasoning is indefensible because it doesn't take into
+account the likelihood of the worst case, and because it ignores what
+might happen if the worst case doesn't come about. A sensible decision
+rule should look at all possible outcomes, paying special attention to
+really bad and really good ones, but also taking into account their
+likelihood.
+
+The standard recipe for solving decision problems therefore evaluates
+each act by the \emph{weighted average} of the utility of all possible
+outcomes, weighted by the likelihood of the relevant state, as given
+by the agent's credence.
+
+Let's first recall how simple averages are computed. If we have $n$
+numbers $x_1, x_2, \ldots, x_n$, then the average of the numbers is
+\[
+\frac{x_1 + x_2 + \ldots + x_n}{n} = \tfrac{1}{n} \cdot x_1 + \tfrac{1}{n} \cdot x_2 + \ldots + \tfrac{1}{n} \cdot x_n.
+\]
+Here each number is given the same weight, $\nicefrac{1}{n}$. In a
+weighted average, the weights can be different for different numbers.
+
+Concretely, to compute the weighted average of the utility that might
+result  from eating the mushroom, we multiply the utility of each
+possible outcome (+1 and -100) by your credence in the corresponding
+state, and then add up these products. The result is called the
+\textbf{expected utility} of eating the mushroom.
+\[
+EU(\text{Eat}) = 0.8 \cdot (+1) + 0.2 \cdot (-100) = -19.2.
+\]
+
+In general, if there are $n$ states $S_1,\ldots, S_n$, your credence
+in these states is $c_1,\ldots,c_n$ respectively, and the outcome of
+act $A$ in these states has utility $u_1,\ldots,u_n$ respectively,
+then the expected utility of $A$ is defined as
+\[
+EU(A) = c_1 \cdot u_1 + \ldots + c_n \cdot u_n.
+\]
+You'll often see this abbreviated using the `sum' symbol $\sum$:
+\[
+EU(A) = \sum_{i=1}^n c_i \cdot u_i.
+\]
+It means the same thing.
+
+\cmnt{%
+  Better use format from ch.9: So here is the general rule for
+  determining expected utilities in the new way. If there are $n$
+  states $S_1,\ldots, S_n$, and a given act $A$ leads to outcomes
+  $O_1,\ldots,O_n$ respectively in these states, then
+  \[
+  EU_e(A) = \Cr(S_1/A) \cdot U(O_1) + \ldots + \Cr(S_n/A) \cdot U(O_n).
+  \]
+} %
+
+\cmnt{%
+  xxx Mention more general notion: EU is an instance of a useful
+  general notion: expectation.  ``We can then calculate your
+  expectation for the quantity. While there are subtleties we will
+  return to later, the basic idea of an expectation is to multiply
+  each value the quantity might take by your credence that it’ll take
+  that value, then add up the results.''
+} %
+
+
+Note that the expected utility of eating the mushroom is -19.2 even
+though the most likely outcome has positive utility. A really bad
+outcome can seriously push down an act's expected utility even if the
+outcome is quite unlikely. 
+
+Let's calculate the expected utility of not eating the mushroom:
+\[
+EU(\text{Not Eat}) = 0.8 \cdot -1 + 0.2 \cdot -1 = -1.
+\]
+No surprise here. If all the numbers $u_1,\ldots,u_n$ are the same,
+their weighted average will again be that number.
+
+Now we can state one of the central assumptions of our model:
+
+\begin{genericthm}{The MEU Principle}
+  Rational agents maximize expected utility. 
+\end{genericthm}
+%
+That is, when faced with a decision problem, rational agents choose an
+option with greatest expected utility.
+
+\cmnt{%
+  Rationality is a complex, multi-faceted, and somewhat fuzzy
+  notion. We will not bother defining or analysing it, for we will in
+  any case only be interested in certain aspects of rationality. One
+  aspect of rationality is consistency of belief: if a rational agent
+  is certain that the cat is on the sofa, she will not also be certain
+  that the cat is on a tree. There are similar norms on goals and
+  desires. Of special importance to us are norms connecting beliefs
+  and goals on the one hand with behaviour on the other.
+} %
+
+\begin{exercise}
+  Assign utilities to the outcomes in the Prisoner Dilemma, assign
+  credences to the states, and compute the expected utility of the two
+  acts.
+\end{exercise}
+
+\begin{exercise}
+  Assign utilities to the outcomes in the Miner Problem, assign
+  credences to the states, and compute the expected utility of the
+  three acts.
+\end{exercise}
+
+\begin{exercise}
+  Explain why the following decision rule is not generally reasonable:
+  \emph{Identity the most likely state; then choose an act which
+    maximizes utility in that state.}
+\end{exercise}
+
+\begin{exercise}
+  Show that if there is a dominant act, then it maximizes
+  expected utility.
+\end{exercise}
+
+\cmnt{%
+  \begin{exercise}
+    What about this weaker claim: ``If one believes that an act will not
+    bring about the best outcome, one should not choose it.'' Show that
+    that's also inadequate!
+  \end{exercise}
+} %
+
+\begin{exercise}\label{e:exam}
+  When applying dominance reasoning or the MEU Principle, it is
+  important that the decision matrix is set up correctly. 
+
+  A student wants to pass an exam and wonders whether she ought to
+  study. She draws up the following matrix.
+  \begin{center}
+    \begin{tabular}{|r|c|c|}\hline
+      \gr & \gr Will Pass (0.5) & \gr Won't Pass (0.5) \\\hline
+      \gr Study & Pass \& No Fun (1) & Fail \& No Fun (-8) \\\hline
+      \gr Don't Study & Pass \& Fun (5) & Fail \& Fun (-2) \\\hline
+    \end{tabular}
+  \end{center}
+  She finds that not studying is the dominant option. 
+
+  The student has correctly identified the acts and the outcomes in
+  her decision problem, but the states are wrong. In an adequate
+  decision matrix, the states must be independent of the acts: whether
+  a given state obtains should not be affected by which act the
+  student chooses. 
+
+  Can you draw an adequate decision matrix for the student's decision
+  problem?
+\end{exercise}
+
+\begin{exercise}[Pascal's Wager]\label{e:pascal}
+  The first recorded use of the MEU Principle outside gambling dates
+  back to 1653, when Blaise Pascal presented the following argument
+  for leading a pious life. (I paraphrase.)
+
+  \emph{An impious life is more pleasant and convenient than a
+    pious life. But if God exists, then a pious life is rewarded by
+    salvation while an impious life is punished by eternal
+    damnation. Thus it is rational to lead a pious life even if one
+    gives quite low credence to the existence of God.}
+  
+  Draw the matrix for the decision problem as Pascal conceives it and
+  verify that a pious life has greater expected utility than an
+  impious life.
+\end{exercise}
+
+\begin{exercise}
+  Has Pascal identified the acts, states, and outcomes correctly? If
+  not, what did he get wrong?
+\end{exercise}
+
+\cmnt{%
+\begin{exercise}
+  Your casino offers customers a game where they can roll a fair die
+  and win the resulting number, in pounds. How much should you charge
+  for each round of the game so that you can expect to break even in
+  the long run?
+\end{exercise}
+} %
+
+
+\section{The nature of belief and desire}
+
+A major obstacle to the systematic study of belief and desire is the
+apparent familiarity of the objects. We all know what beliefs and
+desires are; we have been thinking and talking about them from an
+early age and continue to do so almost every day. We may sometimes ask
+how a peculiar belief or unusual desire came about, but the nature and
+existence of the states themselves seems unproblematic. It takes some
+effort to appreciate what philosophers call \textbf{the problem of
+  intentionality}: the problem of explaining \emph{what makes it the
+  case} that an agent has certain beliefs and desires. 
+
+For example, some people believe that there is life on other planets,
+others don't. What accounts for this difference? Presumably the
+difference between the two kinds of people can be traced to some
+difference in their brains, but what is that difference, and how does
+a certain wiring and chemical activity between nerve cells constitute
+a belief in alien life? More vividly, what would you have to do in
+order to create an artificial agent with a belief in alien life?
+(Notice that producing the sounds `there is life on other planets' is
+neither necessary nor sufficient.)
+
+If we allow for degrees of belief and desire (as we should), the
+problem of intentionality takes on a slightly different form: what
+makes it the case that an agent has a belief or desire \emph{with a
+  given degree}? For example, what makes it the case that my credence
+in the existence of alien life is greater than 0.5? What makes it the
+case that I give greater utility to sleeping in bed than to sleeping
+on the floor?
+
+These may sound like obscure philosophical questions, but they turn
+out to be crucial for a proper assessment of the models we will study.
+
+I already mentioned that economists often identify utility with
+personal wealth or welfare. On that interpretation, the MEU
+Principle says that rational agents are guided solely by the expected
+amount of personal wealth or welfare associated with various
+outcomes. Yet most of us would readily sacrifice some amount of wealth
+or welfare in order to save a child drowning in a pond. Are we
+thereby violating the MEU Principle? 
+
+In general, we can't assess the MEU Principle unless we have some idea
+of how utility and credence (and thereby expected utility) are to be
+understood. There is a lot of cross-talk in the literature because
+authors tacitly interpret these terms in slightly different ways.
+
+So to put flesh on the MEU Principle, we will have to say more about
+what we mean by `credence' and `utility'. I have informally introduced
+credence as degree of belief, and utility as degree of desire, but we
+should not assume that the mental vocabulary we use in everyday life
+precisely carves our objects of study at their joints. 
+
+For example, the word `desire' sometimes suggests an unreflective
+propensity or aversion. In that sense, rational agents often act
+against their desires, as when I refrain from eating a fourth slice of
+cake, knowing that I will feel sick afterwards. By contrast, an
+agent's utilities comprise everything that matters to the agent --
+everything that motivates them, from bodily cravings to moral
+principles. It does not matter whether we would ordinarily call these
+things `desires'.
+
+\cmnt{%
+  Here the familiarity of belief and desire presents another
+  obstacle. I have introduced credence as degree of belief, and
+  utility as degree of desire; thus it is tempting to assume that
+  ordinary English judgements about (degrees of) belief and desire
+  reliably track an agent's credences and utilities. But that
+  temptation should be resisted. There is no good reason to think that
+  the mental vocabulary we use in everyday life carves our objects of
+  study at their joints. On the contrary.
+
+  Consider desire. In ordinary thought and talk, the objects of desire
+  are often presented as particular things: I desire a slice of
+  cake. On reflection, however, it is clear that these desires don't
+  pertain directly to the relevant things, but to a certain relation
+  between the subject and the things: I desire to \emph{eat} the slice
+  of cake. We will therefore depart from ordinary language and always
+  take the objects of utility to be complete states of affairs.
+
+  Here's another famous puzzle about desire reports in ordinary
+  language. Imagine Hans believes that there is a ghost in his
+  attic. Suppose I say, `Hans desires that the ghost in his attic will
+  be quiet tonight'. Observe that any state of affairs in which the
+  ghost in Hans's attic is quiet is also a state of affairs in which
+  there is a ghost in Hans's attic. So my statement (`Hans
+  desires\ldots') seems to attribute to Hans a desire in the third of
+  the following three possibilities:
+  \begin{enumerate}
+  \item[$A$] There is no ghost in Hans's attic.
+  \item[$B$] There is a noisy ghost in Hans's attic.
+  \item[$C$] There is a quiet ghost in Hans's attic.
+  \end{enumerate} 
+  Yet for some complicated reason linguists are still debating over,
+  `Hans desires that the ghost in his attic will be quiet' only
+  conveys that Hans prefers state $C$ to state $B$, and not that he
+  prefers $C$ to $A$. The statement could be true even if Hans has a
+  strong desire to have no ghost in the attic -- no noisy ghost but
+  also no quiet ghost. So we must be careful not to be misled by
+  ordinary statements about desire.
+
+  In addition, return to the drowning child. If you jump into the pond
+  realizing an obligation to save the child, do you \emph{desire} to
+  save the child? Ordinary judgement is ambivalent. It is not a
+  contradiction to say that rational agents sometimes do things which
+  they don't desire to do. Here `desire' seems be used in a sense on
+  which, roughly speaking, to desire an act means to feel an ``emotion
+  of aversion or propensity'', as Hume put it, when imagining the act.
+  If utility measures strength of desire in this sense, the MEU
+  Principle once again becomes highly implausible. We shall therefore
+  understand utility in another way.
+} %
+
+\cmnt{%
+  Loosely speaking, the ``desire'' part will capture how an agent
+  wants the world to be; the ``belief'' part how it represents the
+  world to be. Desires will include a diversity of things that one
+  wouldn't normally call desires: fears, commitments, etc. The belief
+  part will also include things one wouldn't call beliefs and it
+  doesn't include things one would attribute as beliefs (as in
+  Pierre's case, or indexical cases).
+} %
+
+The situation we face is ubiquitous in science. Scientific theories
+often involve expressions that are given a special, technical
+sense. Newton's laws of motion, for example, speak of `mass' and
+`force'. But Newton did not use these words in their ordinary sense;
+nor did he explicitly give them a new meaning: he nowhere defines
+`mass' and `force'. Instead, he tells us what these things \emph{do}:
+objects accelerate at a rate equal to the ratio between the force
+acting upon them and their mass, and so on. These laws implicitly
+define the Newtonian concept of mass and force.
+
+We will assume a similar perspective on credence and utility. That is,
+we won't pretend that we have a perfect grip on these quantities from
+the outset. Instead, we'll start with a vague and intuitive conception
+of credence and utility and then successively refine this conception
+as we develop our model.
+
+\cmnt{%
+
+Papineau: In general, the greater degree of belief an agent attaches
+to some proposition p, the more that agent will be inclined to perform
+actions that will bring good results if p.
+
+The resulting concept of beliefs and desire has a pragmatic element,
+insofar as it takes actions to be true touchstone of whether someone
+has a given attitude, as opposed to e.g.\ feelings of conviction or
+verbal statements. It is easy to pay lip service to something. People
+say they're certain that p, but if you ask them to bet they refuse.
+
+There is also lots of psychological research indicating that we are
+not very good at verbally reporting our attitudes and the reasons for
+our actions (see e.g. \cite{wilson08unseen}). So if we want to use a
+decision theoretic model for explaining actions, or for judging
+whether an action was reasonable given the subject's attitudes, it
+might be better not to rely on what the subject reports.
+
+} %
+
+One last point. I emphasize that we are studying a \textbf{model} of
+belief, desire, and rational choice. Outside fundamental physics,
+models always involve simplifications and idealisations. In that
+sense, ``all models are wrong'', as the statistician George Box once
+put it. The aim of scientific models (outside fundamental physics) is
+not to provide a complete and fully accurate description of certain
+events in the world -- the diffusion of gases, the evolution of
+species, the relationship between interest rates and inflation -- but
+to isolate simple and robust patterns in these events. It is not an
+objection to a model if it leaves out details or fails to explain
+various edge cases.
+
+The model we will study is an extreme case insofar as it abstracts
+away from most of the contingencies that make human behaviour
+interesting. Our topic is not specifically human behaviour and human
+cognition, but what unifies all types of rational behaviour and
+cognition.
+
+\section{Further reading}
+
+The use of decision matrices, dominance reasoning, and the MEU
+Principle are best studied through examples. A good starting point is
+the Stanford Encyclopedia entry on Pascal's Wager, which carefully
+dissects exercise \ref{e:pascal}:
+
+\begin{itemize}
+\item Alan H\'ajek: \href{http://plato.stanford.edu/entries/pascal-wager/}{Pascal's Wager} (2017)
+\end{itemize}
+
+Some general rules for how to identify the right acts, states, and
+outcomes can be found in
+
+\begin{itemize}
+\item James Joyce: ``Decision Problems'', chapter 2 of \emph{The
+    Foundations of Causal Decision Theory} (1999)
+\end{itemize}
+
+We will have a lot more to say about credence, utility, and the MEU
+Principle in later sessions. You may find it useful to read up on
+modelling in general and on the functionalist conception of beliefs
+and desires. Some recommendations:
+
+\begin{itemize}
+  \itemsep0em 
+  \cmnt{%
+  \item Robert Stalnaker: ``The Problem of Intentionality'', chapter 1
+    of \emph{Inquiry} (1984)
+  } %
+
+\item Alisa Bokulich: \href{http://www.romanfrigg.org/Links/MS2/Bokulich.pdf}{``How scientific models can explain''} (2011)
+
+\item Ansgar Beckermann:
+  \href{https://www.uni-bielefeld.de/(en)/philosophie/personen/beckermann/pbint_ve.pdf}{``Is
+    there a problem about intentionality?''} (1996)
+
+\item Mark Colyvan: \href{http://www.colyvan.com/papers/iinm.pdf}{``Idealisations in normative models''} (2013)
+
+  \cmnt{%
+  \item Nancy Cartwright: ``Models: Parables v Fables'' (2010)
+  } %
+  
+\end{itemize}
+
+\begin{essay}
+  Rational agents proportion their beliefs to their evidence. Evidence
+  is what an agent learns through perception. So could we just as well
+  explain rational choice on the basis of an agent's
+  \emph{perceptions} and desires rather than her \emph{beliefs} and
+  desires?
+\end{essay}
+
+\cmnt{%
+\begin{essay}
+  In ``The Problem of Intentionality'', Robert Stalnaker first defends
+  and then rejects what he calls the \emph{pragmatic analysis} of
+  belief and desire. What is the analysis? Explain in your own words
+  why Stalnaker rejects it. Can you think of a response?
+\end{essay}
+} %
+
+\cmnt{%
+
+  \textbf{Lecture}:
+
+  \begin{itemize}
+
+  \item Clarify mechanics: lectures + tutorials; must attend lectures;
+    before coming to lectures, work through notes, hand in exercises
+    (with student numbers!); grades (20\% for empty answers, essay);
+    website.
+
+  \item Lecture: won't read out, but tell me what you didn't
+    understand.
+
+  \item Intro: course will provide a glimpse at a powerful and
+    influential model of rationality; three elements: belief, desire,
+    action [picture]. We'll talk about internal structure of each, and
+    their connections.
+
+  \item (1.1) Subjective ``right''. Three questions.
+
+  \item (1.2) Decision matrices.
+
+  \item (1.3) Desirability of outcomes; credence in states.
+
+  \item (1.4) Solving DPs: find act with MEU.
+
+  \item (1.5) Nature of B and D.
+
+  \end{itemize}
+
+  \textbf{Tutorial}:
+
+  \begin{itemize}
+
+  \item Ultimatum game: play in pairs; tabulate offers and acceptances; discuss: why offer? DP? discuss: why accept/reject? DP money/values.
+
+  \item Pascal's wager: draw silly DP (act `belief', infinite utility, two states; mention problem of underspec. acts: pious only for mercenary reasons, and further acts, e.g. mixing)
+
+  \item Student problem
+
+  \end{itemize}
+
+} %
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "bdrc.tex"
+%%% End:

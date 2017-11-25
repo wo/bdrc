@@ -1,0 +1,1065 @@
+\chapter{Preference}\label{ch:preference}
+
+
+\cmnt{%
+
+  From exercises: many students thought preference means standing,
+  long-term, not-all-things-considered preferences. They said that you
+  might choose wine over water even though you prefer water because of
+  peer pressure or other aspects of the situation.
+  
+  Generally, I need to clarify that ``rewards'' capture everything the
+  agent cares about.
+
+  I need to explain what I mean by ``is unique except...'' in the
+  theorems.
+
+}%
+
+\section{The ordinalist challenge}
+
+If the utility of an outcome for an agent is not measured by the
+amount of money the agent gains or loses, how is it measured? How can
+we find out whether an outcome has utility 5 or 500 or -27? What does
+it even mean to say that an outcome has utility 5?
+
+At the beginning of the 20th century, doubts arose about the coherence
+of numerical utilities. \textbf{Ordinalists} like Vilfredo Pareto
+argued that the only secure foundation for utility judgements are
+people's choices: if you are given a choice between tea and coffee,
+and you choose tea, we can conclude that tea has greater utility for
+you than coffee. We may similarly find that you prefer coffee to milk,
+etc., but how could we find that your utility for tea is twice your
+utility for coffee -- let alone that it has the precise value 5? The
+ordinalists concluded that we should give up the conception of utility
+as a numerical magnitude.
+
+\cmnt{%
+  It is even less clear how any facts about choices could reveal that
+  you get more utility from having tea than I get from having coffee.%
+} %
+
+Ordinalism posed a serious threat to the idea of expected utility
+maximization. If there is no numerical quantity of utility, we can't
+demand that rational agents maximize the probability-weighted average
+of that quantity, as the MEU Principle requires.
+
+In 1926, Frank Ramsey pointed out that if we look at the choices an
+agent makes in a state of uncertainty, we may discover more about an
+agent's utility function than how it orders the relevant outcomes --
+enough to vindicate the MEU Principle. Ramsey's argument was largely
+ignored until it was rediscovered by John von Neumann and Oskar
+Morgenstern, who presented a simpler version of it in their 1944
+monograph \emph{Game Theory and Economic Behaviour}, which is widely
+taken to provide the foundation of modern expected utility theory.
+
+Before we have a closer look at these arguments, let's think a
+little about the ordinalist challenge.
+
+Ordinalism was inspired by a wider ``positivist'' movement in science
+and philosophy that aimed to improve scientific reasoning by
+discarding reference to seemingly obscure and unobservable facts. Any
+meaningful statement, according to positivism, must have clear
+conditions of verification and falsification. If someone puts
+forward a hypothesis, but can't explain how one could in principle
+test whether the hypothesis is true or false, then the hypothesis
+should be rejected as meaningless.  In psychology, this movement gave
+rise to \textbf{behaviourism}, the doctrine that all statements about
+feelings, intentions, convictions, and other psychological states
+should either be abandoned or defined in terms of the agent's
+observable behaviour.
+
+Today, behaviourism (and positivism more generally) has been almost
+universally abandoned.  One reason, to which I already alluded in the
+previous session, is the holistic character of scientific testing:
+many statements in highly successful scientific theories have
+observable consequences only in conjunction with other theoretical
+assumptions.%
+%
+\cmnt{%
+  Arguably, that is also true for statements about belief and
+  desire. A hypothesis about an agent's beliefs alone does not allow
+  us to predict what she will do; that also depends on her goals or
+  desires.%
+} %
+More practically, the behaviourist paradigm was found to stand in the
+way of scientific progress. It is hard to explain even the behaviour
+of simple animals without appealing to inner representational states
+like goals or perceptions as causes of the behaviour.
+
+So can we dismiss the ordinalist challenge as misguided? Not
+quite. Even if they were motivated by mistaken views about science,
+the ordinalists raised an important concern. It really isn't obvious
+what it is supposed to mean when we say that an outcome has utility 5,
+as opposed to any other number.
+
+In session \ref{ch:probabilism}, I emphasized that we shouldn't think
+of an agent's credences as little numbers written in her head. If your
+credence in rain is \nicefrac{1}{2}, then this must be grounded in
+other, more basic facts about you -- facts that do not involve the
+number \nicefrac{1}{2}. Even if we accept your state of belief as a
+genuine internal state, a cause of your behaviour, we need to explain
+why we represent that state by the number \nicefrac{1}{2} rather than
+\nicefrac{3}{4} or \nicefrac{12}{5}. There's nothing special here
+about credence. Numerical representations in scientific models are
+always based on non-numerical facts about the represented
+objects. For the numerical representations to have meaning, we need to
+specify what underlying non-numerical facts they are meant to represent.
+
+Return to utility. In the previous session, I explained that we
+understand utility to comprise a wide range of psychological factors,
+some conscious, some unconscious. What unites all these factors is
+that they make certain acts or outcomes more appealing to the agent:
+they motivate the agent to choose these acts or aim at those
+outcomes. We can perhaps agree that some of these factors are stronger
+than others, but if we want to represent their strength by numbers, we
+have to explain what the numbers are supposed to stand for.
+
+So the ordinalists raised an important question. Moreover, there is
+something to be said for the idea that the answer should appeal to
+the agent's choices. 
+
+Consider our practice of attributing conscious or unconscious
+motives. A child bullies other children at school. Why does she do
+this? One hypothesis is that she simply enjoys the sense of
+power. Another is that her aggression is an attempt to hide her
+insecurities and protect herself from an unconsciously perceived
+threat posed by  other children. A minimal standard for any such
+explanation is that the goals it postulates make sense of the child's
+behaviour. That is, on the assumption that the child is motivated by
+the hypothesized factors, we would expect to see the kind of behaviour
+we actually observe.
+
+In general, the main reason to think that an agent has specific goals
+or desires is that this would explain her behaviour. The point also
+applies to the relative strength of the attributed goals or
+desires. We say that my sense of duty was stronger than my desire to
+stay in bed because I actually got up. Absent further explanation, the
+claim that in fact my desire to stay in bed was stronger, even though
+I got up, is unintelligible.
+
+So there is a close connection between an agent's motives or goals or
+desires, and her behaviour. What it means to be in a particular
+motivational state is, at least in part, to be in a state that
+typically leads to particular kinds of behaviour, given suitable
+beliefs. If we seek a standard to measure the comparative strength of
+different motives, a natural move is therefore to look at their
+behavioural consequences.
+
+
+\cmnt{%
+  In current philosophy of mind, this position is known as
+  \emph{functionalism}, or \emph{analytical functionalism}, and some
+  of its classical defenses include \cite{armstrong68materialist},
+  \cite{psychophysical}, and \cite{madpain}. Functionalism is an
+  intellectual heir to behaviorism, the view on which an attribution
+  of a belief or desire is in some sense equivalent to an attribution
+  of complex dispositions to behave. On this view, to say that you
+  desire to have eggs for breakfast just is to say that under suitable
+  conditions you would choose to have eggs. Apart from the obvious
+  difficulty in spelling out ``suitable conditions'', this position
+  has problems accounting for beliefs and desires in people who are
+  paralysed and may e.g. desire not to be paralysed. Modern-day
+  functionalism largely avoids these problems by identifying belief
+  and desire not with mere behavioural dispositions, but with real
+  psychological states that normally underlie these dispositions.
+
+  Desires, together with beliefs, cause actions. Our Bayesian model
+  can be understood as filling in some more details. Utilities sit in
+  a network of causal input and output and other mental states.
+} %
+
+\cmnt{%
+
+  The most important challenge to functionalism need not concern us
+  here. It is the problem of ``phenomenal consciousness'': the fact
+  that humans are not merely information-processing devices with
+  complex behaviour, but that there is something it is like to be one
+  of these devices (see e.g. \cite[ch.1]{chalmers96conscious}). This
+  need not concern us here because we are precisely not interested in
+  an analysis of \emph{conscious} belief and desire.
+
+} %
+
+\cmnt{%
+  Perhaps the first clear statement of modern-day functionalism about
+  belief and desire occurs in Frank Ramsey's 1926 paper ``Truth and
+  probability'' -- a somewhat obscurely written paper that makes the
+  biggest advances in the history of decision theory. We will look at
+  this theory in more detail in the next chapter. One of Ramsey's key
+  ideas is to measure desire by choices between lotteries.
+} %
+
+
+\section{Scales}
+
+Utility, like credence, mass, or length, is a numerical representation
+of an essentially non-numerical phenomenon. All such representations
+are to some extent conventional.  We can represent the length of my
+pencil as 19 centimetres or as 7.48 inches -- it's the same length
+either way. We must take care to distinguish real features of the
+represented properties from arbitrary consequences of a particular
+representation. For example, it is nonsense to ask whether the length
+of my pencil -- the length itself, not the length in any particular
+system of representation -- is a whole number. By contrast, it is not
+meaningless to ask whether the length of my pencil is greater than the
+length of my hand.
+
+The mathematical discipline of measure theory studies the
+representation of physical properties by numbers. In the case of
+length, as in the case of mass, the conventionality boils down to the
+choice of a unit. You can introduce a new measure of length simply by
+picking out a particular length and assigning it the number 1. Any
+object twice that length will then have a length of 2 in your new
+system, and so on. (You can fix the unit by assigning any number
+greater than zero to any non-trivial length; it doesn't have to be the
+number 1.)
+
+Quantities like mass and length, for which only the unit of
+measurement is conventional, are said to have a \textbf{ratio scale},
+because even though the particular numbers are conventional, ratios
+between them are not: if the length of my arm is four times the length
+of my pencil in centimetres, then that is also true in inches,
+millimetres, and any other sensible system of measurement.
+
+Temperature is different. Historically, the basis for representing
+temperature by numbers was the observation that metals such as mercury
+expand as the temperature goes up. Imagine we put some mercury in a
+narrow glass tube. The higher the temperature, the more of the glass
+tube is filled up by the expanding mercury. To get a numerical measure
+of temperature, we need to mark two points on the tube -- for example,
+by 0 and 100. We can then say that if the mercury has expanded to
+$x\%$ of the distance between 0 and 100, then the temperature is
+$x$. Anders Celsius suggested to use 0 for the temperature at which
+water freezes, and 100 for the temperature at which it boils. Daniel
+Fahrenheit instead marked as 0 the coldest temperature he measured in
+his home town of Danzig in the winter of 1708/1709, and used 100 for
+the body temperature in a healthy human. As a result, 10 degrees
+Celsius is 50 degrees Fahrenheit, and 20 degrees Celsius is 68 degrees
+Fahrenheit. Since the ratio between the two temperatures is not
+preserved, the Celsius scale and the Fahrenheit scale are not ratio
+scales.%
+\cmnt{%
+  By contrast, ratios between \emph{differences} of temperature are
+  not: the difference between 10$^\circ$C = xxx and 20$^\circ$C = xxx
+  is twice the difference between 5$^\circ$C = xxx and 10$^\circ$C =
+  xxx, in both Celsius and Fahrenheit.%
+} %
+Such scales, where both the zero and the unit are a matter of
+convention, are called \textbf{interval scales}.
+
+\cmnt{%
+  Yet another, and much simpler, kind of scale is at work when we use
+  numbers just to keep track of an object's relative position in an
+  order. In some waiting rooms, customers draw tickets with numbers on
+  them. A higher number means you're further down in the queue. Apart
+  from that, the numbers need not have any significance. The system
+  works as long as later customers get higher numbers; the distance
+  between the numbers does not matter, nor does it matter whether the
+  first customer got the number 1. Here, the only thing that is not a
+  matter of convention is the ordering of the numbers: that the second
+  customer's number is greater than the first's, and so on. Such
+  scales are called \textbf{ordinal scales}.%
+} %
+
+The ordinalists held that utility has neither a ratio scale nor an
+interval scale, but merely an \textbf{ordinal scale} (hence the name
+of the movement). In an ordinal scale, the only thing that is not
+conventional is which of two objects is assigned a greater number. For
+example, according to the ordinalists, a preference of tea over coffee
+over milk can be represented by a utility function that assigns 3 to
+tea, 2 to coffee, and 1 to milk, but it can also be represented by a
+utility function that assigns 300 to tea, 0 to coffee, and -1 to
+milk. Either function correctly reflects your choices.
+
+If the ordinalists were right, we would have to give up the MEU
+Principle. Which act in a decision problem maximizes expected utility
+would then frequently depend on arbitrary conventions for representing
+utility.
+
+\begin{exercise}
+  In the Mushroom Problem as described by the matrix on the bottom of
+  page \pageref{mushroom-matrix} (section \ref{mushroom-matrix}), not
+  eating the mushroom has greater expected utility than eating the
+  mushroom. Describe a different assignment of utilities to the four
+  outcomes that preserves their ordering but gives eating the mushroom
+  greater expected utility than not eating. $\star$
+\end{exercise}
+
+By contrast, if utility has an interval scale, then different measures
+of utility will never disagree on the ranking of acts in a decision
+problem. A ratio scale is not required. 
+
+\cmnt{%
+  Exercise: prove that if $U$ is a positive linear transform of $U'$,
+  then ratios of differences are preserved. (E.g. Broome 1990 p.75).%
+} %
+
+\cmnt{%
+  Exercise: show that if $U$ is a positive linear transform of $U'$,
+  and money has declining marginal utility in $U$, then it also does
+  in $U'$.%
+} %
+
+\begin{exercise}
+  Suppose two utility functions $U$ and $U'$ differ merely by their
+  choice of unit and zero. This means that there are numbers $x>0$ and
+  $y$ such that, for any $A$, $U(A) = x\cdot U'(A) + y$.%
+  \cmnt{%
+    The number $x$ encodes the ratio of the units, $y$ the difference
+    in zeroes. (By comparison, temperature in Fahrenheit equals 1.8
+    times temperature in Celsius plus 32.)%
+  } %
+  Suppose some act $A$ in some decision problem has greater expected
+  utility than some act $B$, if utility is measured by $U$. Show that
+  it follows that $A$ also has greater expected utility than $B$ if
+  utility is measured by $U'$. (You can assume for simplicity that the
+  outcome of either act depends only on whether some state $S$
+  obtains; so the states are $S$ and $\neg S$.) $\star \star$%
+  \cmnt{%
+    The hypothesis that $EU(A) > EU(B)$ then means that
+    \[
+    U(A)\Cr(S_1) + U(A)\Cr(S_2) > U(B)\Cr(S_1) + U(B)\Cr(S_2).
+    \]
+    Adding $y$ to both sides and multiplying by $x$, with $x>0$, we get:
+    \[
+    x[U(A)\Cr(S_1)+ U(A)\Cr(S_2)]+y > x[U(B)\Cr(S_1) + U(B)\Cr(S_2)]+y.
+    \]
+    With a little algebra, this entails
+    \[
+    [xU(A)+y] \Cr(S_1)+ [xU(A)+y]\Cr(S_2) > [xU(B)+y]\Cr(S_1) + [xU(B)+y]\Cr(S_2)].
+    \]
+    Which is to say that $EU'(A) > EU'(B)$. $\star$
+  } %
+  \cmnt{%
+    Need to clarify that EU is not U!
+  } %
+\end{exercise}
+  
+So if we want to rescue the MEU Principle from ordinalist skepticism,
+we don't need to explain what makes it the case that your utility for
+tea is 5 rather than 500; we can accept that the precise numbers are a
+matter of conventional representation. Nor do we need to explain what
+makes your utility for tea twice your utility for coffee; such ratios
+also needn't track anything real. But we do have to explain what makes
+it the case that once we arbitrarily set your utility for tea as 5 and
+your utility for coffee as 0, then your utility for milk is fixed at,
+say, -7.
+
+\cmnt{%
+  Is an agent's value function more like temperature or more like
+  mass?  We could say that there's a privileged zero: complete
+  indifference. But how does indifference show up in an agent's
+  preferences? Also, if a world has zero, and zero means indifference,
+  and indifference means status quo, then conditionalization changes
+  values. That's not what we want.
+} %
+
+\cmnt{%
+  Before the ordinalist revolution, it was commonly assumed that
+  utility has a ratio scale, with the zero fixed by the point where an
+  agent feels neither pleasure nor pain. But it is not clear how the
+  zero point could be determined through an agent's choices. In any
+  case, it turns out that to make sense of the MEU Principle, an
+  interval scale is enough. So the standard approach today is to
+  assume that utility, like temperature, is relative to a zero and a
+  unit.
+} %
+
+
+\section{Utility from preference}
+
+I am now going to describe the method proposed by von Neumann and
+Morgenstern for determining an agent's utility function from her
+choice dispositions.
+
+Suppose we want to find  the utility an agent assigns to certain
+items, which we'll call \emph{rewards}. A reward might be an amount of
+money, a sensation of pleasure or pain, a commodity bundle, a
+proposition about the outcome of the next elections, or whatever. I'll
+use lower-case letters $a,b,c,\ldots$ for rewards. 
+
+We will determine the agent's utility function from her
+\textbf{preferences}, which we assume to represent her choice
+dispositions. For example, if she were given a choice between rewards
+$a$ and $b$, the agent might opt for $a$; so she prefers $a$ to
+$b$. The ordinalists did not challenge the idea that people have
+preferences in this sense.
+
+Let's introduce some shorthand notation:
+%
+\begin{align*}
+  a \succ b &\Leftrightarrow \text{The agent prefers $a$ to $b$}.\\
+  a \sim b &\Leftrightarrow \text{The agent is indifferent between $a$ and $b$.}\\
+  a \succsim b & \Leftrightarrow \text{The agent prefers $a$ to $b$ or is indifferent between them.}
+\end{align*}
+%
+(Note that `$\succ$', `$\sim$', and `$\succsim$' had a different
+meaning in section \ref{sec:comparative-credence}. You always have to
+look at the context to figure out what these symbols mean.)
+
+We saw that to defend the MEU Principle, we can choose an arbitrary
+unit and zero for the utility scale. So let's take arbitrary rewards
+$a$ and $b$ such that $b \succ a$ and set $U(a) = 0$ and $U(b) =
+1$. This corresponds to Kelvin choosing zero as the temperature where
+water freezes and 100 as the temperature where water boils. 
+
+\begin{exercise}
+  If the agent is indifferent between all rewards, then our procedure
+  stalls at this step. Nonetheless, we can easily find a utility
+  function for such an agent. What does it look like? $\star \star$
+\end{exercise}
+
+Having fixed the utility of two rewards $a$ and $b$, here is how we
+can determine the utility of any other reward $c$. We distinguish
+three cases, depending on how the agent ranks $c$ relative to $a$ and
+$b$.
+
+Suppose first that $c$ ``lies between'' $a$ and $b$ in the sense that
+$b \succ c$ and $c \succ a$.  To find the utility of $c$, we then look
+at the agent's preferences between $c$ and a \textbf{lottery} between
+$a$ and $b$. By a `lottery between $a$ and $b$', I mean an event that
+leads to $a$ with some objective probability $x$ and otherwise to
+$b$. For example, suppose we offer our agent a choice between $c$ for
+sure and the following gamble $L$: we'll toss a fair coin; on heads
+the agent gets $a$, on tails $b$. Assuming the agent obeys the
+Probability Coordination Principle, the expected utility of the gamble
+is%
+\cmnt{%
+\[
+  EU(L) = \nicefrac{1}{2} \cdot U(a) + \nicefrac{1}{2} \cdot U(b) =  
+   \nicefrac{1}{2} \cdot 0 + \nicefrac{1}{2} \cdot 1 = \nicefrac{1}{2}. 
+\]
+} %
+\nicefrac{1}{2}. Thus if the agent is indifferent between the lottery
+and $c$, we can infer that the agent's utility for $c$ is also
+\nicefrac{1}{2}, assuming she obeys the MEU Principle.
+
+\begin{exercise}
+  Suppose an agent's utility is 0 for $a$, 1 for $b$, and
+  \nicefrac{1}{2} for $c$. Draw a decision matrix representing a
+  choice between $c$ and $L$, and verify that both options have
+  expected utility \nicefrac{1}{2}. $\star\star$
+\end{exercise}
+
+\begin{exercise}
+  Why do we need to assume that the agent obeys the Probability
+  Coordination Principle? $\star\star$
+\end{exercise}
+
+If the agent isn't indifferent between $L$ and $c$, we try other
+lotteries.%
+\cmnt{%
+  For example, if the agent prefers $L$ to $c$, we can infer that
+  $U(c) < \nicefrac{1}{2}$.%
+} %
+Perhaps the agent is indifferent between $c$ and a gamble $L'$ where she
+would get $a$ with probability \nicefrac{4}{5} and $b$ with
+probability \nicefrac{1}{5}. Since the expected utility of this gamble
+is \nicefrac{1}{5}, we could then infer that the agent's utility for $c$
+is \nicefrac{1}{5}.
+
+We've assume that $c$ lies between $a$ and $b$. What if the agent
+prefers $c$ to both $a$ and $b$? Then we'll look for a lottery between
+$a$ and $c$ such that the agent is indifferent between $b$ and the
+lottery. For example, if the agent is indifferent between $b$ for sure
+and a gamble $L''$ where she gets either $a$ or $c$ with equal
+probability, then $c$ must have utility 2. That's because the expected
+utility of $L''$ is
+\[
+  EU(L'') = \nicefrac{1}{2} \cdot U(a) + \nicefrac{1}{2} \cdot U(c) =  
+   0 + \nicefrac{1}{2} \cdot U(c) = \nicefrac{1}{2} \cdot U(c). 
+\]
+If the agent is indifferent between $L''$ and $b$, which has a
+guaranteed utility of 1, the gamble must have expected utility 1. So
+$1 = \nicefrac{1}{2} \cdot U(c)$. And so $U(c) = 2$.
+
+\cmnt{% 
+  I need to clarify that 1/2 is only an example.
+} %
+
+\begin{exercise}
+  Can you complete the argument for the case where the agent prefers
+  both $a$ and $b$ to $c$? $\star\star$
+\end{exercise}
+
+In this manner, we can determine the agent's utility for all rewards
+from her preferences between rewards and lotteries. And so we can
+answer the ordinalist challenge: we can define the agent's utility as
+whatever utility function we could read off in this way from her
+preferences. This is the official definition of `utility' in most
+economics textbooks. (A simpler definition of a merely ordinal concept
+of utility in terms of preferences is also frequently used for
+applications where uncertainty can be ignored.)
+
+\section{The von Neumann and Morgenstern axioms}\label{sec:vnm}
+
+The method described in the previous section assumes that the agent
+obeys the MEU Principle. At first glance, that may seem strange. The
+ordinalists argued that the MEU Principle made no sense; how can we
+respond to them by \emph{assuming} the principle? Besides, doesn't
+application of the MEU Principle presuppose that we already know the
+agent's utilities?
+
+The trick is that we are applying the principle backwards. Normally,
+when we apply the MEU Principle, we start with an agents beliefs and
+desires and try to find out her (optimal) choices. Now we start with her
+choices and try to find out her desires, relying on the Probability
+Coordination Principle to fix the relevant beliefs.
+
+There is nothing dodgy about this. Whenever we want to measure a
+quantity whose value can't be directly observed, we have to rely on
+assumptions about how the quantity relates to other things that we can
+observe. Together with the Probability Coordination Probability, the
+MEU Principle tells us what lotteries an agent should be disposed to
+accept if she has a given utility function. If she wouldn't accept
+those lotteries, we can infer that she doesn't have the utility
+function, and so we look at other lotteries until we find a match.
+
+You may wonder, though, what happened to the normativity of the MEU
+Principle. If we follow the von Neumann and Morgenstern method to
+define an agent's utility function, won't the agent automatically come
+out as obeying the MEU Principle, at least for the relevant lotteries
+and rewards? 
+
+Not quite. It's true that \emph{if the method} works, then the agent
+will evaluate lotteries by their expected utility, relative to the
+utility function identified by the method. But the method is not
+guaranteed to work. For example, we have assumed that if an agent
+ranks some reward $c$ in between $a$ and $b$, then the agent is
+indifferent between $c$ and some lottery between $a$ and $b$. That is
+not a logical truth. An agent could in principle prefer $c$ to any
+lottery between $a$ and $b$, yet still prefer $c$ to $a$ and $b$ to
+$c$.  The von Neumann and Morgenstern method does not identify a
+utility function for such an agent.
+
+Von Neumann and Morgenstern investigated just what conditions an
+agent's preferences must satisfy in order for the definition to work.
+To state these conditions, let's assume that `$\succ$', `$\sim$', and
+`$\succsim$' are defined not just for basic rewards but also for
+lotteries between rewards as well as ``compound lotteries'' whose
+payoff is another lottery. For example, if I toss a fair coin and
+offer you lottery $L$ on heads and $L'$ on tails, that would be a
+compound lottery.
+
+Here are the conditions we need. `$A$', `$B$', `$C$' range over
+arbitrary lotteries or rewards.
+
+\begin{genericthm}{Completeness}
+  For any $A$ and $B$, either $A \succ B$ or $B \succ A$ or $A \sim B$.
+\end{genericthm}
+\cmnt{%
+  Completeness is plausibly implied by an interpretation of preference
+  in terms of choice dispositions.
+
+  Incomparability: If there is only one pro-attitude, any apparent
+  incomparability is a matter of indeterminacy. One might postulate
+  several pro-attitude, e.g. selfish vs moral, short-term vs
+  long-term, to account for more substantial incomparability. But (a)
+  when it comes to actions, some sort of comparison is inescapable,
+  and (b) arguably whatever motivates these distinctions also
+  motivates even more fine-grained distinctions e.g. between a
+  career-related pro-attitude and a hobby-related attitude etc., which
+  is getting silly. In any case, (c) we're only developing a model.)
+
+} %
+\vspace{-2mm}
+\begin{genericthm}{Transitivity}
+  For any $A$, $B$, and $C$, if $A \succsim B$ and $B\succsim C$ then
+  $A \succsim C$.
+\end{genericthm}
+\cmnt{%
+  Money pumps?
+
+  I should add an exercise on transitivity, something like Broome's
+  Maurice. First ask about the rationalization: options individuated
+  more narrowly. Follow-up: Can't you be money-pumped here? Isn't that
+  still a sign of irrationality? In practice, you might be
+  money-pumped once, if you didn't see it coming.
+
+} %
+\vspace{-2mm}
+\begin{genericthm}{Independence (of Irrelevant Alternatives)}
+  For any $A$, $B$, and $C$, if $A \succsim B$, and $L_1$ is a lottery
+  that leads to $A$ with some probability $x$ and otherwise to $C$,
+  and $L_2$ is a lottery that leads to $B$ with probability $x$ and
+  otherwise to $C$, then $L_1 \succsim L_2$.
+\end{genericthm}
+\vspace{-2mm}
+\begin{genericthm}{Continuity}
+  For any $A$, $B$, and $C$, if $A \succsim B$ and $B \succsim C$ then
+  there are lotteries $L_1$ and $L_2$ between $A$ and $C$ such
+  that $L_1 \succsim B$ and $B \succsim L_2$.
+\end{genericthm}
+\vspace{-2mm}
+\begin{genericthm}{Reduction (of Compound Lotteries)}
+  If a $L_1$ and $L_2$ are two (possibly compound) lotteries that lead
+  to the same rewards with the same objective probabilities, then $L_1
+  \sim L_2$.
+\end{genericthm}
+
+Von Neumann and Morgenstern proved that if (and only if) an agent's
+preferences satisfy all these conditions, then there is a utility
+function $U$, determined by the method from the previous section, which
+represents the agent's preferences in the sense that $A \succ B$ just
+in case $U(A) > U(B)$. Moreover, the function is unique except for the
+choice of unit and zero. This result is known as the \textbf{von
+  Neumann-Morgenstern Representation Theorem}.
+
+\cmnt{%
+  \begin{genericthm}{The von Neumann and Morgenstern Representation
+      Theorem}
+    If (and only if) an agent's preferences satisfy Completeness,
+    Transitivity, Independence, Continuity, and Reduction, then there
+    is a utility function $U$ such that
+    \begin{enumerate}
+    \item[(a)] $A \succ B$ just in case $U(A) > U(B)$, and
+    \item[(b)] the utility of a lottery is the sum of the probability
+      of each outcome times the utility of that outcome.
+    \end{enumerate}
+    Moreover, any two functions $U$ and $U'$ that satisfy (a) and (b)
+    differ only by their choice of unit and zero.
+  \end{genericthm}
+} %
+
+So if we follow von Neumann and Morgenstern's definition of utility,
+then the MEU Principle (for choices involving lotteries) will
+automatically be satisfied by any agent whose preferences satisfy the
+above conditions -- Completeness, Transitivity, etc. The normative
+claim that an agent ought to evaluate lotteries by their expected
+utility therefore reduces to the claim that their preferences ought to
+satisfy the conditions. For this reason, the conditions are also known
+as the \textbf{axioms of expected utility theory}.
+
+Von Neumann and Morgenstern thus offered not only a response to the
+ordinalist challenge, but also an argument for the MEU Principle. The
+argument could be spelled out as follows.
+
+\begin{enumerate}
+\item The preferences of a rational agent satisfy Completeness,
+  Transitivity, Continuity, Independence, and Reduction.
+\item If an agent's preferences satisfy these conditions, then (by the
+  Representation Theorem) they are represented by a utility function
+  $U$ relative to which the agent ranks options by their expected utility.
+\item That utility function $U$ is the agent's true utility function.
+\item Therefore: a rational agent ranks options by their expected utility.
+\end{enumerate}
+
+\cmnt{%
+  To assess the plausibility of the MEU Principle, we should therefore
+  have a closer look at the axioms.
+} %
+
+\begin{exercise}
+  (An example due to John Broome.) Maurice would choose to go to Rome
+  if he were offered a choice between Rome and going to the mountains,
+  because the mountains frighten him. Offered a choice between staying
+  at home and going to Rome, he would prefer to stay at home, because
+  he finds sightseeing boring. But if he were offered a choice between
+  mountaineering and staying at home, he would choose the mountains
+  because it would be cowardly, he believes, to stay at home. Which of
+  the axioms does Maurice appear to violate? $\star$
+\end{exercise}
+
+
+\section{Utility and credence from preference}
+
+In session \ref{ch:probabilism} we looked at the betting
+interpretation, which attempts to derive an agent's credences from her
+choice dispositions. We saw that the approach relied on implausible
+assumptions about the agent's utilities. Now we've learned from von
+Neumann and Morgenstern how we might derive an agent's utilities from
+her choice dispositions. Ramsey had the idea of pursuing both projects
+at once. He showed how we might simultaneously determine both an
+agent's credences and her utilities from her choices.%
+%
+\cmnt{%
+It is worth studying this approach not just because it offers a
+dramatic improvement over the betting interpretation of credence, but
+also because it promises to fill a gap in von Neumann and
+Morgenstern's argument for the MEU Principle. At best, their argument
+showed that agents should rank lotteries by their expected
+utility. But not all choices involve lotteries. In a lottery, the
+agent knows the objective probability of each outcome. In real life,
+we often face choices in which the objective probabilities (if they
+even exist) are unknown. Yet the MEU Principle is supposed to apply in
+these cases, too.%
+} %
+%
+Ramsey's idea was rediscovered and streamlined by Leonard Savage in
+his \emph{Foundations of Statistics} (1954). I will briefly describe
+Savage's main result.
+
+Like von Neumann and Morgenstern, Savage begins with some conditions
+(``axioms'') on an agent's comparative preference relation, which we
+assume to reflect the agent's choice dispositions. This time, the
+relation is defined over a set of basic rewards as well as
+``conditional prospects''. A conditional prospect is an event that
+leads to some reward $a$ if some state of the world $X$ obtains and
+otherwise to a possibly different reward $b$. I will abbreviate such a
+prospect by `$\bet{X}{a}{b}$' (pronounced `if $X$ then $a$ else $b$').
+We also allow for conditional prospects in which the outcomes are not
+basic rewards but further conditional prospects. The intuitive thought
+is that any act in any decision problem corresponds to a conditional
+prospect. In the mushroom problem from session \ref{ch:overview}, for
+example, eating the mushroom amounts to choosing the prospect
+$\bet{\text{Poisonous}}{\text{Dead}}{\text{Satisfied}}$; not eating
+the mushroom amounts to choosing
+$\bet{\text{Poisonous}}{\text{Hungry}}{\text{Hungry}}$.
+
+Savage's axioms are a little more complicated than those of von
+Neumann and Morgenstern. As before, we need Completeness and
+Transitivity -- I won't repeat them. We also need to assume that the
+agent is not indifferent between all rewards, as then we would have no
+means of discovering her beliefs:
+%
+\begin{genericthm}{Non-Triviality}
+  There are rewards $a$ and $b$ for which $a\succ b$.
+\end{genericthm}
+
+The Independence axiom is redefined as follows to reflect the change
+from lotteries to conditional prospects.
+%
+\cmnt{%
+  I follow Joyce 1999.
+} %
+%
+\begin{genericthm}{Independence (of Irrelevant Alternatives)} 
+  If two prospects $A$ and $B$ lead to different outcomes only under
+  condition $X$, then for any $C$, $A \succ B$ iff $\bet{X}{A}{C}
+  \succ \bet{X}{B}{C}$.
+
+\end{genericthm}
+
+Instead of Continuity and Reduction we have the following
+conditions. (Don't worry if you can't make immediate sense of them.)
+%
+\begin{genericthm}{Nullity} 
+  If $A \pref B$ and $\bet{X}{A}{C} \not\pref \bet{X}{B}{C}$, then
+  for all $A',B'$, $\bet{X}{A'}{C} \not\pref \bet{X}{B'}{C}$.
+\end{genericthm}
+\cmnt{%
+  Note that if $A \pref B$ and $\bet{X}{A}{C} \not\pref
+  \bet{X}{B}{Z}$, then the probability of $X$ is 0.%
+}%
+\vspace{-2mm}
+\begin{genericthm}{Stochastic Dominance} 
+  If $A \pref B$ and $A'\pref B'$, then $\bet{X}{A}{B} \pref
+  \bet{Y}{A}{B}$ iff $\bet{X}{A'}{B'} \pref \bet{Y}{A'}{B'}$.
+\end{genericthm}
+\cmnt{%
+  Note that if $\bet{A}{X}{Y} \pref \bet{B}{X}{Y}$ then the
+  probability of $A$ is greater than that of $B$.%
+}%
+\vspace{-2mm}
+\newpage
+\begin{genericthm}{State Richness} 
+  If $A \pref B$, then for all $C$ there is a finite number of
+  mutually exclusive and jointly exhaustive states $X_1,\ldots,X_n$
+  such that for all $X_i$, $\bet{X_i}{C}{A} \pref B$ and $A \pref
+  \bet{X_i}{C}{B}$.
+\end{genericthm}
+\cmnt{%
+  The idea is that you can partition the states into finitely many
+  cells each of which has a probability so small that it doesn't
+  affect the ordering between $X$ and $Y$ if each of those is replaced
+  by $Z$ in one cell of the partition.
+}%
+\vspace{-2mm}
+\begin{genericthm}{Averaging} 
+  It is not the case that for all outcomes $O$ that might result from
+  prospect $A$ under condition $X$, $\bet{X}{A}{B} \succ
+  \bet{X}{O}{B}$, nor is it the case that $\bet{X}{O}{B} \succ
+  \bet{X}{A}{B}$ for all such outcomes.
+\end{genericthm}
+
+\cmnt{%
+  \begin{genericthm}{Savage's Representation Theorem}
+    If an agent's preferences satisfy Completeness, Transitivity,
+    Independence, Nullity, Stochastic Dominance, State Richness, and
+    Averaging, then there is a (bounded) utility function $U$ and a
+    probability function $\Cr$ such that $A \pref B$ iff the expected
+    utility of $A$, relative to $\Cr$ and $U$, is greater than that of
+    $B$. Moreover, $\Cr$ is unique and $U$ is unique up to the choice of
+    zero and unit.
+  \end{genericthm}
+} %
+  
+\textbf{Savage's Representation Theorem} states that if (but not only
+if) an agent's preferences satisfy all these conditions, then there is
+a utility function $U$ and a probability function $\Cr$ such that $A
+\succ B$ iff the expected utility of $A$, relative to $\Cr$ and $U$,
+is greater than that of $B$. Moreover, $\Cr$ is unique and $U$ is
+unique up to the choice of zero and unit.
+
+What can this do for us? Well, suppose we define an agent's credence
+and utility function as the functions $\Cr$ and $U$ whose existence
+and uniqueness (modulo conventional choice of zero and unit, for $U$)
+is guaranteed by Savage's theorem, provided the agent's preferences
+satisfy the axioms. If we accept the axioms as genuine norms of
+rationality, we can then explain what non-numerical facts the
+credences and utilities of rational agents are meant to represent:
+they represent certain patterns in the agent's preferences and
+therefore ultimately in her choice dispositions. For on the present
+approach, saying that a rational agent has credences $\Cr$ and
+utilities $U$ is equivalent (by the proposed definition of $\Cr$ and
+$U$) to a certain claim about the agent's preferences. We no longer
+need the betting interpretation.
+
+In addition, the present approach promises a more comprehensive
+argument for the MEU Principle than the argument we got from von
+Neumann and Morgenstern. Their argument only showed that agents should
+rank \emph{lotteries} by their expected utility. But not all choices
+involve lotteries. In real life, agents often face conditional
+prospects in which they don't know the objective probability of the
+various outcomes. Why should they rank such prospects by their
+expected utility? Savage's answer is that if they don't, then they
+don't satisfy his axioms.
+
+We also get a new argument for probabilism -- the claim that rational
+degrees of belief satisfy the probability axioms. Again, the
+requirement reduces to the preference axioms: on the proposed
+definition of credence, any agent who obeys these axioms automatically
+has probabilistic credences. If you don't have probabilistic
+credences, you violate the axioms.
+
+\begin{exercise}
+  Can you spell out the argument for probabilism I just outlined in
+  more detail, in parallel to the argument for the MEU Principle I
+  spelled out at the end of section \ref{sec:vnm}? $\star\star$
+\end{exercise}
+
+
+\cmnt{%
+  Now we get an argument for both the MEUP and probabilism.  The
+  theorem shows that if you violate probabilism and maximise EU, then
+  you fail one of the axioms. In other words, if you're going to act
+  in accordance with your beliefs, and you want to satisfy the axioms,
+  you must be probabilistic. And if you want to be probabilistic, you
+  should MEU.
+} %
+
+It should now be clear why the results of Savage and von Neumann and
+Morgenstern are widely taken to provide the foundations of expected
+utility theory. The results not only seem to show how an agent's
+credence and utility function can be measured in terms of overt
+choices, they also suggest that our main norms -- probabilism and the
+MEU Principle -- reduce to certain conditions on choices. To finish
+the job, it seems, we only have to convince ourselves that these
+conditions (the ``axioms'') are genuine norms of rationality.
+
+In fact, doubts have been raised about every single one of the axioms.
+We will turn to some of these worries in session \ref{ch:risk}. In the
+meantime, I want to flag a different kind of problem.
+
+\section{Preference from choice?}\label{sec:preferences-choices}
+
+Von Neumann and Morgenstern and Savage take as their starting point an
+agent's preferences, represented by the relations $\succ$, $\sim$, and
+$\succsim$. Informally, we have interpreted `$A \succ B$' as stating
+that the agent would choose $A$ if she were offered a choice between
+$A$ and $B$. The representation theorems would then explain how an
+agent's utilities (or utilities and credences) can be measured by her
+choices -- or rather, by her choice dispositions.
+
+An agent's \emph{dispositions} reflect what she \emph{would} do if
+such-and-such circumstances were to arise. The definitions of von
+Neumann and Morgenstern and Savage assume that an agent's preferences
+are defined between arbitrary lotteries or conditional prospects, even
+if the agent in fact never faces a corresponding choice.
+
+But now one of the problems for the betting interpretation, from
+section \ref{sec:problem-betting}, returns with a vengeance. If an
+agent is in fact not facing a choice between two options $A$ and $B$,
+then offering her the choice would change her beliefs. Among other
+things, she would come to believe that she faces that
+choice. According to the MEU Principle, the agent in the hypothetical
+choice situation should choose whichever option maximizes expected
+utility relative to the beliefs and desires she has in that
+situation. So if we interpret preferences in terms of hypothetical
+choices, then we cannot assume that a rational agent prefers $A$ to
+$B$ just in case $A$ has greater expected utility than $B$ relative to
+the agent's actual beliefs and desires.
+
+\cmnt{%
+  If we interpret preferences that way, some of the axioms will
+  fail. E.g., you may well ``prefer'' a lottery between a and b over
+  both a and b. %
+} %
+
+The problem is exacerbated by the fact that many of the lotteries and
+prospects for which preferences are assumed to be defined are quite
+bizarre. Suppose one thing you desire (one ``reward'') is peace in
+Syria, another is being able to play the piano. The von Neumann and
+Morgenstern definition then determines your utilities in part by your
+preferences between peace in Syria and a lottery that leads to peace
+in Syria with objective probability \nicefrac{1}{4} and to an ability
+to play the piano with probability \nicefrac{3}{4}. Savage's method
+will similarly look at your preferences between peace in Syria and
+various prospects like \bet{\emph{Rain}}{\emph{Peace}}{\emph{Piano}}
+-- an imaginary act that leads to peace in Syria if it rains and to an
+ability to play the piano if it doesn't rain. If you thought you'd
+face this bizarre choice, your beliefs would surely be quite different
+from your actual beliefs. Indeed, no matter what you pick in the
+hypothetical choice situation, it is guaranteed that there is either
+peace in Syria or you can play the piano. So you could only believe
+that you face the hypothetical choice if you are sure one of these
+propositions is true. Clearly we can't assume that your credences in
+the hypothetical choice situation match your actual credences.
+
+Even in the rare case where an agent actually faces one of the
+relevant choices, we arguably can't infer that whichever option she
+chooses has greater expected utility for her. After all, people can
+have false beliefs about their options. If your real choice is between
+water and wine, but you think it is between petrol and wine (because
+you think the water is petrol), we can't infer from your choice of
+wine that you prefer wine to water. Savage and von Neumann and
+Morgenstern presuppose that agents are never mistaken about the
+relevant options, but can that really be assumed?
+
+\begin{exercise}
+  Yet another problem: Suppose an agent picks $A$ in a choice between
+  $A$ and $B$. Assuming the agent is aware that her options are indeed
+  $A$ and $B$, why can we still not infer that she prefers $A$ to $B$?
+  That is, why can't we infer that $A \succ B$ rather than $B \succ A$
+  or $A \sim B$? $\star$
+\end{exercise}
+
+\cmnt{%
+  All this shows that the preference relations that figure in the
+  axioms and theorem can not straightforwardly be interpreted in terms
+  of observable choices or choice dispositions.
+
+  That's a problem for behaviourism/functionalism, not so much for the
+  normative applications?%
+} %
+
+The upshot of all these problems is that we need to distinguish (at
+least) two notions of preference. One represents the agent's choice
+dispositions: whether she would choose $A$ over $B$ in a hypothetical
+situation in which she faces that choice. The other represents the
+agent's current ranking of hypothetical prospects or lotteries:
+whether by the lights of her current beliefs and desires, $A$ is
+better than $B$. Von Neumann and Morgenstern and Savage at best
+demonstrated how to derive utilities and credences from preferences in
+the second sense.
+
+This could still be valuable. For example, we might still get
+interesting arguments for probabilism and the MEU Principle. Moreover,
+there is plausibly \emph{some} connection between preference in the
+second sense and choices dispositions, so even though we haven't fully
+solved the measurement problem for credences and utilities, one might
+hope that we are at least a few steps closer.
+
+\cmnt{%
+
+We will encounter even more problems for von Neumann and Morgenstern
+and Savage in session \ref{ch:risk}. You may already get a glimpse of
+them if you consider how the model of utility from the previous
+session meshes with the accounts of von Neumann and Morgenstern and
+Savage. In the previous session, we saw how an agent's utility
+function is determined by her credence function and her value function
+-- the utility function restricted to maximally specific
+possibilities. In a sense the individual worlds are the basic objects
+of desire. But in the framework von Neumann and Morgenstern or Savage,
+the ``rewards'' can't be individual possible worlds. Can you see why?
+
+} %
+
+\cmnt{%
+
+There are serious problems hiding in the concepts of a lottery or
+prospect and a reward. The problems do not arise if the agent in
+question only cares about her present level of pleasure or wealth. But
+suppose we want to be more liberal and allow for other
+values. For example, suppose an 
+
+
+Von Neumann and Morgenstern assume that any ``reward'' can either come
+about directly or as the result of a lottery. But that is not
+obvious. If the reward is that there are no lotteries then this cannot
+come about as the result of a lottery. The approach also assumes that
+the way the lottery is determined is not itself an object of value. If
+I desire all coins to land heads, then two fully specified rewards may
+specify that all coins land heads. And then it makes no sense to have
+a lottery that yields $R_1$ on heads and $R_2$ on tails. 
+
+Both of these problems also arise in Savage's framework. If
+conditional prospects $\bet{X}{A}{B}$ are understood as hypothetical
+acts, then an agent may well care about which of these acts take
+place. (For example, suppose her moral or religious beliefs imply that
+certain such acts are wrong.) So two ``rewards'' $A$ and $B$ might
+both entail the absence of $\bet{X}{A}{B}$. And then the conditional
+prospect is logically impossible. Moreover, suppose the agent cares
+about $X$. Then a fully specific reward will entail whether or not $X$
+obtains. So there can't be a 
+
+
+\cmnt{%
+
+  In the previous session, we saw how an agent's utility function is
+  determined by her credence function and her value function -- the
+  utility function restricted to maximally specific possibilities. In
+  a sense the individual worlds are the basic objects of desire. But
+  can we take them to be the rewards? Arguably not. For consider a
+  prospect $\bet{A}{w}{w'}$. If $A$ is true in $w$ and not $w'$, the
+  bet is equivalent to $w$. Moreover if the act $\bet{A}{w}{w'}$ takes
+  place neither in $w$ nor in $w'$, the prospect is logically
+  impossible.
+
+} %
+
+
+Jeffrey/Bolker and Joyce prove RTs that solve the second
+problem. However, weakening the assumptions about the space of
+prospects makes it no longer possible to derive a unique credence
+function.
+
+In a way, that should not be too surprising or concerning. Why should
+an agent's credences be entirely determined by her preferences? If you
+want to know what someone believes, looking at their behaviour is
+certainly useful. But so is looking at what they see. 
+
+
+\cmnt{%
+  From the previous section we already know how to compute utilities
+  from an agent's basic value function. Since her basic value function
+  encodes everything she cares about, it is clearly not a single
+  introspectible quantity, nor a conscious judgement (people can be
+  wrong). So what does it mean if we say that an agent assigns value
+  0.3 or -7 or $3\,000$ to a possible world?
+} %
+
+} %
+
+\section{Further reading}
+
+For some recent discussion of the idea that utility and credence are
+derived from preferences, see (for example)
+
+\begin{itemize}
+\item Samir Okasha: \href{https://research-information.bristol.ac.uk/files/70387986/On_Interpretation_Decision_TheoryECONPHILrevised.pdf}{``On the Interpretation of Decision Theory''} (2016),
+\item Daniel Hausman: ``Mistakes about Preferences in the Social
+  Sciences'' (2011).
+\end{itemize}
+You may notice that Okasha and Hausman mean different things by
+`preference'.
+
+A useful survey of many further representation theorems in the style
+of those we have reviewed is
+\begin{itemize}
+\item Peter Fishburn: ``Utility and Subjective Probability'' (1994).
+\end{itemize}
+
+\begin{essay}
+  Do you think an agent's choice dispositions can in principle reveal
+  all her goals and values? If yes, can you explain how? If no, can
+  you explain why not?
+\end{essay}
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "bdrc.tex"
+%%% End:

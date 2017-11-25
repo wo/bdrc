@@ -1,0 +1,785 @@
+\chapter{Probabilism}\label{ch:probabilism}
+
+\section{Justifying the probability axioms}
+
+The hypothesis that rational degrees of belief satisfy the
+mathematical conditions on a probability measure is known as
+\textbf{probabilism}. In this session, we will look at some arguments
+for probabilism. We do so not because the hypothesis is especially
+controversial (by philosophy standards, it is not), but because it is
+instructive to reflect on how one could argue for an assumption like
+this, and also because the task will bring us back to a more
+fundamental question: what it means to say that an agent has
+such-and-such degrees of belief in the first place.
+
+We will assume without argument that if a rational agent has degrees
+of belief in some propositions $A$ and $B$, then she also has degrees
+of belief in their conjunction, disjunction, and negation. Probabilism
+then reduces to the hypothesis that rational degrees of belief satisfy
+the probability axioms -- specifically, Kolmogorov's axioms (i)--(iii):
+\begin{itemize}
+\itemsep0em 
+\item[(i)] For any proposition $A$, $0 \leq \Cr(A) \leq 1$.
+\item[(ii)] If $A$ is logically necessary, then $\Cr(A) = 1$.
+\item[(iii)] If $A$ and $B$ are logically incompatible, then $\Cr(A \lor B) = \Cr(A) + \Cr(B)$.
+\end{itemize}
+
+Consider axiom (i). Why should rational degrees of belief always fall
+in the range between 0 and 1? Why would it be irrational to believe
+some proposition to degree 7? The question is hard to answer unless we
+have some idea of what it would mean to believe a proposition to
+degree 7.
+
+It is tempting to think that axiom (i) does not express a substantive
+norm of rationality, but a convention of representation. We have
+decided to represent strength of belief by numbers between 0 and 1,
+where 1 means absolute certainty. We could just as well have decided
+to use numbers between 0 and 100, or between -100 and +100. Having set
+up the convention to put the upper limit at 1, it doesn't make any
+sense to assume that an agent believes something to degree 7.
+
+Axioms (ii) and (iii) look more substantive. It seems that we can at
+least imagine an agent who assigns degree of belief less than 1 to a
+logically necessary proposition or whose credence in a disjunction of
+incompatible propositions is not the sum of her credence in the
+individual disjuncts. Still, we need to clarify what exactly it is
+that we're imagining if we want to discuss whether the imagined states
+are rational or irrational.
+
+For example, suppose we understand strength of belief as a certain
+introspectible quantity: a basic feeling of conviction people have
+when entertaining propositions. Axiom (ii) would then say that when
+agents entertain logically necessary propositions, they ought to
+experience this sensation with maximal intensity. It is hard to see
+why this should be norm of rationality. It is also hard to see why
+the sensation should guide an agent's choices in line with the MEU
+Principle, or why it should be sensitive to the agent's evidence.
+
+So if we understand degrees of belief as measuring the intensity of a
+certain feeling, the norms of Bayesian decision theory and Bayesian
+epistemology look implausible and inexplicable. The same is true if we
+understand degrees of belief as measuring some other basic
+psychological quantity: why should that quantity satisfy the
+probability axioms, guide behaviour, respond to evidence, etc.?
+
+A more promising line of thought assumes that strength of belief is
+defined (perhaps in part) by the MEU Principle. On that approach, what
+we mean when we say that an agent has such-and-such degrees of belief
+is that she is (or ought to be) disposed to make certain choices. We
+can then assess the rationality of the agent's beliefs by looking at
+the corresponding choice dispositions.
+
+Unfortunately, beliefs alone do not settle rational choices: the
+agent's desires or goals also play a role. The argument we are now
+going to look at therefore fixes an agent's goals by assuming that in
+certain choices, utility equals monetary payoff. In session
+\ref{ch:preference}, we will encounter a more sophisticated relative
+of the following argument that does not fix the utilities.
+
+\section{The betting interpretation}
+
+Before we return to degrees of belief, let's briefly look at other
+numerical quantities in science. Mass, for example. What do we mean
+when we say that an object -- a chunk of iron perhaps -- has a mass of
+2 kg? There are no little numbers written in chunks of iron, just as
+there are no little numbers written in the head. As with degrees of
+belief, there is an element of conventionality in the way we represent
+masses by numbers: instead of representing the chunk's mass by the
+number 2, we could just as well have used a different scale on which
+the mass would be 2000 or 4.40925. (Appending `kg' to the number, as
+opposed to `g' or `lb', hints at the conventional scale.)
+
+I am not suggesting that mass itself is conventional. I take it that whether a chunk
+of iron has a mass of 2 kg is a completely objective, mind-independent
+matter. If there were no humans, the chunk would still have that
+mass. What's conventional is only the representation of masses (which
+are not intrinsically numerical) by numbers.
+
+The reason why we can measure mass in numbers -- and the reason why we
+know anything at all about mass -- is that things tend to behave
+differently depending on their mass. The greater an object's mass, the
+harder the object is to lift up or accelerate. Numerical measures of
+mass reflect these dispositions, and can be standardized by reference
+to particular manifestations. For example, if we put two objects on
+opposite ends of a balance, the one with greater mass will go down. So
+we could choose a random chunk of iron, call it the ``standard
+kilogram'', and stipulate that something has a mass of $n$ kg just in
+case it balances against $n$ copies of the standard kilogram (or
+against $n$ objects each of which balances against the standard
+kilogram).
+
+Can we take a similar approach to degrees of belief? The idea would be
+to find a characteristic way in which degrees of belief manifest
+themselves in behaviour and use that to define a numerical scale for
+degrees of belief.
+
+So how do you measure someone's degrees of belief? The classical
+answer is: by offering them a bet. 
+
+Consider a bet that pays £1 if it will rain tomorrow at noon, and
+nothing if it won't rain. How much would you be willing to pay for
+this bet?
+
+We can calculate the expected payoff, i.e.\ the average of the
+possible payoffs, weighted by their subjective probability.  Suppose
+your degree of belief in rain tomorrow is $x$, and your degree of
+belief in not-rain is $1-x$. Then the bet would give you £1 with
+probability $x$ and £0 with probability $1-x$. So the expected payoff
+is $x \cdot \text{£1} + (1-x) \cdot \text{£0} = \text{£}x$. This
+suggests that the bet is worth £$x$. That is, £$x$ is the most you
+should pay for the bet.
+
+\begin{exercise}
+  Suppose your degree of belief in rain is $0.8$ (and your degree of
+  belief in not-rain 0.2). For a price of £0.70 you can buy a bet that
+  pays £1 if it rains and £0 if it doesn't rain. Draw a decision
+  matrix for your decision problem and compute the expected utility of
+  the acts, assuming your subjective utilities equal the net amount of
+  money you have gained in the end.
+\end{exercise}
+
+If we're looking for a way to measure your degrees of belief, we can
+turn this line of reasoning around: if £$x$ is the most you're willing
+to pay for the bet, then $x$ is your degree of belief in the
+proposition that it will rain. This leads to the
+following suggestion.
+
+\begin{genericthm}{The betting interpretation}
+  An agent believes a proposition $A$ to degree $x$ just in case she
+  would pay up to £$x$ for a bet that pays £1 if $A$ is true and £0
+  otherwise.
+\end{genericthm}
+
+The betting interpretation is meant to have the same status as the
+above (hypothetical) stipulation that an object has a mass of $n$ kg
+just in case it balances against $n$ copies of the standard kilogram.
+On the betting interpretation, offering people bets is like putting
+objects on a balance scale. For some prices, the test subject will
+prefer to buy the bet, for others she will be prefer to sell the bet
+to others; in between there is a point at which the price of the bet
+is in balance with the expected payoff, so the subject will be
+indifferent about the bet. The price at the point of balance reveals
+the subject's degree of belief. The stake of £1 is a unit of
+measurement, much like the standard kilogram in the measurement of
+mass.
+
+\cmnt{%
+
+ xxx This exercise was too imprecise. Improve!!
+
+\begin{exercise}
+  Show that if an agent's degree of belief in $A$ is $x$, then the
+  a bet that pays £100 if $A$ and £0 if $\neg A$ has expected
+  payoff £$100 \cdot x$. (Thus if we had used £100 instead of £1 in
+  the betting interpretation, then degrees of belief would range
+  from 0 to 100 rather than from 0 to 1.)
+\end{exercise}
+
+} %
+
+The betting interpretation gives us a clear grip on what it means to
+believe a proposition to a particular degree. It also points towards
+an argument for probabilism. For we can show that if an agent's
+degrees of belief do not satisfy the probability axioms (for short, if
+her beliefs are not \textbf{probabilistic}), then the agent is
+disposed to enter bets that amount to a guaranteed loss.
+
+\section{The Dutch Book theorem}
+
+In what follows, we are going to assume that if an agent is not
+willing to buy a bet for £$x$, then she would be be willing to sell
+the bet for that price. Selling a bet means offering it to somebody
+else. The idea is that if you judge a bet to worth less than £$x$,
+then you should be happy to offer someone the bet for a price of £$x$.
+
+\begin{exercise}
+  Suppose your degree of belief in rain is $0.8$ (and in not-rain 0.2)
+  and someone offers you £0.90 for a bet that pays £1 if it rains and
+  £0 if it doesn't rain. Should you sell (i.e.\ offer) them the bet?
+  Draw a decision matrix for your decision problem and compute the
+  expected utility of the acts, assuming your subjective utilities
+  equal the net amount of money you get in the end.
+\end{exercise}
+
+In betting jargon, a combination of bets (bought or sold) is called a
+`book'. A combination of bets that amounts to a guaranteed loss is a
+\textbf{Dutch book}. We will now prove that if an agent's degrees of
+belief violate one or more of the Kolmogorov axioms, and she values
+bets in accordance with their monetary payoff, then she is prepared to
+accept a Dutch Book.
+
+We begin with axiom (i). Suppose your credence in some proposition $A$
+is greater than 1. For concreteness, let's say $\Cr(A)=2$. By the
+betting interpretation, this means you'd be willing to pay up to £2
+for a deal that pays you back either £0 or £1, depending on whether
+$A$ is true. You're guaranteed to lose at least £1. More generally, if
+your degree of belief in $A$ is greater than 1, then you are
+guaranteed to lose at least the difference between your degree of
+belief and 1.
+
+Similarly, suppose your credence in $A$ is below 0. Let's say it's
+-1. By the betting interpretation, this means you would pay no more
+than £-1 for a bet on $A$ and you'd be willing to sell the bet for any
+price above £-1. What does it mean to sell a bet for £-1?  It means to
+pay someone £1 to take the bet. So you would be willing to pay up to
+£1 for me to take the bet from you, with no chance of getting any
+money back. You're guaranteed to lose at least £1. Again, the argument
+generalizes to any degree of belief below 0.
+
+I leave the case of axiom (ii) as an exercise.
+
+\begin{exercise}
+  Suppose your degrees of belief violate axiom (ii). Describe a bet
+  you should be willing to sell for a price less than what you could
+  possibly get back.
+\end{exercise}
+
+Now for axiom (iii). Suppose your credence in the disjunction of two
+logically incompatible propositions $A$ and $B$ is not the sum of your
+credence in the individual propositions. For concreteness, let's
+assume $\Cr(A) = 0.4$, $\Cr(B) = 0.2$, and $\Cr(A \lor B) = 0.5$. By
+the betting interpretation, you'll then be willing to sell a bet on $A
+\lor B$ for at least £0.50, and you'll be willing to buy a bet on $A$
+for up to £0.40 and a bet on $B$ for up to £0.20. Notice that if you
+buy these two bets you have in effect bought a bet on $A \lor B$, for
+you will get £1 if either $A$ or $B$ is true, and £0 otherwise. So you
+are (in effect) willing to sell this bet for £0.50 and buy it back for
+£0.60. No matter how the bets turn out, you will therefore lose £0.10
+(as you can easily check).
+
+The reasoning generalizes to any other case where $\Cr(A \lor B) <
+\Cr(A) + \Cr(B)$. For cases where $\Cr(A \lor B) > \Cr(A) + \Cr(B)$,
+simply reverse all occurrences of `buy' and `sell'.
+
+We have thereby proved the \emph{Dutch Book Theorem}.
+
+\begin{genericthm}{Dutch Book Theorem}
+  If an agent values bets by their expected monetary payoff and her
+  degrees of belief don't conform to the Kolmogorov axioms, then she
+  is prepared to accept combinations of bets that amount to a
+  guaranteed loss. 
+\end{genericthm}
+
+Note that the Dutch Book Theorem is a conditional: \emph{if} an agent
+has non-probabilistic beliefs and values bets by their expected
+monetary payoff, \emph{then} she is vulnerable to Dutch Books. We have
+not shown that agents with probabilistic beliefs are immune to Dutch
+Books. But that can also be shown (with some further
+restrictions on the relevant agents); the result is known as the
+\textbf{Converse Dutch Book Theorem}. We won't go through the proof.
+
+In session \ref{ch:probability} I mentioned that some authors treat
+the Ratio Formula for conditional probability as a definition while
+others treat it fourth axiom of probability. On the second
+perspective, we might want to show that violations of that fourth
+axiom also make an agent vulnerable to Dutch Books.
+
+To this end, we would first have to extend the betting interpretation,
+in order to clarify how conditional credences manifest themselves in
+betting behaviour. The standard approach is to introduce the idea of a
+\emph{conditional bet}. A unit bet on $A$ conditional on $B$ is a bet
+that only comes into effect if $B$ is true. In that case it pays £1 if
+$A$ is true and £0 if $A$ is false. If $B$ is not true, whoever bought
+the bet gets a refund for the price they paid. Now we can extend the
+betting interpretation to say that your conditional credence in $A$
+given $B$ is the maximal price at which you would be willing to buy the
+corresponding conditional bet. And then it is not hard to show that a
+Dutch Book can be made against you unless your conditional credences
+satisfy the Ratio Formula.
+
+\cmnt{%
+ show?
+} %
+
+\begin{exercise}
+  Suppose I believe that it is raining to degree 0.6 and that it is
+  not raining also to degree 0.6. Describe a Dutch Book you could make
+  against me, assuming I value bets in accordance with their expected
+  monetary payoff.
+\end{exercise}
+
+\section{Problems with the betting interpretation}\label{sec:problem-betting}
+
+The Dutch Book Theorem is a mathematical result. It does not show that
+rational degrees of belief satisfy the probability axioms. To reach
+that conclusion, and thereby an argument for probabilism, we need to
+add some philosophical premises about rational belief.
+
+On the face of it, the Dutch Book Theorem seems to warn us that if our
+degrees of belief do not satisfy the probability axioms, then a
+cunning Dutchman might come along and trick us out of money. But why
+does that show that non-probabilistic beliefs are irrational?  Two
+problems immediately stand out.
+
+First, why should the mere possibility of financial loss be a sign of
+irrational beliefs? True, there might be a Dutchman going around
+exploiting people with non-probabilistic beliefs. But there might also
+be someone (a Frenchman, say) going around richly rewarding people
+with non-probabilistic beliefs. We don't think the latter possibility
+shows that people ought to have non-probabilistic beliefs. Even if
+there is such a Frenchman, we can at most conclude that it would be
+\emph{practically useful} to have non-probabilistic beliefs. Arguably
+those beliefs would still not be \emph{epistemically
+  rational}. (Compare: if someone offers you a million pounds if you
+believe that the moon is made of cheese, then the belief would be
+practically useful, but it would not be epistemically justified;
+it would not be grounded in reason and evidence.) Why should we think
+differently about the hypothetical Dutchman? 
+
+Second, the threat of financial exploitation only awaits
+non-probabilistic agents who value bets by their expected monetary
+payoff, i.e.\ who are disposed to buy or sell any bet if the expected
+monetary payoff of the transaction is positive. This is entailed by
+the betting interpretation, but on reflection it is untenable.
+
+Consider the following gamble.
+\begin{example}[The St.\ Petersburg Paradox]
+  I will toss a fair coin until it lands tails. If the coin lands tails on
+  the first toss, you get £2. If it lands heads on the first
+  toss and tails on the second, you get £4. If it lands heads on the
+  first two tosses and tails on the third, you get £8. And so on: if
+  the coin first lands tails on the $n$th toss, you get £$2^n$.
+\end{example}
+How much would you pay for this gamble? 
+
+We can compute the expected payoff. With probability \nicefrac{1}{2}
+you'll get £2; with probability \nicefrac{1}{4} you get £4; with
+probability \nicefrac{1}{8} you get £8; and so on. The expected payoff
+is therefore
+\[
+  \nicefrac{1}{2} \cdot \text{£2} + 
+  \nicefrac{1}{4} \cdot \text{£4} + 
+  \nicefrac{1}{8} \cdot \text{£8} + 
+  \ldots = \text{£1} +  \text{£1} +  \text{£1} + \ldots. 
+\]
+The sum of this series is infinite. That is, if you value bets in
+accordance with their monetary payoff, you should sacrifice everything
+you have for an opportunity to play the gamble. In reality, few
+people would do that, seeing as the payoff is almost certain to be
+quite low.
+
+\begin{exercise}
+  What is the probability that you will get £16 or less when playing
+  the St.\ Petersburg gamble?
+\end{exercise}
+
+The St.\ Petersburg Paradox was first described by the Swiss
+mathematician Nicolas Bernoulli in 1713 and motivated his cousin
+Daniel Bernoulli to introduce the theoretical concept of utility as
+distinct from monetary payoff. As (Daniel) Bernoulli realised, ``a
+gain of one thousand ducats is more significant to the pauper than to
+a rich man though both gain the same amount''. In other words, most
+people don't regard having two million pounds as twice as good as
+having one million pounds: the first million would make a much greater
+difference to our lives than the second.
+
+In the economics terminology, money has \textbf{declining marginal
+  utility}. The `marginal utility' of a good for an agent is how much
+she desires an extra unit of the good. To say that the marginal
+utility of money is declining therefore means that the more money you
+have, the less you value an additional pound.
+
+Concretely, Daniel Bernoulli suggested that $n$ units of money provide
+not $n$ but $\log(n)$ units of utility, so that doubling your wealth
+from £1000 to £2000 would provide the same boost in utility than
+doubling your wealth from £1 million to £2 million (even though the
+second change is much larger in absolute terms). On Bernoulli's model,
+the expected utility of the St.\ Petersburg gamble for a person with a
+wealth of £1000 is not infinite, but £10.95: that is the most she
+ought to be willing to pay.
+
+The declining marginal utility of money is empirically well
+established and makes intuitive sense. It is certainly not a sign of
+irrationality. But it means that rational agents for the most part do
+not value bets by their monetary payoff. 
+
+\begin{exercise}
+  Suppose owning £$n$ gives you a utility of $\log(n)$. You currently
+  have £1. For a price of £0.40 you are offered a bet that pays £1 if
+  it will rain tomorrow (and £0 otherwise). Your degree of belief in
+  rain tomorrow is \nicefrac{1}{2}. Should you accept the bet?  Draw
+  the decision matrix and compute the expected utilities. [You'll need
+  to know that $\log(1) = 0$, $\log(1.6) \approx 0.47$, and $\log(0.6)
+  \approx -0.51$. Besides that you don't need to understand what `$\log$'
+  means.]
+\end{exercise}
+
+\begin{exercise}
+  Bernoulli's logarithmic model is obviously a simplification. Suppose
+  you want to take a bus home, but you only have £1.40 whereas the
+  fare is £1.60. If you can't take the bus, you'll have to walk for 50
+  minutes through the rain. A stranger at the bus stop offers you a
+  deal: if you give her your £1.40, she will toss a fair coin and pay
+  you back £1.60 on heads or £0 on tails. Explain (briefly and
+  informally) why it would be rational for you to accept the deal.
+\end{exercise}
+
+There's another reason why rational agents don't always value bets by
+their expected payoff, even if their subjective utility is adequately
+measured by monetary payoff. The reason is that buying or selling bets
+can alter the relevant beliefs. 
+
+For example, I am quite confident I will not buy any bets
+today. Should I therefore be prepared to pay close to £1 for a bet on
+the proposition that I don't buy any bets today? Clearly not. By
+buying the bet, I would render the proposition false. Given my current
+state of belief, the (imaginary) bet has an expected payoff close to
+£1; nonetheless, it would be irrational for me to buy it.
+
+So rational agents don't always value bets by their expected
+payoff. The betting interpretation is untenable. An agent's betting
+dispositions may often give a good hint about their degrees of belief,
+but we can't simply read off degrees of belief from dispositions to
+buy and sell bets.
+
+\section{A Dutch Book argument}
+
+Given the issues raised in the previous section, can we learn anything
+about rational belief from the Dutch Book Theorems? Some philosophers
+have argued that we can't. I am a little more optimistic. But clearly
+the argument will have to be more complicated than one might initially
+have thought. Here is a sketch of one possible approach.
+
+Consider an arbitrary agent with non-probabilistic beliefs. Call her
+$\alpha$. Our aim is to show that $\alpha$'s beliefs are
+epistemically irrational. 
+
+Arguably, whether $\alpha$'s beliefs are epistemically rational does
+not depend on her goals: if we want to know whether it is
+epistemically rational (as opposed to practically useful) for an agent
+to have such-and-such beliefs, we don't need to know anything about
+her goals or desires.  So let's imagine a counterpart $\beta$ of
+$\alpha$ who is in most respects just like $\alpha$ but who has
+(possibly) different basic desires. For $\beta$, the utility of any
+bet she might buy or sell is adequately measured by monetary
+payoff. We'll also assume that $\beta$ is practically rational insofar
+as she obeys the MEU Principle, and that this alone does not make her
+beliefs epistemically irrational. So our first philosophical premise
+states that if $\alpha$'s beliefs are epistemically rational, then so
+are $\beta$'s.
+
+As we saw at the end of the previous section, the assumption that for
+$\beta$, the utility of a bet is measured by monetary payoff does not
+guarantee that she values bets by their expected monetary payoff in
+the sense that she will be prepared to buy or sell bets whenever the
+expected monetary payoff of the transaction is positive, since the act
+of buying or selling a bet can affect her credence in relevant
+propositions. But this problem seems to arise only for a small and
+special class of propositions (e.g., the proposition that the agent
+won't buy any bets today). Let's call those propositions `unstable'
+and the others `stable'. Stable propositions are those $\beta$ values
+by their expected monetary payoff.
+
+\cmnt{%
+  A complication: what if $\alpha$ already made a high-stakes bet that
+  she would not buy any more bets today? Then buying any more bets has
+  negative monetary payoff for $\beta$!
+} %
+
+\cmnt{%
+  Shouldn't I also restrict the betting propositions to those that can
+  credibly be verified?%
+} %
+
+Now the probability axioms are supposed to be general consistency
+requirements on rational belief. Such requirements plausibly hold for
+beliefs or every kind, not just for beliefs with a specific
+content. In particular, if the probability axioms are requirements for
+beliefs in stable propositions then they are also requirements for
+beliefs in unstable propositions. (This is our second premise.) To
+show that non-probabilistic beliefs are irrational, it is therefore
+enough to show that non-probabilistic beliefs towards stable
+propositions are irrational. So we can assume without loss of
+generality that $\alpha$'s (and therefore $\beta$'s) beliefs towards
+stable propositions are non-probabilistic.
+
+It follows by the Dutch Book Theorem that $\beta$ is prepared to
+knowingly buy and sell bets in such a way that she is guaranteed to
+lose money. Our next premise states that it would be irrational for
+$\beta$ to make these transactions. That is, it is irrational for an
+agent whose sole aim is to maximize profits to knowingly and avoidably
+make transactions that are logically guaranteed to cost her
+money. (The plausibility of this premise turns on the Converse Dutch
+Book Theorem: on the fact that it is possible to avoid making such
+transactions.)
+
+So our hypothetical agent $\beta$ is disposed to make irrational
+choices. Let's have a closer look at these choices. Arguably (premise
+4), if a choice is irrational, then the choice is either based on
+irrational beliefs, on irrational desires, or it wrongly evaluates the
+agent's options on the basis of her beliefs and desires. In the case
+of $\beta$, we can rule out the third possibility, if we assume the
+MEU Principle (premise 5), for by hypothesis $\beta$'s choices are in
+line with that principle. As I said above, $\beta$ is practically
+rational. The fault lies either in her beliefs or in her desires.
+
+Now $\beta$'s desires are certainly peculiar. Since $\beta$ values
+bets by their expected monetary payoff, she would be prepared to give
+all she has for an opportunity to play the St.\ Petersburg gamble. But
+from a thoroughly subjective point of view, there is nothing
+incoherent or inconsistent about these desires. (Premise 6.) So the
+irrationality lies in $\beta$'s belief. Intuitively, $\beta$ misjudges the
+profitability of the relevant bets.
+
+So $\beta$  is epistemically irrational. By our very first premise, it
+follows that $\alpha$ is epistemically irrational.
+
+The argument has a lot of premises, and many of them could be
+challenged. Can you think of a better argument?
+
+
+
+\section{Comparative credence}\label{sec:comparative-credence}
+
+To conclude, I want to briefly review an entirely different approach
+to subjective probability, and an entirely different argument for
+probabilism, first outlined in the 1930s by the Italian mathematician and
+philosopher Bruno de Finetti.
+
+De Finetti endorsed the betting interpretation, but he also described
+an alternative idea according to which degrees of belief are defined
+in terms of a comparative attitude: the attitude of being more certain
+or confident in one proposition than in another. While any numerical
+representation of beliefs is partly conventional, this comparative
+attitude is not. It is simply a fact that I am more confident that
+there are busses from Waverley to the airport than that the 37 bus
+goes to Waverley. Ultimately, we may or may not want to analyze
+comparative certainty in terms of other things, but let's put this
+task aside.
+
+I will write $A \succ B$ to express that an agent is more confident in
+$A$ than in $B$. Let's collect a few constraints on the relation $\succ$.
+
+First of all, you can't be more confident in $A$ than in
+$B$ and at the same time more confident in $B$ than in $A$. In maths
+jargon, the relation $\succ$ is \textbf{asymmetric}:
+\begin{itemize}
+  \item[(i)] If $A \succ B$ then $B \not\succ A$.
+\end{itemize}
+
+Moreover, suppose you are more confident in $A$ than in $B$, and more
+confident in $B$ than in $C$. Then you should arguably be more
+confident in $A$ then in $C$. In other words, $\succ$ should be
+\textbf{transitive}:
+\begin{itemize}
+  \item[(ii)] If $A \succ B$ and  $B \succ C$ then $A \succ C$.
+\end{itemize}
+
+What if you are \emph{not} more confident in $A$ than in $B$, nor more
+confident in $B$ than in $C$? Arguably, you then shouldn't be more
+confident in $A$ than in $C$ either. That is, $\not\succ$ should also
+be transitive:
+\begin{itemize}
+  \item[(iii)] If $A \not\succ B$ and  $B \not\succ C$ then $A \not\succ C$.
+\end{itemize}
+
+Any relation $\succ$ that satisfies (i)--(iii) is called a
+\textbf{weak order}.
+
+\cmnt{%
+  These were too hard?
+} %
+
+\begin{exercise}
+  Show that (ii) actually follows from (i) and (iii). (Hint: Assume
+  for reductio that $A \succ B$, $B \succ C$, and $A \not\succ C$. Now
+  try to derive a contradiction, using (i) and (iii).)
+\end{exercise}
+
+\begin{exercise}
+  Define $A \sim B$ as $(A \not\succ B) \land (B \not\succ A)$. Define
+  $A \succsim B$ as $(A \succ B) \lor (A \sim B)$. Show that (i)
+  implies that $\succsim$ is \textbf{complete}, meaning that for all
+  $A$ and $B$, $(A \succsim B)$ or $(B \succsim A)$. (Hint: Assume
+  $A\not\succsim B$ and derive $B \succ A$.)  
+\end{exercise}
+
+\cmnt{%
+
+Figuratively speaking, imagine we wanted to order all propositions on
+a line in such a way that a proposition $A$ is to the right of a
+proposition $B$ just in case $A \succ B$. (Several propositions can be
+at the same point on the line: we arrange them on top of each other.)
+It can be shown that this is possible if and only if $\succ$ is a weak
+order. (Assuming we have at most countably many propositions to order;
+otherwise a further condition is needed.)
+
+If we have things arranged on a line, we can represent their relative
+position by a number.
+
+} %
+
+For the next requirements, I use `$\top$' to stand for a logically
+necessary proposition and `$\bot$' for a logically impossible
+proposition. The following are fairly plausible conditions of
+rationality.
+
+\begin{itemize}
+\item[(iv)] $\top \succ \bot$.
+\item[(v)] There is no proposition $A$ such that $\bot \succ A$.
+\end{itemize}
+
+The next condition is best illustrated by an example. Suppose you are
+more confident that Bob is German than that he is French.  Then you
+should also be more confident that Bob is \emph{either German or
+  Russian} than that he is \emph{either French or
+  Russian}. Conversely, if you are more confident that he is German or
+Russian than that he is French or Russian, then you should be more
+confident that he is German than that he is French. In general:
+\begin{itemize}
+\item[(vi)] If $A$ and $B$ are both logically incompatible with $C$,
+  then $A \succ B$ iff $(A \lor C) \succ (B \lor C)$.
+\end{itemize}
+
+Now de Finetti conjectured that whenever $\succ$ satisfies conditions
+(i)--(vi), then there is a unique probability measure $\Cr$ such that
+$A \succ B$ iff $\Cr(A) > \Cr(B)$. The conjecture turned out to be
+false; a further condition (vii) is required. But the following can be
+shown:
+%
+\begin{genericthm}{Probability Representation Theorem}
+  If $\succ$ satisfies (i)--(vii) then there is a unique probability
+  measure $\Cr$ such that $A \succ B$ iff $\Cr(A) > \Cr(B)$. 
+\end{genericthm}
+%
+Before I describe condition (vii), let me explain what the Probability
+Representation Theorem might tell us.
+
+\cmnt{%
+  xxx Rewrite the next two paragraphs!!
+} %
+
+Suppose we follow de Finetti and take it as given that agents are more
+certain of some propositions than of others, and we regard (i)--(vii)
+as rationality constraints on the comparative confidence relation
+$\succ$. The Probability Representation Theorem then implies that we
+can interpret statements about an agent's credences as convenient ways
+of talking about the agent's comparative confidence relation. On this
+approach, what's psychologically real are the agent's comparative
+attitudes. By the Representation Theorem, these attitudes are
+uniquely represented by a certain probability measure. To say that an
+agent assigns credence $0.8$ to rain and $0.6$ to wind therefore means
+not much more than that she is more confident in rain than in wind.
+
+The assumption that agents have probabilistic degrees of belief then
+boils down to the assumption that their comparative confidence relation
+satisfies conditions (i)--(vii). Any agent who satisfies these
+conditions has probabilistic credences, because the agent's credence
+function is \emph{defined} as the unique probability measure $\Cr$
+such that $A \succ B$ iff $\Cr(A) > \Cr(B)$.
+
+As you may imagine, this approach has also not gone unchallenged. One
+obvious question is whether we can take comparative certainty as
+primitive. If we can, a further question is whether de Finetti's
+conditions (i)--(vi) are really general constraints on
+rationality. (i), (iv), and (v) look fairly safe, but all the others
+have been questioned. In this regard, the missing seventh condition is
+especially troublesome. As it turns out, the form of that condition
+depends on whether the number of propositions ranked by $\succ$ is
+finite or infinite. In either case the condition is complicated --
+which makes it especially hard to treat it as a basic norm of
+rationality. Just to prove the point, here is the condition for the
+case of finitely many propositions:
+
+\begin{itemize}
+\item[(vii)] For any two sequences of propositions $A_1,\ldots,A_n$
+  and $B_1,\ldots,B_n$ such that for every world $w$, the number of
+  propositions in the first sequence that contain $w$ equals the
+  number of propositions in the second sequence that contain $w$, if
+  $B_i \not\succ A_i$ for all $i < n$, then $A_n \not\succ B_n$.
+\end{itemize}
+
+
+
+\section{Further reading}
+
+A thorough critique of Dutch Book arguments can be found in
+%
+\begin{itemize}
+\item Alan H\'ajek: \href{http://philrsss.anu.edu.au/people-defaults/alanh/papers/DBA.pdf}{``Dutch Book Arguments''} (2008).
+\end{itemize}
+%
+For even more details and background information, have a look at the
+Stanford Encyclopedia entry
+%
+\begin{itemize}
+\item Susan Vineberg: \href{https://plato.stanford.edu/entries/dutch-book/}{``Dutch Book Arguments''} (2016).
+\end{itemize}
+
+If you're interested in the approach based on comparative credence,
+a good (though mathematically non-trivial) introduction is
+%
+\begin{itemize}
+\item Peter Fishburn: \href{https://projecteuclid.org/download/pdf_1/euclid.ss/1177013611}{``The Axioms of Subjective Probability''} (1986).
+\end{itemize}
+
+\begin{essay}
+  Do you think the Dutch Book Theorems can teach us anything about
+  epistemic rationality? If so, can you spell out how? If not, can you
+  explain why not?
+\end{essay}
+
+\cmnt{%
+  Using MEU in the definition may seem odd, but remember we're not
+  interested in the ordinary sense of ``belief'' and ``desire'', nor
+  in what people say about their beliefs and desires. We're defining a
+  pragmatic notion of belief and desire. On that usage, it makes no
+  sense to suggest that somebody whose choices reveal certain values
+  and beliefs really has quite different values and beliefs that don't
+  match those choices.
+
+  To illustrate, imagine we find an alien creature on an island that
+  displays sophisticated, intelligent behaviour. Suppose we have
+  repeatedly observed it sneaking chocolate out of handbags and hiding
+  it on a tree. A sensible explanation would be that it likes to eat
+  chocolate and thinks it is safe on the tree. But suppose I suggest
+  that in fact, this creature doesn't like chocolate at all. We would
+  then ask for another explanation of the behaviour: does it think it
+  can use it to attract prey on the tree? Or does it like to tease
+  humans?  Suppose I say that all of this is false: from the
+  creature's point of view, there is no benefit whatsoever in taking
+  the chocolate; it takes it \emph{despite the fact} that it realises
+  this to be no good. This is an unintelligible suggestion.
+
+  A minor complication is that the theory that introduces theoretical
+  terms can be false. Ramsey is well aware of this. It's like defining
+  distance by presupposing Newtonian mechanics. In fact, nothing quite
+  plays the role of distance, and the notion is indeterminate between
+  several candidates.
+} %
+
+
+\cmnt{%
+
+Lecture:
+
+\begin{itemize}
+\item Emphasize again that even if we call credences
+  ``probabilities'', it is not trivial that they are probabilities,
+  and indeed what the numbers are supposed to stand for: not for
+  intensity of feeling, nor for a special kind of judgement. (Compare
+  ungraded concept of belief, which is often understood in terms of
+  assertions.)
+\item A good idea is to define credence in terms of effect on
+  behaviour; problem: entanglement with desires. 
+\item Betting interpretation
+\item Go through case (iii) of DBT in detail.
+\item First problems with betting interpretation: utility
+  curves. Clarify how that affects the argument: Bernoulli agents
+  still don't want sure losses. Point is, they wouldn't buy/sell the
+  relevant bets.
+\item On representation theorems: what it means in general that < is
+  represented by a number f; example; conditions that are required:
+  weak order; representation is never unique, but here the result is
+  that there's a unique probabilistic representation.
+\end{itemize}
+
+
+
+} %
+
+ 	
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "bdrc.tex"
+%%% End:

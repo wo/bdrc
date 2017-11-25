@@ -1,0 +1,1152 @@
+\chapter{Bounded Rationality}
+
+\section{Models and reality}
+
+We have studied an abstract model of rational agents. The model
+assumes that the agent to be modelled has some idea of what the world
+might be like, which we represent by a credence function $\Cr$ over a
+suitable space of propositions. We also assume that the agent has some
+goals or values or desires, which we represent by a utility function
+$U$ on the same space of propositions. The credence function is
+assumed to satisfy the formal rules of the probability calculus; it is
+assumed to evolve over time by conditionalizing on sensory
+information, and it is assumed to satisfy further constraints such as
+the Probability Coordination Principle. The utility function $U$ is
+assumed to satisfy Jeffrey's axiom, so that it is jointly determined
+by the agent's credences and the basic values assigned to individual
+possible worlds. The basic values may in turn be determined by
+aggregating subvalues. When the agent faces a choice, she is assumed
+to choose an act which maximizes the credence-weighted average of the
+utility of the act's possible outcomes.
+
+As we saw, the model is really a family of models, since there are
+different ways of filling in the details. Should expected utility be
+understood causally or evidentially? Should credences satisfy a
+restricted version of the Principle of Indifference? Should utilities
+conform to localism?  Should they be stationary? And so on.
+
+Each model in this family can be understood either
+\textbf{normatively} or \textbf{descriptively}. Understood
+normatively, the models purport to describe an ideal which real agents
+should perhaps aspire to. Understood descriptively, the models purport
+to describe the attitudes and choices of ordinary humans.
+
+It is a commonplace in current economics and psychology that our
+models are descriptively inadequate: that real people are not expected
+utility maximizers. In itself, this is not necessarily a problem --
+not even for the descriptive interpretation of the models. Remember
+that ``all models are false''. With the possible exception of the
+standard model of particle physics, the purpose of a model is to
+identify interesting and robust patterns in the phenomena, not to get
+every detail right.  Nonetheless, it is worth looking at how real
+agents fail to conform to our models, and what we could change to make
+the models more realistic.
+
+Many examples of people supposedly failing to maximize expected
+utility are not really counterexamples to the descriptive adequacy of
+our models, since the examples rely on implausible restrictions on the agent's
+utility function. As we saw in session \ref{ch:risk}, our models can easily
+accommodate agents who care about risk or fairness or feelings of
+frustration, which explains the common preferences in Allais's
+paradox. We can similarly accommodate altruistic behaviour (section
+\ref{sec:decision-matrices}), the endowment effect (section
+\ref{sec:sources-utility}), or apparent failures of time consistency
+(section \ref{sec:separability-time}).
+
+\cmnt{%
+  Another fact is that preference orders themselves can vary. They
+  clearly vary across long stretches of time: my favourite food is no
+  longer what it used to be when I was seven. (We could say that my
+  preference is still the same, for I still prefer eating pasta and
+  being seven to eating brussels sprouts and being seven, but it is
+  not clear that anything is gained from that.) They can also vary in
+  shorter intervals -- from morning to evening, from talking to a
+  pretty woman to no longer talking to her. Here again we need
+  substantive constraints to divide these into ``rational'' changes
+  and ``irrational'' changes, and the borderline is fuzzy.
+} %
+
+But other phenomena are harder to accommodate. For example, suppose I
+offer you £100 for telling me the prime factors of 82717. You have 10
+seconds. Can you do it? Probably not. All you'd have to do to get the
+money is utter `181 and 457'. You plausibly know that `181 and 457' is
+the correct answer just in case the prime factors of 82717 are 181 and
+457. And as an ideal Bayesian agent, you should be confident that the
+prime factors of 82717 are 181 and 457. To maximize expected utility
+(assuming you'd like to get the £100), you should therefore utter `181
+and 457'. Yet you don't.
+
+\begin{exercise}
+  Why should you be confident, as an ideal Bayesian agent, that the
+  prime factors of 82717 are 181 and 457? $\star$
+\end{exercise}
+
+In 1913, Ernst Zermelo proved that in the game of chess, there is
+either a strategy for the starting player, White, that guarantees
+victory no matter what Black does, or there is such a strategy for
+Black, or there is a strategy for either play to force a
+draw. Consequently, if two ideal Bayesian agents sat down to a game of
+chess, and their only interest was in winning, they would
+immediately agree to a draw or one of them would resign before the
+first move. Real people don't play like that.
+
+Another obvious respect in which real people deviate from the Bayesian
+ideal is that real people often forget. In section \ref{sec:why-meu},
+I mentioned forgetting to buy soap in the shop. That's a temporary
+kind of forgetting, because you later remember what you forgot. We
+also often lose information completely. As an ideal Bayesian agent,
+you would still know what you had for breakfast on 12 June 2006.
+
+\begin{exercise}
+  Show that if $\Cr_t(A) = 1$, and the agent conditionalizes on
+  information $E$ with $\Cr_t(E) > 0$, then $\Cr_{t+1}(A) =
+  1$. (Conditionalization was introduced in
+  section \ref{sec:conditionalization}.) $\star$
+\end{exercise}
+
+\cmnt{%
+  Other issues are less clear. E.g., it is widely claimed that real
+  agents are not ``logically omniscient'', meaning that they are not
+  certain of every logical truth, in violation of Kolmogorov's axiom
+  2. But it is not obvious what it would mean for an agent to have
+  credence less than 1 in a logical truth, and therefore it is also
+  not obvious whether people actually have such attitudes. Indeed, if
+  `credence' is a technical term defined by our model, then so far it
+  is trivially true that everyone is logically omniscient. We would
+  need an alternative model.
+} %
+
+So it's plausibly true that our model doesn't fit real agents in
+certain respects. As we are going to see, there is indirect evidence
+for this from research on artificial intelligence. The type of model
+we have studied is well known in these quarters, and forms the
+background for much recent research.%
+\cmnt{%
+  see RN.%
+} %
+Yet the model turns out to be computationally intractable. Real agents
+with limited cognitive resources, it seems, couldn't possibly conform
+to our models.
+
+
+\section{Avoiding computational costs}
+
+Before we look at ways of making our models more realistic, I want to
+address another common misunderstanding.
+
+Suppose you walk back to shop to buy soap. At any point on your way,
+you could decide to turn around, or start running, or check if your shoe
+laces are tied, or mentally compute $181 + 457$, or start humming the
+national anthem, or utter `Age quod agis', and so on. There are
+literally millions of things you could do. Many of these would lead to
+significantly different outcomes, especially if you consider long-term
+consequences. (Hitler almost certainly would not have existed if hours
+or even months before his conception, his mother had decided to run
+rather than walk to buy soap.) Some people take the MEU Principle to
+imply that at each point of your walk to the shop, you should
+explicitly consider all your options, envisage all their possible
+outcomes, assess their utility and probability, and on that basis
+compute their expected utility. Real people clearly don't do that.
+
+But the MEU Principle requires no such thing. The MEU Principle says
+that rational agents choose acts that maximize expected utility; it
+says nothing about the internal process that leads agents to these
+choices. It definitely doesn't say that the agent must explicitly
+consider all her options and compute expected utilities.
+
+The opposite is closer to the truth. If an agent has the capacity to
+compute the expected utility of all her options, then the MEU
+Principle generally says that the agent should \emph{not} exercise
+that capacity. (If an agent does not have the capacity, so that
+computing expected utilities is not even an available act, the MEU
+Principle obviously also doesn't say that the agent should carry out that act.)
+
+The reason is simple. Let $A_1,\ldots,A_n$ be your ``basic'' options,
+those that don't involve computing expected utilities. In addition to
+these, we assume, you have the option $C$ of computing the expected
+utilities of $A_1,\ldots,A_n$ and then choosing whichever of them
+comes out best. Let $A_i$ be the best of the basic options. If you
+choose $C$, you are guaranteed to get the same outcome as if you
+choose $A_i$ directly, except that you've also spent some time and effort
+on computing expected utilities. Usually, that will ensure that
+whatever outcome you get from $C$ is worse than what you would have
+gotten from $A_i$. Thus $A_i$ has greater expected utility than $C$,
+and you should not choose $C$.
+
+\begin{exercise}
+  The argument just outlined is not fully general. There are unusual
+  cases in which $C$ would have greater expected utility than directly
+  choosing $A_i$, even though the computation has negative
+  (sub)value. What do such cases look like? $\star\star$
+\end{exercise}
+
+\cmnt{%
+  So unless they get some direct value from computing expected
+  utilities, ideal Bayesian agents don't compute expected
+  utilities. Instead they directly choose whichever option maximizes
+  expected utility.
+  
+  That may seem strange. How is the agent supposed to arrive at her
+  choice of the best option, if not by figuring out that it maximizes
+  expected utility? By accident? That doesn't look rational. By magic?
+  
+  Part of the answer is that ideal Bayesian agents have no need to
+  compute anything: if they are certain of some facts, and these facts
+  entail other facts, then the probability axioms entail that they are
+  also certain of the other facts. For ideal Bayesian agents,
+  computations are a costly process of arriving at results that are
+  already known.
+} %
+
+So ideal Bayesian agents generally don't compute expected
+utilities. That may seem puzzling. How can you reliably choose an
+act with greatest expected utility if you don't compute expected
+utilities?
+
+One possibility is that you \emph{already know} which acts maximize
+expected utility, without any computations. But there are other, more
+realistic possibilities. The psychologist Gerd Gigerenzer once pointed
+out that if you want to catch a flying ball, an efficient strategy is
+to move around in such a way that the angle between you and the ball
+remains within a certain range. This is much easier than explicitly
+computing the ball's trajectory, and it ensures that you'll eventually
+stand where the ball will arrive. The point is that in order to
+reliably achieve a goal, you can often fall back on simple
+heuristics. If you desire to catch the ball, following Gigerenzer's
+heuristic will maximize expected utility. You don't need to explicitly
+compute anything.
+
+In addition, many decision problems don't require computing expected
+utilities because one act clearly dominates. Whether that is the case
+depends on the agent's utility function. So you can often reduce the
+computational costs of decision-making by tweaking your utilities. For
+example, suppose you assign significant (sub)value to obeying
+orders. Doing whatever you're ordered to do is then a reliable way of
+maximizing expected utility, and it requires very little cognitive
+effort. Similarly if you value imitating whatever your peers are
+doing.
+
+\cmnt{%
+  Endowing individuals with a desire for social conformity might be an
+  evolutionary trick to ensure that people make reasonably simple
+  choices without having to reason too much. (Conformity has other
+  evolutionary advantages as well.)
+} %
+
+Our capacity for planning and commitment can also be seen in this
+light. Before you went to the shop, you probably decided to go to the
+shop. The result of that decision was in the first instance an
+intention to go to the shop.
+
+\cmnt{%
+  Somewhat confusingly, according to our model, this was not a
+  decision to go to the shop. That's because, at the time, going to
+  the shop was not strictly speaking an available act, since was
+  partly outside your control. Someone could have prevented you from
+  leaving the house. You could have gotten into an accident while
+  crossing the street. Your future self could have been seduced by the
+  sight of the pub and stopped for a few beers. When you decided to go
+  to the shop, the ``act'' you chose was an act of commitment or
+  planning. You formed the intention of going to the shop.%
+} %
+
+Once an intention or plan if formed, we assign value to executing the
+plan. Revising a plan or overturning a commitment has negative
+(sub)value. As a result, if you've formed a plan, simply following it
+often reliably maximizes expected utility. You don't need to think any
+more about what to do unless you receive surprising new information or
+your basic values suddenly change.
+
+Habits can play a similar role. Most of us spend little effort
+deciding whether or not to brush our teeth in the morning; we do it
+out of habit. Habitual behaviour is computationally cheap, and it can
+reliably maximize expected utility -- especially if we assign
+(sub)value to the habitual behaviour. And we do, at least on a
+motivational conception of desire: habits motivate.
+
+The upshot is that various cognitive strategies that are often
+described as alternatives to computing expected utilities -- habits,
+instincts, heuristics, etc.\ -- may well be efficient
+techniques for maximizing expected utility. Far from ruling out such
+strategies, our model actually predicts that we should use them.
+
+\cmnt{%
+  Still, one might complain that our model lacks detail.  We could
+  model pointless habitual behaviour as simply MEU, but to understand
+  why someone might have the relevant utilities, it is useful to
+  develop a more complex model that distinguishes between deliberate
+  and habitual behaviour. (Such ``two systems'' models are common both
+  in psychology and neuroscience; see e.g.\ Dickinson A. Actions and
+  habits: the development of behavioural autonomy. Philosophical
+  Transactions of the Royal Society B: Biological Sciences. 1985;
+  308:67–78 and 2 system theory.)
+} %
+
+A famous example in which something like this might play a role is
+Ellsberg's Paradox.
+
+\begin{example}[Ellsberg's Paradox]
+  An urn contains a red ball and two other balls. The other balls have
+  been selected from a box containing only green and blue balls, but
+  you don't know which colours where chosen. A ball is drawn at random
+  from the urn. Which of the following two lotteries do you prefer?
+  % 
+  \begin{center}
+  \begin{tabular}{|r|c|c|c|}\hline
+    \gr & \gr Red & \gr Green & \gr Blue \\\hline
+    \gr $A$ & £1000 & £0 & £0 \\\hline
+    \gr $B$ & £0 & £1000 & £0  \\\hline
+  \end{tabular}
+  \end{center}
+  %
+  Next, which of $C$ and $D$ do you prefer?
+  % 
+  \begin{center}
+  \begin{tabular}{|r|c|c|c|}\hline
+    \gr & \gr Red & \gr Green & \gr Blue \\\hline
+    \gr $C$ & £1000 & £1000 & £0 \\\hline
+    \gr $D$ & £0 & £1000 & £1000 \\\hline
+  \end{tabular}
+  \end{center}
+\end{example}
+
+Many subjects prefer $A$ to $B$ and $D$ to $C$. Like in Allais's
+Paradox, there is no way of assigning utilities to the monetary
+outcomes that supports these preferences.
+
+In Ellsberg's Paradox, risk aversion doesn't seem to be at issue. What
+makes the difference is that you know the objective probability of
+winning for options $A$ and $D$: it is \nicefrac{1}{3} for $A$ and
+\nicefrac{2}{3} for $D$. But you don't know the objective probability
+of winning with $B$ and $C$, since you have too little information
+about the non-red balls. 
+
+Why does that matter? One explanation is that people simply prefer
+lotteries (in which the outcomes have known objective
+probabilities) to uncertain prospects (in which only subjective
+probability can be given to the outcomes). With such a utility
+function, the outcome wrongly labelled `£1000' in $A$ is actually
+better than the corresponding outcome in $C$, because only the former
+involves having chosen a lottery.
+
+\begin{exercise}
+  The explanation of the Ellsberg preferences that I just outlined
+  makes the preferences conform to the MEU Principle by redescribing
+  the outcomes. Is the redescription global or local in the sense of
+  session \ref{ch:risk}? $\star$
+\end{exercise}
+
+But why would agents prefer lotteries? Perhaps because such a
+preference can reduce computational costs. If you know the objective
+probabilities of the outcomes, it is easy to figure out the credence
+you should give to the outcomes: it should match the objective
+probabilities. If you don't know the objective probabilities, a lot
+more work may be required to figure out the extent to which your total
+evidence supports the occurrence of the various outcomes. In
+Ellsberg's Paradox, $\Cr(\text{Red})$ is a easier to figure out than
+$\Cr(\text{Green})$ and $\Cr(\text{Blue})$. If you have a preference
+for lotteries, you don't need to figure out $\Cr(\text{Green})$ and
+$\Cr(\text{Blue})$: from eyeballing the options, you can already see
+that the expected monetary payoff of $A$ and $B$ is approximately the
+same (ditto for $C$ and $D$); a preference for lotteries then clearly
+favours $A$ (and $D$).
+
+
+\section{Reducing computational costs}
+
+I will now review a few ideas from theoretical computer science for
+rendering our models computationally tractable.
+
+Imagine we are designing an artificial agent, with a probabilistic
+representation of her environment and a number of goals or
+desires. Let's assume we want the agent to have credences and
+utilities in 50 logically independent propositions
+$A_1,\ldots,A_{50}$ (an absurdly small number).
+How large of a database do we need for that?
+
+You might think that we need 50 records for the probabilities and 50
+for the utilities. But we generally can't compute $Cr(A \land B)$ or
+$\Cr(A \lor B)$ from $\Cr(A)$ and $\Cr(B)$. Nor can we compute $U(A
+\land B)$ or $U(A \lor B)$ from $U(A)$ and $U(B)$. In order to fix the
+agent's entire credence and utility functions (without further
+assumptions about these functions), we need to store at least the
+probability and utility they assign to every ``possible world'' --
+that is, to every maximally consistent conjunction of
+$A_1,\ldots,A_{50}$ and their negations.
+
+\begin{exercise}
+  Explain why the probability of every proposition that can be defined
+  in terms of $A_1,\ldots,A_{50}$ can be computed from the probability
+  assigned to the possible worlds. Then explain why the utility of all
+  such propositions can be computed from the probability and utility
+  assigned to the worlds. $\star\star$
+\end{exercise}
+
+\cmnt{%
+  Since every proposition that can be defined in terms of
+  $A_1,\ldots,A_{50}$ is equivalent to a disjunction of these possible
+  worlds, Kolmogorov's axiom (iii) and Jeffrey's Axiom ensure that we
+  can compute all probabilities and utilities from the assignment to
+  possible worlds.
+} %
+
+There are $2^{50} = 1,125,899,906,842,624$ maximally consistent
+conjunctions of $A_1,\ldots,A_{50}$ and their negations.  So we need a
+database with $2,251,799,813,685,248$ records. (I'm exaggerating a
+little. Once we've fixed the probability of the first
+1,125,899,906,842,623 worlds, the probability of the last world is 1
+minus the sum of the others, so we really only need
+$2,251,799,813,685,247$ records.)
+
+We'll need to buy a lot of hard drives for our agent if we want to
+store 2 quadrillion floating point numbers. Worse, updating all these
+records in response to sensory information, or computing expected
+utilities on their basis, will take a very long time, and use a large
+amount of energy.
+
+In session \ref{ch:separability}, we've encountered two tricks for
+simplifying the representation of an agent's basic value function --
+the utility function for individual worlds. First, if the agent cares
+about some features of the world and not about others, it is enough to
+store the agent's value for sets of worlds that agree in all respects
+that matter to the agent; all worlds within such a set will have the
+same value as the set itself (section
+\ref{sec:construction-value}). For example, if our agent only cares
+about the possible combinations of 20 among the 50 propositions
+$A_1,\ldots,A_n$, we only need to store $2^{20}$ values. Second, and
+more dramatically, if the agent's preferences are separable, we can
+cut down the number of utility records from $2^{20}$ to $2 \cdot 20 =
+40$, because the value of any combination of the 20 propositions and
+their negations can be determined by adding up the relevant subvalues
+(section \ref{sec:additivity}).
+
+Similar tricks are available for the agent's credence
+function. Mirroring the first trick, we could explicitly store only
+the agent's credence in certain sets of possible worlds, and assume
+that her credence is distributed uniformly within these sets. The
+trick can be extended to non-uniform distributions. For example,
+suppose our agent has imperfect information about how far she is from
+the next charging station. Instead of explicitly storing a probability
+for every possible distance (1 m, 2 m, 3 m, \ldots), we might assume
+that the agent's credence over these possibilities follows a Gaussian
+distribution, which can be specified by two numbers (mean and
+variance). Researchers in artificial intelligence make heavy use of
+this trick.
+
+An analogue of separability, for credences, is probabilistic
+independence. If $A$ and $B$ are probabilistically independent, then
+$\Cr(A\land B) = \Cr(A) \cdot \Cr(B)$. If all the 50 propositions
+$A_1,\ldots,A_{50}$ are mutually independent,
+then specifying their individual probability is enough to specify the
+probability of all possible worlds and therefore of all logical
+combinations of the 50 propositions.
+
+Independence is often plausible. Whether the next charging station is
+100 meters away plausibly doesn't depend on whether the outside
+temperature is above 20\celsius. But for many other propositions,
+independence is implausible. On the supposition that the temperature
+is above 20\celsius, it may well be more likely that the window is
+open, or that there are people on the street; so
+$\Cr(\emph{Open}/\emph{Warm}) > \Cr(\emph{Open})$, and
+$\Cr(\emph{People}/\emph{Warm}) > \Cr(\emph{People})$. So we can't
+assume probabilistic independence across all the 50 propositions $A_1,\ldots,A_{50}$.
+
+Even where independence fails, we often have \textbf{conditional independence}. For example,
+if warm temperatures make it more likely that the window is open and
+that there are people on the street, then an open window is also evidence
+that there are people on the street: $\Cr(\emph{People}/\emph{Open}) >
+\Cr(\emph{People})$.  So \emph{People} and \emph{Open} are not
+independent. However, \emph{on the supposition that it is warm
+  outside}, the window being open may no longer increase the
+probability of people on the street:
+\[
+\Cr(\emph{People}/\emph{Open} \land \emph{Warm}) = \Cr(\emph{People}/
+\emph{Warm}).
+\]
+In that case, we say that \emph{People} and \emph{Open} are
+independent \emph{conditional on} \emph{Warm}.
+
+Now consider the possible combinations of \emph{Warm}, \emph{People},
+\emph{Open} and their negations. By the probability calculus
+\[
+\Cr(\emph{Warm} \land \emph{People} \land \emph{Open}) = 
+\Cr(\emph{Warm}) \cdot \Cr(\emph{Open}/\emph{Warm}) \cdot \Cr(\emph{People}/\emph{Open} \land \emph{Warm}).
+\]
+By the above assumption of conditional independence, this simplifies to
+\[
+\Cr(\emph{Warm} \land \emph{People} \land \emph{Open}) = 
+\Cr(\emph{Warm}) \cdot \Cr(\emph{Open}/\emph{Warm}) \cdot \Cr(\emph{People}/\emph{Warm}).
+\]
+In general, with the assumption of conditional independence, we can
+fix the probability of all combinations of \emph{Warm}, \emph{People},
+\emph{Open}, and their negations by specifying the probability of
+\emph{Warm}, the probability of \emph{People} conditional on
+\emph{Warm} and $\neg\emph{Warm}$, and the probability of \emph{Open}
+conditional on \emph{Warm} and $\neg\emph{Warm}$.  This reduces the
+number of required records from $2^3-1 = 7$ to 5, which may not look
+all that impressive, but the method really pays off if more than three
+propositions are involved.
+
+The present technique of exploiting conditional independence to
+simplify probabilistic models is known under the heading of
+\textbf{Bayesian networks} (or \textbf{Bayes nets}, for short). Bayes
+nets have proved useful in wide range of applications.
+
+A special case of Bayes nets%
+\cmnt{%
+  called \textbf{Dynamic Decision Networks}%
+} %
+are commonly used in artificial intelligence to model decision-making
+agents. A decision-making agent needs not only information about the
+present state of the world, but also about the future. We can model a
+whole history of states as a sequence $\t{S_1,S_2,S_3,\ldots}$, where
+$S_1$ is a particular hypothesis about the present state, $S_2$ about
+the next state, and so on. If there are 100 possible states at any
+given time, there will be $100^{10} = 100,000,000,000,000,000,000$
+possible histories with length 10. Instead of storing individual
+probabilities for all these histories, it helps to assume that a later
+state (probabilistically) depends only on its immediate predecessor,
+so that $\Cr(S_3/S_1 \land S_2) = \Cr(S_3/S_2)$. This is known as the
+\textbf{Markov assumption}. It reduces the number of records we'd to
+store from $100^{10}$ to $990,100$.%
+\cmnt{%
+  $100 + (100\cdot 100)\cdot 99 \approx 1000000$ %
+} %
+\cmnt{%
+  It also simplifies belief updates through
+  conditionalization. Assuming that sensory information only carries
+  direct information about the present state of the world, we only
+  need to store $\Cr(E/S)$ for any evidence proposition $E$ and state
+  $S$.%
+} %
+
+To further simplify the task of decision-making, computer scientists
+typically assume that basic values are stationary and separable across
+times, so that the value of a history of states is a discounted sum of
+the subvalue for individual states. To specify the whole utility
+function, we then only need to store the discounting factor $\delta$
+and 100 values for the individual states. The task of
+conditionalization can also be simplified, by assuming that sensory
+evidence only contains direct information about the present state of
+the world, rather than entire histories.
+
+These simplifications define what computer scientists call a
+`\textbf{POMDP}': a \textbf{Partially Observable Markov Decision
+  Process}. There is a simple recursive algorithm for computing
+expected utilities in POMDPs.%
+\cmnt{%
+  In the jargon of computer science, maximizing the expected long-run
+  utility is called \textbf{planning}.  } %
+
+\cmnt{%
+  There is evidence that our brains do process sensory signals roughly
+  in line with \eqref{Bayesint}, and evaluate actions and outcomes
+  roughly in line with \eqref{EUint} (see
+  \cite[296--299]{gershman12perception} for literature). Of course,
+  the two components are not entirely independent (a point emphasised
+  in \cite{gershman12perception}): organism have greater interest in
+  learning about aspects of the world with possibly extreme (positive
+  or negative) utility; thus our sensory processing is often attuned
+  to what matters to us in terms of utility.
+} %
+
+\cmnt{%
+  \begin{exercise}
+    Explain one respect in which real decision situations are not
+    adequately modelled by POMDPs.
+  \end{exercise}
+} %
+
+In practice, even these simplifications generally don't suffice to
+make conditionalization and expected utility maximization
+tractable. Further simplifications are needed. For example, it often
+helps to ``myopically'' ignore states in the distant future and let
+the agent maximize the expected utility of the next $n$ states only,
+for some reasonable choice of $n$. A range of other techniques have
+been developed that allow an efficient \emph{approximate} computation
+of expected utilities and posterior probabilities. Such techniques
+are often supplemented by a meta-decision process which lets the
+system choose a level of precision: when a lot is at stake, it is
+worth spending more effort on getting the computations right.
+
+\cmnt{%
+  Sophisticated models have been developed that apply a kind of
+  meta-decision procedure to the choice of a computational
+  approximation of \eqref{Bayesint} and \eqref{EUInt}, as reviewed in
+  \cite[306ff.]{gershman12perception}. Again, one can let the system
+  perform meta-analyses about the amount of effort to put in,
+  e.g. when to stop getting a more precise update.
+
+  ``Metalevel analyses have been aimed at endowing computational
+  systems with the ability to make expected utility decisions about
+  the ideal balance between effort or delay and the quality of actions
+  taken in the world. The use of such rational metareasoning plays a
+  central role in decision-theoretic models of bounded rationality
+  (10–14)''.
+
+  Note that if computational cost is a form of utility then once again
+  we actually don't have a violation of MEU, but that's not a very
+  illuminating account. (The general picture that emerges is that our
+  model is largely correct, but rather uninformative for bounded
+  agents.)
+} %
+
+While originating in theoretical computer science, these models and
+techniques have in recent years had a great influence on our views on
+human cognition. There is evidence that when our brain processes
+sensory information or decides on a motor action, it employs the same
+techniques computer scientists have found useful in approximating the
+Bayesian ideal. Thus it has been suggested that various quirks of
+human perception and decision-making are consequences of the shortcuts
+our brain uses to approximate conditionalization and computing
+expected utilities.%
+\cmnt{%
+  The family of techniques known as \textbf{predictive processing} has
+  even been taken to offer an entire new perspective on many aspects
+  of human cognition.%
+} %
+
+\cmnt{%
+  In computer science they are usually approximated either by Monte
+  Carlo simulation or by choosing a more tractable distribution $Q$
+  that is similar to $P$ (as measured by KL
+  distance). \cite[302f.]{gershman12perception} reviews experimental
+  findings that suggest that the brain also uses some such
+  approximation. For example, abrupt changes of response over the
+  course of continuous learning are well explained by an underlying
+  Monte Carlo approximation for \eqref{Bayesint} and \eqref{EUint}.
+} %
+
+\cmnt{%
+  An exciting aspect of these models is that they explain
+  ``fallacies'' not as accidental quirks but as consequences for
+  optimizing with limited resources. See e.g. Griffiths et al 2015. We
+  can also explain why e.g. cognitive load or stress etc. affect
+  rational choice by making it reasonable to delegate more choices to
+  ``model-free'' habitual systems.
+
+  Halpern et al. 
+} %
+
+\section{``Non-expected utility theories''}
+
+Meanwhile, researchers at the intersection of psychology and economics
+have also tried to develop more realistic models of
+decision-making. The most influential of these alternatives is
+\textbf{prospect theory}, developed by Daniel Kahneman and Amon
+Tversky.
+
+Prospect theory has to be understood on the background of a highly
+restricted version of decision theory still popular in economics. The
+highly restricted theory only deals with choices between lotteries,
+with known objective probabilities. The outcomes of these lotteries
+are identified with monetary wealth or commodity bundles. (Even local
+feelings of frustration or regret are excluded.)  Finally, it is
+assumed that agents always prefer more money or goods, with declining
+marginal utility. When you find social scientists discuss ``Expected
+Utility Theory'', this highly restricted theory is what they usually
+have in mind. Prospect theory now proposes four main changes.
+
+1. \textbf{Reference dependence}. According to prospect theory, agents
+classify possible outcomes into gains and losses, by comparing the
+outcomes with a contextually determined reference point. Outcomes
+better than the reference point are modelled as having positive
+utility, outcomes worse than the reference point have negative
+utility.
+
+2. \textbf{Diminishing sensitivity}. Prospect theory holds that both
+gains and losses have diminishing marginal utility: the same objective
+difference in wealth makes a larger difference in utility near the
+reference point than further away, on either side. For example, the
+utility difference between a loss of £100 and a loss of £200 is
+greater than that between a loss of £1000 and a loss of £1100. This
+predicts that people are risk averse about gains but risk seeking
+about losses: they prefer a sure gain of £500 to a 50 percent chance
+of £1000, but they prefer a 50 percent chance of losing £1000 to
+losing £500 for sure.
+
+3. \textbf{Loss aversion}: According to prospect theory, people are
+more sensitive to losses than to gains of the same magnitude. For
+example, the utility difference between a loss of £100 and a loss of
+£200 is greater than that between a gain of £200 and a gain of
+£100. This explains why many people turn down a lottery in which they
+can either win £110 or lose £100, with equal probability.
+
+4. \textbf{Probability weighting}. According to prospect theory, the
+outcomes are weighted not by their objective probability, but by
+transformed probabilities known as `decision weights' that are meant
+to reflect how seriously people take the relevant states in their
+choices. Decision weights generally overweight low-probability
+outcomes. Thus probability 0 events have weight 0, probability 1
+events have weight 1, but in between the weight curve is steep at the edges
+and flatter in the middle: probability 0.01 events might have weight
+0.05, probability 0.02 events weight 0.08, \ldots, probability 0.99
+events weight 0.92. Among other things, this is meant to explain why
+people play the lottery, and why they tend to pay a high price for
+certainty: they prefer a settlement of £90000 over a trial in which
+they have a 99\% chance of getting £100000 but a 1\% chance of
+getting nothing.%
+\cmnt{%
+  This ``certainty effect'' turns into a ``possibility effect'' at the
+  other end of the scale.%
+
+  What is supposedly captured by probability weighting is that an
+  increase from a 0\% to a 1\% chance of loss significantly taints an
+  option, much more than e.g.\ an increase from 20\% to 21\%. At the
+  other end of the spectrum, the difference between 99\% and 100\%
+  again matters a lot, much more than that between 79\% and 80\%. We
+  could make the same predictions by assuming that people have
+  preferences about risks, including global features in the utility
+  function.
+} %
+\cmnt{%
+  Kahneman notes that buying a lottery ticket also buys ``the right to
+  dream pleasantly of winning'', and that by buying insurance you also
+  ``eliminate a worry and purchase a peace of mind''
+  \cite[318]{kahneman11thinking}, but he nevertheless resists
+  broadening the utility function accordingly. %
+} %
+
+
+Prospect theory is clearly an alternative to the simplistic economical
+model mentioned above. It is not so obvious whether it is alternative
+to the more liberal model we have been studying for most of this
+course. Diminishing sensitivity and loss aversion certainly don't
+contradict our model. Reference dependence and probability weighting
+are a little more subtle.
+
+Our model assumes that if an agent knows the objective probability of
+a state, then in decision-making she will weight that state in
+proportion to the known probability. Prospect theory says that real
+people don't do that. If we measure an agent's credences in terms of
+preferences or choices, then the decision weights of prospect theory
+are the agent's credences; they play precisely the role of credences
+in guiding behaviour. So prospect theory assumes that people
+systematically violate the Probability Coordination Principle: their
+credence in low-probability event is greater than the known objective
+probability.
+
+Studies show that this failure of coordinating credences with
+objective probabilities seems to depend on how the objective
+probabilities are presented. Decision weights often differ widely from
+objective probabilities when the probabilities are presented verbally
+(`there's a 1\% chance of success', etc.), but much less so when
+people have experienced the relevant probabilities as relative
+frequencies in repeated trials.%
+\cmnt{%
+  \cite[331]{kahneman11thinking}%
+} %
+This suggests that we have trouble fully understanding verbal
+presentations of probabilities. Widespread mistakes like the base rate
+fallacy support that suspicion.
+
+\cmnt{%
+
+Here prospect theory therefore seems to points towards a genuine
+respect in which our model doesn't fit actual human behaviour,
+although it does not offer a clear picture of how and why people go
+wrong when processing verbal information about probabilities.
+
+} %
+
+\cmnt{%
+  The mere hypothesis that people's credences deviate from objective
+  probabilities in a certain way however arguably doesn't get at the
+  heart of the matter. What we'd need is a more general model
+  explaining the difference between verbal and non-verbal
+  presentation, and the particular mistakes people make.
+} %
+
+\cmnt{%
+  When you decide not to switch in Monty Hall, your credences are in
+  line with your choices, but they violate other norms. Defining an
+  alternative model of credence is not easy.
+} %
+
+Reference dependence may also raise a genuine challenge. Most forms of
+reference dependence are harmless. We can easily allow for people who
+care especially about how much they will have in comparison to what
+they had before, or in comparison to what their peers have. But
+sometimes, the reference point is affected by intuitively
+irrelevant features of the context, and that is harder to square with
+our model.
+
+\begin{exercise}
+  When people compete in sports, average performance often seems to
+  function as a reference point: the effort people put in to avoid
+  performing below average is higher than the effort they put in to
+  exceed the average.%
+  \cmnt{%
+    \cite[303f.]{kahneman11thinking}.%
+  } %
+  Can you explain this observation by ``redescribing the outcomes''?
+  $\star$
+\end{exercise}
+
+
+\cmnt{%
+  Decision theory can also accommodate for a related fact that even
+  counterfactual outcomes matter: if you choose an option $[0.9 ? \$1
+  million : \$0]$, then an outcome of $\$0$ will not be regarded as
+  neutral; you will be thoroughly disappointed. If there was an
+  alternative sure gain, even it was quite small (say, $\$1000$), you
+  will probably regret your choice. Avoidance of regret and
+  disappointment are psychologically important, but cannot be
+  explained by prospect theory or rational choice theory
+  \cite[287f.]{kahneman11thinking}. They can easily be accommodated in
+  decision theory, since they are simply part of the relevant outcome.
+} %
+
+The problematic type of reference dependence is closely related to
+so-called \textbf{framing effects}. In experiments, people's choices
+can systematically depend on how one and the same decision problem is
+described. For example, when presented with a hypothetical situation
+in which 1000 people are in danger of death, and a certain act would
+save exactly 600 of them, subjects are more favourable towards the act
+if it is described in terms of `600 survivors' than if it is described
+in terms of `400 deaths'. In prospect theory, the difference might be
+explained by a change in reference point: if the outcome is described
+in terms of survivors, it is classified as a gain; if it is described
+in terms of deaths, it is classified as a loss.
+
+In principle, our liberal model could also explain the relevance of
+the description. Perhaps people assign basic value to choosing options
+\emph{that have been described in terms of survivors} rather than in
+terms of deaths. However, on reflection, most people would certainly
+deny that the verbal description of an outcome is of great concern to
+them. As in the case of decision weights, a more adequate model would
+arguably have to take into account incomplete grasp of a verbally
+described scenario. When hearing about survivors, we focus on a
+certain attribute of the outcome, on all the people who are
+saved. That attribute is desirable. When hearing about deaths, a
+different, and much less desirable, attribute of the same outcome
+becomes salient.
+
+\cmnt{%
+  But is this a failure in decision making, and should we make room
+  for it in a descriptively adequate theory of decisions? I'm not
+  sure. I suspect it is rather a failure in processing the information
+  about the options. Under the positive description (chance of
+  success), you really do consider the outcome as more desirable than
+  under the negative description. So the problem isn't that you go
+  wrong when putting your beliefs and desires into actions. Rather,
+  you go wrong when judging the value of a verbally described
+  situation. Admittedly, the issue is subtle: your calculation of EUs
+  is part of your conforming to decision theory, and isn't this where
+  you made the mistake, since you didn't correctly calculate the
+  utility of one of the outcomes? But perhaps the more basic reason is
+  that you didn't fully understand the content of the outcome you were
+  told about. It's not like you were perfectly aware of the relevant
+  \emph{proposition}, but sloppy when calculating its utility. The
+  presentation-dependence shows that you weren't clear about what
+  exactly the outcome would involve: you heard something about success
+  and imagined the good case (or the lives saved etc.) and quickly
+  gave a value to that, without realizing what else is entailed by the
+  presentation. This is less a failure in acting than in
+  understanding.
+} %
+
+Ideal agents always weigh up all attributes of every possible
+outcome. Real agents arguably don't do that, as it requires
+considerable cognitive effort.%
+\cmnt{%
+  One of Gigerenzer's heuristics is to consider only the most
+  important attribute of any given outcome.%
+} %
+As a result, the attributes we consider depend on contextual clues
+such as details of a verbal description. Some recent models of
+decision making in philosophy and psychology take this kind of
+attribute selection into account.
+
+\cmnt{%
+  Christian List and Franz Dietrich have a model that involves such
+  context-dependent selection of salient features.
+} %
+
+\section{Imprecise credence and utility}\label{sec:imprecise}
+
+I'm going to toss three dice. Would you rather get £10 if the sum of
+the numbers I will get is at least 10 or if all three numbers are
+different? You'd probably need some time to give a final answer. You
+know that the six possible results for every dice have equal
+probability, and that the results are independent. But it takes some
+effort to infer from that which of the two events I described is more likely.
+
+A real agent's cognitive system can't explicitly store her credence and
+utility for every proposition. It can only store a limited number of
+\textbf{constraints} on credences and utilities. A constraint rules
+out some credences and utilities, but not others. For example, that
+outcomes of die tosses are probabilistically independent is a
+constraint; it entails that the probability that three dice will land
+six is the product of the probabilities for the individual dice:
+$\Cr(\text{Six}_1 \land \text{Six}_2 \land \text{Six}_3) =
+\Cr(\text{Six}_1)\Cr(\text{Six}_2)\Cr(\text{Six}_3)$, but it does not
+fix what these probabilities are.
+
+So far, we have assumed that taken together, the constraints stored by
+an agent's cognitive system are rich enough to determine a unique
+credence and utility function. But maybe they don't.  Maybe there are
+questions on which you don't have a settled opinion even on
+reflection. Or suppose you don't have time for lengthy reflection, or
+you're too tired.  In such cases, it would arguably be wrong to model
+your attitudes in terms of a single, precise credence function, and a
+single, precise utility functions.
+
+Across several disciplines, researchers have developed models that
+relax the assumption of precise credences and utilities. The standard
+approach is to use \textbf{sets of credence and utility functions}
+instead of single functions. The functions in the set are all those
+that meet the constraints. Intuitively, each member of the set is a
+\emph{refinement} or \emph{precisification} of the agent's
+indeterminate state of mind.
+
+The use of sets of credence functions is often motivated by
+consideration like the following. How likely do you think it is that
+it will snow in Toronto on 7 January 2041? If someone suggested the
+probability is 80\%, you might say that's too high; 5\% seems too
+low. But 20\% might seem just as plausible to you as 21\%. It would
+therefore be wrong to model your state of mind by single and precise
+probability. Rather, we should say that your credence is a whole range
+of numbers:
+\[
+\Cr(\emph{Snow}) = [0.1, 0.5].
+\]
+Here, `$[0.1, 0.5]$' denotes the range of all numbers from 0.1 to 0.5;
+it is the range of all numbers your refined credence functions assign
+to \emph{Snow}.
+
+\cmnt{%
+  Suppose you similarly haven't made up your mind about whether
+  Leonardo da Vinci liked porridge: $\Cr(\emph{Porridge}) =
+  [0.2,0.7]$. Nonetheless, you might reasonably treat the two
+  propositions as independent. (That might be one of the constraints
+  encoded in your belief state.) If we model your beliefs in terms of
+  credence intervals, we seem to lose the information about
+  independence.%
+  \cmnt{%
+    Recall that \emph{Snow} and \emph{Porridge} are probabilistically
+    independent just in case $\Cr(\emph{Snow}/\emph{Porridge}) =
+    \Cr(\emph{Snow})$. Plausibly, $\Cr(\emph{Snow} \land
+    \emph{Porridge}) = [0.01,0.25]$, so by the ratio formula, we'd
+    need to assume that $\frac{[0,01,0.25]}{[0.2,0.7]} = [0.1,0.5]$.%
+  } %
+} %
+
+You should be skeptical about this line of argument. The term
+`probability' in English almost always means objective
+probability. When asked about the probability of \emph{Snow}, it is
+therefore natural to interpret the question as concerning a certain
+objective quantity -- something you could perhaps find out by
+developing a sophisticated weather model. But credence, on the
+Bayesian conception, is not belief about objective probability. It is
+simply strength of belief. You could not find out your credence in
+\emph{Snow} by developing a sophisticated weather model.
+
+Nonetheless, there are reasons to extend the Bayesian conception of
+credence to allow for sets of credence functions. For example, suppose
+we measure (or define) an agent's credences and utilities in terms of
+her preferences. Various representation theorems show that if the
+agent's preferences satisfy certain axioms, then the preferences are
+represented by a \emph{unique} credence and utility function (except
+for the conventional choice of zero and unit for utilities). Giving up
+uniqueness then means that the agent violates one or more of the
+axioms. And it is not implausible that real agents do violate some of
+these axioms.
+
+In particular, consider the completeness axiom. Completeness states
+that for any propositions $A$ and $B$, the agent either prefers $A$ to
+$B$ or $B$ to $A$ or is indifferent between the two. This is trivial
+if we define preference in terms of choice. Indeed, presented with a
+forced choice between $A$ and $B$, you will inevitably choose either
+$A$ or $B$; even indifference can be ruled out. But we've already seen
+that if we want to measure credence and utility in terms of
+preference, then the relevant preference relation can't be directly
+defined in terms of choices. And once we take a step back from choice
+behaviour, it seems perfectly possible that you might neither prefer
+$A$ to $B$, nor $B$ to $A$, and yet you're not indifferent between the
+two. Instead, you haven't fully made up your mind. The two
+propositions seem roughly ``on a par'', but you wouldn't say they are
+exactly equal in value.
+
+For example, would you rather lose your capacity to hear or your
+capacity to walk? You may well have no clear preference, even after
+considerable reflection. Does that mean you're exactly indifferent?
+Not necessarily. If you were, you should definitely prefer losing the
+capacity to hear \emph{and getting £1} to losing the capacity to
+walk. In reality, the added £1 probably doesn't make any difference.
+
+\begin{exercise}
+  Suppose we define `$\sim$' in terms of `$\succ$', as follows: $A\sim
+  B \Leftrightarrow (A \not\succ B) \land (B \not\succ A)$. Explain
+  why completeness is then logically guaranteed. What other
+  assumptions about preference would then fail if you haven't made up
+  your mind between $A$ and $B$? $\star\star\star$
+\end{exercise}
+
+\cmnt{%
+  Chang thinks parity is different from incomparability. I don't think so.%
+} %
+
+\cmnt{%
+  (But even transitivity needs to be reconsidered: maybe you've never
+  thought about A vs C?)%
+} %
+
+So there are reasons to relax completeness, at least if we're
+interested in modelling real agents. (Some would say even ideal
+agents don't need to have complete preferences.) But we may still
+impose an axiom of \textbf{completability}. That is, we can require
+that if an agent's preferences violate, say, the Savage axioms because
+they fail to rank certain options, then there is a refinement of her
+preferences, filling in the missing rankings, that does satisfy the
+axioms. Savage's representation theorem then implies that the agent's
+preferences are represented by a set of credence and utility
+functions.
+
+In sum, even if we don't conflate credence with belief about objective
+probability, we might want to model agents as having a set of credence
+(and utility) functions. We then have to revise other parts of our
+model, to explain how those agents should update their beliefs over
+time, and how they should make choices. As it turns out, the required
+revisions are not at all straightforward. I will mention just one
+problem, concerning rational choice. 
+
+Suppose you have a set of credence and utility functions, because you
+haven't made up your mind about certain things, and you face a
+choice. According to some of your credence and utility functions, act
+$A$ has greatest expected utility; according to others, you should
+choose $B$. What should you do? A popular (``permissivist'') answer is that you are
+permitted to choose either option.
+
+\begin{exercise}
+  Explain how the common choices in Ellsberg's paradox might be
+  justified by the permissivist approach. $\star\star$
+\end{exercise}
+
+But now consider the following scenario. You are offered two bets $A$
+and $B$, one after the other, on a proposition $H$ about which you
+haven't made up your mind. Let's say $\Cr(H) = [0.2,0.8]$. Bet $A$
+would give you £1.40 if $H$ and £-1 if $\neg H$. Bet $B$ would give
+you £-1 if $H$ and £1.40 if $\neg H$. Assuming for simplicity that
+your utility is precise and proportional to the monetary payoff, both
+bets have an imprecise expected utility of between -0.52 and
+0.92. (For example, the expected utility of the first bet ranges from
+$0.2 \cdot -1 + 0.8 \cdot 1.40 = 0.92$ to $0.8 \cdot -1 + 0.2 \cdot
+1.40 = -0.52$.) Your undecided state of mind therefore leaves open
+whether accepting either bet is a good idea. On the permissivist
+approach, it is permissible for you to refuse both bets. But
+arguably, that would be irrational, since the two bets together have a
+guaranteed payoff of £0.40. By refusing both bets, you would miss out
+on a sure gain.
+
+
+\cmnt{%
+  Perhaps one should choose in some other way then. E.g. by averaging
+  the credences. But then there's a threat that we're not taking the
+  agent's indecision seriously.
+} %
+\cmnt{%
+\begin{exercise}
+  Can't average if independence is a constraint.
+\end{exercise}
+} %
+\cmnt{%
+
+  Another problem concerns learning. According to standard
+  Bayesianism, agents learn by conditionalizing on new evidence. How
+  does that work if an agent has a set of credence functions? The
+  usual answer is that each of the individual credence functions
+  should conditionalize.
+
+  Now suppose you don't know the proportion of white balls in an urn
+  containing 10 balls. I pick a ball, note its colour, and put it back
+  in. What is your credence that I picked a white ball? Arguably, any
+  credence distribution is permissible. Now you repeatedly sample a
+  ball with replacement and always get a white one. Any credence
+  distribution is still permissible! E.g. if one of your initial
+  credence functions $\Cr^i_t$ gives 0.9999999999 to there being just
+  1 white ball in the urn ($H_1$), and 0.0000000001 to the 10 other
+  possibilities (0,2,..,10 balls), then conditionalizing on 10 white
+  balls being drawn ($E$) yields
+  \begin{align*}
+    \Cr^i_{t+1}(H_1) &= \frac{\Cr^i_{t}(E/H_1) \Cr^i_{t}(H_1)}{Cr^i_{t}(E)}\\
+    &\approx \frac{0.1^{10} \cdot 0.9999999999}{0.000000000105}\\
+    &\approx 0.95.
+  \end{align*}
+} %
+
+\section{Further reading}
+
+An accessible overview of some advances in theoretical computer science and their
+influence on cognitive science is
+
+\begin{itemize}
+\item Samuel Gershman et al: \href{http://gershmanlab.webfactional.com/pubs/GershmanHorvitzTenenbaum15.pdf}{``Computational rationality: A converging paradigm for intelligence in brains, minds, and machines''} (2015)
+\end{itemize}
+
+For a brief overview of prospect theory and related models, motivated by
+the idea of bounded rationality, see
+%
+\begin{itemize}
+\item Daniel Kahneman: \href{http://www2.econ.iastate.edu/tesfatsi/JudgementAndChoice.MappingBoundedRationality.DKahneman2003.pdf}{``A Perspective on Judgment and Choice''} (2003)
+\end{itemize}
+
+The Stanford Encyclopedia article on imprecise probabilities gives a
+thorough (and highly opinionated) overview of the models discussed in
+section \ref{sec:imprecise}:
+
+\begin{itemize}
+\item Saemus Bradley: \href{https://plato.stanford.edu/entries/imprecise-probabilities/}{``Imprecise Probabilities''} (2014)
+\end{itemize}
+
+\cmnt{%
+
+
+Ramsey's approach, without constraints on U and P, seems to allow for
+any choice patterns at all.  We can always read off some U and P
+relative to which the agent maximizes EU. That shows that these U and
+P are not what we intuitively think of or recognize as beliefs and
+desires.  For we can easily think of cases where people act
+irrationally, against their strongest desires, where they choose worse
+options because they didn't consider what they actually knew (think of
+chess moves), where they only thought of the most likely outcome, or
+the worst outcome, or the best, and so on. All of this would be
+conceptually impossible on Ramsey's account.
+
+One might suggest that for this reason we need to impose further,
+external rationality constraints on U and P that make satisfying EUT
+non-trivial. That's what EUT models in psy and econ often do. Instead
+of calling them rationality constraints we could also add constraints
+that have nothing to do with normative rationality, but simply seem to
+be plausible default assumptions, e.g. no basic desire for saucers of
+mud. 
+
+I think this can be a sensible approach, but we have to be
+careful. What we wanted to make room for are cases where people
+clearly seem to choose options that are non-ideal by the lights of
+their beliefs and desires, such as the chess example. Saying that
+desires ought to be selfish (for example) or risk-neutral doesn't help
+with that, and instead forces us to say that people made irrational
+choices in \emph{other} cases where in fact we shouldn't say any such
+thing. 
+
+What the above considerations actually suggest is that our concepts of
+belief and utility -- not just our pre-theoretic concepts, but also
+the concepts that we think should figure in decision theory, deciding
+whether an agent was instrumentally rational, as well as the concept
+of partial belief that figures in formal epistemology -- that these
+concepts are not fully definable in terms of choice dispositions. We
+know that the chess player made the wrong move because we know their
+goal, and we don't know that simply from their choices. 
+
+Presumably we need a more complicated Bayesian model here that allows
+for irrational choices. 
+
+} %
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "bdrc.tex"
+%%% End:

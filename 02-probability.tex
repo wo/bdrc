@@ -1,0 +1,815 @@
+\chapter{Belief as Probability}\label{ch:probability}
+
+\cmnt{%
+  The exercises were too hard. (Need to give more hints.)
+
+  Use $\times$ for multiplication?
+  
+  I need to emphasize that the letters are arbitrary propositions, and
+  that substituting logical equivalents is always fine. A good student
+  asked whether one could define a new letter $C$ as $A \land B$ and
+  plug that into the formulas. 
+
+} %
+
+
+\section{Subjective and objective probability}
+
+Beliefs vary in strength. I believe that the 37 bus goes to Waverley
+station, and that there are busses from Waverley to the airport, but
+the second belief is stronger than the first. With some idealization,
+we can imagine that for any propositions $A$ and $B$, a rational agent
+is either more confident in $A$ than in $B$, more confident in $B$
+than in $A$, or equally confident of both. The agent's belief state
+then effectively sorts the propositions from `least confident' to
+`most confident', and we can represent a proposition's place in the
+ordering by a number between 0 (`least confident') and 1 (`most
+confident'). This number is the agent's \textbf{credence} in the
+proposition. For example, my credence in the proposition that the 37
+bus goes to Waverley might be around 0.8, while my credence in the
+proposition that there are busses from Waverley to the airport is
+around 0.95.
+
+The core assumption that unifies ``Bayesian'' approaches to
+epistemology, statistics, decision theory, and other areas, is that
+rational degrees of belief obey the formal rules of the probability
+calculus. For that reason, degrees of belief are also called
+\textbf{subjective probabilities} or even just \textbf{probabilities}.
+But this terminology can gives rise to confusion because the word
+`probability' has other, and more prominent, uses.
+
+Textbooks in science and statistics often define probability as
+relative frequency. On that usage, the probability of some outcome is
+the proportion of that type of outcome in some base class of
+events. For example, to say that the probability of getting a six when
+throwing a regular die is \nicefrac{1}{6} means that the proportion of
+sixes in a large class of throws is (or converges to) \nicefrac{1}{6}.
+
+Another use of `probability' is related to determinism. Consider a
+particular die in mid-roll. Could one in principle figure out how the
+die will land, given full information about its present physical
+state, the surrounding air, the surface on which it rolls, and so on?
+If yes, there's a sense in which the outcome is not a matter of
+probability. Quantum physics seems to suggest that the answer is no:
+that the laws of nature together with the present state of the world
+only fix a certain probability for future events. This kind of
+probability is sometimes called `chance'.
+
+Chance and relative frequency are examples of \textbf{objective
+  probability}. Unlike degrees of belief, they are not relative to an
+agent; they don't vary between you and me. You and I may have
+different opinions about chances or relative frequencies; but that
+would just be an ordinary disagreement. At least one of us would be
+wrong. By contrast, if you are more confident that the die will land
+six than me, then your subjective probability for that outcome really
+is greater than mine.
+
+In this course, when we talk about credences or subjective
+probabilities, we do not mean beliefs about objective probability. We
+simply mean degrees of belief.
+%
+\cmnt{%
+  Imagine I have two dice: a normal one and one with a six drawn on
+  all sides. I've randomly chosen one of the dice -- you can't see
+  which -- and I'm about to toss it. Your degree of belief that the
+  die will land six should then be $\nicefrac{1}{2} \cdot
+  \nicefrac{1}{6} + \nicefrac{1}{2} \cdot 1 = \nicefrac{7}{12}$ (for
+  reasons that will become clear), even though you are sure that the
+  objective probability of a six is either 1 or \nicefrac{1}{6} and
+  not \nicefrac{7}{12}.
+
+} %
+%
+I emphasize this point because there is a tendency, especially among
+economists, to interpret the probabilities in expected utility theory
+as objective probabilities. On that view, the MEU Principle only holds
+for agents who know the objective probabilities. On the (Bayesian)
+approach we will take instead, the MEU Principle does not presuppose
+knowledge of objective probabilities; it only assumes that the agent
+in question has a definite degree of belief in the relevant states.
+
+\cmnt{%
+  To find out my subjective probability for rain, it would be useless
+  to ask the weatherman: how would he know my degree of belief?
+} %
+
+\section{Probability theory}
+
+What all forms of probability, objective and subjective, have in
+common is a certain abstract structure, which is studied by the
+mathematical discipline of probability theory.
+
+Mathematically, a \textbf{probability measure} is a certain kind of
+function (in the mathematical sense, i.e.\ a mapping) from certain
+kinds of objects to real numbers. The objects (the bearers of
+probability) are usually called `events', but in philosophy we call
+them \textbf{propositions}.
+
+The main assumption probability theory makes about the bearers of
+probability is that whenever some proposition $A$ has a probability,
+then so does its negation $\neg A$ (`not $A$'), and whenever two
+propositions $A$ and $B$ both have a probability, then so does their
+conjunction $A \land B$ (`$A$ and $B$') and their disjunction $A \lor
+B$ (`$A$ or $B$'). On the hypothesis that rational degrees of belief
+satisfy the mathematical conditions on a probability measure, this
+means that if a rational agent has a definite degree of belief in some
+propositions $A$ and $B$, then she also has a definite degree of
+belief in $\neg A$, $A \land B$, and $A \lor B$. This isn't obvious,
+but let's roll with it.
+
+\cmnt{%
+  Maybe I should emphasize this as Kolmogorov's 0th axiom. Also note
+  the corollary that credences aren't conscious judgments.%
+} %
+
+What sorts of things are propositions? If you want, you can think of
+them as sentences. A common alternative, in line with our discussion
+in the previous session, is to construe propositions as possible
+states of the world. Possible states of the world are in some respects
+more coarse-grained than sentences. For example, consider
+the current temperature in Edinburgh. I don't know what that
+temperature is; one possibility (one possible state of the world) is
+that it is 10\celsius. Since 10\celsius is 50\fahrenheit, this is
+arguably the very same possibility (the same possible state of the
+world) as the possibility that it is 50\fahrenheit. `It is 10\celsius'
+and `It is 50\fahrenheit' are different ways of picking out the same
+state of the world. The sentences are different, but the states are
+the same.
+
+Like sentences, possible states of the world can be negated,
+conjoined, and disjoined. The negation of the possibility that it is
+10\celsius is the possibility that it is \emph{not} 10\celsius. If we
+negate that negated state, we get back the original state: the
+possibility that it is \emph{not} \emph{not} 10\celsius coincides with
+the possibility that it is 10\celsius. In general, on this approach,
+logically equivalent states are not just equivalent, but
+identical. 
+
+\cmnt{%
+  `It is raining and it is windy' and `It is not the case that it is
+  either not raining or not windy' are different ways of describing
+  the same state of the world.
+} %
+
+Possible states of the world can be more or less specific. That the
+temperature is 10\celsius is more specific than that it is between
+7\celsius and 12\celsius. It is often useful to think of unspecific
+states as sets of more specific states. Thus we might think of the
+possibility that it is between 7\celsius and 12\celsius as a
+collection of several possibilities: \{ 7\celsius, 8\celsius,
+9\celsius, 10\celsius, 11\celsius, 12\celsius \}. The unspecific
+possibility obtains just in case one of the more specific
+possibilities obtains. In this context, the most specific states are
+also known as \textbf{possible worlds} (in philosophy, and as
+`outcomes' in most other disciplines). So we'll sometimes identify
+propositions with sets of possible worlds.
+
+I should warn that the word `proposition' has many uses in
+philosophy. In this course, all we mean by `proposition' is `object of
+credence'. And `credence', recall, is a semi-technical term for a
+certain quantity in the model we are building. It is pointless to
+argue over the nature of propositions before we have spelled out the
+model in more detail. Also, by `possible world' I just mean `maximally
+specific proposition'. The identification of propositions with sets of
+possible worlds is not supposed to be an informative reduction.
+
+\begin{exercise}
+  First a reminder of some jargon from set theory:
+  \begin{itemize}
+    \itemsep0em
+  \item The \emph{intersection} of two sets $A$ and $B$ is the set of
+    objects that are in both $A$ and $B$.
+  \item The \emph{union} of two sets $A$ and $B$ is the set of objects
+    that are in one or both of $A$ and $B$.
+  \item The \emph{complement} of a set $A$ is the set of objects that
+    are not in $A$.
+  \item A set $A$ is a \emph{subset} of a set $B$ if all objects in
+    $A$ are also in $B$.
+  \end{itemize}
+
+  Now, assume propositions are modelled as sets of possible
+  worlds. Then the negation $\neg A$ of a proposition $A$ is the
+  complement of $A$.
+  \begin{enumerate}
+    \itemsep0em
+  \item[(a)] What is the conjunction $A \land B$ of two propositions,
+    in set theory terms?
+  \item[(b)] What is the disjunction $A \lor B$?
+  \item[(c)] What does it mean if a proposition $A$ is a subset of
+    a proposition $B$?
+  \end{enumerate}
+  \vspace{-1em}
+\end{exercise}
+
+\begin{exercise}
+  Strictly speaking, the objects of probability can't all be construed
+  as possible states of the world: at least one object of probability
+  is always an \emph{impossible} state of the world. Can you explain
+  why?
+\end{exercise}
+  
+
+Let's return to probability theory. I said a probability measure is a
+function from propositions to numbers that satisfies certain
+conditions.  These conditions are called \textbf{probability
+  axioms} or \textbf{Kolmogorov axioms}, because their canonical
+statement was presented in 1933 by the Russian mathematician Andrej Kolmogorov.
+\begin{genericthm}{The Kolmogorov Axioms}
+  \leavevmode\vspace{-2em}
+  \begin{itemize}
+  \itemsep0em 
+  \item[(i)] For any proposition $A$, $0 \leq \Cr(A) \leq 1$.
+  \item[(ii)] If $A$ is logically necessary, then $\Cr(A) = 1$.
+  \item[(iii)] If $A$ and $B$ are logically incompatible, then $\Cr(A \lor B) = \Cr(A) + \Cr(B)$.
+  %\item[(iv)] For all $A$, if $\Cr(B) > 0$, then $\Cr(A /B) = \Cr(A \land B) \;/\; \Cr(B)$.
+  \end{itemize}
+\end{genericthm}
+
+Here I've used `$\Cr$' as the symbol for the probability measure, as
+we'll be mostly interested in subjective probability or credence. Thus
+`$\Cr(A)$' should be read as `the subjective probability of $A$' or
+`the credence in $A$'. Strictly speaking, we should perhaps add
+subscripts `$\Cr_{i,t}(A)$' to make clear that subjective probability
+is relative to an agent $i$ and a time $t$; but since we're mostly
+dealing with rules that hold for all agents at all times (or the
+relevant agent and time is clear from context), we'll often omit the
+subscripts.
+
+Understood as a condition on rational credence, axiom (i) says that
+credences range from 0 to 1: you can't have a degree of belief greater
+than 1 or less than 0. Axiom (ii) says that if a proposition is
+logically necessary -- like \emph{it is raining or it is not raining}
+-- then it must have credence 1. Axiom (iii) says that your credence
+in a disjunction should equal the sum of your credence in the two
+disjuncts, provided these are logically incompatible (meaning they
+can't be true at the same time). For example, since it can't be both
+8\celsius and 12\celsius, your credence in $8\celsius \lor 12\celsius$
+must be $\Cr(\text{8\celsius}) + \Cr(\text{12\celsius})$.
+
+We'll ask about the justification for these assumptions later. First,
+let's derive a few theorems.
+
+
+\section{Some rules of probability}
+
+Suppose your credence in the hypothesis that it is 8\celsius is
+0.3. Then what should be your credence in the hypothesis that it is
+\emph{not} 8\celsius? Answer: 0.7. In general, the probability of
+$\neg A$ is always 1 minus the probability of $A$:
+
+\begin{genericthm}{The Negation Rule}
+  $\Cr(\neg A) = 1 - \Cr(A)$.
+\end{genericthm}
+
+This follows from the Kolmogorov axioms. Here is the proof. For any
+proposition $A$, $A \lor \neg A$ is logically necessary. By axiom
+(ii), this means that $\Cr(A \lor \neg A) = 1$. Moreover, $A$ and
+$\neg A$ are logically incompatible. So by axiom (iii), $\Cr(A \lor
+\neg A) = \Cr(A) + \Cr(\neg A)$. Putting these together, we have $1 =
+\Cr(A) + \Cr(\neg A)$, and so $\Cr(\neg A) = 1-\Cr(A)$.
+
+Next, we can prove that logically equivalent propositions always have
+the same probability.
+
+\begin{genericthm}{The Equivalence Rule}
+  If $A$ and $B$ are logically equivalent, then $\Cr(A) = \Cr(B)$.
+\end{genericthm}
+Proof: Assume $A$ and $B$ are logically equivalent. Then $A \lor \neg
+B$ is logically necessary; so by axiom (ii), $\Cr(A \lor \neg B) =
+1$. Moreover, $A$ and $\neg B$ are logically incompatible, so by axiom
+(iii), $\Cr(A \lor \neg B) = \Cr(A) + \Cr(\neg B)$.  By the Negation Rule,
+$\Cr(\neg B) = 1-\Cr(B)$. Thus we have $1 = \Cr(A) + 1 -
+\Cr(B)$. Subtracting $1-\Cr(B)$ from both sides yields $\Cr(A) =
+\Cr(B)$.
+
+Above I mentioned that logically equivalent propositions are often
+assumed to be identical: $\neg\neg A$, for example, is assumed to be
+the very same proposition (the same possible state of the world) as
+$A$. The Equivalence Rule provides some justification for this
+assumption. It shows that even if we did distinguish between logically
+equivalent propositions, an agent whose credences satisfy the
+Kolmogorov axioms never has different attitudes towards equivalent
+propositions: if she believes $A$ to degree $x$, and $A$ is equivalent
+to $B$, she must also believe $B$ to degree $x$.
+
+\begin{exercise}\label{exerc:partition}
+  Prove that $\Cr(A) = \Cr(A\land B) + \Cr(A \land \neg B)$.
+\end{exercise}
+
+Next, let's show that axiom (iii) generalizes to three disjuncts:
+
+\begin{genericthm}{Additivity for three propositions}
+  If $A$, $B$, and $C$ are all incompatible with one another, then
+  $\Cr(A \lor B \lor C) = \Cr(A) + \Cr(B) + \Cr(C)$.
+\end{genericthm}
+Proof: $A \lor B \lor C$ is equivalent (or identical) to $(A \lor B) \lor C$. If
+$A$, $B$, and $C$ are mutually incompatible, then $A \lor B$ is
+incompatible with $C$. So by axiom (iii), $\Cr((A \lor B) \lor C) =
+\Cr(A \lor B) + \Cr(C)$. Again by axiom (iii), $\Cr(A \lor B) = \Cr(A)
++ \Cr(B)$. Putting these together, we have $\Cr((A \lor B) \lor C) =
+\Cr(A) + \Cr(B) + \Cr(C)$. 
+
+The result generalizes further to any finite number of propositions
+$A,B,C,D,\ldots$. So whenever a proposition can be decomposed into
+finitely many possible worlds, then the probability of the proposition
+is the sum of the probability of the individual worlds.
+
+For example, suppose two dice are tossed. There are 36 possible
+outcomes (``possible worlds''), which we might tabulate as follows.
+%
+\begin{center}
+\begin{tabular}{cccccc}
+  (1,1) & (1,2) & (1,3) & (1,4) & (1,5) & (1,6)\\
+  (2,1) & (2,2) & (2,3) & (2,4) & (2,5) & (2,6)\\
+  (3,1) & (3,2) & (3,3) & (3,4) & (3,5) & (3,6)\\
+  (4,1) & (4,2) & (4,3) & (4,4) & (4,5) & (4,6)\\
+  (5,1) & (5,2) & (5,3) & (5,4) & (5,5) & (5,6)\\
+  (6,1) & (6,2) & (6,3) & (6,4) & (6,5) & (6,6)
+\end{tabular}
+\end{center}
+%
+Suppose you give equal credence \nicefrac{1}{36} to each of these
+outcomes. How confident should you then be that the sum of the numbers
+that will come up is equal to 5? There are four relevant possibilities:
+$(1,4), (2,3), (3,2), (4,1)$. That is, the proposition that the sum of
+the numbers is 5 is equivalent to the proposition that the dice land
+(1,4) \emph{or} (2,3) \emph{or} (3,2) \emph{or} (4,1).  Since all of
+these are incompatible with one another, the probability of the
+disjunction is the sum of the probability of the individual
+possibilities, i.e.\ $\nicefrac{1}{36} + \nicefrac{1}{36} +
+\nicefrac{1}{36} + \nicefrac{1}{36} = \nicefrac{4}{36} =
+\nicefrac{1}{9}$. So your credence in the hypothesis that the numbers
+add to 5 should be \nicefrac{1}{9}.
+
+\begin{exercise}
+  How confident should you be that (a) at least one die lands 6?
+  (b) exactly one die lands 6?
+\end{exercise}
+
+What if there are infinitely many worlds? Then things become
+tricky. It would be nice if we could say that the probability of a
+proposition is always the sum of the probability of the worlds that
+make up the proposition, but if there are too many worlds, this turns
+out to be incompatible with the mathematical structure of the real
+numbers. The most one can safely assume is that the additivity
+principle holds if the number of worlds is ``countable'', meaning that
+there are no more worlds than there are natural numbers
+1,2,3,\ldots. To secure this, axiom (iii) -- which is known as the
+axiom of \textbf{Finite Additivity} -- has to be replaced by the
+following stronger version:
+%
+\begin{genericthm}{Axiom of Countable Additivity} 
+  If $A_1, A_2, A_3, \ldots$ are countably many propositions all of
+  which are logically incompatible with one another, then $\Cr(A_1
+  \lor A_2 \lor A_3 \lor \ldots) = \sum_{i=1}^\infty \Cr(A_i)$.
+\end{genericthm}
+%
+In this course, we will try to stay away from troubles arising from
+infinities, so the weaker axiom (iii) will be enough.
+
+\begin{exercise}
+  Prove that if $A$ entails $B$, then $\Cr(A) \leq \Cr(B)$. (Hint: if
+  $A$ entails $B$, then $A$ is equivalent to $A \land B$.)
+\end{exercise}
+
+
+\section{Conditional credence}\label{sec:conditional}
+
+To continue, we need two more concepts. The first is the idea of
+\textbf{conditional probability} or, more specifically,
+\textbf{conditional credence}.  Intuitively, an agent's conditional
+credence reflects her degree of belief in a given proposition on the
+supposition that some other proposition is true. For example, I am
+fairly confident that it won't snow tomorrow, and that the temperature
+will be above 4\celsius. But on the supposition that it will snow, I
+am not at all confident that the temperature will be above
+4\celsius. So my \emph{unconditional credence} in temperatures above
+4\celsius is high, while my \emph{conditional credence} in the same
+proposition, on the supposition that it will snow, is low.
+
+So conditional credence relates two propositions: the proposition that
+is supposed, and the proposition that gets evaluated on the basis of
+that supposition.
+
+In fact (to complicate things even further), there are two kinds of
+supposition, and two kinds of conditional credence. The two kinds
+correspond to a grammatical distinction between ``indicative'' and
+``subjunctive'' conditionals. Compare the following pair of
+statements.
+%
+\begin{itemize}
+\item[(1)] If Shakespeare didn't write Hamlet, then someone else did.
+\item[(2)] If Shakespeare hadn't written Hamlet, then someone else
+  would have.
+\end{itemize}
+%
+The first of these (an indicative conditional) is highly plausible: we
+know that someone wrote Hamlet; if it wasn't Shakespeare then it must
+have been someone else. By contrast, the second statement (a
+subjunctive conditional) is plausibly false: if Shakespeare hadn't
+written Hamlet, it is unlikely that somebody else would have stepped
+in to write the very same play.
+
+The two conditionals (1) and (2) relate the same two propositions -- the
+same possible states of the world. To evaluate either statement, we
+suppose that the world is one in which Shakespeare didn't write
+Hamlet. The difference lies in what we hold fixed when we make that
+supposition. To evaluate (1), we hold fixed our knowledge that Hamlet
+exists. Not so in (2). To evaluate (2), we bracket everything we know
+that we take to be a causal consequence of Shakespeare's writing of
+Hamlet.
+
+\cmnt{%
+I will write $\Cr(A/B)$ for the \textbf{indicative conditional
+  credence} in $A$ given $B$, and $\Cr(A//B)$ (with two slashes) for
+the \textbf{subjunctive conditional credence} in $A$ given $B$. Thus
+if $B$ is the proposition that Shakespeare didn't write Hamlet, and
+$A$ the proposition that someone other than Shakespeare wrote Hamlet,
+then $\Cr(A/B)$ is high and $\Cr(A//B)$ is low -- at least for me.
+} %
+
+We will return to the second, subjunctive kind of supposition later.
+For now, let's focus on the first, indicative kind of supposition.  We
+will write $\Cr(A/B)$ for the \textbf{(indicative) conditional
+  credence} in $A$ on the supposition that $B$. Again, intuitively
+this is the agent's credence that $A$ is true \emph{if} (or
+\emph{given that} or \emph{supposing that}) $B$ is true.
+
+\cmnt{%
+  I said that when we indicatively suppose that Shakespeare didn't
+  write Hamlet, we hold fixed our knowledge that someone or other
+  wrote Hamlet. But what's the general rule? What do we hold fixed,
+  and how does that settle the conditional credence? More generally,
+  it seems that conditional credences are closely related to
+  unconditional credences: it is because we know (unconditionally)
+  that someone or other wrote Hamlet that our conditional credence in
+  \emph{Someone else} given \emph{Not Shakespeare} is high. So how, in
+  general, are conditional credences related to unconditional
+  credences?
+} %
+
+How are conditional credences related to unconditional credences?
+The answer is surprisingly simple, and captured by the following
+formula.
+\begin{genericthm}{The Ratio Formula}
+  $\Cr(A/B) = \dfrac{\Cr(A \land B)}{\Cr(B)}$, provided $\Cr(B)>0$.
+\end{genericthm}
+That is, your credence in some proposition $A$ on the (indicative)
+supposition $B$ equals the ratio of your unconditional
+credence in $A \land B$ divided by your unconditional credence in $B$.
+
+To see why this makes sense, it may help to imagine your credence as
+distributing a certain quantity of ``plausibility mass'' over
+the space of possible worlds. When we ask about your credence in
+$A$ conditional on $B$, we set aside worlds where $B$ is false. What
+we want to know is how much of the mass given to $B$ worlds falls on
+$A$ worlds. In other words, we want to know what fraction of the mass
+given to $B$ worlds is given to $A$ worlds that are also $B$ worlds.
+
+People disagree on the status of the Ratio Formula. Some treat it as a
+definition. On that approach, you can ignore everything I said about
+what it means to suppose a proposition and simply read `$\Cr(B/A)$' as
+shorthand for `$\Cr(A \land B)/\Cr(A)$'. Others regard conditional
+beliefs as distinct and genuine mental states and see the Ratio
+Formula as a fourth axiom of probability. We
+don't have to adjudicate between these views. What matters is that the
+Ratio Formula is true, and on this point both sides agree.
+
+The second concept I want to introduce at this point is that of
+probabilistic independence. We say that propositions $A$ and $B$ are
+\textbf{(probabilistically) independent} (for the relevant agent at
+the relevant time) if $\Cr(A/B) = \Cr(A)$. Intuitively, if $A$ and $B$
+are independent, then it makes no difference to your credence in $A$
+whether or not you suppose $B$, so your unconditional credence in $A$
+is equal to your credence in $A$ conditional on $B$.
+
+Note that unlike causal independence, probabilistic independence is a
+feature of beliefs. It can easily happen that two propositions are
+independent for one agent but not for another. That said, there are
+mysterious connections between probabilistic (in)dependence and causal
+(in)dependence. For example, if an agent knows that two events are
+causally independent, then the events are normally also independent in
+the agent's degrees of belief. Sadly, we will not have time to
+investigate these mysteries in any detail.
+
+\newpage
+
+\begin{exercise}
+  Assume $\Cr(\emph{Snow}) = 0.3$, $\Cr(\emph{Wind}) = 0.6$, and $\Cr(\emph{Snow} \land
+  \emph{Wind}) = 0.2$. What is $\Cr(\emph{Snow}/\emph{Wind})$? What is $\Cr(\emph{Wind}/\emph{Snow})$?
+\end{exercise}
+
+\begin{exercise}
+  Using the Ratio Formula, prove that if $A$ is (probabilistically)
+  independent of $B$, then $B$ is independent of $A$. 
+\end{exercise}
+
+\begin{exercise}
+  A fair die will be tossed, and you give equal credence to all six
+  outcomes. Let $A$ be the proposition that the die lands either 1 or
+  6. Let $B$ be the proposition that the die lands an odd number (1,3,
+  or 5). Let $C$ be the proposition that the die lands 1, 2 or 3.
+  \begin{enumerate}
+  \itemsep0em 
+  \item[(a)] Is $A$ independent of $B$ (relative to your beliefs)?
+  \item[(b)] Is $A$ independent of $C$?
+  \item[(c)] Is $A$ independent of $B \land C$?
+  \item[(d)] Is $B$ independent of $C$?
+  \end{enumerate}
+  \vspace{-1.5em}
+\end{exercise}
+
+\section{Some more rules of probability}
+
+If you've studied propositional logic, you'll know how to compute the
+truth-value of arbitrarily complex sentences from the truth-value of
+their atomic parts. For example, if $p$ and $q$ are true and $r$ is
+false, then you can figure out whether $\neg(p \land (q \lor \neg(r
+\lor p)))$ is true. Now suppose instead of the truth-value of $p$,
+$q$, and $r$, I give you their probability. Could you then compute the
+probability of $\neg (p \land (q \lor \neg(r \lor p)))$? The answer is
+no. In general, while the probability of $\neg A$ is determined by the
+probability of $A$, neither the probability of $A\lor B$ nor the
+probability of $A \land B$ is determined by the individual
+probabilities of $A$ and $B$.
+
+Let's have a look at conjunctive propositions, $A \land B$. By
+rearranging the Ratio Formula, we get the following:
+%
+\begin{genericthm}{The Conjunction Rule}
+  $\Cr(A \land B) = \Cr(A) \cdot \Cr(B / A)$.
+\end{genericthm}
+%
+So the probability of a conjunction is the probability of the first
+conjunct times the probability of the second \emph{conditional on the
+  first}. If you only know the unconditional probabilities of the
+conjuncts, you can't figure out the probability of the conjunction.
+
+But note that there's a special case. If $A$ and $B$ are independent,
+then $\Cr(B/A) = \Cr(B)$; so in that case the probability of the
+conjunction is the product of the probability of the conjuncts:
+%
+\begin{genericthm}{The Conjunction Rule for independent propositions}
+  If $A$ and $B$ are independent, then $\Cr(A \land B) = \Cr(A) \cdot
+  \Cr(B)$.
+\end{genericthm}
+
+Why do we multiply (rather than, say, add) the probabilities in the
+Conjunction Rules? Suppose we flip two coins. What is the probability
+that they both land heads? You'd expect the first coin to land heads
+about half the time; and in half \emph{of those} cases you'd expect
+the second to also land heads. So the result is a half of a half,
+i.e.\ $\nicefrac{1}{2} \cdot \nicefrac{1}{2} = \nicefrac{1}{4}$.
+
+What about disjunctions, $A \lor B$? We know that if $A$ and $B$ are
+logically incompatible, then $\Cr(A \lor B) = \Cr(A) + \Cr(B)$. But
+what if $A$ and $B$ are not incompatible? In that case, we have to
+subtract the probability of the conjunction:
+%
+\begin{genericthm}{The Disjunction Rule}
+  $Cr(A \lor B) = Cr(A) + Cr(B) - Cr(A\land B)$.
+\end{genericthm}
+%
+Again, you can't compute the probability of the disjunction just from
+the probability of the disjuncts.
+
+If you want to know where the Disjunction Rule comes from, note that
+in general, the proposition $A\lor B$ comprises three kinds of worlds:
+(1) worlds where $A$ is true and $B$ false, (2) worlds where $B$ is
+true and $A$ is false, and (3) worlds where $A$ and $B$ are both
+true. These three sets are disjoint. So by Additivity, the probability
+of $A \lor B$ is equal to the probability of $A \land \neg B$ plus the
+probability of $B \land \neg A$ plus the probability of $A \land
+B$. But together, the worlds in (1) and (3) comprise precisely the
+$A$-worlds, and the worlds in (2) and (3) comprise the $B$-worlds. So
+if we add together $\Cr(A)$ and $\Cr(B)$, we have effectively
+double-counted the $A \land B$ worlds. So we need to subtract $\Cr(A
+\land B)$.
+
+\begin{exercise}
+  Show that two propositions $A$ and $B$ are independent if and only
+  if $Cr(A \land B) = Cr(A) \cdot Cr(B)$. (Some authors use this as
+  the definition of independence.)
+\end{exercise}
+
+\begin{exercise}
+  Prove that $\Cr(A \land B \land C) = \Cr(A/B \land C) \cdot \Cr(B/C) \cdot
+  \Cr(C)$. (Hint: you only need the Ratio Formula.)
+\end{exercise}
+
+\begin{exercise}
+  In 1999, a British woman was convicted of the murder of her two
+  sons, who she claimed died from Sudden Infant Death Syndrome
+  (SIDS). The eminent paediatrician Sir Roy Meadow explained to the
+  jury that 1 in 8500 infants die from SIDS and hence the chance of
+  SIDS affecting both sons was 1/8500 $\cdot$ 1/8500 = 1 in 73
+  million. What is wrong with Sir Meadow's reasoning?
+\end{exercise}
+
+To conclude, I'll mention two more rules that play a special role in
+Bayesian reasoning. The first goes back to a suggestion by Thomas
+Bayes published in 1763.
+%
+\begin{genericthm}{Bayes' Theorem}
+  $\Cr(A/B) = \dfrac{\Cr(B/A) \cdot \Cr(A)}{\Cr(B)}.$
+\end{genericthm}
+%
+Proof: By the Ratio Formula, $\Cr(A/B) = \Cr(A \land B) / \Cr(B)$, and
+$\Cr(A \land B) = \Cr(B/A) \cdot \Cr(A)$.
+
+Bayes' Theorem relates the conditional credence in $A$ given $B$ to the
+inverse conditional credence in $B$ given $A$. Why that might be
+useful is best illustrated by an example.
+
+Suppose you are unsure whether the die I am about to roll is a regular
+die or a trick die that has a six printed on all its sides. You
+currently give equal credence to both possibilities. Now we might
+wonder how confident you should be that the die is a trick die
+\emph{given that it will land six on the next roll}. That is, what is
+$\Cr(\emph{Trick}/ \emph{Six})$? The answer isn't obvious. Bayes'
+Theorem will help:
+
+\[
+  \Cr(\emph{Trick}/\emph{Six}) = \frac{\Cr(\emph{Six}/\emph{Trick}) \cdot \Cr(\emph{Trick})}{\Cr(\emph{Six})}.
+\]
+
+The numerator on the right is easy. $\Cr(\emph{Six}/ \emph{Trick})$ is
+1: if the die has a six on all its sides then it is certain that it
+will land six. We also know that $\Cr(\emph{Trick})$ is
+\nicefrac{1}{2}. But what is $\Cr(\emph{Six})$, your unconditional
+credence that the die will land six? Here we need our last rule:
+
+\begin{genericthm}{The Law of Total Probability}
+  $\Cr(A) = \Cr(A/B)\cdot \Cr(B) + \Cr(A/\neg B)\cdot \Cr(\neg B)$.
+\end{genericthm}
+This ``law'' follows immediately from exercise \ref{exerc:partition}
+and the Ratio Formula.
+
+If we apply the Law of Total Probability to $\Cr(\emph{Six})$ in our
+application of Bayes' Theorem, we get
+\[
+  \Cr(\emph{Trick}/\emph{Six}) = \frac{\Cr(\emph{Six}/\emph{Trick}) \cdot \Cr(\emph{Trick})}{
+\Cr(\emph{Six}/\emph{Trick}) \cdot \Cr(\emph{Trick}) + \Cr(\emph{Six}/\neg \emph{Trick}) \cdot \Cr(\neg\emph{Trick})
+}.
+\]
+It looks scary, but all the terms on the right are easy to figure
+out. We already know that $\Cr(\emph{Six}/ \emph{Trick}) = 1$ and that
+$\Cr(\emph{Trick}) = \nicefrac{1}{2}$. Moreover, plausibly
+$\Cr(\emph{Six}/ \neg\emph{Trick}) = \nicefrac{1}{6}$ and $\Cr(\neg
+\emph{Trick}) = \nicefrac{1}{2}$. Plugging in all these values, we
+get $\Cr(\emph{Trick}/\emph{Six}) = \nicefrac{6}{7}$. So your credence
+in the trick die hypothesis conditional on seeing a six should be
+\nicefrac{6}{7}.
+
+You will have to wait until session \ref{ch:constraints} to understand
+why this kind of problem arises very often.
+
+\cmnt{%
+\begin{exercise}
+  Use the Disjunction rule and the Conjunction rule to prove that
+  $\Cr(A \lor B \lor C) = \Cr(A)+\Cr(B)+\Cr(C)-\Cr(A \land B)-\Cr(A
+  \land C) - \Cr(B \land C) + \Cr(A \land B \land C)$. 
+\end{exercise}
+} %
+
+\cmnt{%
+
+\begin{exercise}[The Monty Hall problem]\label{ex-montyhall}
+  A game show host offers you a choice between three doors. Behind one
+  of them is a prize. The host, who knows where the prize is,
+  announces that after you've chosen a door, he will open one of the
+  other two doors, revealing a door that does not hide the
+  price. After you've made your choice of a door and the host has
+  opened another door, he offers you an opportunity to switch to the
+  remaining door. If you want to maximise the chance of winning the
+  prize, should you switch?
+\end{exercise}
+
+} %
+
+\cmnt{%
+
+\begin{exercise}[The Prosecutor's Fallacy]\label{ex-prosecutor}
+  A murder has been committed on a remote island with a million
+  inhabitants. In a database of blood donors, detectives find a record
+  whose DNA seems to match the perpetrator's DNA from the crime
+  scene. The DNA test is very reliable: the probability that it finds
+  a match between distinct people is 1 in 100,000. So the person with
+  the matching DNA is arrested and brought to court. The prosecutor
+  argues that the probability that the defendant is innocent is
+  1/100,000. Is that correct? As a member of the jury, how confident
+  should you be in the defendant's guilt?
+\end{exercise}
+
+}%
+
+\cmnt{%
+  $P(Match/Innocent)$ is not at all the same as $P(Innocent/Match)$!
+
+  Diagram in Morin p.92 helps.
+} %
+
+\begin{exercise}
+  A stranger tells you that she has two children. You ask if at least
+  one of them is a boy. The stranger says yes. How confident should
+  you be that the other child is also a boy? (Assume both sexes are
+  equally common and independent among siblings.)
+\end{exercise}
+
+\cmnt{%
+1/3. 
+} %
+
+\section{Further reading}
+
+There are many good introductions to probability theory -- for
+example, chapters 3--7 in
+%
+\begin{itemize}
+\item Ian Hacking: \href{http://fitelson.org/confirmation/hacking_introduction_to_probability_and_inductive_logic.pdf}{\emph{An Introduction to Probability and Inductive Logic}} (2001).
+\end{itemize}
+%
+You may also find the rest the book useful to supplement later parts
+of our course.
+
+A good introduction to the problems that arise if one tries to extend
+additivity to infinite cases is
+%
+\begin{itemize}
+\item Brian Skyrms: \href{http://joelvelasco.net/teaching/3865/skyrms\%2083\%20-\%20zeno\%27s\%20paradox\%20of\%20measure.pdf}{``Zeno's paradox of measure''} (1983)
+\end{itemize}
+
+For a glimpse at some of the mysterious connections between causal
+(in)dependence and probabilistic (in)dependence, have a look at this
+blog post:
+%
+\begin{itemize}
+\item Eliezer Yudkowsky: \href{http://lesswrong.com/lw/ev3/causal_diagrams_and_causal_models/}{Causal Diagrams and Causal Models} (2012)
+\end{itemize}
+
+
+\begin{essay}
+  By Kolmogorov's axiom (ii), logically necessary propositions have
+  probability 1. If an agent's degrees of belief satisfy the
+  probability axioms, it seems to follow that the agent must be
+  absolutely certain of every logical truth, no matter how
+  complex. Does this show that Bayesian models are inapplicable to
+  real agents who are not logically omniscient?
+\end{essay}
+
+\cmnt{%
+
+Lecture:
+
+\begin{itemize}
+\item Remind B-D-A big picture, now focus on B.
+\item Venn diagrams: propositions in logical space; negation, conjunction, disjunction.
+\item Probability as mud in the space (might all lie in a tiny region).
+\item Additivity visually.
+\item Disjunction rule visually.
+\item Entailment visually: why Cr(A) <= Cr(B).
+\item Go through sections of notes.
+\end{itemize}
+
+
+} %
+
+
+\cmnt{%
+  Prove that credences conditional on a particular proposition form a
+  probability distribution.
+
+  Two fair dice are tossed. What is the probability of obtaining at
+  least one six? (We can go via negation: prob of no six is 5/6 * 5/6
+  = 25/36. So 11/36.  Or we use the OR formula: 1/6 + 1/6 - 1/36 =
+  11/36.)
+
+  Two fair dice are tossed. What is the probability of obtaining
+  exactly one six? (First toss 6 second something else: 1/6 * 5/6.
+  Second toss 6 first something else: 1/6 * 5/6.  Sum: 10/36)
+
+  Doomsday or some such? From Aaronson
+
+Morin p.99f gives a nice explanation of Bayes' Theorem.
+
+
+From Kahnemann et al 82:
+
+“Let A be the event that before the
+end of next year, Peter will have installed a burglar alarm in his
+home. Let B denote the event that Peter’s home will have been
+burgled before the end of next year.
+“Question: Which of the two conditional probabilities, pr(A|B)
+or pr(A|¬B), is higher?
+“Question: Which of the two conditional probabilities, pr(B|A)
+or pr(B|¬A), is higher?
+“A large majority of subjects (132 of 161) stated that pr(A|B) >
+pr(A|¬B) and that pr(B|A) < pr(B|¬A), contrary to the laws of
+probability.”
+
+} %
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "bdrc.tex"
+%%% End:
