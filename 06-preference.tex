@@ -11,8 +11,7 @@
   Generally, I need to clarify that ``rewards'' capture everything the
   agent cares about.
 
-  I need to explain what I mean by ``is unique except...'' in the
-  theorems.
+  Introduce ``cardinal''.
 
 }%
 
@@ -71,7 +70,7 @@ observable behaviour.
 
 Today, behaviourism (and positivism more generally) has been almost
 universally abandoned.  One reason, to which I already alluded in the
-previous session, is the holistic character of scientific testing:
+previous chapter, is the holistic character of scientific testing:
 many statements in highly successful scientific theories have
 observable consequences only in conjunction with other theoretical
 assumptions.%
@@ -93,7 +92,7 @@ the ordinalists raised an important concern. It really isn't obvious
 what it is supposed to mean when we say that an outcome has utility 5,
 as opposed to any other number.
 
-In session \ref{ch:probabilism}, I emphasized that we shouldn't think
+In chapter \ref{ch:probabilism}, I emphasized that we shouldn't think
 of an agent's credences as little numbers written in her head. If your
 credence in rain is \nicefrac{1}{2}, then this must be grounded in
 other, more basic facts about you -- facts that do not involve the
@@ -106,7 +105,7 @@ always based on non-numerical facts about the represented
 objects. For the numerical representations to have meaning, we need to
 specify what underlying non-numerical facts they are meant to represent.
 
-Return to utility. In the previous session, I explained that we
+Return to utility. In the previous chapter, I explained that we
 understand utility to comprise a wide range of psychological factors,
 some conscious, some unconscious. What unites all these factors is
 that they make certain acts or outcomes more appealing to the agent:
@@ -278,8 +277,8 @@ would then frequently depend on arbitrary conventions for representing
 utility.
 
 \begin{exercise}
-  In the Mushroom Problem as described by the matrix on the bottom of
-  page \pageref{mushroom-matrix} (section \ref{mushroom-matrix}), not
+  In the Mushroom Problem as described by the matrix on page
+  \pageref{mushroom-matrix} (section \ref{mushroom-matrix}), not
   eating the mushroom has greater expected utility than eating the
   mushroom. Describe a different assignment of utilities to the four
   outcomes that preserves their ordering but gives eating the mushroom
@@ -304,18 +303,21 @@ problem. A ratio scale is not required.
 \begin{exercise}
   Suppose two utility functions $U$ and $U'$ differ merely by their
   choice of unit and zero. This means that there are numbers $x>0$ and
-  $y$ such that, for any $A$, $U(A) = x\cdot U'(A) + y$.%
+  $y$ such that, for any $A$, $U(A) = x\times U'(A) + y$. (For example,
+  temperature in Fahrenheit equals 1.8 times temperature in Celsius
+  plus 32.)%
   \cmnt{%
     The number $x$ encodes the ratio of the units, $y$ the difference
     in zeroes. (By comparison, temperature in Fahrenheit equals 1.8
     times temperature in Celsius plus 32.)%
   } %
   Suppose some act $A$ in some decision problem has greater expected
-  utility than some act $B$, if utility is measured by $U$. Show that
-  it follows that $A$ also has greater expected utility than $B$ if
-  utility is measured by $U'$. (You can assume for simplicity that the
-  outcome of either act depends only on whether some state $S$
-  obtains; so the states are $S$ and $\neg S$.) $\star \star$%
+  utility than some act $B$, if the utility of the outcomes is
+  measured by $U$. Show that it follows that $A$ also has greater
+  expected utility than $B$ if utility of the outcomes is measured by
+  $U'$. (You can assume for simplicity that the outcome of either act
+  depends only on whether some state $S$ obtains; so the states are
+  $S$ and $\neg S$.)  $\star \star$%
   \cmnt{%
     The hypothesis that $EU(A) > EU(B)$ then means that
     \[
@@ -330,9 +332,6 @@ problem. A ratio scale is not required.
     [xU(A)+y] \Cr(S_1)+ [xU(A)+y]\Cr(S_2) > [xU(B)+y]\Cr(S_1) + [xU(B)+y]\Cr(S_2)].
     \]
     Which is to say that $EU'(A) > EU'(B)$. $\star$
-  } %
-  \cmnt{%
-    Need to clarify that EU is not U!
   } %
 \end{exercise}
   
@@ -427,8 +426,8 @@ Probability Coordination Principle, the expected utility of the gamble
 is%
 \cmnt{%
 \[
-  EU(L) = \nicefrac{1}{2} \cdot U(a) + \nicefrac{1}{2} \cdot U(b) =  
-   \nicefrac{1}{2} \cdot 0 + \nicefrac{1}{2} \cdot 1 = \nicefrac{1}{2}. 
+  EU(L) = \nicefrac{1}{2} \times U(a) + \nicefrac{1}{2} \times U(b) =  
+   \nicefrac{1}{2} \times 0 + \nicefrac{1}{2} \times 1 = \nicefrac{1}{2}. 
 \]
 } %
 \nicefrac{1}{2}. Thus if the agent is indifferent between the lottery
@@ -453,11 +452,11 @@ lotteries.%
   For example, if the agent prefers $L$ to $c$, we can infer that
   $U(c) < \nicefrac{1}{2}$.%
 } %
-Perhaps the agent is indifferent between $c$ and a gamble $L'$ where she
-would get $a$ with probability \nicefrac{4}{5} and $b$ with
+Perhaps the agent is indifferent between $c$ and a gamble $L'$ where
+she would get $a$ with probability \nicefrac{4}{5} and $b$ with
 probability \nicefrac{1}{5}. Since the expected utility of this gamble
-is \nicefrac{1}{5}, we could then infer that the agent's utility for $c$
-is \nicefrac{1}{5}.
+is \nicefrac{1}{5}, we could then infer that the agent's utility for
+$c$ is \nicefrac{1}{5}.
 
 We've assume that $c$ lies between $a$ and $b$. What if the agent
 prefers $c$ to both $a$ and $b$? Then we'll look for a lottery between
@@ -467,15 +466,19 @@ and a gamble $L''$ where she gets either $a$ or $c$ with equal
 probability, then $c$ must have utility 2. That's because the expected
 utility of $L''$ is
 \[
-  EU(L'') = \nicefrac{1}{2} \cdot U(a) + \nicefrac{1}{2} \cdot U(c) =  
-   0 + \nicefrac{1}{2} \cdot U(c) = \nicefrac{1}{2} \cdot U(c). 
+  EU(L'') = \nicefrac{1}{2} \times U(a) + \nicefrac{1}{2} \times U(c) =  
+   0 + \nicefrac{1}{2} \times U(c) = \nicefrac{1}{2} \times U(c). 
 \]
 If the agent is indifferent between $L''$ and $b$, which has a
 guaranteed utility of 1, the gamble must have expected utility 1. So
-$1 = \nicefrac{1}{2} \cdot U(c)$. And so $U(c) = 2$.
+$1 = \nicefrac{1}{2} \times U(c)$. And so $U(c) = 2$. In general, if
+the agent is indifferent between $b$ and a lottery that leads to $c$
+with probability $x$ and $a$ with probability $1-x$, then $U(c) =
+\nicefrac{1}{x}$
 
-\cmnt{% 
-  I need to clarify that 1/2 is only an example.
+\cmnt{%
+  $EU(L'') = x U(a) + (1-x)U(c) = (1-x)U(c)$. If this is 1, then $U(c)
+  = 1/(1-x)$.%
 } %
 
 \begin{exercise}
@@ -546,7 +549,8 @@ Here are the conditions we need. `$A$', `$B$', `$C$' range over
 arbitrary lotteries or rewards.
 
 \begin{genericthm}{Completeness}
-  For any $A$ and $B$, either $A \succ B$ or $B \succ A$ or $A \sim B$.
+  For any $A$ and $B$, exactly one of $A \succ B$, $B\succ A$, or $A
+  \sim B$ is the case.
 \end{genericthm}
 \cmnt{%
   Completeness is plausibly implied by an interpretation of preference
@@ -580,16 +584,16 @@ arbitrary lotteries or rewards.
 } %
 \vspace{-2mm}
 \begin{genericthm}{Independence (of Irrelevant Alternatives)}
-  For any $A$, $B$, and $C$, if $A \succsim B$, and $L_1$ is a lottery
+  For any $A$, $B$, and $C$, if $A \succ B$, and $L_1$ is a lottery
   that leads to $A$ with some probability $x$ and otherwise to $C$,
   and $L_2$ is a lottery that leads to $B$ with probability $x$ and
-  otherwise to $C$, then $L_1 \succsim L_2$.
+  otherwise to $C$, then $L_1 \succ L_2$.
 \end{genericthm}
 \vspace{-2mm}
 \begin{genericthm}{Continuity}
-  For any $A$, $B$, and $C$, if $A \succsim B$ and $B \succsim C$ then
+  For any $A$, $B$, and $C$, if $A \succ B$ and $B \succ C$ then
   there are lotteries $L_1$ and $L_2$ between $A$ and $C$ such
-  that $L_1 \succsim B$ and $B \succsim L_2$.
+  that $L_1 \succ B$ and $B \succ L_2$.
 \end{genericthm}
 \vspace{-2mm}
 \begin{genericthm}{Reduction (of Compound Lotteries)}
@@ -600,11 +604,14 @@ arbitrary lotteries or rewards.
 
 Von Neumann and Morgenstern proved that if (and only if) an agent's
 preferences satisfy all these conditions, then there is a utility
-function $U$, determined by the method from the previous section, which
-represents the agent's preferences in the sense that $A \succ B$ just
-in case $U(A) > U(B)$. Moreover, the function is unique except for the
-choice of unit and zero. This result is known as the \textbf{von
-  Neumann-Morgenstern Representation Theorem}.
+function $U$, determined by the method from the previous section,
+which represents the agent's preferences in the sense that $A \succ B$
+just in case $U(A) > U(B)$, and $A \sim B$ just in case $U(A) =
+U(B)$. Moreover, this function $U$ is unique except for the choice of
+unit and zero. (That is, any two functions $U$ and $U'$ that represent
+the agents preferences differ at most in their choice of unit and
+zero.) This result is known as the \textbf{von Neumann-Morgenstern
+  Representation Theorem}.
 
 \cmnt{%
   \begin{genericthm}{The von Neumann and Morgenstern Representation
@@ -636,6 +643,7 @@ ordinalist challenge, but also an argument for the MEU Principle. The
 argument could be spelled out as follows.
 
 \begin{enumerate}
+  \itemsep0em
 \item The preferences of a rational agent satisfy Completeness,
   Transitivity, Continuity, Independence, and Reduction.
 \item If an agent's preferences satisfy these conditions, then (by the
@@ -664,7 +672,7 @@ argument could be spelled out as follows.
 
 \section{Utility and credence from preference}
 
-In session \ref{ch:probabilism} we looked at the betting
+In chapter \ref{ch:probabilism} we looked at the betting
 interpretation, which attempts to derive an agent's credences from her
 choice dispositions. We saw that the approach relied on implausible
 assumptions about the agent's utilities. Now we've learned from von
@@ -701,7 +709,7 @@ prospect by `$\bet{X}{a}{b}$' (pronounced `if $X$ then $a$ else $b$').
 We also allow for conditional prospects in which the outcomes are not
 basic rewards but further conditional prospects. The intuitive thought
 is that any act in any decision problem corresponds to a conditional
-prospect. In the mushroom problem from session \ref{ch:overview}, for
+prospect. In the mushroom problem from chapter \ref{ch:overview}, for
 example, eating the mushroom amounts to choosing the prospect
 $\bet{\text{Poisonous}}{\text{Dead}}{\text{Satisfied}}$; not eating
 the mushroom amounts to choosing
@@ -728,7 +736,6 @@ from lotteries to conditional prospects.
   If two prospects $A$ and $B$ lead to different outcomes only under
   condition $X$, then for any $C$, $A \succ B$ iff $\bet{X}{A}{C}
   \succ \bet{X}{B}{C}$.
-
 \end{genericthm}
 
 Instead of Continuity and Reduction we have the following
@@ -752,7 +759,6 @@ conditions. (Don't worry if you can't make immediate sense of them.)
   probability of $A$ is greater than that of $B$.%
 }%
 \vspace{-2mm}
-\newpage
 \begin{genericthm}{State Richness} 
   If $A \pref B$, then for all $C$ there is a finite number of
   mutually exclusive and jointly exhaustive states $X_1,\ldots,X_n$
@@ -790,7 +796,7 @@ if) an agent's preferences satisfy all these conditions, then there is
 a utility function $U$ and a probability function $\Cr$ such that $A
 \succ B$ iff the expected utility of $A$, relative to $\Cr$ and $U$,
 is greater than that of $B$. Moreover, $\Cr$ is unique and $U$ is
-unique up to the choice of zero and unit.
+unique expect for the choice of zero and unit.
 
 What can this do for us? Well, suppose we define an agent's credence
 and utility function as the functions $\Cr$ and $U$ whose existence
@@ -849,7 +855,7 @@ the job, it seems, we only have to convince ourselves that these
 conditions (the ``axioms'') are genuine norms of rationality.
 
 In fact, doubts have been raised about every single one of the axioms.
-We will turn to some of these worries in session \ref{ch:risk}. In the
+We will turn to some of these worries in chapter \ref{ch:risk}. In the
 meantime, I want to flag a different kind of problem.
 
 \section{Preference from choice?}\label{sec:preferences-choices}
@@ -863,10 +869,17 @@ agent's utilities (or utilities and credences) can be measured by her
 choices -- or rather, by her choice dispositions.
 
 An agent's \emph{dispositions} reflect what she \emph{would} do if
-such-and-such circumstances were to arise. The definitions of von
-Neumann and Morgenstern and Savage assume that an agent's preferences
-are defined between arbitrary lotteries or conditional prospects, even
-if the agent in fact never faces a corresponding choice.
+such-and-such circumstances were to arise. We can't just look at the
+agent's actual choice behaviour, since most agents are not confronted
+with all the choices from which von Neumann and Morgenstern or Savage
+would derive their utility function.
+
+\begin{exercise}
+  Suppose we define `$A \succ B$' as `the agent has been confronted
+  with a choice between $A$ and $B$, and chose $A$'; similarly for
+  `$A\sim B$' and `$A \succsim B$'. Which of the von Neumann and
+  Morgenstern axioms then become highly implausible? $\star\star$
+\end{exercise}
 
 But now one of the problems for the betting interpretation, from
 section \ref{sec:problem-betting}, returns with a vengeance. If an
@@ -909,21 +922,35 @@ the hypothetical choice situation match your actual credences.
 
 Even in the rare case where an agent actually faces one of the
 relevant choices, we arguably can't infer that whichever option she
-chooses has greater expected utility for her. After all, people can
-have false beliefs about their options. If your real choice is between
-water and wine, but you think it is between petrol and wine (because
-you think the water is petrol), we can't infer from your choice of
-wine that you prefer wine to water. Savage and von Neumann and
-Morgenstern presuppose that agents are never mistaken about the
-relevant options, but can that really be assumed?
+chooses has greater expected utility for her. 
 
+For one thing, people can have false beliefs about their options. If
+your real choice is between water and wine, but you think it is
+between petrol and wine (because you think the water is petrol), we
+can't infer from your choice of wine that you prefer wine to
+water. Savage and von Neumann and Morgenstern presuppose that agents
+are never mistaken about their options, but can that really be
+assumed?
+
+\cmnt{%
+  Also, what if you're not aware of a certain option?%
+} %
+
+Moreover, arguably an agent's choice of an option $A$ over an
+alternative $B$ is always compatible with the assumption that she was
+indifferent between $A$ and $B$ and only chose $A$ because she had to
+choose one of $A$ and $B$. So choice behaviour can't tell apart $A
+\succ B$ and $A \sim B$.
+
+\cmnt{%
 \begin{exercise}
   Yet another problem: Suppose an agent picks $A$ in a choice between
   $A$ and $B$. Assuming the agent is aware that her options are indeed
   $A$ and $B$, why can we still not infer that she prefers $A$ to $B$?
-  That is, why can't we infer that $A \succ B$ rather than $B \succ A$
-  or $A \sim B$? $\star$
+  (Hint: Which of the following possibilities are compatible with the
+  agent's choice -- $A \succ B$, $B \succ A$, $A \sim B$?) $\star$
 \end{exercise}
+} %
 
 \cmnt{%
   All this shows that the preference relations that figure in the
@@ -954,10 +981,10 @@ hope that we are at least a few steps closer.
 \cmnt{%
 
 We will encounter even more problems for von Neumann and Morgenstern
-and Savage in session \ref{ch:risk}. You may already get a glimpse of
+and Savage in chapter \ref{ch:risk}. You may already get a glimpse of
 them if you consider how the model of utility from the previous
-session meshes with the accounts of von Neumann and Morgenstern and
-Savage. In the previous session, we saw how an agent's utility
+chapter meshes with the accounts of von Neumann and Morgenstern and
+Savage. In the previous chapter, we saw how an agent's utility
 function is determined by her credence function and her value function
 -- the utility function restricted to maximally specific
 possibilities. In a sense the individual worlds are the basic objects
@@ -997,7 +1024,7 @@ obtains. So there can't be a
 
 \cmnt{%
 
-  In the previous session, we saw how an agent's utility function is
+  In the previous chapter, we saw how an agent's utility function is
   determined by her credence function and her value function -- the
   utility function restricted to maximally specific possibilities. In
   a sense the individual worlds are the basic objects of desire. But

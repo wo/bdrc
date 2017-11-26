@@ -18,7 +18,7 @@
 
 } %
 
-In session \ref{ch:utility} we saw that the utility of a proposition
+In chapter \ref{ch:utility} we saw that the utility of a proposition
 for an agent generally depends on the agent's beliefs. That's because
 most propositions can be true in different ways, and some of these
 ways are more desirable than others. The set of possible worlds in
@@ -45,7 +45,7 @@ lottery and are unhappy are equally good, since they agree in the only
 two respects you care about. (Let's pretend for simplicity that being
 happy, like winning the lottery, is an all-or-nothing matter.)
 
-In general, if there are $n$ propositions $A_1,A_2,\ldots,A_n$ you
+In general, if there are $n$ propositions $A_1,A_2,\ldots,A_n$ that you
 ultimately care about -- if these are your only \emph{basic desires}
 -- then any conjunction that can be formed from these propositions and
 their negations (such as $A_1 \land \neg A_2 \land A_3 \land \ldots
@@ -82,7 +82,7 @@ second.
 Thus we can represent your desires with respect to flats by a value
 function that is defined not over possible flats but over possible
 combinations of attributes. We'll write these combinations as lists
-enclosed by angular brackets. For example, `$\t{40 \m^2,
+enclosed in angular brackets. For example, `$\t{40 \m^2,
   \text{central}, \text{£500}}$' stands for any flat with a size of 40
 $\m^2$, central location, and monthly costs of £500. If these are all
 the attributes you care about, then your value function will assign
@@ -137,8 +137,8 @@ all the attributes: that size, location, and price are equally
 important to you. To allow for different weights, you might think, we
 should include scaling factors $w_S, w_L, w_P$, like so:
 \[
-V(\t{40 \m^2, \text{central}, \text{£500}}) = w_s \cdot V_{S}(40 \m^2) +
-w_L \cdot V_{L}(\text{central}) + w_P \cdot V_{P}(\text{£500}).
+V(\t{40 \m^2, \text{central}, \text{£500}}) = w_s \times V_{S}(40 \m^2) +
+w_L \times V_{L}(\text{central}) + w_P \times V_{P}(\text{£500}).
 \]
 For what follows however it will prove convenient to fold the weights
 into the subvalues. Thus $V_S(200 \m^2)$ should reflect not only how
@@ -155,12 +155,11 @@ this feature is compared to price and location.
 \begin{exercise}\label{e:subv-not-u}
   Like utility functions, subvalue functions assign numbers to sets of
   possible worlds that may vary in desirability. But unlike utility
-  functions, subvalue functions are insensitive to belief. For
-  example, if you could find a large flat in a good location with
-  monthly costs of only £300, the low price should count in favour of
-  the flat. So $V_{P}(\text{£300})$ is relatively high. Nonetheless,
-  the utility you assign to renting a flat for £300 may well be
-  low. Can you explain why? $\star$
+  functions, subvalue functions are insensitive to belief. This
+  explains why, if you can afford to pay more than £300 in monthly
+  rent, then $V_{P}(\text{£300})$ is plausibly high, while the utility
+  you assign to renting a flat for £300 is low. Can you spell out the
+  explanation?  $\star$
 \end{exercise}
 
 \cmnt{%
@@ -191,12 +190,12 @@ this feature is compared to price and location.
   Additivity greatly simplifies an agent's psychology. Suppose an
   agent's basic desires pertain to 10 propositions
   $A_1,A_2,\ldots,A_{10}$. There are $2^{10} = 1024$ conjunctions of
-  these propositions or their negation (such as $A_1 \land A_2 \land
+  these propositions and their negations (such as $A_1 \land A_2 \land
   \neg A_3 \land \neg A_4 \land A_5 \land A_6 \land \neg A_7 \land A_8
-  \land A_9 \land \neg A_{10}$). To fully specify an agent's value
-  function, we may therefore need to write down 1024 numbers. By
-  contrast, how many numbers do we need to write down to specify the
-  agent's value function if the function is additive?  $\star \star$
+  \land A_9 \land \neg A_{10}$). To store the agent's value function
+  in a database, we would therefore need to store up to 1024
+  numbers. By contrast, how many numbers would we need to store if the
+  value function is additive?  $\star \star$
 \end{exercise}
 
 
@@ -204,10 +203,10 @@ this feature is compared to price and location.
 
 Under what conditions is value determined by adding subvalues? How are
 different subvalue functions related to one another? What do subvalue
-functions represent anyway? We can get some insight into
-these questions by following an idea from the previous session and
-look at how an agent's value function might be derived from her
-preferences.
+functions represent anyway? We can get some insight into these
+questions by following an idea from the previous chapter and
+investigating at how an agent's value function might be derived from
+her preferences.
 
 For the moment, we want to set aside the influence of the agent's
 beliefs, so we are not interested in an agent's preferences between
@@ -306,8 +305,8 @@ so your preferences aren't strongly separable.
   experience equal pleasure to states in which your degrees of
   pleasure are very different. For example, you prefer $\t{2,2,2,2}$
   to $\t{2,2,2,8}$, and you prefer $\t{8,8,8,8}$ to $\t{8,8,8,2}$.
-  Are your preferences weakly separable? If yes, are they strongly
-  separable? $\star$
+  Are your preferences weakly separable? Are they strongly separable?
+  $\star$
 \end{exercise}
 
 \cmnt{%
@@ -315,8 +314,8 @@ so your preferences aren't strongly separable.
 } %
 
 \begin{exercise}
-  Which of the following preferences violate weak/strong separability,
-  based on the information provided? $\star\star$
+  Which of the following preferences violate weak separability or
+  strong separability, based on the information provided? $\star\star$
 
   \medskip
   
@@ -371,30 +370,30 @@ separability. (Double-cancellation says that if $\t{A_1,B_1} \succsim
 \succsim \t{A_3,B_2}$. But let's just focus on cases with at least
 three relevant attributes.)
 
-One consequence of Debreu's theorem may also be worth noting: the
-value function $V$ that additively represents the agent's preferences
-is unique except for the choice of unit and zero. Additivity therefore
-opens the way to another potential response to the ordinalist
-challenge. The ordinalists claimed that utility assignments are
-arbitrary as long as they respect the agent's preference order. In
-response, one might argue that strongly separable preferences should
-be represented by an additive utility (or value) function. The
-utilities representing strongly separable preferences would then have
-an interval scale.
+One consequence of Debreu's theorem may also be worth noting: if the
+agent's preferences are defined over a sufficiently rich set of
+possibilities, then the value function $V$ that additively represents
+the preferences is unique except for the choice of unit and
+zero. Additivity therefore opens the way to another potential response
+to the ordinalist challenge. The ordinalists claimed that utility
+assignments are arbitrary as long as they respect the agent's
+preference order. In response, one might argue that strongly separable
+preferences should be represented by an additive utility (or value)
+function. The utilities representing strongly separable preferences
+would then have an interval scale.
 
 \begin{exercise}
   Show that whenever $V$ additively represents an agent's preferences,
-  then so does any function $V'$ that differs from $V$ only by the choice of
-  zero and unit. (The converse is more interesting, but a little
-  harder to prove.) Thus, assume that $V$ additively represents an
-  agent's preferences, so that for some subvalue functions
-  $V_1,V_2,\ldots,V_n$,
+  then so does any function $V'$ that differs from $V$ only by the
+  choice of zero and unit. That is, assume that $V$ additively
+  represents an agent's preferences, so that for some subvalue
+  functions $V_1,V_2,\ldots,V_n$,
   \[
   V(\t{A_1,A_2,\ldots,A_n}) = V_1(A_1) + V_2(A_2) + \ldots + V_n(A_n).
   \]
   Assume $V'$ differs from $V$ only by a different choice of unit and
   zero, which means that there are numbers $x>0$ and $y$ such that
-  $V'(\t{A_1,A_2,\ldots,A_n}) = x\cdot V(\t{A_1,A_2,\ldots,A_n}) +
+  $V'(\t{A_1,A_2,\ldots,A_n}) = x\times V(\t{A_1,A_2,\ldots,A_n}) +
   y$. From these assumptions, show that there are subvalue functions
   $V_1',V_2',\ldots,V_n'$ such that
   \[
@@ -406,21 +405,21 @@ an interval scale.
     preferences, then so does any function $V'$ that differs only by
     the choice of zero and unit. The converse can also be shown, but
     it's a little harder: if there are \emph{no} numbers $x>0$ and $y$
-    for which $V'(\t{A_1,A_2,\ldots,A_n}) = x\cdot
+    for which $V'(\t{A_1,A_2,\ldots,A_n}) = x\times
     V(\t{A_1,A_2,\ldots,A_n}) + y$, then $V'$ does \emph{not}
     additively represent the agent's preferences.) $\star \star \star$
-  }% 
+  }%
   \cmnt{%
-    Additive separability implies cardinality. For note that additive
-    separability is not preserved under arbitrary positive
-    transformations of $U$. For example, if $U(X_1,X_2,X_3) =
-    \log(X_1) + \log(X_2) + \log(X_3)$, and we transform $U$ by the
-    exponential function, then $U'(X_1,X_2,X_3) = e^{U(X_1,X_2,X_3)} =
-    e^{\log(X_1) + \log(X_2) + \log(X_3)} = e^{\log(X_1)}
-    e^{\log(X_2)} e^{\log(X_3)} = X_1 X_2 X_3$, and the product of
-    three numbers cannot be represented as a sum of some function of
-    the three numbers. By contrast, if we take any positive linear
-    transform of $U$, then additivity is preserved:
+    Additive separability with richness of state implies
+    cardinality. Note that additive separability is not preserved
+    under arbitrary positive transformations of $U$. For example, if
+    $U(X_1,X_2,X_3) = \log(X_1) + \log(X_2) + \log(X_3)$, and we
+    transform $U$ by the exponential function, then $U'(X_1,X_2,X_3) =
+    e^{U(X_1,X_2,X_3)} = e^{\log(X_1) + \log(X_2) + \log(X_3)} =
+    e^{\log(X_1)} e^{\log(X_2)} e^{\log(X_3)} = X_1 X_2 X_3$, and the
+    product of three numbers cannot be represented as a sum of some
+    function of the three numbers. By contrast, if we take any
+    positive linear transform of $U$, then additivity is preserved:
     \begin{align*}
       a U(X_1,X_2,X_3) +b &= a(u_1(X_1) + u_2(X_2) + u_3(X_3)) + b
       &= a u_1(X_1)+b + a u_2(X_2)+b + a u_3(X_3)b.
@@ -560,11 +559,10 @@ etc. his means that you
 
 \begin{exercise}
   Imagine you could freely choose 4 courses for next semester. You
-  assess each course by your interest in the topic, the amount of work
-  required, whether the course will teach you anything useful, and whether you
-  can expect to get good grades. On this basis, you
-  determine an overall ranking of the courses and sign up for the top
-  4. Why might this not be a good idea? $\star \star$
+  assess each course by a range of criteria (such as whether the
+  course will teach you anything useful). On this basis, you determine
+  an overall ranking of the courses and sign up for the top 4. Why
+  might this not be a good idea? $\star \star$
 \end{exercise}
 
 \cmnt{%
@@ -730,8 +728,8 @@ It is not hard to show that if preferences over time streams are
 separable and stationary (as well as transitive and complete), then
 they can be represented by a value function of the form
 \[
-V(\t{A_1,\ldots,A_n}) = V_1(A_1) + \delta \cdot V_1(A_2) +
-\delta^2 \cdot V_1(A_3) \ldots + \delta^{n-1} \cdot V_1(A_n),
+V(\t{A_1,\ldots,A_n}) = V_1(A_1) + \delta \times V_1(A_2) +
+\delta^2 \times V_1(A_3) \ldots + \delta^{n-1} \times V_1(A_n),
 \]
 where $\delta$ is some number. The interesting thing here is that the
 subvalue function for all times equals the subvalue function $V_1$ for
@@ -850,10 +848,10 @@ problematic.
 
 What shows up in the more problematic kind of time inconsistency
 concerning studying, food, or exercise, is that preferences have a
-range of different sources, as I emphasized in session
+range of different sources, as I emphasized in chapter
 \ref{ch:utility}. When we reflect on having fries or salad now, we are
 more influenced by spontaneous cravings than when we consider the same
-choice in the distant future.
+options in the distant future.
 
 If different sources or kinds of preference pertain to different
 aspects of the world, then the results we have reviewed can also clarify
@@ -890,7 +888,7 @@ problem, are the possible outcomes. If two acts lead to the same
 outcomes in all states, the agent will be indifferent between them. We
 can therefore model the agent's preferences between acts as 
 preferences between lists of outcomes, one for each state.
-For example, in the mushroom problem from session \ref{ch:overview},
+For example, in the mushroom problem from chapter \ref{ch:overview},
 eating the mushroom can be modelled as $\t{\text{satisfied},
   \text{dead}}$, and not eating as $\t{\text{hungry}, \text{hungry}}$.
 
@@ -935,7 +933,7 @@ $B$ leads either to a much better outcome or to a much worse one. The
 expected utilities are the same, but one might think an agent might
 rationally prefer the safe option $A$ just because it is safe --
 because the utility distribution $\t{10,10}$ is more even than
-$\t{\text{-10},30}$. Much more on that in the next session.
+$\t{\text{-10},30}$. Much more on that in the next chapter.
 
 \begin{exercise}
   Where in their axioms do Savage and von Neumann and Morgenstern
@@ -991,13 +989,13 @@ ranks the options differently than those who would be saved.
 
 \begin{exercise}[The Condorcet Paradox]
   A ``democratic'' strengthening of the Pareto condition might say
-  that whenever \emph{a majority} of people prefer $A$ to $B$, then $A$
-  is better than $B$. But consider the following scenario. There are
-  three relevant states: $A,B,C$, and three people. Person 1 prefers
-  $A$ to $B$ to $C$. Person 2 prefers $B$ to $C$ to $A$. Person 3
-  prefers $C$ to $A$ to $B$. If betterness is decided by majority
-  vote, what does the betterness relation between $A$, $B$, and $C$
-  look like? $\star$
+  that whenever \emph{a majority} of people prefer $A$ to $B$, then
+  $A$ is better than $B$. But consider the following scenario. There
+  are three relevant states: $A,B,C$, and three people. Person 1
+  prefers $A$ to $B$ to $C$. Person 2 prefers $B$ to $C$ to
+  $A$. Person 3 prefers $C$ to $A$ to $B$. If betterness is decided by
+  majority vote, is $A$ better than $B$? How about $A$ and $C$, and
+  $B$ and $C$?
 \end{exercise}
 
 In 1955, John Harsanyi proved a remarkable theorem that seemed to
@@ -1017,7 +1015,7 @@ for the choice of unit and zero.
 Second, Harsanyi assumes that the betterness order satisfies the
 Pareto condition (both for states and for lotteries).
 
-Finally, Harsanyi assumes that every person -- of which he assumes for
+Finally, Harsanyi assumes that each person -- of which he assumes for
 simplicity that there is a fixed number $n$ -- has personal
 preferences between the relevant states and lotteries, and that these
 preferences also satisfy the von Neumann and Morgenstern axioms. So
@@ -1085,7 +1083,7 @@ A lucid introduction to Harsanyi's argument for utilitarianism is
 \item John Broome: ``Utilitarianism and Expected Utility'' (1987)
 \end{itemize}
 
-Most of the remaining topics in this session covered elementary ideas
+Most of the remaining topics in this chapter covered elementary ideas
 from a subject known as ``multi-attribute utility theory''. I don't
 know any introduction to this subject that is reasonably short and
 good.

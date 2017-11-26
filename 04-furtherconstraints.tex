@@ -143,7 +143,7 @@ increase to 0.9.
   Assume $\Cro(\emph{Snow}) = 0.3$, $\Cro(\emph{Wind}) = 0.6$, and
   $\Cro(\emph{Snow} \land \emph{Wind}) = 0.2$. By the Principle of
   Conditionalization, what is $\Crn(\emph{Wind})$ if the agent finds
-  out that it is snowing?
+  out that it is snowing? $\star$
 \end{exercise}
 
 \cmnt{%
@@ -152,8 +152,9 @@ increase to 0.9.
 } %
 
 \begin{exercise}
-  Show that if $\Crn$ results from $\Cro$ by conditionalizing on
-  some information $E$ with $\Cro(E) > 0$, then $\Crn(E) = 1$.
+  Show from the definition of conditionalization that if $\Crn$
+  results from $\Cro$ by conditionalizing on some information $E$ with
+  $\Cro(E) > 0$, then $\Crn(E) = 1$. $\star$
 \end{exercise}
 
 \cmnt{%
@@ -171,10 +172,10 @@ increase to 0.9.
   Assume that $\Crn$ results from $\Cro$ by conditionalizing on some
   information $E$ with $\Cro(E) > 0$. Show that if $\Cro$ satisfies
   the Kolmogorov axioms, then $\Crn$ also satisfies the Kolmogorov
-  axioms. (Feel free to use any of the derived rules from session 2,
+  axioms. (Feel free to use any of the derived rules from chapter 2,
   including those derived in the exercises. Hint for Kolmogorov's
   axiom (ii): if $A$ is logically necessary, then $A\land E$ is
-  logically equivalent to $E$.)
+  logically equivalent to $E$.) $\star\star\star$
 \end{exercise}
 
 \cmnt{%
@@ -195,7 +196,7 @@ of Conditionalization then turns into the following (equivalent) norm,
 known as \textbf{Bayes' Rule}:
 %
 \[
-\Cr_{\text{new}}(A) = \frac{\Cr_{\text{old}}(E/A) \cdot \Cr_{\text{old}}(A)}{\Cr_{\text{old}}(E)}, \text{ provided $\Cr_\text{old}(E) > 0$}.
+\Cr_{\text{new}}(A) = \frac{\Cr_{\text{old}}(E/A) \times \Cr_{\text{old}}(A)}{\Cr_{\text{old}}(E)}, \text{ provided $\Cr_\text{old}(E) > 0$}.
 \]
 %
 The usefulness of this formulation comes from the fact that it is
@@ -226,10 +227,10 @@ result in 10\% of non-cancer cases, $\Cr_{\text{old}}(P/\neg C) =
 denominator by the Law of Total Probability:
 %
 \begin{align*}
-  \Cr_{\text{new}}(C) &= \frac{\Cr_{\text{old}}(P/C) \cdot
-  \Cr_{\text{old}}(C)}{\Cr_\text{old}(P/C) \cdot \Cr_\text{old}(C) +
-  \Cr_\text{old}(P/\neg C)\cdot \Cr_\text{old}(\neg C)}\\[3mm]
-  &= \frac{0.95 \cdot 0.02}{0.95 \cdot 0.02 + 0.1 \cdot 0.99} = \frac{0.019}{0.019 + 0.098} = 0.16.
+  \Cr_{\text{new}}(C) &= \frac{\Cr_{\text{old}}(P/C) \times
+  \Cr_{\text{old}}(C)}{\Cr_\text{old}(P/C) \times \Cr_\text{old}(C) +
+  \Cr_\text{old}(P/\neg C)\times \Cr_\text{old}(\neg C)}\\[3mm]
+  &= \frac{0.95 \times 0.02}{0.95 \times 0.02 + 0.1 \times 0.99} = \frac{0.019}{0.019 + 0.098} = 0.16.
 \end{align*}
 
 The answer is much lower than many people think -- including many trained 
@@ -253,7 +254,7 @@ assumed to arise from neglecting the low ``base rate'' of 2\%.
   Box $A$ contains two black balls. Box $B$ contains one black ball
   and one white ball. I choose a box at random and blindly draw a
   ball. The ball is black. How confident should you be that I chose
-  box $A$?
+  box $A$? $\star\star$
 \end{exercise}
 \cmnt{
   Move Prosecutor's Fallacy here.
@@ -277,7 +278,7 @@ assumed to arise from neglecting the low ``base rate'' of 2\%.
   price. After you've made your choice of a door and the host has
   opened another door, he offers you an opportunity to switch to the
   remaining door. If you want to maximise the chance of winning the
-  prize, should you switch? (Explain briefly.)
+  prize, should you switch? (Explain briefly.) $\star\star$
 \end{exercise}
 
 
@@ -337,7 +338,7 @@ any relevant evidence.
   agent's evidence $E$, nor is its negation $\neg H$, then
   conditionalizing on $E$ is compatible with \emph{any} credence in $H$:
   for any $x \in [0,1]$ there is some credence $\Cr_\text{old}$ such
-  that $\Cr_\text{old}(H/E) = x$.
+  that $\Cr_\text{old}(H/E) = x$. $\star\star$
 \end{exercise}
 
 What we see here is Hume's problem of induction. As Hume pointed out,
@@ -431,7 +432,7 @@ the following exercise illustrates.
   \item[(b)] What should your credence in $S$ be if you treat equally
     sized ranges of volume as equally likely?
   \end{enumerate*}
-  \vspace{-6mm}
+  $\star\star$
 \end{exercise}
 
 Another problem with the Principle of Indifference is that it actually
@@ -531,15 +532,15 @@ circumstances $C$, the probability of $O$ is 0.9; $H_2$ says it is
 outcome $O$. How does that affect your credence in $H_1$ and $H_2$? By
 Bayes' Rule,
 \[
-\Cr_{\text{new}}(H_1) = \frac{\Cr_{\text{old}}(O/H_1) \cdot
-  \Cr_{\text{old}}(H_1)}{\Cr_\text{old}(O/H_1)\cdot \Cr_\text{old}(H_1) +
-  \Cr_\text{old}(O/H_2)\cdot \Cr_\text{old}(H_2)}.
+\Cr_{\text{new}}(H_1) = \frac{\Cr_{\text{old}}(O/H_1) \times
+  \Cr_{\text{old}}(H_1)}{\Cr_\text{old}(O/H_1)\times \Cr_\text{old}(H_1) +
+  \Cr_\text{old}(O/H_2)\times \Cr_\text{old}(H_2)}.
 \]
 We know that $\Cr_\text{old}(H_1) = \Cr_\text{old}(H_2) =
 \nicefrac{1}{2}$. The Probability Coordination Principle tells us that
 $\Cr_{\text{old}}(O/H_1) = 0.9$ and $\Cr_{\text{old}}(O/H_2) = 0.3$. Thus 
 \[
-\Cr_{\text{new}}(H_1) = \frac{0.9 \cdot 0.5}{0.9 \cdot 0.5 + 0.3 \cdot 0.5} = 0.75.
+\Cr_{\text{new}}(H_1) = \frac{0.9 \times 0.5}{0.9 \times 0.5 + 0.3 \times 0.5} = 0.75.
 \]
 So your credence in $H_1$ should increase to \nicefrac{3}{4}, and your
 credence in $H_2$ should decrease to \nicefrac{1}{4}.
@@ -552,7 +553,7 @@ credence in $H_2$ should decrease to \nicefrac{1}{4}.
   each possibility. Then you toss the coin twice, and both times it
   comes up heads. What is your new credence concerning the coin's
   bias? (If a coin is biased 2:1 towards heads, then heads has an
-  objective probability of \nicefrac{2}{3}.)
+  objective probability of \nicefrac{2}{3}.) $\star\star$
 \end{exercise}
 
 
@@ -567,37 +568,36 @@ The following puzzle is due to Nick Bostrom.
 
 \begin{example}[God's Coin Toss]\label{ex:godscoin}
   At the beginning of time, God flips a fair coin. If the coin lands
-  heads, she creates two people in two rooms, one with red hair and
-  one with green hair. If the coin lands tails, God creates only one
-  room with a red-haired person in it. You wake up, and God informs
-  you of these facts. Then you look in the mirror and see that your
-  hair is red. How confident should you be that God's coin landed
-  heads?
+  heads, she creates two people in two rooms, one with blue eyes and
+  one with green eyes. If the coin lands tails, God creates only one
+  room with a blue-eyed person in it. You wake up, and God informs you
+  of these facts. Then you look in the mirror and see that your eyes
+  are blue. How confident should you be that God's coin landed heads?
 \end{example}
 
 At first, you might think the answer is \nicefrac{1}{2} on the grounds
 that the objective probability of heads is \nicefrac{1}{2} and your
-evidence of having red hair is equally compatible with heads and
-tails. But notice that if you had found your hair to be green, then
+evidence of having blue eyes is equally compatible with heads and
+tails. But notice that if you had found your eyes to be green, then
 you could have inferred with certainty that God's coin landed
 heads. And if some evidence $E$ increases the probability of a
 hypothesis $H$, then $\neg E$ must decrease the probability of $H$. So
-finding your hair to be red should decrease your credence in heads.
+finding your eyes to be blue should decrease your credence in heads.
 More specifically, if $\Cr_\text{old}(\emph{Heads}) =
-\nicefrac{1}{2}$, then by Bayes' Rule, $Cr_\text{new}(\emph{Heads}) =
+\nicefrac{1}{2}$, then by Bayes' Rule, $\Cr_\text{new}(\emph{Heads}) =
 \nicefrac{1}{3}$.
 
 \cmnt{%
 \begin{align*}
-  \Cr_\text{new}(\emph{Heads}) &= \frac{\Cr_\text{old}(\emph{Red}/\emph{Heads})\cdot \Cr_\text{old}(\emph{Heads})}{\Cr_\text{old}(\emph{Red}/\emph{Heads})\cdot \Cr_\text{old}(\emph{Heads}) + \Cr_\text{old}(\emph{Red}/\emph{Tails})\cdot \Cr_\text{old}(\emph{Tails})}\\
+  \Cr_\text{new}(\emph{Heads}) &= \frac{\Cr_\text{old}(\emph{Blue}/\emph{Heads})\cdot \Cr_\text{old}(\emph{Heads})}{\Cr_\text{old}(\emph{Blue}/\emph{Heads})\cdot \Cr_\text{old}(\emph{Heads}) + \Cr_\text{old}(\emph{Blue}/\emph{Tails})\cdot \Cr_\text{old}(\emph{Tails})}\\
    &= \frac{0.5 \cdot \Cr_\text{old}(\emph{Heads})}{0.5 \cdot \Cr_\text{old}(\emph{Heads}) + 1 \cdot \Cr_\text{old}(\emph{Tails})}
  \end{align*}
 }% 
 
 \begin{exercise}
   Show this. That is, assume $\Cr_\text{old}(\emph{Heads}) =
-  \nicefrac{1}{2}$, and use Bayes' Rule to derive that $Cr_\text{new}(\emph{Heads}) =
-  \nicefrac{1}{3}$.%
+  \nicefrac{1}{2}$, and use Bayes' Rule to derive that $\Cr_\text{new}(\emph{Heads}) =
+  \nicefrac{1}{3}$. $\star$%
   \cmnt{%
     And if $\Cr_\text{old}(\emph{Heads}) = \nicefrac{2}{3}$, then
     $Cr_\text{new}(\emph{Heads}) = \nicefrac{1}{2}$.  %
@@ -620,20 +620,20 @@ that you are one of them is twice the chance that you're the single
 person in a tails world. By that line of thought, the observation that
 you exist, which you make before looking in the mirror, should
 increase your credence in heads from \nicefrac{1}{2} to
-\nicefrac{2}{3}. Finding that your hair is red then reduces it back to
+\nicefrac{2}{3}. Finding that your eyes are blue then reduces it back to
 \nicefrac{1}{2}.
 
 \begin{exercise}
   Show that
   \begin{enumerate*}
   \item[(a)] if $\Cr(\emph{Heads}) = \nicefrac{1}{2}$ and
-    $\Cr(\emph{Exist}/\emph{Heads}) = 2 \cdot
+    $\Cr(\emph{Exist}/\emph{Heads}) = 2 \times
     \Cr(\emph{Exist}/\emph{Tails})$, then by Bayes' Theorem,
     $\Cr(\emph{Heads}/\emph{Exist}) = \nicefrac{2}{3}$;
   \item[(b)] if $\Cr_\text{old}(\emph{Heads}) = \nicefrac{2}{3}$, then
     $\Cr_\text{new}(\emph{Heads}) = \nicefrac{1}{2}$.
   \end{enumerate*}
-  \vspace{-4mm}
+  $\star\star$
 \end{exercise}
 
 If you are sceptical about this argument for $\Crn(\emph{Heads}) =
@@ -646,7 +646,7 @@ Anyway, let's give a name to the problematic assumption:
 \begin{genericthm}{Dubious Principle}
   If $H_1$ is the hypothesis that there are $n$ people in total, and
   $H_2$ says that there are $k$ people, then $\Cr_0(\emph{Exist} /
-  H_1) = \Cr_0(\emph{Exist}/H_2) \cdot \nicefrac{n}{k}$, where $Cr_0$
+  H_1) = \Cr_0(\emph{Exist}/H_2) \times \nicefrac{n}{k}$, where $\Cr_0$
   is the credence function of a rational agent without any evidence,
   and $\emph{Exist}$ is the proposition that the agent exists.
 \end{genericthm}
@@ -671,8 +671,8 @@ first 100 billion is arguably \nicefrac{1}{1000} (by the Probability
 Coordination Principle); on the supposition that the total number of
 people is 100 billion, the probability is 1. So, by Bayes' Theorem,
 \begin{align*}
-  \Cr(\emph{Doom}/\emph{Early}) &= \frac{\Cr(\emph{Early}/\emph{Doom}) \cdot \Cr(\emph{Doom})}{\Cr(\emph{Early}/\emph{Doom}) \cdot \Cr(\emph{Doom}) + \Cr(\emph{Early}/\neg\emph{Doom}) \cdot \Cr(\neg \emph{Doom})}\\[3mm]
-    &= \frac{1 \cdot \Cr(\emph{Doom})}{1 \cdot \Cr(\emph{Doom}) + 0.001 \cdot \Cr(\neg\emph{Doom})}.
+  \Cr(\emph{Doom}/\emph{Early}) &= \frac{\Cr(\emph{Early}/\emph{Doom}) \times \Cr(\emph{Doom})}{\Cr(\emph{Early}/\emph{Doom}) \times \Cr(\emph{Doom}) + \Cr(\emph{Early}/\neg\emph{Doom}) \times \Cr(\neg \emph{Doom})}\\[3mm]
+    &= \frac{1 \times \Cr(\emph{Doom})}{1 \times \Cr(\emph{Doom}) + 0.001 \times \Cr(\neg\emph{Doom})}.
 \end{align*}
 
 \smallskip 
@@ -691,7 +691,7 @@ confident that we are among the last people to have lived.
 
 You may not be surprised to hear that. After all, we face a long list
 of existential threats -- nuclear war, global warming,
-pandemics, hostile A.I., and so on. What's surprising is that none of
+pandemics, hostile AI, and so on. What's surprising is that none of
 these threats are taken into account in the doomsday argument. The
 conclusion is reached solely on the basis of population statistics.
 

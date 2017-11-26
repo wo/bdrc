@@ -1,12 +1,19 @@
 \chapter{Risk}\label{ch:risk}
 
+\cmnt{%
+
+I need to clarify that $U$ is a function of outcomes.
+
+} %
+
+
 \section{Why maximize expected utility?}\label{sec:why-meu}
 
 So far, we have largely taken for granted that rational agents
 maximize expected utility. It is time to put this assumption under
 scrutiny.
 
-In session \ref{ch:overview}, I motivated the MEU Principle by arguing
+In chapter \ref{ch:overview}, I motivated the MEU Principle by arguing
 that an adequate decision rule should consider all the outcomes an act
 might bring about -- not just the best, the worst, or the most likely
 -- and that it should weigh outcomes in proportion to their
@@ -15,7 +22,7 @@ greater weight. These are fairly natural assumptions, and they rule
 out many alternatives to the MEU Principle.
 
 We encountered another, quite different, argument for the MEU
-Principle in session \ref{ch:preference}. The argument began with the
+Principle in chapter \ref{ch:preference}. The argument began with the
 assumption that utility can be measured by the methods described by
 von Neumann and Morgenstern or Savage. The MEU Principle can then be
 shown to reduce to certain ``axioms'' concerning the agent's
@@ -23,7 +30,7 @@ preferences. To conclude the argument, we would have to convince
 ourselves that these axioms are genuine norms of rationality. We will
 look at some apparent counterexamples below.
 
-Yet another argument for the MEU Principle was hiding in session
+Yet another argument for the MEU Principle was hiding in chapter
 \ref{ch:utility}.  There we saw that the desirability (or utility) of
 a proposition can plausibly be understood as a probability-weighted
 average of the desirability of its parts, as described by Jeffrey's
@@ -43,7 +50,7 @@ another. Choosing $A$ then effectively means choosing to bring about
 $O_1 \lor O_2$; choosing $B$ means choosing to bring about $O_3
 \lor O_4$. By Jeffrey's axiom,
 \[
-U(O_1 \lor O_2) = U(O_1)\cdot \Cr(O_1/O_1 \lor O_2) + U(O_2)\cdot \Cr(O_2/O_1 \lor O_2).
+U(O_1 \lor O_2) = U(O_1)\times \Cr(O_1/O_1 \lor O_2) + U(O_2)\times \Cr(O_2/O_1 \lor O_2).
 \]
 What is $\Cr(O_1/O_1 \lor O_2)$? It is, of course, the agent's
 credence that $O_1$ will come about on the supposition that $O_1$ or
@@ -60,7 +67,7 @@ unconditional credence in $S_1$. So $\Cr(O_1/O_1 \lor O_2) =
 \Cr(S_2)$. Plugging these into the above instance of Jeffrey's axiom,
 we get
 \[
-U(O_1 \lor O_2) = U(O_1)\cdot \Cr(S_1) + U(O_2)\cdot\Cr(S_2).
+U(O_1 \lor O_2) = U(O_1)\times \Cr(S_1) + U(O_2)\times\Cr(S_2).
 \]
 
 This says that the desirability of the proposition $O_1 \lor O_2$,
@@ -68,7 +75,7 @@ which the agent would bring about by choosing act $A$, equals the
 expected utility of $A$! Assuming that an agent should prefer to bring
 about more desirable propositions rather than less desirable
 propositions, it follows that the agent should maximize expected
-utility.  (We will reconsider the present argument in session
+utility.  (We will reconsider the present argument in chapter
 \ref{ch:cdt}.)
 
 So we have seen three arguments in favour of the MEU Principle. I will
@@ -182,8 +189,8 @@ utility even if the probability of all others voting is as low as
 
 \section{The long run}
 
-The last argument for the MEU Principle that I want to mention turns
-on a consequence of the probability axioms we haven't used until now:
+The last argument for the MEU Principle that I want to mention relates
+to a consequence of the probability axioms we haven't used until now:
 the \textbf{law of large numbers}.
 
 Suppose you repeatedly toss a fair coin, keeping track of the total
@@ -225,8 +232,7 @@ as John Maynard Keynes quipped. The practical relevance of the present
 argument therefore derives not just from the law of large numbers, but
 from the fact that probabilities can be expected to converge to
 proportions \emph{reasonably fast}: it doesn't take trillions of
-tosses until the percentage of heads is almost certain to lie between
-40\% and 60\%.
+tosses until the percentage of heads is almost certain to exceed 40\%
 
 Even so, the argument as it stands only supports the MEU Principle in
 rather unusual cases where an agent faces the same decision problem
@@ -259,7 +265,7 @@ professional gamblers or investors for long.) To see why, imagine you
 are offered to invest in a startup company that tries to find a cure
 for snoring. If they succeed, your investment will pay back
 tenfold. If they don't, the investment is lost. The chance of success
-is 20\%, so the expected return is $0.2 \cdot 1000\% + 0.8 \cdot 0\% =
+is 20\%, so the expected return is $0.2 \times 1000\% + 0.8 \times 0\% =
 200\%$. Even if this exceeds the expected return of all other
 investment possibilities, you would be mad to put all your money into
 that company. If you repeatedly faced that kind of decision and went
@@ -279,13 +285,13 @@ expected utility?
 \begin{exercise}
   Each year, an investor is given £100,000, which she can invest
   either in a risky startup of the kind described (a different one
-  each year), or put in a bank account at 0\% interest. If the
-  investor always chooses the second option, she will have £1,000,000
-  after ten years.
+  each year), or put in a bank account at 0\% interest. If she always
+  chooses the second option, she will have £1,000,000 after ten years.
   \begin{enumerate}
   \item[(a)] What are the chances that she would do at least as well
-    (after ten years) if she always chooses the first option? (Hint:
-    Compute the chance that she would do worse.)
+    (after ten years) if she always chooses the first option, without
+    reinvesting previous profits? (Hint: Compute the chance that she
+    would do worse.)
   \item[(b)] How does the answer to (a) mesh with the claim (in the
     text) that an investor who always goes with the risky option is
     virtually guaranteed to go bankrupt before long?
@@ -306,7 +312,7 @@ assume that, for this agent, the difference in utility between £1000
 and £100 is less than five times the difference in utility between
 £100 and £0. For example, if $U(\text{£0}) = 0$, $U(\text{£100}) = 1$,
 and $U(\text{£1000}) = 4$, then the lottery has expected utility $0.8
-\cdot 0 + 0.2 \cdot 4 = 0.8$, which is less than the guaranteed
+\times 0 + 0.2 \times 4 = 0.8$, which is less than the guaranteed
 utility of the £100.
 
 \cmnt{%
@@ -321,7 +327,7 @@ economics is to assume that utility is a ``concave function of
 money'', meaning that the amount of utility an extra £100 would add to
 an outcome of £1000 is less than the amount of utility the same £100
 would add to an lesser outcome of, say, £100. We have already
-encountered this phenomenon in session \ref{ch:utility}, where we saw
+encountered this phenomenon in chapter \ref{ch:utility}, where we saw
 that for most people, money has declining marginal utility: the more
 you have, the less utility you get from an extra £100. According to
 standard economics, risk aversion is the flip side of declining
@@ -410,9 +416,9 @@ parallel reasoning with $C$ and $D$, it follows that
 No matter how you rank $L_1$ and $L_2$, you can't have $B \succ A$ and $C \succ D$.
 
 \begin{exercise}
-  Does the preference of $A$ to $B$ and $C$ to $D$ violate strong
+  Does the preference of $B$ to $A$ and $C$ to $D$ violate strong
   separability, weak separability, or neither? (Explain briefly.)
-  $\star$
+  $\star\star$
 \end{exercise}
 
 \cmnt{%
@@ -468,7 +474,7 @@ Diamond.
     \end{tabular}
   \end{center}
   
-  The mother's preferences are $C \succ A$, $C \succ B$, $A \sim B$.
+  The mother's preferences are $C \succ A$, $C \succ B$, $A \succ B$.
 \end{example}
 
 Like in Allais's Paradox, there is no way of assigning utilities to
@@ -479,9 +485,9 @@ options. It would be absurd to claim that rational agents cannot
 value fairness.
 
 \begin{exercise}
-  Which of the von Neumann and Morgenstern axioms do the preferences
-  in example \ref{ex:diamond} appear to violate? (Explain briefly.)
-  $\star \star \star$
+  Which of the von Neumann and Morgenstern axioms do the mother's
+  preferences in example \ref{ex:diamond} appear to violate? (Explain
+  briefly.)  $\star \star \star$
 \end{exercise}
 
 \cmnt{%
@@ -528,7 +534,7 @@ having taken $A$, but since $A$ was just as unsafe as $B$, you
 probably wouldn't think you made a terrible mistake. So the outcome in
 that cell should say something like `£0 and a little
 frustration/regret'. With these changes, the preference for $B$ over
-$A$ and $C$ over $D$ is easily reconciled with the MEU Principle.
+$A$, and for $C$ over $D$ is easily reconciled with the MEU Principle.
 
 \begin{exercise}
   Assign utilities to the outcomes in the two matrices, with the
@@ -574,12 +580,6 @@ Let's say (following Lara Buchak) that outcomes are
 features that are a genuine causal consequence of the relevant act. If
 outcomes are not individuated locally, they are \textbf{individuated
   globally}. 
-
-Globally individuated outcomes typically include features of the
-choice that are constant across states. For example, that you chose a
-risky option over a safe alternative is true not just in the bottom
-right cell of the second matrix, but in all cells on the bottom
-row.
 
 \begin{exercise}\label{e:diamond}
   Redescribe the outcomes in example \ref{ex:diamond} so that the
@@ -742,7 +742,7 @@ This second shift made it possible to regard expected utility theory
 as a general model of practical rationality, without assuming that
 rational agents only care about their personal pleasure or welfare.
 
-But as we saw in section \ref{ch:utility}, the second shift never
+But as we saw in chapter \ref{ch:utility}, the second shift never
 fully caught on. Many authors still assume that utility is a measure
 of pleasure or welfare or wealth. On that conception, if one act leads
 to a particular amount of pleasure or welfare or wealth in a given
@@ -917,7 +917,7 @@ Some good (and rare) discussion of the localism issue can be found in
 
 \begin{itemize}
 \item Jamie Dreier: ``Rational preference: Decision theory as a theory of practical rationality'' (1996), 
-\item Lara Buchak: ``Redescription'', chapter 5 of her \emph{Risk and Rationality} (2013),
+\item Lara Buchak: ``Redescription'', chapter 4 of her \emph{Risk and Rationality} (2013),
 \item Paul Weirich: ``Expected Utility and Risk'' (1986).
 \end{itemize}
 %

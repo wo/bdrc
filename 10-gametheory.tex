@@ -52,7 +52,7 @@ each player will do.
 
 Here, for example, is how game theorists would write the game matrix
 for the original Prisoner Dilemma, assuming you and your partner only
-care about your own prison term:
+care about your own prison terms:
 \begin{center}
   \begin{tabular}{|r|c|c|}\hline
     \gr & \gr Confess & \gr Silent\\\hline
@@ -216,9 +216,9 @@ that Row is going to play $R_2$, she can do no better than play $C_2$.
 
 A combination of options that is ``stable'' in this way is called a
 \textbf{Nash equilibrium} (after the economist John Nash). In general,
-a Nash equilibrium in a two-player game is a pair of acts such that
-neither player could get greater utility by deviating from her part
-of the equilibrium given that the other player sticks to her part.
+a Nash equilibrium is a combination of acts, one for each player, such
+that no player could get greater utility by deviating from her part of
+the equilibrium given that the other players stick to their part.
 
 Here is an algorithm for finding Nash equilibria. Start from the
 perspective of the row player. For each act of the column player,
@@ -483,14 +483,14 @@ and on forever?  \cmnt{%
   equal at 2x = 3-3x => 5x = 3 => x = 3/5.%
 } %
 
-Our assumptions (1)--(3) here give rise to a quite general
-epistemological puzzle. If you have no further relevant evidence, how
-confident should you be that Bob goes to B? You might think your
-degree of belief should be \nicefrac{1}{2}, by the Principle of
-Indifference. But then you should assume that Bob's degree of belief
-in \emph{you} going to B is also \nicefrac{1}{2}. And that would imply
-that Bob goes to A. So it can't be right that you should give equal
-credence to the two possibilities.
+Our assumptions (1)--(3) here give rise to a general epistemological
+puzzle. If you have no further relevant evidence, how confident should
+you be that Bob goes to B? You might think your degree of belief
+should be \nicefrac{1}{2}, by the Principle of Indifference. But then
+you should assume that Bob's degree of belief in \emph{you} going to B
+is also \nicefrac{1}{2}. And that would imply that Bob goes to A. So
+it can't be right that you should give equal credence to the two
+possibilities.
 
 \cmnt{%
   Skyrms suggests to stare the infinite iterations calmly in the eye
@@ -605,7 +605,7 @@ strike even if they had nothing to gain any more.
 
 So far we've looked at games in which each player makes just one move
 and neither player knows about the other's move ahead of their
-choice. Game theory also studies games with these assumptions are
+choice. Game theory also studies games in which these assumptions are
 relaxed. Let's have a quick look at games with several moves in which
 players always know what was played before.
 
@@ -792,17 +792,12 @@ as it is likely to get you at least to round 3!
 \end{exercise}
 
 \begin{exercise}
-  Suppose you repeatedly face a Prisoner Dilemma with the following
-  utilities.
-  \begin{center}
-    \begin{tabular}{|r|c|c|}\hline
-      \gr & \gr Confess & \gr Silent\\\hline
-      \gr Confess & -5,-5 & 0,-8  \\\hline
-      \gr Silent & -8,0 & -1,-1 \\\hline
-    \end{tabular}
-  \end{center}
-  What should you do if you don't know how often the game will be played?
-  $\star\star$
+  Suppose you repeatedly face a Prisoner Dilemma against the same
+  opponent, for an unknown number of rounds. You expect that your
+  opponent will remain silent in the first round and from then on
+  imitate whatever you will do. Given that, it seems reasonable that
+  you should remain silent. Does that mean you should choose an act
+  that doesn't maximize expected utility? $\star\star$
 \end{exercise}
 
 
@@ -840,11 +835,11 @@ evolution. Consider the following game.
 
 In the evolutionary interpretation, the utilities represent the
 \emph{relative fitness} that results from a combination of choices,
-measured by number of surviving offspring. Let's assume that each
-strategy is played by a certain fraction of individuals in a
-population. Individuals who achieve an outcome with greater utility
-will, by definition, have more offspring, so their proportion in the
-population will increase. 
+measured in terms of average number of surviving offspring. Let's
+assume that each strategy is played by a certain fraction of
+individuals in a population. Individuals who achieve an outcome with
+greater utility will, by definition, have more offspring on average,
+so their proportion in the population will increase.
 
 Suppose initially \nicefrac{1}{4} of the individuals in the population
 goes for stags and \nicefrac{3}{4} for rabbits. Assuming that
@@ -852,7 +847,7 @@ encounters between individuals are completely random, this means that
 any given individual has a \nicefrac{1}{4} chance of playing with
 someone hunting stag, and a \nicefrac{3}{4} chance of playing with
 someone hunting rabbit. The average utility of hunting stag is
-therefore $\nicefrac{1}{4} \cdot 5 + \nicefrac{3}{4} \cdot 0 = 1.25$;
+therefore $\nicefrac{1}{4} \times 5 + \nicefrac{3}{4} \times 0 = 1.25$;
 for hunting rabbit the utility is of course 1. Individuals going for
 stag therefore have greater average fitness. Their fraction in the
 population increases. As a consequence, it becomes even more
@@ -983,7 +978,8 @@ their own fitness for the sake of others. Evolutionary game theory
 explains how this kind of altruism could have evolved.
 
 \begin{exercise}
-  Why can't we expect cooperative behaviour to take over completely?
+  Why can't we expect cooperative behaviour to take over completely in
+  the scenario where cooperation spreads through correlated play?
   $\star$
  \end{exercise}
 
@@ -994,15 +990,15 @@ explains how this kind of altruism could have evolved.
   \begin{center}
     \begin{tabular}{|r|c|c|}\hline
       \gr & \gr A & \gr B \\\hline
-      \gr B & 5,5 & 0,0 \\\hline
-      \gr B & 0,0 & 0,0 \\\hline
+      \gr A & 5,5 & 1,1 \\\hline
+      \gr B & 1,1 & 1,1 \\\hline
     \end{tabular}
   \end{center}
 \end{exercise}
 
 \section{Further reading}
 
-The Stanford Encyclopedia Entry on game theory provides a fairly comprehensive overview:
+The Stanford Encyclopedia entry on game theory provides a fairly comprehensive overview:
 
 \begin{itemize}
 \item Don Ross: \href{https://plato.stanford.edu/entries/game-theory/}{``Game Theory''} (2014)

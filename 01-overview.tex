@@ -90,7 +90,7 @@ decision problems.
   that around 1 in 1 million children dies from the vaccination. The
   infant gets the vaccination and dies. Was the doctor's
   recommendation wrong? Or was it wrong in one sense and right in
-  another? If so, can you explain these senses?
+  another? If so, can you explain these senses? $\star$
 \end{exercise}
 
 
@@ -216,7 +216,7 @@ does.
 
 \begin{exercise}\label{e:rock}
   Draw the decision matrix for the game \emph{Rock, Paper, Scissors},
-  assuming all you care about is whether you win.
+  assuming all you care about is whether you win. $\star$
 \end{exercise}
 
 \cmnt{%
@@ -325,7 +325,7 @@ look out for is \textbf{Bayesian}: if a theory or framework is called
 Bayesian, this usually means it involves degrees of belief. The name
 refers to the Thomas Bayes (1701--1761), who made an important
 contribution to the movement. We will look at some applications of
-``Bayesianism'' in later sessions.
+``Bayesianism'' in later chapters.
 
 Much of the power of Bayesian models derives from the assumption that
 rational degrees of belief satisfy the mathematical conditions on a
@@ -356,7 +356,7 @@ with that.
 
 \begin{exercise}
   Add utilities and (reasonable) credences to your decision matrix for
-  \emph{Rock, Paper, Scissors}.
+  \emph{Rock, Paper, Scissors}. $\star$
 \end{exercise}
 
 \section{Solving decision problems}\label{sec:solving}
@@ -438,7 +438,7 @@ by the agent's credence.
 Let's first recall how simple averages are computed. If we have $n$
 numbers $x_1, x_2, \ldots, x_n$, then the average of the numbers is
 \[
-\frac{x_1 + x_2 + \ldots + x_n}{n} = \tfrac{1}{n} \cdot x_1 + \tfrac{1}{n} \cdot x_2 + \ldots + \tfrac{1}{n} \cdot x_n.
+\frac{x_1 + x_2 + \ldots + x_n}{n} = \tfrac{1}{n}\times x_1 + \tfrac{1}{n}\times x_2 + \ldots + \tfrac{1}{n}\times x_n.
 \]
 Here each number is given the same weight, $\nicefrac{1}{n}$. In a
 weighted average, the weights can be different for different numbers.
@@ -449,31 +449,22 @@ possible outcome (+1 and -100) by your credence in the corresponding
 state, and then add up these products. The result is called the
 \textbf{expected utility} of eating the mushroom.
 \[
-EU(\text{Eat}) = 0.8 \cdot (+1) + 0.2 \cdot (-100) = -19.2.
+EU(\text{Eat}) = 0.8 \times (+1) + 0.2 \times (-100) = -19.2.
 \]
 
-In general, if there are $n$ states $S_1,\ldots, S_n$, your credence
-in these states is $c_1,\ldots,c_n$ respectively, and the outcome of
-act $A$ in these states has utility $u_1,\ldots,u_n$ respectively,
-then the expected utility of $A$ is defined as
+In general, suppose an act $A$ leads to outcomes $O_1,\ldots,O_n$
+respectively in states $S_1,\ldots, S_n$. Let
+$\Cr(S_1),\ldots,\Cr(S_n)$ be your credence in the different states,
+and $U(O_1),\ldots,U(O_n)$ the utility you assign to the
+outcomes. Then the expected utility of $A$ is defined as
 \[
-EU(A) = c_1 \cdot u_1 + \ldots + c_n \cdot u_n.
+EU(A) = \Cr(S_1) \times U(O_1) + \ldots + \Cr(S_n) \times U(O_n).
 \]
 You'll often see this abbreviated using the `sum' symbol $\sum$:
 \[
-EU(A) = \sum_{i=1}^n c_i \cdot u_i.
+EU(A) = \sum_{i=1}^n \Cr(S_i) \times U(O_i).
 \]
 It means the same thing.
-
-\cmnt{%
-  Better use format from ch.9: So here is the general rule for
-  determining expected utilities in the new way. If there are $n$
-  states $S_1,\ldots, S_n$, and a given act $A$ leads to outcomes
-  $O_1,\ldots,O_n$ respectively in these states, then
-  \[
-  EU_e(A) = \Cr(S_1/A) \cdot U(O_1) + \ldots + \Cr(S_n/A) \cdot U(O_n).
-  \]
-} %
 
 \cmnt{%
   xxx Mention more general notion: EU is an instance of a useful
@@ -520,24 +511,24 @@ option with greatest expected utility.
 \begin{exercise}
   Assign utilities to the outcomes in the Prisoner Dilemma, assign
   credences to the states, and compute the expected utility of the two
-  acts.
+  acts. $\star$
 \end{exercise}
 
 \begin{exercise}
   Assign utilities to the outcomes in the Miner Problem, assign
   credences to the states, and compute the expected utility of the
-  three acts.
+  three acts. $\star$
 \end{exercise}
 
 \begin{exercise}
   Explain why the following decision rule is not generally reasonable:
   \emph{Identity the most likely state; then choose an act which
-    maximizes utility in that state.}
+    maximizes utility in that state.} $\star\star$
 \end{exercise}
 
 \begin{exercise}
   Show that if there is a dominant act, then it maximizes
-  expected utility.
+  expected utility. $\star\star\star$
 \end{exercise}
 
 \cmnt{%
@@ -570,7 +561,7 @@ option with greatest expected utility.
   student chooses. 
 
   Can you draw an adequate decision matrix for the student's decision
-  problem?
+  problem? $\star\star\star$
 \end{exercise}
 
 \begin{exercise}[Pascal's Wager]\label{e:pascal}
@@ -586,12 +577,12 @@ option with greatest expected utility.
   
   Draw the matrix for the decision problem as Pascal conceives it and
   verify that a pious life has greater expected utility than an
-  impious life.
+  impious life. $\star\star$
 \end{exercise}
 
 \begin{exercise}
   Has Pascal identified the acts, states, and outcomes correctly? If
-  not, what did he get wrong?
+  not, what did he get wrong? $\star\star$
 \end{exercise}
 
 \cmnt{%
@@ -801,7 +792,7 @@ outcomes can be found in
 \end{itemize}
 
 We will have a lot more to say about credence, utility, and the MEU
-Principle in later sessions. You may find it useful to read up on
+Principle in later chapters. You may find it useful to read up on
 modelling in general and on the functionalist conception of beliefs
 and desires. Some recommendations:
 

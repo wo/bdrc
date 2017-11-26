@@ -45,7 +45,7 @@ the models more realistic.
 Many examples of people supposedly failing to maximize expected
 utility are not really counterexamples to the descriptive adequacy of
 our models, since the examples rely on implausible restrictions on the agent's
-utility function. As we saw in session \ref{ch:risk}, our models can easily
+utility function. As we saw in chapter \ref{ch:risk}, our models can easily
 accommodate agents who care about risk or fairness or feelings of
 frustration, which explains the common preferences in Allais's
 paradox. We can similarly accommodate altruistic behaviour (section
@@ -333,7 +333,7 @@ involves having chosen a lottery.
   The explanation of the Ellsberg preferences that I just outlined
   makes the preferences conform to the MEU Principle by redescribing
   the outcomes. Is the redescription global or local in the sense of
-  session \ref{ch:risk}? $\star$
+  chapter \ref{ch:risk}? $\star$
 \end{exercise}
 
 But why would agents prefer lotteries? Perhaps because such a
@@ -404,7 +404,7 @@ records in response to sensory information, or computing expected
 utilities on their basis, will take a very long time, and use a large
 amount of energy.
 
-In session \ref{ch:separability}, we've encountered two tricks for
+In chapter \ref{ch:separability}, we've encountered two tricks for
 simplifying the representation of an agent's basic value function --
 the utility function for individual worlds. First, if the agent cares
 about some features of the world and not about others, it is enough to
@@ -415,7 +415,7 @@ same value as the set itself (section
 about the possible combinations of 20 among the 50 propositions
 $A_1,\ldots,A_n$, we only need to store $2^{20}$ values. Second, and
 more dramatically, if the agent's preferences are separable, we can
-cut down the number of utility records from $2^{20}$ to $2 \cdot 20 =
+cut down the number of utility records from $2^{20}$ to $2 \times 20 =
 40$, because the value of any combination of the 20 propositions and
 their negations can be determined by adding up the relevant subvalues
 (section \ref{sec:additivity}).
@@ -435,7 +435,7 @@ this trick.
 
 An analogue of separability, for credences, is probabilistic
 independence. If $A$ and $B$ are probabilistically independent, then
-$\Cr(A\land B) = \Cr(A) \cdot \Cr(B)$. If all the 50 propositions
+$\Cr(A\land B) = \Cr(A) \times \Cr(B)$. If all the 50 propositions
 $A_1,\ldots,A_{50}$ are mutually independent,
 then specifying their individual probability is enough to specify the
 probability of all possible worlds and therefore of all logical
@@ -467,15 +467,16 @@ In that case, we say that \emph{People} and \emph{Open} are
 independent \emph{conditional on} \emph{Warm}.
 
 Now consider the possible combinations of \emph{Warm}, \emph{People},
-\emph{Open} and their negations. By the probability calculus
+\emph{Open} and their negations. By the probability calculus (compare
+exercise \ref{e:chain-rule}),
 \[
 \Cr(\emph{Warm} \land \emph{People} \land \emph{Open}) = 
-\Cr(\emph{Warm}) \cdot \Cr(\emph{Open}/\emph{Warm}) \cdot \Cr(\emph{People}/\emph{Open} \land \emph{Warm}).
+\Cr(\emph{Warm}) \times \Cr(\emph{Open}/\emph{Warm}) \times \Cr(\emph{People}/\emph{Open} \land \emph{Warm}).
 \]
 By the above assumption of conditional independence, this simplifies to
 \[
 \Cr(\emph{Warm} \land \emph{People} \land \emph{Open}) = 
-\Cr(\emph{Warm}) \cdot \Cr(\emph{Open}/\emph{Warm}) \cdot \Cr(\emph{People}/\emph{Warm}).
+\Cr(\emph{Warm}) \times \Cr(\emph{Open}/\emph{Warm}) \times \Cr(\emph{People}/\emph{Warm}).
 \]
 In general, with the assumption of conditional independence, we can
 fix the probability of all combinations of \emph{Warm}, \emph{People},
@@ -510,7 +511,7 @@ so that $\Cr(S_3/S_1 \land S_2) = \Cr(S_3/S_2)$. This is known as the
 \textbf{Markov assumption}. It reduces the number of records we'd to
 store from $100^{10}$ to $990,100$.%
 \cmnt{%
-  $100 + (100\cdot 100)\cdot 99 \approx 1000000$ %
+  $100 + (100\times 100)\times 99 \approx 1000000$ %
 } %
 \cmnt{%
   It also simplifies belief updates through
@@ -1031,7 +1032,7 @@ you £-1 if $H$ and £1.40 if $\neg H$. Assuming for simplicity that
 your utility is precise and proportional to the monetary payoff, both
 bets have an imprecise expected utility of between -0.52 and
 0.92. (For example, the expected utility of the first bet ranges from
-$0.2 \cdot -1 + 0.8 \cdot 1.40 = 0.92$ to $0.8 \cdot -1 + 0.2 \cdot
+$0.2 \times -1 + 0.8 \times 1.40 = 0.92$ to $0.8 \times -1 + 0.2 \times
 1.40 = -0.52$.) Your undecided state of mind therefore leaves open
 whether accepting either bet is a good idea. On the permissivist
 approach, it is permissible for you to refuse both bets. But
@@ -1070,7 +1071,7 @@ on a sure gain.
   balls being drawn ($E$) yields
   \begin{align*}
     \Cr^i_{t+1}(H_1) &= \frac{\Cr^i_{t}(E/H_1) \Cr^i_{t}(H_1)}{Cr^i_{t}(E)}\\
-    &\approx \frac{0.1^{10} \cdot 0.9999999999}{0.000000000105}\\
+    &\approx \frac{0.1^{10} \times 0.9999999999}{0.000000000105}\\
     &\approx 0.95.
   \end{align*}
 } %

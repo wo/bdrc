@@ -3,8 +3,6 @@
 \cmnt{%
   The exercises were too hard. (Need to give more hints.)
 
-  Use $\times$ for multiplication?
-  
   I need to emphasize that the letters are arbitrary propositions, and
   that substituting logical equivalents is always fine. A good student
   asked whether one could define a new letter $C$ as $A \land B$ and
@@ -106,25 +104,30 @@ probability) are usually called `events', but in philosophy we call
 them \textbf{propositions}.
 
 The main assumption probability theory makes about the bearers of
-probability is that whenever some proposition $A$ has a probability,
-then so does its negation $\neg A$ (`not $A$'), and whenever two
-propositions $A$ and $B$ both have a probability, then so does their
-conjunction $A \land B$ (`$A$ and $B$') and their disjunction $A \lor
-B$ (`$A$ or $B$'). On the hypothesis that rational degrees of belief
-satisfy the mathematical conditions on a probability measure, this
-means that if a rational agent has a definite degree of belief in some
+probability is the following.
+%
+\begin{genericthm}[Booleanism]
+  Whenever some proposition $A$ has a probability, then so does its
+  negation $\neg A$ (`not $A$'). Whenever two propositions $A$ and $B$
+  both have a probability, then so does their conjunction $A \land B$
+  (`$A$ and $B$') and their disjunction $A \lor B$ (`$A$ or $B$').
+\end{genericthm}
+%
+On the hypothesis that rational degrees of belief satisfy the
+mathematical conditions on a probability measure, Booleanism means
+that if a rational agent has a definite degree of belief in some
 propositions $A$ and $B$, then she also has a definite degree of
-belief in $\neg A$, $A \land B$, and $A \lor B$. This isn't obvious,
-but let's roll with it.
+belief in $\neg A$, $A \land B$, and $A \lor B$. Clearly, having a
+degree of belief in a proposition therefore can't be understood as
+making a conscious judgement about the proposition. If you judge that
+it's likely to rain and unlikely to snow, you don't thereby make a
+judgement about $\emph{rain} \lor (\neg \emph{rain} \land
+(\emph{snow}))$. 
 
-\cmnt{%
-  Maybe I should emphasize this as Kolmogorov's 0th axiom. Also note
-  the corollary that credences aren't conscious judgments.%
-} %
 
 What sorts of things are propositions? If you want, you can think of
 them as sentences. A common alternative, in line with our discussion
-in the previous session, is to construe propositions as possible
+in the previous chapter, is to construe propositions as possible
 states of the world. Possible states of the world are in some respects
 more coarse-grained than sentences. For example, consider
 the current temperature in Edinburgh. I don't know what that
@@ -174,18 +177,13 @@ specific proposition'. The identification of propositions with sets of
 possible worlds is not supposed to be an informative reduction.
 
 \begin{exercise}
-  First a reminder of some jargon from set theory:
-  \begin{itemize}
-    \itemsep0em
-  \item The \emph{intersection} of two sets $A$ and $B$ is the set of
-    objects that are in both $A$ and $B$.
-  \item The \emph{union} of two sets $A$ and $B$ is the set of objects
-    that are in one or both of $A$ and $B$.
-  \item The \emph{complement} of a set $A$ is the set of objects that
-    are not in $A$.
-  \item A set $A$ is a \emph{subset} of a set $B$ if all objects in
-    $A$ are also in $B$.
-  \end{itemize}
+  First a reminder of some terminology from set theory: 
+  The \textbf{intersection} of two sets $A$ and $B$ is the set of
+  objects that are in both $A$ and $B$. The \textbf{union} of two sets
+  $A$ and $B$ is the set of objects that are in one or both of $A$ and
+  $B$. The \textbf{complement} of a set $A$ is the set of objects that
+  are not in $A$. A set $A$ is a \textbf{subset} of a set $B$ if all
+  objects in $A$ are also in $B$.
 
   Now, assume propositions are modelled as sets of possible
   worlds. Then the negation $\neg A$ of a proposition $A$ is the
@@ -198,14 +196,15 @@ possible worlds is not supposed to be an informative reduction.
   \item[(c)] What does it mean if a proposition $A$ is a subset of
     a proposition $B$?
   \end{enumerate}
-  \vspace{-1em}
+  $\star\star$
+  \vspace{-0em}
 \end{exercise}
 
 \begin{exercise}
   Strictly speaking, the objects of probability can't all be construed
-  as possible states of the world: at least one object of probability
-  is always an \emph{impossible} state of the world. Can you explain
-  why?
+  as possible states of the world: it follows from Booleanism that at
+  least one object of probability is always an \emph{impossible} state
+  of the world. Can you explain why? $\star\star$
 \end{exercise}
   
 
@@ -293,7 +292,8 @@ propositions: if she believes $A$ to degree $x$, and $A$ is equivalent
 to $B$, she must also believe $B$ to degree $x$.
 
 \begin{exercise}\label{exerc:partition}
-  Prove that $\Cr(A) = \Cr(A\land B) + \Cr(A \land \neg B)$.
+  Prove from Kolmogorov's axioms that $\Cr(A) = \Cr(A\land B) + \Cr(A
+  \land \neg B)$. $\star\star$
 \end{exercise}
 
 Next, let's show that axiom (iii) generalizes to three disjuncts:
@@ -343,7 +343,7 @@ add to 5 should be \nicefrac{1}{9}.
 
 \begin{exercise}
   How confident should you be that (a) at least one die lands 6?
-  (b) exactly one die lands 6?
+  (b) exactly one die lands 6? $\star$
 \end{exercise}
 
 What if there are infinitely many worlds? Then things become
@@ -368,8 +368,9 @@ In this course, we will try to stay away from troubles arising from
 infinities, so the weaker axiom (iii) will be enough.
 
 \begin{exercise}
-  Prove that if $A$ entails $B$, then $\Cr(A) \leq \Cr(B)$. (Hint: if
-  $A$ entails $B$, then $A$ is equivalent to $A \land B$.)
+  Prove from Kolmogorov's axioms that if $A$ entails $B$, then $\Cr(A)
+  \leq \Cr(B)$. (Hint: if $A$ entails $B$, then $A$ is equivalent to
+  $A \land B$.) $\star\star\star$
 \end{exercise}
 
 
@@ -492,16 +493,14 @@ causally independent, then the events are normally also independent in
 the agent's degrees of belief. Sadly, we will not have time to
 investigate these mysteries in any detail.
 
-\newpage
-
 \begin{exercise}
   Assume $\Cr(\emph{Snow}) = 0.3$, $\Cr(\emph{Wind}) = 0.6$, and $\Cr(\emph{Snow} \land
-  \emph{Wind}) = 0.2$. What is $\Cr(\emph{Snow}/\emph{Wind})$? What is $\Cr(\emph{Wind}/\emph{Snow})$?
+  \emph{Wind}) = 0.2$. What is $\Cr(\emph{Snow}/\emph{Wind})$? What is $\Cr(\emph{Wind}/\emph{Snow})$? $\star$
 \end{exercise}
 
 \begin{exercise}
   Using the Ratio Formula, prove that if $A$ is (probabilistically)
-  independent of $B$, then $B$ is independent of $A$. 
+  independent of $B$, then $B$ is independent of $A$. $\star\star$
 \end{exercise}
 
 \begin{exercise}
@@ -516,7 +515,7 @@ investigate these mysteries in any detail.
   \item[(c)] Is $A$ independent of $B \land C$?
   \item[(d)] Is $B$ independent of $C$?
   \end{enumerate}
-  \vspace{-1.5em}
+  $\star$
 \end{exercise}
 
 \section{Some more rules of probability}
@@ -537,7 +536,7 @@ Let's have a look at conjunctive propositions, $A \land B$. By
 rearranging the Ratio Formula, we get the following:
 %
 \begin{genericthm}{The Conjunction Rule}
-  $\Cr(A \land B) = \Cr(A) \cdot \Cr(B / A)$.
+  $\Cr(A \land B) = \Cr(A) \times \Cr(B / A)$.
 \end{genericthm}
 %
 So the probability of a conjunction is the probability of the first
@@ -550,7 +549,7 @@ then $\Cr(B/A) = \Cr(B)$; so in that case the probability of the
 conjunction is the product of the probability of the conjuncts:
 %
 \begin{genericthm}{The Conjunction Rule for independent propositions}
-  If $A$ and $B$ are independent, then $\Cr(A \land B) = \Cr(A) \cdot
+  If $A$ and $B$ are independent, then $\Cr(A \land B) = \Cr(A) \times
   \Cr(B)$.
 \end{genericthm}
 
@@ -559,7 +558,7 @@ Conjunction Rules? Suppose we flip two coins. What is the probability
 that they both land heads? You'd expect the first coin to land heads
 about half the time; and in half \emph{of those} cases you'd expect
 the second to also land heads. So the result is a half of a half,
-i.e.\ $\nicefrac{1}{2} \cdot \nicefrac{1}{2} = \nicefrac{1}{4}$.
+i.e.\ $\nicefrac{1}{2} \times \nicefrac{1}{2} = \nicefrac{1}{4}$.
 
 What about disjunctions, $A \lor B$? We know that if $A$ and $B$ are
 logically incompatible, then $\Cr(A \lor B) = \Cr(A) + \Cr(B)$. But
@@ -588,13 +587,13 @@ double-counted the $A \land B$ worlds. So we need to subtract $\Cr(A
 
 \begin{exercise}
   Show that two propositions $A$ and $B$ are independent if and only
-  if $Cr(A \land B) = Cr(A) \cdot Cr(B)$. (Some authors use this as
-  the definition of independence.)
+  if $Cr(A \land B) = Cr(A) \times Cr(B)$. (Some authors use this as
+  the definition of independence.) $\star$
 \end{exercise}
 
-\begin{exercise}
-  Prove that $\Cr(A \land B \land C) = \Cr(A/B \land C) \cdot \Cr(B/C) \cdot
-  \Cr(C)$. (Hint: you only need the Ratio Formula.)
+\begin{exercise}\label{e:chain-rule}
+  Prove from the Ratio Formula that $\Cr(A \land B \land C) = \Cr(A/B
+  \land C) \times \Cr(B/C) \times \Cr(C)$. $\star\star$
 \end{exercise}
 
 \begin{exercise}
@@ -602,8 +601,8 @@ double-counted the $A \land B$ worlds. So we need to subtract $\Cr(A
   sons, who she claimed died from Sudden Infant Death Syndrome
   (SIDS). The eminent paediatrician Sir Roy Meadow explained to the
   jury that 1 in 8500 infants die from SIDS and hence the chance of
-  SIDS affecting both sons was 1/8500 $\cdot$ 1/8500 = 1 in 73
-  million. What is wrong with Sir Meadow's reasoning?
+  SIDS affecting both sons was 1/8500 $\times$ 1/8500 = 1 in 73
+  million. What is wrong with Sir Meadow's reasoning? $\star$
 \end{exercise}
 
 To conclude, I'll mention two more rules that play a special role in
@@ -611,11 +610,11 @@ Bayesian reasoning. The first goes back to a suggestion by Thomas
 Bayes published in 1763.
 %
 \begin{genericthm}{Bayes' Theorem}
-  $\Cr(A/B) = \dfrac{\Cr(B/A) \cdot \Cr(A)}{\Cr(B)}.$
+  $\Cr(A/B) = \dfrac{\Cr(B/A) \times \Cr(A)}{\Cr(B)}.$
 \end{genericthm}
 %
 Proof: By the Ratio Formula, $\Cr(A/B) = \Cr(A \land B) / \Cr(B)$, and
-$\Cr(A \land B) = \Cr(B/A) \cdot \Cr(A)$.
+$\Cr(A \land B) = \Cr(B/A) \times \Cr(A)$.
 
 Bayes' Theorem relates the conditional credence in $A$ given $B$ to the
 inverse conditional credence in $B$ given $A$. Why that might be
@@ -630,7 +629,7 @@ $\Cr(\emph{Trick}/ \emph{Six})$? The answer isn't obvious. Bayes'
 Theorem will help:
 
 \[
-  \Cr(\emph{Trick}/\emph{Six}) = \frac{\Cr(\emph{Six}/\emph{Trick}) \cdot \Cr(\emph{Trick})}{\Cr(\emph{Six})}.
+  \Cr(\emph{Trick}/\emph{Six}) = \frac{\Cr(\emph{Six}/\emph{Trick}) \times \Cr(\emph{Trick})}{\Cr(\emph{Six})}.
 \]
 
 The numerator on the right is easy. $\Cr(\emph{Six}/ \emph{Trick})$ is
@@ -640,7 +639,7 @@ will land six. We also know that $\Cr(\emph{Trick})$ is
 credence that the die will land six? Here we need our last rule:
 
 \begin{genericthm}{The Law of Total Probability}
-  $\Cr(A) = \Cr(A/B)\cdot \Cr(B) + \Cr(A/\neg B)\cdot \Cr(\neg B)$.
+  $\Cr(A) = \Cr(A/B)\times \Cr(B) + \Cr(A/\neg B)\times \Cr(\neg B)$.
 \end{genericthm}
 This ``law'' follows immediately from exercise \ref{exerc:partition}
 and the Ratio Formula.
@@ -648,8 +647,8 @@ and the Ratio Formula.
 If we apply the Law of Total Probability to $\Cr(\emph{Six})$ in our
 application of Bayes' Theorem, we get
 \[
-  \Cr(\emph{Trick}/\emph{Six}) = \frac{\Cr(\emph{Six}/\emph{Trick}) \cdot \Cr(\emph{Trick})}{
-\Cr(\emph{Six}/\emph{Trick}) \cdot \Cr(\emph{Trick}) + \Cr(\emph{Six}/\neg \emph{Trick}) \cdot \Cr(\neg\emph{Trick})
+  \Cr(\emph{Trick}/\emph{Six}) = \frac{\Cr(\emph{Six}/\emph{Trick}) \times \Cr(\emph{Trick})}{
+\Cr(\emph{Six}/\emph{Trick}) \times \Cr(\emph{Trick}) + \Cr(\emph{Six}/\neg \emph{Trick}) \times \Cr(\neg\emph{Trick})
 }.
 \]
 It looks scary, but all the terms on the right are easy to figure
@@ -661,7 +660,7 @@ get $\Cr(\emph{Trick}/\emph{Six}) = \nicefrac{6}{7}$. So your credence
 in the trick die hypothesis conditional on seeing a six should be
 \nicefrac{6}{7}.
 
-You will have to wait until session \ref{ch:constraints} to understand
+You will have to wait until chapter \ref{ch:constraints} to understand
 why this kind of problem arises very often.
 
 \cmnt{%
@@ -713,7 +712,7 @@ why this kind of problem arises very often.
   A stranger tells you that she has two children. You ask if at least
   one of them is a boy. The stranger says yes. How confident should
   you be that the other child is also a boy? (Assume both sexes are
-  equally common and independent among siblings.)
+  equally common and independent among siblings.) $\star\star\star$
 \end{exercise}
 
 \cmnt{%
