@@ -64,6 +64,14 @@ you are one of these philosophers: you think it would be wrong to
 sacrifice the shortest miner. \emph{By your values}, it would be
 better to block either shaft $A$ or shaft $B$.
 
+\begin{exercise}
+  A doctor recommends small pox vaccination for an infant, knowing
+  that around 1 in 1 million children dies from the vaccination. The
+  infant gets the vaccination and dies. Was the doctor's
+  recommendation wrong? Or was it wrong in one sense and right in
+  another? If so, can you explain these senses? $\star$
+\end{exercise}
+
 When we ask what an agent should do in a given decision problem, we
 will always mean what they should do in light of whatever they believe
 about their situation and of whatever goals or values they happen to
@@ -84,14 +92,6 @@ clarified the questions and made some progress towards an answer.
 
 To begin, let me introduce a standard format for thinking about
 decision problems.
-
-\begin{exercise}
-  A doctor recommends small pox vaccination for an infant, knowing
-  that around 1 in 1 million children dies from the vaccination. The
-  infant gets the vaccination and dies. Was the doctor's
-  recommendation wrong? Or was it wrong in one sense and right in
-  another? If so, can you explain these senses? $\star$
-\end{exercise}
 
 
 \section{Decision matrices}\label{sec:decision-matrices}
@@ -333,7 +333,7 @@ probability function. Among other things, this means that the
 credences assigned to the states in a decision problem must add up to
 1. For example, if you are 80 percent (0.8) confident that the
 mushroom is a paddy straw, then you can't be more than 20 percent
-confident that the mushroom is a paddy straw. It would be OK to
+confident that the mushroom is a death cap. It would be OK to
 reserve some credence for further possibilities, so that the credence
 in the paddy straw possibility and the death cap possibility add up to
 less than 1. But then our decision matrix should include further
@@ -453,10 +453,11 @@ EU(\text{Eat}) = 0.8 \times (+1) + 0.2 \times (-100) = -19.2.
 \]
 
 In general, suppose an act $A$ leads to outcomes $O_1,\ldots,O_n$
-respectively in states $S_1,\ldots, S_n$. Let
-$\Cr(S_1),\ldots,\Cr(S_n)$ be your credence in the different states,
-and $U(O_1),\ldots,U(O_n)$ the utility you assign to the
-outcomes. Then the expected utility of $A$ is defined as
+respectively in states $S_1,\ldots, S_n$. Let `$\Cr(S_1)$' denote the
+agent's degree of belief (or credence) in $S_1$; similarly for
+$S_2,\ldots,S_n$. Let `$U(O_1)$' denote the utility of $O_1$ for the
+agent; similarly for $O_2\,ldots,O_n$. Then the expected utility of
+$A$ is defined as
 \[
 EU(A) = \Cr(S_1) \times U(O_1) + \ldots + \Cr(S_n) \times U(O_n).
 \]
