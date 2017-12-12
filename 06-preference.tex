@@ -12,6 +12,8 @@
 
   Introduce ``cardinal''.
 
+  Say ``von Neumann'' instead of ``vNM and M''
+
 }%
 
 \section{The ordinalist challenge}
@@ -525,24 +527,28 @@ out as obeying the MEU Principle, at least for the relevant lotteries
 and rewards? 
 
 Not quite. It's true that \emph{if the method} works, then the agent
-will evaluate lotteries by their expected utility, relative to the
-utility function identified by the method. But the method is not
-guaranteed to work. For example, we have assumed that if an agent
-ranks some reward $c$ in between $a$ and $b$, then the agent is
-indifferent between $c$ and some lottery between $a$ and $b$. That is
-not a logical truth. An agent could in principle prefer $c$ to any
-lottery between $a$ and $b$, yet still prefer $c$ to $a$ and $b$ to
-$c$.  The von Neumann and Morgenstern method does not identify a
-utility function for such an agent.
+will evaluate \emph{certain} lotteries by their expected utility,
+relative to the utility function identified by the method. But the
+method is not guaranteed to work, and it does not settle how the agent
+evaluates arbitrary lotteries.
+
+For example, we have assumed that if an agent ranks some reward $c$ in
+between $a$ and $b$, then the agent is indifferent between $c$ and
+some lottery between $a$ and $b$. That is not a logical truth. An
+agent could in principle prefer $c$ to any lottery between $a$ and
+$b$, yet still prefer $c$ to $a$ and $b$ to $c$. The von Neumann and
+Morgenstern method does not identify a utility function for such an
+agent.
 
 Von Neumann and Morgenstern investigated just what conditions an
-agent's preferences must satisfy in order for the definition to work.
-To state these conditions, let's assume that `$\succ$', `$\sim$', and
-`$\succsim$' are defined not just for basic rewards but also for
-lotteries between rewards as well as ``compound lotteries'' whose
-payoff is another lottery. For example, if I toss a fair coin and
-offer you lottery $L$ on heads and $L'$ on tails, that would be a
-compound lottery.
+agent's preferences must satisfy in order for the method to work, and
+for it to guarantee that the agent evaluates arbitrary lotteries by
+their expected utility.  To state these conditions, let's assume that
+`$\succ$', `$\sim$', and `$\succsim$' are defined not just for basic
+rewards but also for lotteries between rewards as well as ``compound
+lotteries'' whose payoff is another lottery.  For example, if I toss a
+fair coin and offer you lottery $L$ on heads and $L'$ on tails, that
+would be a compound lottery.
 
 Here are the conditions we need. `$A$', `$B$', `$C$' range over
 arbitrary lotteries or rewards.
@@ -582,17 +588,17 @@ arbitrary lotteries or rewards.
 
 } %
 \vspace{-2mm}
+\begin{genericthm}{Continuity}
+  For any $A$, $B$, and $C$, if $A \succ B$ and $B \succ C$ then
+  there are lotteries $L_1$ and $L_2$ between $A$ and $C$ such
+  that $L_1 \succ B$ and $B \succ L_2$.
+\end{genericthm}
+\vspace{-2mm}
 \begin{genericthm}{Independence (of Irrelevant Alternatives)}
   For any $A$, $B$, and $C$, if $A \succ B$, and $L_1$ is a lottery
   that leads to $A$ with some probability $x$ and otherwise to $C$,
   and $L_2$ is a lottery that leads to $B$ with probability $x$ and
   otherwise to $C$, then $L_1 \succ L_2$.
-\end{genericthm}
-\vspace{-2mm}
-\begin{genericthm}{Continuity}
-  For any $A$, $B$, and $C$, if $A \succ B$ and $B \succ C$ then
-  there are lotteries $L_1$ and $L_2$ between $A$ and $C$ such
-  that $L_1 \succ B$ and $B \succ L_2$.
 \end{genericthm}
 \vspace{-2mm}
 \begin{genericthm}{Reduction (of Compound Lotteries)}
@@ -606,7 +612,7 @@ preferences satisfy all these conditions, then there is a utility
 function $U$, determined by the method from the previous section,
 which represents the agent's preferences in the sense that $A \succ B$
 just in case $U(A) > U(B)$, and $A \sim B$ just in case $U(A) =
-U(B)$. Moreover, this function $U$ is unique except for the choice of
+U(B)$. Moreover, the function $U$ is unique except for the choice of
 unit and zero. (That is, any two functions $U$ and $U'$ that represent
 the agents preferences differ at most in their choice of unit and
 zero.) This result is known as the \textbf{von Neumann-Morgenstern
