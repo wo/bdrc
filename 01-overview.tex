@@ -1,5 +1,15 @@
 \chapter{Modelling Rational Agents}\label{ch:overview}
 
+% I should briefly mention the rules for matrices: states exclusive
+% and exhaustive, outcomes comprehensive, acts comprehensive and
+% exclusive, states independent of acts. Might mention that missing
+% options is a common practical problem.
+
+% A good student found it odd to call utility and credence functions
+% "functions" because that suggests not just an input-output mapping
+% but an algorithm/a computation. Maybe I should say "measure" or
+% "assignment".
+
 \section{Overview}
 
 \cmnt{%
@@ -70,14 +80,6 @@ about their situation and of whatever goals or values they happen to
 have. We will also ask whether those beliefs and goals are themselves
 reasonable. But it is best to treat these as separate questions.
 
-\begin{exercise}
-  A doctor recommends small pox vaccination for an infant, knowing
-  that around 1 in 1 million children dies from the vaccination. The
-  infant gets the vaccination and dies. Was the doctor's
-  recommendation wrong? Or was it wrong in one sense and right in
-  another? If so, can you explain these senses? $\star$
-\end{exercise}
-
 So we have three questions:
 \begin{enumerate}
   \itemsep0em 
@@ -92,6 +94,15 @@ clarified the questions and made some progress towards an answer.
 
 To begin, let me introduce a standard format for thinking about
 decision problems.
+
+\begin{exercise1}
+  In a surprise outbreak of small pox (a deadly infectious disease), a
+  doctor recommends vaccination for an infant, knowing that around one
+  in a million children die from the vaccination. The infant gets the
+  vaccination and dies. Was the doctor's recommendation wrong? Or was
+  it wrong in one sense and right in another? If so, can you explain
+  these senses?
+\end{exercise1}
 
 
 \section{Decision matrices}\label{sec:decision-matrices}
@@ -141,7 +152,7 @@ the states, and the cells the outcome of performing the relevant act
 in the relevant state.
 
 Let's do another example.
-\begin{example}[The mushroom problem]
+\begin{example}[The mushroom problem]\label{ex:mushroom}
   You find a mushroom. You're not sure whether it's a delicious
   \emph{paddy straw} or a poisonous \emph{death cap}. You wonder
   whether you should eat it.
@@ -190,7 +201,7 @@ form:
 
 Notice that if your goal is to minimize your prison term, then
 confessing leads to the better outcome no matter what your partner
-does. So that is what you should do.
+does. 
 
 I've assumed you only care about your own prison term. What if you
 also care about the fate of your partner? Then your decision problem
@@ -214,10 +225,10 @@ your goal is to minimize the combined prison term for you and your
 partner, then remaining silent is better no matter what your partner
 does.
 
-\begin{exercise}\label{e:rock}
+\begin{exercise1}\label{e:rock}
   Draw the decision matrix for the game \emph{Rock, Paper, Scissors},
-  assuming all you care about is whether you win. $\star$
-\end{exercise}
+  assuming all you care about is whether you win.
+\end{exercise1}
 
 \cmnt{%
 \begin{exercise}
@@ -323,7 +334,7 @@ decision theory, but also in epistemology, philosophy of science,
 artificial intelligence, statistics, and other areas. The keyword to
 look out for is \textbf{Bayesian}: if a theory or framework is called
 Bayesian, this usually means it involves degrees of belief. The name
-refers to the Thomas Bayes (1701--1761), who made an important
+refers to Thomas Bayes (1701--1761), who made an important early
 contribution to the movement. We will look at some applications of
 ``Bayesianism'' in later chapters.
 
@@ -354,10 +365,10 @@ personal wealth or welfare. That's not how we will use the term. Real
 people don't just care about themselves, and there is nothing wrong
 with that.
 
-\begin{exercise}
+\begin{exercise1}
   Add utilities and (reasonable) credences to your decision matrix for
-  \emph{Rock, Paper, Scissors}. $\star$
-\end{exercise}
+  \emph{Rock, Paper, Scissors}. 
+\end{exercise1}
 
 \section{Solving decision problems}\label{sec:solving}
 
@@ -394,7 +405,7 @@ about each other, they could have gotten away with 1.
 Often there is no dominant act. Recall the mushroom problem.
 \begin{center}
   \begin{tabular}{|r|c|c|}\hline
-    \gr & \gr Paddy straw (0.8) & \gr Death cap (0.2)\\\hline
+    \gr\; & \gr Paddy straw (0.8) & \gr Death cap (0.2)\\\hline
     \gr Eat & satisfied (+1)  & dead (-100) \\\hline
     \gr Don't eat & hungry (-1) & hungry (-1) \\\hline
   \end{tabular}
@@ -417,7 +428,7 @@ is indefensible.
 Imagine you have 100 sheep who have consumed water from a contaminated
 well and will die unless they're given an antidote. Statistically, one
 in a thousand sheep die even when given the antidote. According to
-worst-case reasoning there is consequently no point of giving your
+worst-case reasoning there is no point of giving your
 sheep the antidote: either way, the worst possible outcome is that all
 the sheep will die. In fact, if we take into account the cost of the
 antidote, then worst-case reasoning suggests you should not give the
@@ -438,10 +449,11 @@ by the agent's credence.
 Let's first recall how simple averages are computed. If we have $n$
 numbers $x_1, x_2, \ldots, x_n$, then the average of the numbers is
 \[
-\frac{x_1 + x_2 + \ldots + x_n}{n} = \tfrac{1}{n}\times x_1 + \tfrac{1}{n}\times x_2 + \ldots + \tfrac{1}{n}\times x_n.
+\frac{x_1 + x_2 + \ldots + x_n}{n} = \tfrac{1}{n}\cdot x_1 + \tfrac{1}{n}\cdot x_2 + \ldots + \tfrac{1}{n}\cdot x_n.
 \]
-Here each number is given the same weight, $\nicefrac{1}{n}$. In a
-weighted average, the weights can be different for different numbers.
+(`$\cdot$' stands for multiplication.) Here each number is given the
+same weight, $\nicefrac{1}{n}$. In a weighted average, the weights can
+be different for different numbers.
 
 Concretely, to compute the weighted average of the utility that might
 result  from eating the mushroom, we multiply the utility of each
@@ -449,21 +461,21 @@ possible outcome (+1 and -100) by your credence in the corresponding
 state, and then add up these products. The result is called the
 \textbf{expected utility} of eating the mushroom.
 \[
-EU(\text{Eat}) = 0.8 \times (+1) + 0.2 \times (-100) = -19.2.
+EU(\text{Eat}) = 0.8 \cdot (+1) + 0.2 \cdot (-100) = -19.2.
 \]
 
 In general, suppose an act $A$ leads to outcomes $O_1,\ldots,O_n$
 respectively in states $S_1,\ldots, S_n$. Let `$\Cr(S_1)$' denote the
-agent's degree of belief (or credence) in $S_1$; similarly for
-$S_2,\ldots,S_n$. Let `$U(O_1)$' denote the utility of $O_1$ for the
-agent; similarly for $O_2,\ldots,O_n$. Then the expected utility of
-$A$ is defined as
+agent's degree of belief (or credence) in $S_1$, `$\Cr(S_2)$' her
+credence in $S_2$, etc. Let `$U(O_1)$' denote the utility of $O_1$ for
+the agent, `$U(O_2)$' the utility of $O_2$, etc. Then the expected utility
+of $A$ is defined as
 \[
-EU(A) = \Cr(S_1) \times U(O_1) + \ldots + \Cr(S_n) \times U(O_n).
+EU(A) = \Cr(S_1) \cdot U(O_1) + \ldots + \Cr(S_n) \cdot U(O_n).
 \]
 You'll often see this abbreviated using the `sum' symbol $\sum$:
 \[
-EU(A) = \sum_{i=1}^n \Cr(S_i) \times U(O_i).
+EU(A) = \sum_{i=1}^n \Cr(S_i) \cdot U(O_i).
 \]
 It means the same thing.
 
@@ -484,9 +496,9 @@ outcome is quite unlikely.
 
 Let's calculate the expected utility of not eating the mushroom:
 \[
-EU(\text{Not Eat}) = 0.8 \times -1 + 0.2 \times -1 = -1.
+EU(\text{Not Eat}) = 0.8 \cdot -1 + 0.2 \cdot -1 = -1.
 \]
-No surprise here. If all the numbers $u_1,\ldots,u_n$ are the same,
+No surprise here. If all the numbers $x_1,\ldots,x_n$ are the same,
 their weighted average will again be that number.
 
 Now we can state one of the central assumptions of our model:
@@ -509,28 +521,28 @@ option with greatest expected utility.
   and goals on the one hand with behaviour on the other.
 } %
 
-\begin{exercise}
+\begin{exercise1}
   Assign utilities to the outcomes in the Prisoner Dilemma, assign
   credences to the states, and compute the expected utility of the two
-  acts. $\star$
-\end{exercise}
+  acts.
+\end{exercise1}
 
-\begin{exercise}
+\begin{exercise1}
   Assign utilities to the outcomes in the Miner Problem, assign
   credences to the states, and compute the expected utility of the
-  three acts. $\star$
-\end{exercise}
+  three acts.
+\end{exercise1}
 
-\begin{exercise}
+\begin{exercise2}
   Explain why the following decision rule is not generally reasonable:
   \emph{Identity the most likely state; then choose an act which
-    maximizes utility in that state.} $\star\star$
-\end{exercise}
+    maximizes utility in that state.} 
+\end{exercise2}
 
-\begin{exercise}
+\begin{exercise3}
   Show that if there is a dominant act, then it maximizes
-  expected utility. $\star\star\star$
-\end{exercise}
+  expected utility.
+\end{exercise3}
 
 \cmnt{%
   \begin{exercise}
@@ -540,7 +552,7 @@ option with greatest expected utility.
   \end{exercise}
 } %
 
-\begin{exercise}\label{e:exam}
+\begin{exercise3}\label{e:exam}
   When applying dominance reasoning or the MEU Principle, it is
   important that the decision matrix is set up correctly. 
 
@@ -562,10 +574,10 @@ option with greatest expected utility.
   student chooses. 
 
   Can you draw an adequate decision matrix for the student's decision
-  problem? $\star\star\star$
-\end{exercise}
+  problem? 
+\end{exercise3}
 
-\begin{exercise}[Pascal's Wager]\label{e:pascal}
+\begin{exercise2}[Pascal's Wager]\label{e:pascal}
   The first recorded use of the MEU Principle outside gambling dates
   back to 1653, when Blaise Pascal presented the following argument
   for leading a pious life. (I paraphrase.)
@@ -578,13 +590,13 @@ option with greatest expected utility.
   
   Draw the matrix for the decision problem as Pascal conceives it and
   verify that a pious life has greater expected utility than an
-  impious life. $\star\star$
-\end{exercise}
+  impious life.
+\end{exercise2}
 
-\begin{exercise}
+\begin{exercise2}
   Has Pascal identified the acts, states, and outcomes correctly? If
-  not, what did he get wrong? $\star\star$
-\end{exercise}
+  not, what did he get wrong?
+\end{exercise2}
 
 \cmnt{%
 \begin{exercise}
@@ -603,7 +615,7 @@ apparent familiarity of the objects. We all know what beliefs and
 desires are; we have been thinking and talking about them from an
 early age and continue to do so almost every day. We may sometimes ask
 how a peculiar belief or unusual desire came about, but the nature and
-existence of the states themselves seems unproblematic. It takes some
+existence of the states themselves seems unproblematic. It takes
 effort to appreciate what philosophers call \textbf{the problem of
   intentionality}: the problem of explaining \emph{what makes it the
   case} that an agent has certain beliefs and desires. 
@@ -718,7 +730,7 @@ things `desires'.
   Pierre's case, or indexical cases).
 } %
 
-The situation we face is ubiquitous in science. Scientific theories
+The situation we here face is ubiquitous in science. Scientific theories
 often involve expressions that are given a special, technical
 sense. Newton's laws of motion, for example, speak of `mass' and
 `force'. But Newton did not use these words in their ordinary sense;
@@ -728,7 +740,7 @@ objects accelerate at a rate equal to the ratio between the force
 acting upon them and their mass, and so on. These laws implicitly
 define the Newtonian concept of mass and force.
 
-We will assume a similar perspective on credence and utility. That is,
+We will adopt a similar perspective towards credence and utility. That is,
 we won't pretend that we have a perfect grip on these quantities from
 the outset. Instead, we'll start with a vague and intuitive conception
 of credence and utility and then successively refine this conception
@@ -761,10 +773,10 @@ models always involve simplifications and idealisations. In that
 sense, ``all models are wrong'', as the statistician George Box once
 put it. The aim of scientific models (outside fundamental physics) is
 not to provide a complete and fully accurate description of certain
-events in the world -- the diffusion of gases, the evolution of
-species, the relationship between interest rates and inflation -- but
-to isolate simple and robust patterns in these events. It is not an
-objection to a model if it leaves out details or fails to explain
+events in the world -- be it the diffusion of gases, the evolution of
+species, or the relationship between interest rates and inflation --
+but to isolate simple and robust patterns in these events. It is not
+an objection to a model that it leaves out details or fails to explain
 various edge cases.
 
 The model we will study is an extreme case insofar as it abstracts
@@ -794,8 +806,8 @@ outcomes can be found in
 
 We will have a lot more to say about credence, utility, and the MEU
 Principle in later chapters. You may find it useful to read up on
-modelling in general and on the functionalist conception of beliefs
-and desires. Some recommendations:
+modelling in general and on the ``functionalist'' conception of
+beliefs and desires. Some recommendations:
 
 \begin{itemize}
   \itemsep0em 
@@ -804,11 +816,11 @@ and desires. Some recommendations:
     of \emph{Inquiry} (1984)
   } %
 
-\item Alisa Bokulich: \href{http://www.romanfrigg.org/Links/MS2/Bokulich.pdf}{``How scientific models can explain''} (2011)
-
 \item Ansgar Beckermann:
   \href{https://www.uni-bielefeld.de/(en)/philosophie/personen/beckermann/pbint_ve.pdf}{``Is
     there a problem about intentionality?''} (1996)
+
+\item Alisa Bokulich: \href{http://www.romanfrigg.org/Links/MS2/Bokulich.pdf}{``How scientific models can explain''} (2011)
 
 \item Mark Colyvan: \href{http://www.colyvan.com/papers/iinm.pdf}{``Idealisations in normative models''} (2013)
 

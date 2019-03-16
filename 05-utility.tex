@@ -4,24 +4,44 @@
   
   In the final section I should introduce the most fine-grained
   bearers of utility as ``rewards'' or ``outcomes'', like I do in the
-  beginning of ch.7.  That's importance to avoid confusion in the next
+  beginning of ch.7.  That's important to avoid confusion in the next
   chapter.
 
 
-Lectures:
+2017 Lectures:
 
 - clarify independence
 - clarify DMs
 - clarify sets of worlds thinking: AvB = C; AvBvC = AvD
 - subjunctive desire?
 
+2019 lectures:
+
+- example of mother and treat
+  -> why prefer coin?
+  -> why prefer fairness? Maybe basic.
+  -> utility is not satisfaction you feel when outcome is realised.
+
+- think of utilities as attaching to sets of worlds
+  -> draw example: win the lottery (+10) and no pain (+5)
+  -> what about the conjunction? seems even better! (+12)
+  -> remainder of winning is worse (+5)
+  -> so U(win) some kind of average, but weighted, by what? By Cr!
+  
+- intuitive dist. basic and instrumental/derived desires
+  (e.g. pain-free, taking paracetamol)
+  -> basic desires are good- or bad-makers (ceteris paribus)
+  -> draw diagram with three areas: Pain, Paracetamol,
+     Paracetamol-cures-pain; most credence in intersection of
+     Para and Cures; /here/ Para is a good-maker.
+  
 }
 
 
 \section{Two conceptions of utility}
 
 Daniel Bernoulli realized that rational agents don't always maximize
-expected monetary payoff, because £1000 has more utility for a pauper
+expected monetary payoff: £1000 has more utility for a pauper
 than for a rich man. But what is utility?
 
 Until the early 20th century, utility was widely understood to be some
@@ -46,23 +66,22 @@ of human rights, and so on -- would be morally relevant only insofar
 as it causes pleasure or pain. This assumption is known as \textbf{ethical
   hedonism}. We will not pursue it any further.
 
-\begin{exercise}
+\begin{exercise1}
   Suppose that money has declining marginal utility, and that the
   utility of money is the same for all people (so a net wealth of
   £1000 is as good for me as it is for you). Without any further
   assumptions about utility, it follows that if one person has more
   money than another, then their combined utility would increase if
   the wealthier person gave some of her money to the poorer person,
-  decreasing the gap in wealth. Explain why! $\star$
-\end{exercise}
+  decreasing the gap in wealth. Explain why!
+\end{exercise1}
 
 Another role for the concept of utility lies in the theory of
-practical rationality, where the MEU Principle states that
-(practically) rational agents choose acts that maximize expected
-utility -- that is, the probability-weighted average of the utility
-that might result from an act. If we identify utility with degree of
-pleasure, the MEU principle turns into what we might call the
-`MEP Principle':
+practical rationality. Here the MEU Principle states that
+(practically) rational agents choose acts which maximize the
+probability-weighted average of the utility of any possible outcome.
+If we identify utility with degree of pleasure, the MEU principle
+turns into what we might call the `MEP Principle':
 %
 \begin{genericthm}{The MEP Principle}
   Rational agents maximize their expected degree of pleasure. 
@@ -78,21 +97,23 @@ that ultimately motivates people is their own pleasure and pain.
 
 The founding fathers of modern utilitarianism, Jeremy Bentham and John
 Stuart Mill, had sympathies for both ethical hedonism and
-psychological hedonism, and so the two conceptions of utility were not
-properly distinguished. Unfortunately, the two conceptions are still
-often conflated today, even though both kinds of hedonism have long
-fallen out of fashion.
+psychological hedonism, and so the two conceptions of utility -- the
+two roles associated with the word `utility' -- were not properly
+distinguished. Today, both kinds of hedonism have long fallen out of
+fashion, but the two conceptions are still often conflated.
 
 For the most part, contemporary utilitarians hold that the standard of
 moral rightness is the total \emph{welfare} or \emph{well-being}
 produced by an act, which is not assumed to coincide with total degree
 of pleasure. Thus `utility' is nowadays often used as a synonym for
 `welfare' or `well-being'. But the word is also widely used in the
-other sense, to denote whatever motivates (rational) agents. Some have
-argued that the two uses actually coincide: that the only thing that
-motivates rational people is their own welfare or well-being. That may
-or may not be true. But it needs to be backed up by data and argument;
-it does not become true through sloppy use of language.
+other sense, to denote whatever motivates (rational) agents.
+
+Some have argued that the two uses actually coincide: that the only
+thing that motivates rational agents is their own welfare or
+well-being. This may or may not be true. But it needs to be backed up
+by data and argument; it does not become true through sloppy use of
+language.
 
 In these notes, `utility' is only used in the second sense, which fits
 the official definition in economics textbooks. That is, the utility
@@ -116,14 +137,14 @@ that people only care about their own welfare, is at most a contingent
 fact about humans. One can easily imagine agents who are motivated by
 other things. There is no contradiction in the hypothesis that an
 agent chooses acts that she knows will decrease her pleasure or
-welfare: a mother who knowingly takes on hardships for the benefit of
-her children, a soldier who intentionally chooses a painful death in
-order to save her comrades, and so on. Psychological hedonists claim
-that humans never do things like this -- that whenever an agent
-sacrifices her own good to benefit others, she mistakenly believes
-that her choice will actually make herself better off than the
-alternatives. That is implausible enough, but we don't need to argue
-over it. The important point is that utility, as we use the term, does
+welfare -- a mother who knowingly takes on hardships for the benefit
+of her children, a soldier who intentionally chooses a painful death
+in order to save her comrades, and so on. Psychological hedonists
+claim that humans would never consciously do such things: whenever an
+agent sacrifices her own good to benefit others, she mistakenly
+believes that her choice will actually make herself better off than
+the alternatives. Again, we don't need to argue over whether this is
+true. The important point is that utility, as we use the term, does
 not \emph{mean} the same as degree of pleasure or welfare or
 well-being.
 
@@ -139,47 +160,49 @@ would be irrational. After all, the MEP Principle only states that
 \emph{rational} agents maximize their expected degree of pleasure; it
 doesn't cover irrational agents.
 
-This brings us to a tricky issue: what do we mean by `rational'? Some
-people associate the label `rational' with cold-hearted selfishness.
-On that conception, a rational agent is an agent who always looks out
-for her own advantage, with no concern for others. This idea of
-``economic rationality'' has its use, but it is not our topic. The
+This brings us to a tricky issue: what do we mean by `rational'? The
+label `rational' is sometimes associated with cold-hearted
+selfishness. A rational agent is assumed to be an agent who always
+looks out for her own advantage, with no concern for others. This idea
+of ``economic rationality'' has its use, but it is not our topic. The
 kind of rationality we're interested in is a more abstract and minimal
-notion. Intuitively, it is the idea of ``making sense''.  If you want
+notion. Intuitively, it is the idea of ``making sense''. If you want
 to reduce animal suffering, and you know you can achieve this by
 eating less meat, then it makes sense that you eat less meat. If you
-are sure that the picnic will be cancelled if it rains, and you're
-also sure that it rains, then it doesn't make sense to believe that
-the picnic will go ahead. The model we are studying is a model of
-agents who ``make sense'' in this kind of way.
+are sure that a picnic will be cancelled if it rains, and you learn
+that it rains, then it doesn't make sense to believe that the picnic
+will go ahead. The model we are studying is a model of agents who
+``make sense'' in this kind of way.
 
-If we were interested in the cold-hearted and selfish sense of
-rationality, we still shouldn't define utility as degree of pleasure
-or welfare.  For consider a hypothetical agent who cares not just
-about herself, and who sacrifices some of her own good to reduce the
-pain of others. The agent is ``irrational'' in the cold-hearted and
-selfish sense. But what is irrational about her?  Does the fault lie
-in her beliefs, in her goals, or in the way she brings these together
-to make choices?  Plausibly, the ``fault'' lies in her goals. Her
-concern for others is what goes against the standards of cold-hearted
-and selfish rationality. However, if we were to define utility as
-degree of pleasure, we would have to say that the agent violates the
-basic norm of practical rationality, the MEU Principle, which states
-how credences and utilities combine to determine action.
+Even if we were interested in the cold-hearted and selfish sense of
+rationality, we shouldn't \emph{define} utility as degree of pleasure or
+welfare. Consider a hypothetical agent who cares not just about
+herself, and who sacrifices some of her own good to reduce the pain of
+others. The agent is ``irrational'' in the cold-hearted and selfish
+sense. But what is irrational about her? Does the fault lie in her
+beliefs, in her goals, or in the way she brings these together to make
+choices? Plausibly, the ``fault'' lies in her goals. Her concern for
+others is what goes against the standards of cold-hearted and selfish
+rationality. However, if we were to define utility as degree of
+pleasure, we would have to say that the agent violates the basic norm
+of practical rationality, the MEU Principle, which states how
+credences and utilities combine to determine action.
 
-The general point is that by using `utility' to measure whatever the
-agent in question desires, we do not automatically treat these desires
-as rational. Imagine a person in an abusive relationship who is
-manipulated into doing things that hurt her. We might reasonably think
-that the person shouldn't do these things; it is against her interest
-to do them. But what is at fault?  Arguably, the fault lies in her
-(manipulated) desires. What the person does may well be in line with
-what she wants to achieve -- in particular, with her strong desire to
-please her partner. But a healthy, self-respecting person, we think,
-should have other desires. So our usage of `utility' still allows us
-to say that the person shouldn't do what she is doing: she shouldn't
-do it because she should have different desires that would not support
-her actions.
+The point generalizes. Imagine a person in an abusive relationship who
+is manipulated into doing things that hurt her. We might reasonably
+think that the person shouldn't do these things; it is against her
+interest to do them. But what is at fault? Arguably, the fault lies in
+her (manipulated) desires. What the person does may well be in line
+with what she wants to achieve -- in particular, with her strong
+desire to please her partner. But a healthy, self-respecting person,
+we think, should have other desires.
+
+By understanding utility as a measure of whatever the agent in
+question desires, we do not automatically treat these desires as
+rational. Our usage of `utility' allows us to say that the
+person in the abusive relationship shouldn't do what she is doing,
+because she should have different desires that would not support her
+actions.
 
 \section{Sources of utility}\label{sec:sources-utility}
 
@@ -190,19 +213,18 @@ also need to cover ``negative desire''. Being hungry might have
 greater utility for you than being dead, even though you do not desire
 either. More importantly, the word `desire' is often associated with a
 particular type of motivational state: with unreflective urges and
-cravings, in contrast to more considerate and dignified motives.  For
-example, I might say that I got up early in the morning despite my
-strong desire to stay in bed; I got up not because I desired to get
-up, but because I had to. On this usage, my desires contrast with my
-sense of duty.
+cravings, in contrast to more considerate and dignified motives. I
+might say that I got up early in the morning despite my strong desire
+to stay in bed; I got up not because I desired to get up, but because
+I had to. On this usage, my desires contrast with my sense of duty.
 
 Utility is meant to comprise everything that motivates the agent, all
-the reasons she has for or against any particular action. As such,
-utility is an umbrella term for a highly diverse set of psychological
+the reasons she has for and against a particular action. As such,
+utility is an umbrella term for a diverse set of psychological
 states or events. We can be motivated by cravings and appetites, by
 moral commitments, by our image of the kind of person we want to be,
-by an overwhelming feeling of terror or love, and so on. Often, these
-factors are unconscious: there is good evidence that our true motives
+by an overwhelming feeling of terror or love, and so on. These
+factors may not be conscious: there is good evidence that our true motives
 are often not what we think or say. An agent's utility function
 represents her true motives, and all of them.
 
@@ -300,8 +322,8 @@ Consider the following example.
 The kind of behaviour displayed by Emily is quite common. It is also
 widely claimed to contradict expected utility theory. The idea is that
 if Emily isn't willing to sell the ticket for £70, then having the
-ticket is worth more than having £70 to her, and then she should have
-bought the ticket for £70 at the outset.
+ticket is worth more than having £70 to her, so she should have bought
+the ticket for £70 at the outset.
 
 But it is not hard to understand what happened. By the time George
 approaches Emily, she has made plans for going to the concert; she is
@@ -312,26 +334,19 @@ make new plans for tomorrow evening. In short, for Emily, \emph{giving
   the ticket in the first place}. Given these values, her behaviour is
 perfectly in line with the MEU Principle.
 
-\begin{exercise}
-  Draw an adequate decision matrix (with states, acts, outcomes) for
-  Emily's decision problem when she first considered buying the
-  ticket, and another matrix for her decision problem when she was
-  approached by George. $\star\star$
-  
-  \cmnt{%
+\begin{exercise2}
+  Draw an adequate decision matrix for Emily's decision problem when
+  she first considered buying the ticket, and another matrix for her
+  decision problem when she was approached by George. (There is no
+  relevant uncertainty, so the matrices have only one state.)
+\end{exercise2}
 
-    Students didn't get this. Not obvious what the states are etc.
-
-    } %
-
-\end{exercise}
-
-So Emily's behaviour does not violate the MEU Principle. Indeed, it
-seems that no pattern of behaviour whatsoever can, all by itself,
-violate the MEU Principle. After all, for any pattern of behaviour, we
-can imagine that the agent has a basic desire to display just that
-pattern of behaviour. Displaying the behaviour then evidently
-maximizes expected utility.
+So Emily's behaviour does not violate the MEU Principle. Indeed, no
+pattern of behaviour whatsoever can, all by itself, violate the MEU
+Principle. After all, for any pattern of behaviour, we can imagine
+that the agent has a basic desire to display just that pattern of
+behaviour. Displaying the behaviour then evidently maximizes expected
+utility.
 
 So if we are interested in the MEU Principle as a descriptive
 hypothesis about real people's choices, and we interpret `utility' to
@@ -388,9 +403,9 @@ in the game.
   is desire satisfaction.%
 } %
 
-All that said, the model we are studying has applications in which the
-utilities do not represent the agent's desires, or in which the
-credences do not represent her beliefs. For example, the board of
+All that said, the model we are studying also has applications in
+which the utilities do not represent the agent's desires, or in which
+the credences do not represent her beliefs. For example, the board of
 directors of a company may want to know what corporate decisions would
 ideally promote shareholder value in the light of such-and-such
 information. Here the utility function could be derived from the
@@ -399,34 +414,23 @@ function could be derived from the information at hand. Neither of
 these needs to match the beliefs and desires of any individual member
 of the board. Similarly, in ethics, the question may arise what an
 agent ought to do, from a moral perspective, in a case where she is
-not sure whether a given choice would end up being good or bad. Here
-the utility function would be derived from the relevant ethical system
+not sure whether a given choice is right or wrong. Here the relevant
+utility function might be derived from an ethical system
 (utilitarianism, perhaps) and again need not match the agent's actual
 desires.
 
-\begin{exercise}
-  Some choices can predictably change our basic desires. Right now,
-  you may only desire to have one drink tonight, but you may also know
-  that if you have one drink, then you will want another. One might argue
-  that a rational agent should be guided not by her present desires,
-  but by the desires she will have after the choice is made. Can this
-  be accommodated in our framework? If so, how would we have to set up
-  the states in a decision problem? (Note that you may not be sure
-  what your future self will desire.) $\star\star\star$
-  
-  \cmnt{%
+\begin{exercise2}
+  Some choices can predictably change our desires. One might argue that
+  a rational agent should be guided not by her present desires, but by
+  the desires she will have as a result of the choice.
 
-    Students didn't get this.
-
-    Clearer: if you know your future self will want two beers if you
-    have one, and otherwise prefers one over none like you, here's the
-    utilities: no beer 0, 1 beer 1, 2 beers 2. Note if you don't have
-    a beer this is not the actual future U function! How in general is
-    the function defined? ...
-
-  } %
-
-\end{exercise}
+  For example, suppose you can decide right now how many drinks you
+  will have tonight: zero, one, or two. If you're sober, you prefer to
+  have one drink rather than zero or two. But if you have a drink, you
+  sometimes prefer to have another. Draw a matrix for your decision
+  problem assuming that your goal is to maximize your expected future
+  utility.
+\end{exercise2}
 
 \cmnt{%
   People like the idea of a reflective desire or value to be what you
@@ -498,53 +502,57 @@ utility. However much you desire that it won't rain tomorrow, your
 desire that \emph{it either will or won't rain} should be at least as
 great.
 
-That does not look plausible. Intuitively, if something is certain to
-be the case anyway, then it doesn't make sense to desire it. But this
-could mean two things. It could mean that degrees of desire are not
-even defined for logically necessary propositions. Or it could mean
-that an agent should always be indifferent towards logically necessary
-propositions -- neither wanting them to be the case nor wanting them
-to not be the case. Our common-sense conception of desire arguably
-sides with the first option: if you are certain of something, even
-asking how strongly you desire it seems ill-posed. But the case isn't
-entirely clear. In any case, for our purposes, it proves more
-convenient to go with the second option. So we will say that even
-logically necessary propositions have well-defined utility, but we
-will treat their utility as ``neutral''.
+This does not look plausible. Intuitively, if something is certain to
+be the case, it makes no sense to desire it. But this could mean two
+things. It could mean that degrees of desire are not even defined for
+logically necessary propositions. Or it could mean that an agent
+should always be indifferent towards logically necessary propositions
+-- neither wanting them to be the case nor wanting them to not be the
+case. Our common-sense conception of desire arguably sides with the
+first option: if you are certain of something, even asking how
+strongly you desire it seems ill-posed. But the issue isn't 
+clear. For our purposes, it proves more convenient to go
+with the second option. So we will say that even logically necessary
+propositions have well-defined utility, but we will treat their
+utility as ``neutral''.
 
-What about axiom (iii)? Axiom (iii) states that if $A$ and $B$ are
-logically incompatible, then the probability of $A\lor B$ equals the
-sum of the probabilities of $A$ and $B$. To illustrate, suppose there
-are three possible locations for a picnic: Alder Park, Buckeye Park,
-and Cedar Park. Alder Park and Buckeye Park would be convenient for
-you; Cedar Park would not. Now how much do you desire that the picnic
-takes place in \emph{either Alder Park or Buckeye Park}? If axiom
-(iii) holds for utilities, then if you desire Alder Park and Buckeye
-Park to equal degree $x$, then your utility for the disjunction should
-be $2x$: you should be more pleased to learn that the picnic takes
-place in either Alder Park or Buckeye Park than to learn that it takes
-place in Alder Park. That clearly doesn't make sense. So axiom (iii)
-also fails.
+% xxxx what is neutral? 0?
+
+Axiom (iii) states that if $A$ and $B$ are logically incompatible,
+then the probability of $A\lor B$ equals the sum of the probabilities
+of $A$ and $B$. To illustrate, suppose there are three possible
+locations for a picnic: Alder Park, Buckeye Park, and Cedar Park.
+Alder Park and Buckeye Park would be convenient for you; Cedar Park
+would not. Now how much do you desire that the picnic takes place in
+\emph{either Alder Park or Buckeye Park}? If axiom (iii) holds for
+utilities, then if you desire Alder Park and Buckeye Park to equal
+degree $x$, then your utility for the disjunction should be $2x$: you
+should be more pleased to learn that the picnic takes place in either
+Alder Park or Buckeye Park than to learn that it takes place in Alder
+Park. That clearly doesn't make sense. So axiom (iii) also fails.
 
 What is the true connection between the utility of $A \lor B$ and the
 utilities of $A$ and $B$? Intuitively, if $A$ and $B$ have equal
 utility $x$, then the utility of $A \lor B$ should also be $x$. What
-if the utility of $A$ and $B$ is not equal? Then the utility of $A
-\lor B$ should plausibly lie in between the utilities of $A$ and $B$:
+if the utilities of $A$ and $B$ are not equal? What if, say,
+$U(A) > U(B)$?  Then the utility of $A \lor B$ should plausibly lie in
+between the utilities of $A$ and $B$:
 \[
-  U(A) \leq U(A \lor B) \leq U(B).
+  U(A) \geq U(A \lor B) \geq U(B).
 \]
 That is, if Alder Park is your first preference and Buckeye your second, then
 the disjunction \emph{either Alder Park or Buckeye Park} can't be
 worse than Buckeye Park or better than Alder Park. But where does $U(A
 \lor B)$ lie in between $U(A)$ and $U(B)$? At the mid-point?
 
-Suppose you prefer Alder Park to Buckeye Park, and you find out that
-the picnic won't take place in Buckeye Park. Now how pleased would you be
-to learn the picnic will take place either in Alder Park or in Buckeye
-Park? Quite pleased. If you're certain that $B$ is false, then $U(A
-\lor B)$ should plausibly equal $U(A)$. If you're certain that $A$ is
-false, then $U(A \lor B)$ should equal $U(B)$.
+Suppose you prefer Alder Park to Buckeye Park, and Buckeye Park to
+Cedar Park. You think it is highly unlikely that the picnic will take
+place in Buckeye Park. Now how pleased would you be to learn the
+picnic won't take place in Cedar Park -- equivalently, that it will
+take place either in Alder Park or in Buckeye Park? You should be
+quite pleased. If you're confident that $B$ is false, then
+$U(A \lor B)$ should plausibly be close to $U(A)$. If you're confident
+that $A$ is false, then $U(A \lor B)$ should be near $U(B)$.
 
 So your utilities depend on your beliefs! On reflection, this should
 not come as a surprise. A lot of the things we desire we only desire
@@ -570,12 +578,11 @@ that the hammer will allow you to hang up the picture.
 So here is the general rule for $U(A \lor B)$, assuming $A$ and $B$
 are incompatible. The rule was discovered by Richard Jeffrey in the
 1960s and is the \emph{only} basic rule of utility.
-\newpage
 %
 \begin{genericthm}{Jeffrey's Axiom}
   If $A$ and $B$ are logically incompatible, then 
   \[ U(A \lor B) =
-  U(A)\times \Cr(A/(A\lor B)) + U(B)\times \Cr(B/(A \lor B)). \]
+  U(A)\cdot \Cr(A/(A\lor B)) + U(B)\cdot \Cr(B/(A \lor B)). \]
 \end{genericthm}
 %
 In words: the utility of $A \lor B$ is the weighted average of the
@@ -584,16 +591,16 @@ the two disjuncts, conditional on $A \lor B$.
 
 Why `conditional on $A \lor B$'? Why don't we simply weigh the utility
 of $A$ and $B$ by their unconditional probability? Because then highly
-unlikely disjunctions would automatically have a utility near 0. If
+unlikely propositions would automatically have a utility near 0. If
 you are almost certain that the picnic will take place in Cedar Park,
 both $\Cr(\emph{Alder Park})$ and $\Cr(\emph{Buckeye Park})$ will be
-close to 0. But the mere fact that a proposition is unlikely does
-not make it undesirable. To evaluate the desirability of $A \lor B$,
-we should bracket its probability. Thus we take the
-probability-weighted average of $U(A)$ and $U(B)$ on the supposition
-that $A \lor B$ is true.
+close to 0. But the mere fact that a proposition is unlikely does not
+make it undesirable. To evaluate the desirability of a proposition, we
+should bracket its probability. That's why Jeffrey's Axiom defines
+$U(A \lor B)$ the probability-weighted average of $U(A)$ and $U(B)$ \emph{on
+the supposition that $A \lor B$ is true}.
 
-\begin{exercise}
+\begin{exercise1}
   You would like to win the lottery because that would allow you to
   travel the world, which you always wanted to do. Let \emph{Win} be
   the proposition that you win the lottery, and \emph{Travel} the
@@ -603,11 +610,11 @@ that $A \lor B$ is true.
   utility. Suppose $U(\emph{Win} \land \emph{Travel}) = 10$,
   $U(\emph{Win} \land \neg \emph{Travel}) = 0$, and your credence that
   you will travel the world on the supposition that you will win the
-  lottery is 0.9. By Jeffrey's axiom, what is $U(\emph{Win})$? $\star$
-\end{exercise}
+  lottery is 0.9. By Jeffrey's axiom, what is $U(\emph{Win})$?
+\end{exercise1}
 
-\begin{exercise}
-  At the beginning of this section, we argued that if $U(\neg A)$ is
+\begin{exercise2}
+  At the beginning of this section, I argued that if $U(\neg A)$ is
   high, then $U(A)$ should be low, and vice versa. Let's use the
   utility of the tautology $A \lor \neg A$ as a neutral point of
   reference, so that $U(A \lor \neg A) = 0$. From this assumption, and
@@ -617,10 +624,10 @@ that $A \lor B$ is true.
   U(A)\Cr(A) = - U(\neg A)\Cr(\neg A).
   \]
   Can you show how this follows? (It's not as hard as it looks. Hint:
-  $A$ is logically incompatible with $\neg A$.) $\star\star$
-\end{exercise}
+  $A$ is logically incompatible with $\neg A$.)
+\end{exercise2}
 
-\begin{exercise}
+\begin{exercise2}
   Let's say that an agent \emph{desires} a proposition $A$ just in
   case $U(A) > U(\neg A)$. One might have thought that whenever an
   agent desires a conjunction $A \land B$, then she should also desire
@@ -636,8 +643,7 @@ that $A \lor B$ is true.
     should also desire $A \land B$.
   \end{enumerate}
   Explain briefly and informally whether these are valid or invalid,
-  perhaps by giving a counterexample like I did above. $\star\star$
-  
+  perhaps by giving a counterexample like I did above. 
   \cmnt{%
     Students were misled by pragmatics here: an offer of tea or coffee
     sounds good if you like tea and dislike coffee -- you'll just take
@@ -647,23 +653,33 @@ that $A \lor B$ is true.
     presented as disjunctions. 
   } %
 
-\end{exercise}
+\end{exercise2}
 
-\begin{exercise}
+\begin{exercise3}
   Derive the following rule from Jeffrey's axiom and the rules of probability: 
   if $A$, $B$, and $C$ are incompatible with one another, then 
   \begin{align*} U(A \lor B \lor C) =
-  U(A)\times \Cr(A/(A\lor B \lor C)) &+ U(B)\times \Cr(B/(A \lor B \lor C))\\
-  &+ U(C)\times\Cr(C/(A \lor B\lor C)).
+  U(A)\cdot \Cr(A/(A\lor B \lor C)) &+ U(B)\cdot \Cr(B/(A \lor B \lor C))\\
+  &+ U(C)\cdot\Cr(C/(A \lor B\lor C)).
   \end{align*}
-  $\star\star\star$
-\end{exercise}
+\end{exercise3}
 
 
 \section{Basic desire}\label{sec:basic-desire}
 
+
 \cmnt{%
   Need to explain better.
+
+  According to Binmore 2009:6n3, ``the distinction between intrinsic
+  preferences and instrumental preferences is made in economics by
+  speaking of direct and indirect utility functions''.
+  
+  In this section I should introduce the most fine-grained
+  bearers of utility as ``rewards'' or ``outcomes'', like I do in the
+  beginning of ch.7.  That's important to avoid confusion in the next
+  chapter.
+
 } %
 
 I have presented Jeffrey's axiom as the sole formal requirement on
@@ -671,43 +687,47 @@ rational utility. Even that much is controversial. Many economists and
 philosophers hold that rationality imposes no constraints at all on an
 agent's desires. (In a way, this is the opposite extreme of the
 hedonist doctrine that all rational agents desire nothing but their
-own pleasure.) The thought was memorably expressed by Hume in his
-\emph{Treatise of Human Nature}: ``\,'tis not contrary to reason to
-prefer the destruction of the whole world to the scratching of my
-finger. 'Tis not contrary to reason for me to chuse my total ruin, to
-prevent the least uneasiness of an Indian or person unknown to me.''
+own pleasure.) This idea was memorably expressed by David Hume in
+his \emph{Treatise of Human Nature}:
 
-Hume's idea is that basic goals are not responsive to evidence,
+\begin{quote}
+  'tis not contrary to reason to prefer the destruction of the whole
+  world to the scratching of my finger. 'Tis not contrary to reason
+  for me to chuse my total ruin, to prevent the least uneasiness of an
+  Indian or person unknown to me.
+\end{quote}
+
+Hume claimed that basic goals are not responsive to evidence,
 reason, or argument. If your ultimate goal is to help some distant
 stranger, there is no non-circular argument that could prove your goal
 to be wrong, nor could we fault you for not taking into account any
 relevant evidence. Whatever facts you might find out about the world,
-you could coherently maintain that this is what the world is like,
-while your ultimate goal remains to help the stranger.
+you could coherently retain your ultimate goal of helping the
+stranger.
 
-Hume assumes that beliefs and goals are in principle independent. What
+For Hume, beliefs and goals are in principle independent. What
 you believe is one thing, what you desire is another. Beliefs try to
 answer the question: what is the world like? Desires answer an
 entirely different question: what do you want the world to be like?
-On the face of it, these two questions do seem to be logically
+On the face of it, these two questions really appear to be logically
 independent. Two agents could in principle give the same answer to the
 first question and different answers to second, or the other way
 around.
 
 What we have seen in the previous section seems to contradict these
 intuitions. We have seen that an agent's utilities are thoroughly
-entangled with her credences. Indeed it turns out that we can even
-read off an agent's credence in any proposition $A$ from her
-utilities, assuming the agent's utilities obey Jeffrey's axiom, her
-credences obey the probability axioms, and the agent is not
-indifferent towards $A$. For by Jeffrey's axiom,
+entangled with her credences. Indeed, we can read off an agent's
+credence in any proposition $A$ from her utilities, assuming the 
+utilities obey Jeffrey's axiom, the credences obey the probability
+axioms, and the agent is not indifferent towards $A$. For by Jeffrey's
+axiom,
 \[
-  U(A \lor \neg A) = U(A)\times \Cr(A) + U(\neg A)\times \Cr(\neg A).
+  U(A \lor \neg A) = U(A)\cdot \Cr(A) + U(\neg A)\cdot \Cr(\neg A).
 \]
-By the Negation Rule for rational credence, we can replace
-$\Cr(\neg A)$ by $1 - \Cr(A)$. Multiplying out, we get
+By the Negation Rule, we can replace $\Cr(\neg A)$ by $1 - \Cr(A)$.
+Multiplying out, we get
 \[
-  U(A \lor \neg A) = U(A)\times \Cr(A) + U(\neg A) - U(\neg A)\Cr(A).
+  U(A \lor \neg A) = U(A)\cdot \Cr(A) + U(\neg A) - U(\neg A)\Cr(A).
 \]
 And then we can solve for $\Cr(A)$:
 \[
@@ -718,83 +738,119 @@ The ratio on the right-hand side is defined whenever $U(A) \not= U(\neg A)$.
 What is going on here? Have we refuted Hume? Have we shown that an
 agent's beliefs are \emph{part of her desires}? 
 
-Of course not -- or not in any interesting sense. Utilities are
-entangled with credences because they represent not just an agent's
-\textbf{basic desires} but also her non-basic or instrumental
-desires. Your desire to buy a hammer is instrumental. You desire the
-hammer because you believe this will allow you to hang up the picture,
-which is something you want (either instrumentally or
-non-instrumentally). If we restrict your utility function to basic
-desires, the function may well be independent of your beliefs.  Before
-I explain how we can do that, let me offer another kind of motivation.
+Of course not -- or not in any interesting sense. We need to
+distinguish \textbf{basic desires} from \textbf{derived desires}. If
+you are looking for a hammer to hang up a picture, your desire to find
+the hammer is not a basic desire. Rather, it is derived from your
+desire to hang up the picture and your belief that you need a hammer
+to achieve that goal. By contrast, a desire to be free from pain is
+typically basic: if you want a headache to go away, this is usually
+not (or not only) because you think having no headache is associated
+with other things you desire. You simply don't want to have a
+headache, and that's the end of the story.
 
-People's goals and values often change. Many of the things that were
-important to me at age 10 are no longer important to me now. But if we
-look at an agent's utility function, we will see a lot of changes that
-merely reflect a change in the agent's beliefs, without any underlying
-change in her goals or values. For example, suppose there's a party,
-and at first you want to go. Then you hear that Bob will be there, and
-you no longer want to go. Then you hear that there will be free beer,
-and you want to go again. Your desire seems to change back and
-forth. But it's not like you can't make up your mind about what you
-want. Rather (let's assume), when you initially wanted to go to the
-party, you had some idea of what the party would be like. Among other
-things, you thought it would be a party without Bob, and without free
-beer. That kind of party -- a party of type $A$, as I'll call it --
-had some appeal to you. When you then learned that Bob will come, you
-didn't suddenly find parties of type $A$ unappealing. Instead, you
-realized that the party on offer is not of type $A$. It is a different
-kind of party, a party with Bob, and (still) no free beer. That kind
-of party, of type $B$, you don't find appealing. Learning that there
-will be free beer then told you that the party on offer is not of type
-$B$ either. It is a party of another type $C$, with free beer, which
-you find appealing. Throughout, we can assume that you liked parties
-of type $A$ and $C$, but not parties of type $B$. These more basic
-desires never changed.
+When Hume claimed that desires are independent of beliefs, he was
+talking about basic desires.
 
-The example also indicates where your basic desires are hiding in your
-utility function. The proposition that you go to the party comprises a
-wide and diverse set of possible worlds. In some of these worlds, Bob
-is at the party, in others he is not. In some, there is free beer, in
-others not. In some, you break your arm while trying to dance, in
-others you meet the love of your life, and so on. Some of these worlds have high
-utility, others have low utility. If you want to go to the party, that
-is because, on balance, you assign greater degree of belief to worlds
-with high utility. It follows from Jeffrey's axiom that the utility of
-\emph{going to the party} is a weighted average of the utility of all
-the individual worlds where you go to the party, weighted by your
-degree of belief in the relevant worlds, on the supposition that you
-go to the party. When you learn that Bob will be at the party, your
-utility in the individual worlds doesn't change. Rather, your credence
-is redistributed among the party worlds in such a way that the
-weighted average of the utility becomes less appealing.
+How are basic desires related to an agent's utility function? Imagine
+an agent whose \emph{only} basic desire is to be free from pain, and
+let's pretend this is an all-or-nothing matter. The utility this agent
+gives to being free from pain then does not depend on her beliefs. All
+worlds in which she is free from pain are equally good, equally
+desirable, so it does not matter how the agent's credences are
+distributed among these worlds. Being pain-free \emph{and rich}, for
+example, is equally desirable as being pain-free \emph{and poor}. Both
+have the same utility as being pain-free itself.
 
-So your basic desires are encoded in the utility of individual
-possible worlds. If the utility you assign to an individual world
-increases or decreases, then that's a genuine change in preference,
-not just an effect of new information.
+Let's say that a proposition has \emph{uniform utility} if the agent
+does not care how the proposition is realized: all (non-empty) subsets
+of the proposition (understood as a set of possible worlds) have equal
+utility. 
 
-Instead of modelling agents by a full-fledged credence and utility
-function, defined over a wide range of propositions, we could
-equivalently model them by a credence function and a restricted
-utility function that is only defined for maximally specific
-propositions (possible worlds). This restricted function is
-sometimes called the agent's \textbf{value function}. The agent's
-utility for less specific propositions could then be computed from
-their value function and their credence function. For all we've shown,
-these two functions are independent of one another.
+What if an agent has two basic desires, say, being pain-free and being
+liked? These are logically independent, so there are four
+combinations: (1) being pain-free and liked, (2) being pain-free and
+not liked, (3) being in pain and liked, and (4) being in pain and not
+liked. Being pain-free no longer has uniform utility, since the worlds
+where the agent is pain-free divide into (better) worlds where the
+agent is pain-free and liked and (worse) worlds where the agent is
+pain-free and disliked. As a consequence, the utility of being
+pain-free now depends on the agent's beliefs: the stronger she
+believes that she is liked if she is pain-free, the more she desires
+being pain-free.
 
-\begin{exercise}
-  Suppose your only basic desire is to increase the degree of pleasure
-  of a certain stranger; call her $X$. What does your value function
-  look like? That is, for any possible world $w$, what does your value
-  function assign to $w$?  $\star\star$
+The four combinations of being pain-free and being liked, however,
+have uniform utility. All worlds in which the agent is, say, pain-free
+and not liked are equally desirable (pretending these are
+all-or-nothing features). Let's call such a combination a
+\textbf{concern}. So a concern is a proposition that specifies
+everything the agent ultimately cares about.
 
-  \cmnt{%
-    Students didn't get this. They didn't know what to write. V(X, U)
-    = Cr... Also didn't see that Cr doesn't play a role.
-  } %
-\end{exercise}
+We can think of an agent's utility function as built up from the
+utility she attaches to her concerns. The choice of concerns, and the
+utilities they get, is independent of the agent's beliefs. Once the
+utilities of the agent's concerns are fixed, the agent's credence
+function determines the utility of all other propositions, by
+Jeffrey's axiom.
+
+\begin{exercise2}
+  There's a party, and at first you want to be invited. Then you hear that Bob
+  will be there, and you no longer want to be invited. Then you hear that
+  there will be free beer, and you want to be invited again. Your desire seems
+  to change back and forth. Nonetheless, your basic desires may have
+  remained the same throughout. Explain how your fluctuating attitude
+  might have come about without any change in basic desires.
+\end{exercise2}
+
+%   But it's not like you can't make up your
+%   mind about what you want. More plausibly, when you initially wanted
+%   to go to the party, you had some idea of what the party would be
+%   like. Among other things, you thought it would be a party without
+%   Bob, and without free beer. That kind of party -- a party of type
+%   $A$, let's say -- had some appeal to you. When you then learned that
+%   Bob will come, you didn't suddenly find parties of type $A$
+%   unappealing. Instead, you realized that the party on offer is not of
+%   type $A$. It is a different kind of party, a party with Bob, and
+%   (still) no free beer. That kind of party, of type $B$, you don't
+%   find appealing. Learning that there will be free beer then told you
+%   that the party on offer is not of type $B$ after all. It is a party
+%   of another type $C$, with free beer, which you find appealing.
+
+% The desirability of going to the party changes with every piece of
+% information you learn. But your basic desires may well remain the
+% same. The desirability of going to the party changes because this
+% proposition (that you go to the party) comprises a diverse set of
+% possible worlds, cross-cutting your concerns. In some worlds where you
+% go to the party, Bob is there, in others he is not; in some, there is
+% free beer, in others not. You like some of these more specific
+% possibilities more than others.
+
+% So your basic desires are encoded in the utility of individual
+% possible worlds. If the utility you assign to an individual world
+% increases or decreases, then that's a genuine change in preference,
+% not just an effect of new information.
+
+% Instead of modelling agents by a full-fledged credence and utility
+% function, defined over a wide range of propositions, we could
+% equivalently model them by a credence function and a restricted
+% utility function that is only defined for maximally specific
+% propositions (possible worlds). This restricted function is
+% sometimes called the agent's \textbf{value function}. The agent's
+% utility for less specific propositions could then be computed from
+% their value function and their credence function. For all we've shown,
+% these two functions are independent of one another.
+
+% \begin{exercise2}
+%   Suppose your only basic desire is to increase the degree of pleasure
+%   of a certain stranger; call her $X$. What does your value function
+%   look like? That is, for any possible world $w$, what does your value
+%   function assign to $w$? 
+
+%   \cmnt{%
+%     Students didn't get this. They didn't know what to write. V(X, U)
+%     = Cr... Also didn't see that Cr doesn't play a role.
+%   } %
+% \end{exercise2}
 
 \cmnt{%
 Suppose you desire A more than B because A is a stronger indicator of
@@ -961,7 +1017,7 @@ world to be one of the ways it might be, for all we know.
 \begin{genericthm}{The Imaging Axiom}
   If $A$ and $B$ are logically incompatible, then 
   \[ U(A \lor B) =
-  U(A)\times \Cr(A/\!/(A\lor B)) + U(B)\times \Cr(B/\!/(A \lor B)). \]
+  U(A)\cdot \Cr(A/\!/(A\lor B)) + U(B)\cdot \Cr(B/\!/(A \lor B)). \]
 \end{genericthm}
 
 But there is another one. Consider the proposition that Oswald didn't

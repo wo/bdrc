@@ -16,6 +16,10 @@
 
 \newcommand{\m}{\text{m}}
 
+% custom list format in exercises:
+\usepackage[shortlabels]{enumitem} % \begin{enumerate}[(a)]
+\newenvironment{exlist}{\vspace{-2mm}\begin{enumerate}[(a)]\itemsep-1.5mm}{\end{enumerate}\vspace{-5mm}}
+
 \begin{document}
 
 \begingroup
@@ -134,6 +138,12 @@ better than re-reading etc. Retrieval is key to learning.
   omit the MOPs which are crucial to our rational response to evidence
   and to consistency: Pierre has inconsistent ordinary-language
   beliefs, but there's a clear underlying consistency.)
+  
+31. You have a collection of tasks to perform, each of which has a certain probability of failure. If you ever fail on one of the tasks, then you have to start again at all the tasks. (An example: you want to make a Youtube video in one take in which you successfully perform five tricks of varying difficulty.) In what order should you do the tasks if you want to minimize the expected time it will take to eventually succeed?
+
+For more on this question, including an entertaining Youtube video, see this comment of Julia Wolf on my second blog post. She got the question from a Google Buzz post of Terence Tao.
+
+
 } %
 
 \input{01-overview}

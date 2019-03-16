@@ -1,5 +1,7 @@
 \chapter{Further Constraints on Rational Belief}\label{ch:constraints}
 
+% Exercises too hard/tedious for weak students
+
 \cmnt{%
 
   I could add a section on confirmation and uniqueness. The two go
@@ -136,51 +138,43 @@ room for doubts about $E$, and that $E$ is the \emph{total}
 information the agent acquires, rather than part of her new
 information. For example, if you see the paper turn red but at the
 same time notice the smell of ammonium hydroxide, which you know is
-alkaline, your credence in the \emph{Acid} hypothesis should not
+alkaline, your credence in the \emph{Acid} hypothesis may not
 increase to 0.9.
 
-\begin{exercise}
+\begin{exercise1}
   Assume $\Cro(\emph{Snow}) = 0.3$, $\Cro(\emph{Wind}) = 0.6$, and
   $\Cro(\emph{Snow} \land \emph{Wind}) = 0.2$. By the Principle of
   Conditionalization, what is $\Crn(\emph{Wind})$ if the agent finds
-  out that it is snowing? $\star$
-\end{exercise}
+  out that it is snowing? 
+\end{exercise1}
 
 \cmnt{%
   The next exercise should be clarified: show from the definition of
   conditionalization and the probability rules that ...%
 } %
 
-\begin{exercise}
-  Show from the definition of conditionalization that if $\Crn$
-  results from $\Cro$ by conditionalizing on some information $E$ with
-  $\Cro(E) > 0$, then $\Crn(E) = 1$. $\star$
-\end{exercise}
+\begin{exercise2}
+  Show from the definition of conditionalization and the rules of
+  probability that if $\Crn$ results from $\Cro$ by conditionalizing
+  on some information $E$ with $\Cro(E) > 0$, then $\Crn(E) = 1$.
+\end{exercise2}
 
-\cmnt{%
-  Again clarify: assume xxx, then derive xxx.
-} %
 
 \cmnt{%
   Add exercise showing that stepwise conditioning equals cumulative
   conditioning?%
 } %
 
-  
-
-\begin{exercise}
+\begin{exercise3}
   Assume that $\Crn$ results from $\Cro$ by conditionalizing on some
-  information $E$ with $\Cro(E) > 0$. Show that if $\Cro$ satisfies
-  the Kolmogorov axioms, then $\Crn$ also satisfies the Kolmogorov
-  axioms. (Feel free to use any of the derived rules from chapter 2,
-  including those derived in the exercises. Hint for Kolmogorov's
-  axiom (ii): if $A$ is logically necessary, then $A\land E$ is
-  logically equivalent to $E$.) $\star\star\star$
-\end{exercise}
+  information $E$ with $\Cro(E) > 0$, and that $\Cro$ satisfies the
+  Kolmogorov axioms. Using the probability rules, show that $\Crn$
+  then also satisfies the Kolmogorov axioms. (You may use any of the
+  derived rules from chapter 2. Hint for Kolmogorov's axiom (ii): if
+  $A$ is logically necessary, then $A\land E$ is logically equivalent
+  to $E$.)
+\end{exercise3}
 
-\cmnt{%
-  Show that the new credences are guaranteed to be probabilistic?%
-} %
 
 The Principle of Conditionalization seems obvious enough. It is also
 supported by a range of arguments. For example, one can show that any
@@ -196,7 +190,7 @@ of Conditionalization then turns into the following (equivalent) norm,
 known as \textbf{Bayes' Rule}:
 %
 \[
-\Cr_{\text{new}}(A) = \frac{\Cr_{\text{old}}(E/A) \times \Cr_{\text{old}}(A)}{\Cr_{\text{old}}(E)}, \text{ provided $\Cr_\text{old}(E) > 0$}.
+\Cr_{\text{new}}(A) = \frac{\Cr_{\text{old}}(E/A) \cdot \Cr_{\text{old}}(A)}{\Cr_{\text{old}}(E)}, \text{ provided $\Cr_\text{old}(E) > 0$}.
 \]
 %
 The usefulness of this formulation comes from the fact that it is
@@ -214,27 +208,28 @@ Let's do an example.
   confident should you be that the woman has breast cancer?
 \end{example}
 
-We imagine that you know all the statistical information before
-finding out about the test result. If all you know is that the woman
-is from a population in which 2\% of women have breast cancer, your
+Let's imagine that you know all the statistical information before
+finding out about the test result. Knowing that the woman is from a
+population in which 2\% of women have breast cancer, your initial
 credence in the hypothesis $C$ that the woman has breast cancer should
 plausibly be 0.02. So $\Cr_{old}(C) = 0.02$. Moreover, since you know
 that the test yields a positive result in 95\% of cancer cases,
 $\Cr_{\text{old}}(P/C) = 0.95$, where $P$ is the proposition that the
 test result is positive. Similarly, since the test yields a positive
-result in 10\% of non-cancer cases, $\Cr_{\text{old}}(P/\neg C) =
-0.1$. Now we simply plug these numbers into Bayes' Rule, expanding the
-denominator by the Law of Total Probability:
+result in 10\% of non-cancer cases,
+$\Cr_{\text{old}}(P/\neg C) = 0.1$. Now we simply plug these numbers
+into Bayes' Rule, expanding the denominator by the Law of Total
+Probability:
 %
 \begin{align*}
-  \Cr_{\text{new}}(C) &= \frac{\Cr_{\text{old}}(P/C) \times
-  \Cr_{\text{old}}(C)}{\Cr_\text{old}(P/C) \times \Cr_\text{old}(C) +
-  \Cr_\text{old}(P/\neg C)\times \Cr_\text{old}(\neg C)}\\[3mm]
-  &= \frac{0.95 \times 0.02}{0.95 \times 0.02 + 0.1 \times 0.99} = \frac{0.019}{0.019 + 0.098} = 0.16.
+  \Cr_{\text{new}}(C) &= \frac{\Cr_{\text{old}}(P/C) \cdot
+  \Cr_{\text{old}}(C)}{\Cr_\text{old}(P/C) \cdot \Cr_\text{old}(C) +
+  \Cr_\text{old}(P/\neg C)\cdot \Cr_\text{old}(\neg C)}\\[3mm]
+  &= \frac{0.95 \cdot 0.02}{0.95 \cdot 0.02 + 0.1 \cdot 0.99} = \frac{0.019}{0.019 + 0.098} = 0.16.
 \end{align*}
 
 The answer is much lower than many people think -- including many trained 
-physicians. But on reflection it makes intuitive sense. Imagine we
+physicians. But it makes intuitive sense. Imagine we
 took a large sample of 1000 women from the population. We would expect
 around 2\%, or 20 women, in the sample to have breast cancer. If we
 tested all women in the sample, we would expect around 95\% of those
@@ -250,15 +245,24 @@ The tendency to overestimate the significance of tests in cases like example
 \ref{ex:base} is known as the \textbf{base rate fallacy} because it is
 assumed to arise from neglecting the low ``base rate'' of 2\%.
 
-\begin{exercise}
+\begin{exercise2}
   Box $A$ contains two black balls. Box $B$ contains one black ball
   and one white ball. I choose a box at random and blindly draw a
   ball. The ball is black. How confident should you be that I chose
-  box $A$? $\star\star$
-\end{exercise}
-\cmnt{
-  Move Prosecutor's Fallacy here.
-} %
+  box $A$? (Explain briefly.)
+\end{exercise2}
+
+\begin{exercise3}[The Prosecutor's Fallacy]\label{ex-prosecutor}
+  A murder has been committed on a remote island with a million
+  inhabitants. In a database of blood donors, detectives find a record
+  whose DNA seems to match the perpetrator's DNA from the crime
+  scene. The DNA test is very reliable: the probability that it finds
+  a match between distinct people is 1 in 100,000. So the person with
+  the matching DNA is arrested and brought to court. The prosecutor
+  argues that the probability that the defendant is innocent is
+  1/100,000. Is that correct? As a member of the jury, how confident
+  should you be in the defendant's guilt?
+\end{exercise3}
 
 \cmnt{%
 \begin{exercise}[The Three Prisoners]
@@ -270,6 +274,7 @@ assumed to arise from neglecting the low ``base rate'' of 2\%.
 \end{exercise}
 } %
 
+\cmnt{%
 \begin{exercise}[The Monty Hall problem]\label{ex-montyhall}
   A game show host offers you a choice between three doors. Behind one
   of them is a prize. The host, who knows where the prize is,
@@ -280,7 +285,7 @@ assumed to arise from neglecting the low ``base rate'' of 2\%.
   remaining door. If you want to maximise the chance of winning the
   prize, should you switch? (Explain briefly.) $\star\star$
 \end{exercise}
-
+} %
 
 \cmnt{%
   Prove that as long as cr1 pHq and cr1pEq are both nonextreme, condi-
@@ -309,21 +314,18 @@ conditionalization will not make her sane.
 \begin{example}\label{ex:grue}
   You are stranded on a remote island, which you find inhabited by a
   strange kind of flightless bird. In the first ten days of your stay
-  on the island, you see 100 birds, all of which are green. How
-  confident should you be that the 101st bird you will see is also
-  green?
+  on the island, you see 100 birds, all of which are green.
 \end{example}
-
-We don't need to worry about the precise number; what's important is
-that you should be fairly confident that the 101st bird will be
-green. To see why the Principle of Conditionalization does not ensure
-this, let $H$ be the proposition that the first 100 birds you
-encounter on the island are atypical in colour. Suppose when you first
-arrived on the island you were convinced of $H$ -- for no good
+%
+Plausibly, you should be fairly confident that the 101st bird will
+also be green. The Principle of Conditionalization does not ensure
+this. To see why, let $H$ be the proposition that the first 100 birds
+you encounter on the island are atypical in colour. Suppose when you
+first arrived on the island you were convinced of $H$ -- for no good
 reason. The observation of 100 green birds does not challenge that
 conviction, so after conditionalizing on these observations you are
 still confident in $H$. And if you believe that the first 100 birds
-you encountered were not only green but also atypical in colour, then
+you encountered were green and also atypical in colour, then
 you'll expect the 101st bird to have a different colour. So if we
 think you should be confident that the 101st bird will be green, we
 have to say that you should not be confident in $H$ before receiving
@@ -331,7 +333,6 @@ any relevant evidence.
 
 \cmnt{%
   The next exercise is confusing. Strip it.
-} %
 
 \begin{exercise}
   Show that whenever some proposition $H$ is not entailed by an
@@ -340,6 +341,7 @@ any relevant evidence.
   for any $x \in [0,1]$ there is some credence $\Cr_\text{old}$ such
   that $\Cr_\text{old}(H/E) = x$. $\star\star$
 \end{exercise}
+} %
 
 What we see here is Hume's problem of induction. As Hume pointed out,
 there is no logical guarantee that the future will resemble the past,
@@ -364,7 +366,7 @@ to explain what rational priors should look like.
 
 So what should you believe if you have no evidence at all about a
 certain subject matter? A natural thought is that you should be
-maximally open-minded about it. For example, if you know that one of
+maximally open-minded. For example, if you know that one of
 three people has committed a murder, but you have no further
 information about the case, then you should give equal credence to the
 three possibilities. More generally, the following principle looks
@@ -403,22 +405,22 @@ and also that it should be \nicefrac{1}{5}!
 Some have concluded that in cases like these, rationality really does
 require you to have \emph{several} credence functions: relative to one
 of your credence functions, $R$ has probability \nicefrac{1}{2},
-relative to another, it has probability \nicefrac{1}{5}. But let's set
-this view aside. (We will return to it in section
-\ref{sec:imprecise}.)
+relative to another, it has probability \nicefrac{1}{5}. I'll set
+this view aside for now, but we will return to it in section
+\ref{sec:imprecise}.
 
 Another response is to say more about the propositions
-$A_1,\ldots,A_n$ to which the Principle applies. Intuitively, the
-Principle does not hold for $R$ and $\neg R$ because these two
-propositions aren't on a par: there are more ways of being non-red
-than there are of being red. But it is hard to make this
+$A_1,\ldots,A_n$ to which the Principle applies. Intuitively, you
+might say, the Principle does not hold for $R$ and $\neg R$ because
+these two propositions are not on a par: there are more ways of being
+non-red than there are of being red. Unfortunately, it is hard to make this
 intuition precise, and harder still to turn it into a general rule, as
 the following exercise illustrates.
 
-\begin{exercise}\label{e:cubefactory}
-  A cube is hidden in a box. A label on the box reveals that the cube
-  has a side length of at least 2 cm and less than 4 cm. We can divide
-  the possibilities into two:
+\begin{exercise2}\label{e:cubefactory}
+  A cube is hidden in a box. A sticker on the box reveals that the cube
+  has a side length of at least 2 cm, but less than 4 cm. So here are
+  two possibilities:
   \begin{enumerate*}
   \item[$S$:] The cube's side length lies between 2 cm and 3 cm (excluding 3).
   \item[$L$:] The cube's side length lies between 3 cm and 4 cm (excluding 4).
@@ -433,8 +435,8 @@ the following exercise illustrates.
   \item[(b)] What should your credence in $S$ be if you treat equally
     sized ranges of volume as equally likely?
   \end{enumerate*}
-  $\star\star$
-\end{exercise}
+  \vspace{-5mm}
+\end{exercise2}
 
 Another problem with the Principle of Indifference is that it actually
 clashes with the ``uniformity of nature'' assumption required for
@@ -467,14 +469,14 @@ experience.
 Despite these problems, many instances of the Principle of
 Indifference look very plausible. If you're investigating a murder,
 and judge that suspect $A$ is three times as likely as suspect $B$ to
-be the murderer, then there better be some reason for your
+be the murderer, then there had better be some reason for this
 judgement. In the absence of any relevant evidence, your judgement
 would be irrational. Several authors have attempted to turn examples
 like this into a fully general principle which, unlike the classical
 Principle of Indifference, is consistent and allows for inductive
 inference, but there is no agreement on whether this can be done and
-on what the resulting principle should look like.  The ``problem of
-the priors'' remains.
+on what the resulting principle should look like. In this form, at
+least, the ``problem of the priors'' remains open.
 
 \section{Probability coordination}
 
@@ -490,8 +492,7 @@ We turn from the highly controversial Principle of Indifference to
 another norm for rational priors that is almost universally accepted
 among Bayesians. The norm connects subjective probability with
 objective probability, and plays a central role in Bayesian
-confirmation theory and Bayesian statistics. Without further ado, here
-it is.
+confirmation theory and Bayesian statistics.
 
 \begin{genericthm}{The Probability Coordination Principle}
   If an agent has no evidence about some proposition $A$, then her
@@ -503,7 +504,7 @@ it is.
 \end{genericthm}
 %
 Here `Pr' stands for any kind of objective probability, such as
-relative frequency of quantum physical chance. I've added a subscript
+relative frequency or quantum physical chance. I've added a subscript
 `0' to `$\Cr$' to indicate that the agent in question has no evidence
 relevant to $A$. With `Pr' understood as quantum physical chance, the
 Probability Coordination Principle is also known as the `Principal
@@ -512,7 +513,7 @@ Principle'.
 We have unwittingly assumed the Probability Coordination Principle all
 along. In example \ref{ex:base}, for instance, we assumed that if all you
 know about a woman is that she is from a population in which 2\% of
-women have breast cancer, then your credence in the hypothesis she has
+women have breast cancer, then your credence in the hypothesis that she has
 breast cancer should be 0.02. This is clearly not entailed by the
 Kolmogorov axioms. It is, however, entailed by the Probability
 Coordination Principle, assuming that your credence can be modelled as
@@ -533,29 +534,29 @@ circumstances $C$, the probability of $O$ is 0.9; $H_2$ says it is
 outcome $O$. How does that affect your credence in $H_1$ and $H_2$? By
 Bayes' Rule,
 \[
-\Cr_{\text{new}}(H_1) = \frac{\Cr_{\text{old}}(O/H_1) \times
-  \Cr_{\text{old}}(H_1)}{\Cr_\text{old}(O/H_1)\times \Cr_\text{old}(H_1) +
-  \Cr_\text{old}(O/H_2)\times \Cr_\text{old}(H_2)}.
+\Cr_{\text{new}}(H_1) = \frac{\Cr_{\text{old}}(O/H_1) \cdot
+  \Cr_{\text{old}}(H_1)}{\Cr_\text{old}(O/H_1)\cdot \Cr_\text{old}(H_1) +
+  \Cr_\text{old}(O/H_2)\cdot \Cr_\text{old}(H_2)}.
 \]
 We know that $\Cr_\text{old}(H_1) = \Cr_\text{old}(H_2) =
 \nicefrac{1}{2}$. The Probability Coordination Principle tells us that
 $\Cr_{\text{old}}(O/H_1) = 0.9$ and $\Cr_{\text{old}}(O/H_2) = 0.3$. Thus 
 \[
-\Cr_{\text{new}}(H_1) = \frac{0.9 \times 0.5}{0.9 \times 0.5 + 0.3 \times 0.5} = 0.75.
+\Cr_{\text{new}}(H_1) = \frac{0.9 \cdot 0.5}{0.9 \cdot 0.5 + 0.3 \cdot 0.5} = 0.75.
 \]
 So your credence in $H_1$ should increase to \nicefrac{3}{4}, and your
 credence in $H_2$ should decrease to \nicefrac{1}{4}.
 
 
 
-\begin{exercise}
+\begin{exercise2}
   You are unsure whether a certain coin is biased 2:1 towards heads or
   2:1 towards tails; initially you give credence \nicefrac{1}{2} to
   each possibility. Then you toss the coin twice, and both times it
   comes up heads. What is your new credence concerning the coin's
   bias? (If a coin is biased 2:1 towards heads, then heads has an
-  objective probability of \nicefrac{2}{3}.) $\star\star$
-\end{exercise}
+  objective probability of \nicefrac{2}{3}.) 
+\end{exercise2}
 
 
 
@@ -595,15 +596,15 @@ More specifically, if $\Cr_\text{old}(\emph{Heads}) =
  \end{align*}
 }% 
 
-\begin{exercise}
+\begin{exercise1}
   Show this. That is, assume $\Cr_\text{old}(\emph{Heads}) =
   \nicefrac{1}{2}$, and use Bayes' Rule to derive that $\Cr_\text{new}(\emph{Heads}) =
-  \nicefrac{1}{3}$. $\star$%
+  \nicefrac{1}{3}$.%
   \cmnt{%
     And if $\Cr_\text{old}(\emph{Heads}) = \nicefrac{2}{3}$, then
     $Cr_\text{new}(\emph{Heads}) = \nicefrac{1}{2}$.  %
   }%
-\end{exercise}
+\end{exercise1}
 
 To conclude that your credence in \emph{Heads}
 should be \nicefrac{1}{3}, we would have to assume that
@@ -624,18 +625,20 @@ increase your credence in heads from \nicefrac{1}{2} to
 \nicefrac{2}{3}. Finding that your eyes are blue then reduces it back to
 \nicefrac{1}{2}.
 
-\begin{exercise}
+\begin{exercise2}
   Show that
   \begin{enumerate*}
   \item[(a)] if $\Cr(\emph{Heads}) = \nicefrac{1}{2}$ and
-    $\Cr(\emph{Exist}/\emph{Heads}) = 2 \times
+    $\Cr(\emph{Exist}/\emph{Heads}) = 2 \cdot
     \Cr(\emph{Exist}/\emph{Tails})$, then by Bayes' Theorem,
     $\Cr(\emph{Heads}/\emph{Exist}) = \nicefrac{2}{3}$;
-  \item[(b)] if $\Cr_\text{old}(\emph{Heads}) = \nicefrac{2}{3}$, then
+  \item[(b)] Assuming
+    $\Cr_\text{old}(\emph{Heads}) = \nicefrac{2}{3}$, then after
+    seeing that your eyes are blue,
     $\Cr_\text{new}(\emph{Heads}) = \nicefrac{1}{2}$.
   \end{enumerate*}
-  $\star\star$
-\end{exercise}
+  \vspace{-5mm}
+\end{exercise2}
 
 If you are sceptical about this argument for $\Crn(\emph{Heads}) =
 \nicefrac{1}{2}$, you are not alone. Among other things, the argument seems to
@@ -647,7 +650,7 @@ Anyway, let's give a name to the problematic assumption:
 \begin{genericthm}{Dubious Principle}
   If $H_1$ is the hypothesis that there are $n$ people in total, and
   $H_2$ says that there are $k$ people, then $\Cr_0(\emph{Exist} /
-  H_1) = \Cr_0(\emph{Exist}/H_2) \times \nicefrac{n}{k}$, where $\Cr_0$
+  H_1) = \Cr_0(\emph{Exist}/H_2) \cdot \nicefrac{n}{k}$, where $\Cr_0$
   is the credence function of a rational agent without any evidence,
   and $\emph{Exist}$ is the proposition that the agent exists.
 \end{genericthm}
@@ -662,29 +665,31 @@ easy, let's pretend that these are the only two possibilities. Call
 the first \emph{Doom} and the second \emph{No Doom}. A priori -- in
 the absence of any evidence -- you might think \emph{Doom} and
 \emph{No Doom} deserve roughly equal credence. But here's a piece of
-evidence you have (call it \emph{Early}): you are one of the first 100 billion
-people. Since $\neg \emph{Early}$ is incompatible with \emph{Doom}, \emph{Early} should increase the probability of
-\emph{Doom}. 
+evidence you have (call it \emph{Early}): you are one of the first 100
+billion people. And this dramatically increases the probability of
+\emph{Doom}.
 
-More precisely, on the supposition that the total number
-of people is 100,000 billion, the probability that you are one of the
-first 100 billion is arguably \nicefrac{1}{1000} (by the Probability
-Coordination Principle); on the supposition that the total number of
-people is 100 billion, the probability is 1. So, by Bayes' Theorem,
+Let's crunch the numbers. On the supposition that the total number of
+people is 100 trillion (100,000 billion), only \nicefrac{1}{1000} of
+all people are among the first 100 billion. So the prior probability
+that you are one of the first 100 billion is arguably
+\nicefrac{1}{1000}. By contrast, on the supposition that the total
+number of people is 100 billion, the probability that you are one of
+the first 100 billion is 1. So, by Bayes' Theorem,
 \begin{align*}
-  \Cr(\emph{Doom}/\emph{Early}) &= \frac{\Cr(\emph{Early}/\emph{Doom}) \times \Cr(\emph{Doom})}{\Cr(\emph{Early}/\emph{Doom}) \times \Cr(\emph{Doom}) + \Cr(\emph{Early}/\neg\emph{Doom}) \times \Cr(\neg \emph{Doom})}\\[3mm]
-    &= \frac{1 \times \Cr(\emph{Doom})}{1 \times \Cr(\emph{Doom}) + 0.001 \times \Cr(\neg\emph{Doom})}.
+  \Cr(\emph{Doom}/\emph{Early}) &= \frac{\Cr(\emph{Early}/\emph{Doom}) \cdot \Cr(\emph{Doom})}{\Cr(\emph{Early}/\emph{Doom}) \cdot \Cr(\emph{Doom}) + \Cr(\emph{Early}/\neg\emph{Doom}) \cdot \Cr(\neg \emph{Doom})}\\[3mm]
+    &= \frac{1 \cdot \Cr(\emph{Doom})}{1 \cdot \Cr(\emph{Doom}) + 0.001 \cdot \Cr(\neg\emph{Doom})}
 \end{align*}
 
 \smallskip 
 
-If $\Cr(\emph{Doom}) = \nicefrac{1}{2}$, it follows that
-$\Cr(\emph{Doom}/\emph{Early}) = 1000/1001 \approx 0.999$. Taking into
+If $\Cr_0(\emph{Doom}) = \nicefrac{1}{2}$, it follows that
+$\Cr_0(\emph{Doom}/\emph{Early}) = 1000/1001 \approx 0.999$. Taking into
 account the fact that you are among the first 100 billion people who
-ever lived, you should therefore be almost certain that humankind is
+ever lived, it seems that you should be almost certain that humankind is
 about to go extinct!
 
-The argument we've just rehearsed is known as the \textbf{Doomsday
+The argument we've just rehearsed is known as the \textbf{doomsday
   argument}. The conclusion becomes a little less striking if we take
 into account that there are more possibilities than \emph{Doom} and
 \emph{No Doom}, but the upshot remains the same: we should be highly
@@ -708,11 +713,11 @@ the first, without any relevant evidence, surely seems irrational.
 
 But perhaps we have evidence that favours $\emph{No Doom}$
 over $\emph{Doom}$ -- namely, the evidence of our existence. By the
-Dubious Principle, $\Cro(\emph{Exist}/\neg\emph{Doom})$ is 1000
-times greater than $\Cro(\emph{Exist}/\emph{Doom})$. Consequently,
-if $\Cro(\emph{Doom}) = \nicefrac{1}{2}$, then
-$\Cro(\emph{Doom}/\emph{Exist}) = \nicefrac{1}{1000}$ and
-$\Cro(\emph{Doom}/\emph{Exist} \land \emph{Early}) = \nicefrac{1}{2}$.
+Dubious Principle, $\Cr_0(\emph{Exist}/\neg\emph{Doom})$ is 1000
+times greater than $\Cr_0(\emph{Exist}/\emph{Doom})$. Consequently,
+if $\Cr_0(\emph{Doom}) = \nicefrac{1}{2}$, then
+$\Cr_0(\emph{Doom}/\emph{Exist}) = \nicefrac{1}{1000}$ and
+$\Cr_0(\emph{Doom}/\emph{Exist} \land \emph{Early}) = \nicefrac{1}{2}$.
 
 So it would be comforting if the Dubious Principle were true after all.
 
@@ -720,8 +725,6 @@ So it would be comforting if the Dubious Principle were true after all.
   Add exercise: fine-tuning
 } %
 
-
-\newpage
 
 \section{Further reading}
 
@@ -760,36 +763,6 @@ For more on the Doomsday Argument and related puzzles, see
   Can you think of another way to block the Doomsday Argument, without
   relying on the Dubious Principle?
 \end{essay}
-
-\cmnt{%
-  Add:
-
-One thing this theory helps explain is why and under what conditions
-people buy certain kinds of insurance. ``Imagine the utility an agent
-gets from an income of x dollars is x 2 . And imagine that right now
-their income is \$90,000. But there is a 5\% chance that something
-catastrophic will happen, and their income will be just \$14,400.  So
-their expected income is 0.95 × 90, 000 + 0.05 × 14, 400 = 86220. But
-their expected utility is just 0.95 × 300 + 0.05 × 120 = 291, or the
-utility they would have with an income of \$84,861.  Now imagine this
-person is offered insurance against the catastrophic scenario. They
-can pay, say, \$4,736, and the insurance company will restore the
-\$75,600 that they will lose if the catastrophic event takes
-place. Their income is now sure to be \$85,264 (after the insurance is
-taken out), so they have a utility of 292. That’s higher than what
-their utility was, so this is a good deal for them.  But note that it
-might also be a good deal for the insurance company. They receive in
-premiums \$4,736. And they have a 5\% chance of paying out
-\$75,600. So the expected outlay, in dollars, for them, is \$3,780.
-So they turn an expected profit on the deal. If they repeat this deal
-often enough, the probability that they will make a profit goes very
-close to 1.  The point of the example is that people are trying to
-maximise expected utility, while insurance companies are trying to
-maximise expected profits. Since there are cases where lowering your
-expected income can raise your expected utility, there is a chance for
-a win-win trade.''
-
-} %
 
 
 \cmnt{%

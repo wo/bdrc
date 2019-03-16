@@ -59,106 +59,123 @@ states.
   \end{tabular}
 \end{center}
 %
-Assume the outcomes are all logically incompatible with one
-another. Choosing $A$ then effectively means choosing to bring about
-$O_1 \lor O_2$; choosing $B$ means choosing to bring about $O_3
-\lor O_4$. By Jeffrey's axiom,
-\[
-U(O_1 \lor O_2) = U(O_1)\times \Cr(O_1/O_1 \lor O_2) + U(O_2)\times \Cr(O_2/O_1 \lor O_2).
-\]
-What is $\Cr(O_1/O_1 \lor O_2)$? It is, of course, the agent's
-credence that $O_1$ will come about on the supposition that $O_1$ or
-$O_2$ will come about. On the supposition that $O_1$ or $O_2$ will
-come about, it is certain that $O_1$ will come about just in case
-$S_1$ is the case.  Moreover, supposing $O_1 \lor O_2$ is tantamount
-to supposing that the agent will choose $A$.  So $\Cr(O_1/O_1 \lor
-O_2)$ is also the agent's credence in $S_1$ on the supposition that
-she will choose $A$. But in a properly construed decision problem, the
-states must be independent of the acts; so the agent's credence in
-$S_1$ on the supposition that she chooses act $A$ should equal her
-unconditional credence in $S_1$. So $\Cr(O_1/O_1 \lor O_2) =
-\Cr(S_1)$.  By the same reasoning, $\Cr(O_2/O_1 \lor O_2) =
-\Cr(S_2)$. Plugging these into the above instance of Jeffrey's axiom,
-we get
-\[
-U(O_1 \lor O_2) = U(O_1)\times \Cr(S_1) + U(O_2)\times\Cr(S_2).
-\]
+Choosing $A$ effectively means choosing to bring about $O_1 \lor O_2$;
+choosing $B$ means choosing to bring about $O_3 \lor O_4$. Let's
+assume the four outcomes are logically incompatible with each other.
+(We can always make them incompatible by adding more information. For
+example, if $O_1$ and $O_2$ are not incompatible, we can redefine them
+as $O_1 \land S_1$ and $O_2 \land S_2$, respectively.)
 
-This says that the desirability of the proposition $O_1 \lor O_2$,
-which the agent would bring about by choosing act $A$, equals the
-expected utility of $A$! Assuming that an agent should prefer to bring
-about more desirable propositions rather than less desirable
-propositions, it follows that the agent should maximize expected
-utility.  (We will reconsider the present argument in chapter
-\ref{ch:cdt}.)
+By Jeffrey's axiom,
+\[
+U(O_1 \lor O_2) = U(O_1)\cdot \Cr(O_1/O_1 \lor O_2) + U(O_2)\cdot \Cr(O_2/O_1 \lor O_2).
+\]
+Since choosing $A$ is certain to lead to either $O_1$ or $O_2$, and
+choosing $B$ is certain to lead to $O_3$ or $O_4$, we also have
+\[
+  \Cr(O_1 \lor O_2) = \Cr(A).
+\]
+Moreover, on the supposition that $O_1 \lor O_2$ is true, it is
+certain that $O_1$ comes about just in case state $S_1$ obtains:
+\[
+  \Cr(O_1/O_1 \lor O_2) = \Cr(S_1/O_1 \lor O_2).
+\]
+Together, the previous two observations entail that
+\[
+  \Cr(O_1/O_1 \lor O_2) = \Cr(S_1/A).
+\]
+But in a well-defined decision matrix, the states must be independent
+of the acts. So it looks like we can simplify further:
+\[
+  \Cr(O_1/O_1 \lor O_2) = \Cr(S_1).
+\]
+By the same reasoning, $\Cr(O_2/O_1\lor O_2) = \Cr(S_2)$. The above
+instance of Jeffrey's axiom can therefore be rewritten as follows:
+\[
+U(A) = U(O_1)\cdot \Cr(S_1) + U(O_2)\cdot\Cr(S_2).
+\]
+This says that the \emph{expected utility} of act $A$ equals the
+\emph{utility} of $A$! Since utility is defined as a measure of
+desirability, the MEU principle therefore says that rational agents
+prefer to bring about more desirable propositions rather than less
+desirable propositions. (We will reconsider the present argument in
+chapter \ref{ch:cdt}.)
 
-So we have seen three arguments in favour of the MEU Principle. I will
+We have seen three arguments in favour of the MEU Principle. I will
 mention two more, before I turn to objections.
 
-The next argument is simply that the MEU Principle delivers the
-intuitively correct result in many applications, both artificial and
-realistic. For example, consider a decision problem in which there are
-just two possible outcomes, \emph{Good} and \emph{Bad}, and a range of
-options leading to these outcomes with different probabilities. If
-\emph{Good} has greater utility than \emph{Bad}, one should clearly
-choose whichever option maximizes the probability of
-\emph{Good}. Similarly, in a case where there is no relevant
-uncertainty, one should clearly choose whichever option is known to
-bring about the best outcome. The MEU Principle passes these test.
+The next argument is simply that the MEU Principle seems to deliver
+the correct result in many concrete situations. This includes
+situations in which it is obvious what one should do (like in the
+mushroom problem from page p.\pageref{ex:mushroom}), but also
+situations in which many people are tempted to give a different
+answer.
 
-In real life, people occasionally seem to violate the MEU Principle,
-but in these cases it is often plausible that they are making a
-mistake. For example, people often make suboptimal choices because
-they overlook certain options. You go to the shop, but forget to buy
-soap. You walk along the highway because it doesn't occur to you that
-you could instead take the nicer route through the park. The relevant
-options (buying soap, taking the nicer route) are available to you,
-and they are better by the lights of your beliefs and desires, so it
-is a mistake that you don't choose them. 
+% For example, consider a decision problem in
+% which there are just two possible outcomes, \emph{Good} and
+% \emph{Bad}, and a range of options leading to these outcomes with
+% different probabilities. If \emph{Good} has greater utility than
+% \emph{Bad}, one should clearly choose whichever option maximizes the
+% probability of \emph{Good}. Similarly, in a case where there is no
+% relevant uncertainty, one should clearly choose whichever option is
+% known to bring about the best outcome. The MEU Principle passes these
+% test.
 
-Another well-known type of mistake concerns acts that come with a very
-low probability of either great or terrible outcomes. People tend to
-give those outcomes either far too much weight or far too little. For
-example, many people worry about dying in a plane crash or a terrorist
-attack, and take steps to avoid these events, but don't think twice
-about driving to the mall, even after being informed that they are
-much more likely to die on their way to the mall than on a plane trip
-or in a terror attack.
+% In real life, people occasionally seem to violate the MEU Principle,
+% but in these cases it is often plausible that they are making a
+% mistake. For example, people often make suboptimal choices because
+% they overlook certain options. You go to the shop, but forget to buy
+% soap. You walk along the highway because it doesn't occur to you that
+% you could instead take the nicer route through the park. The relevant
+% options (buying soap, taking the nicer route) are available to you,
+% and they are better by the lights of your beliefs and desires, so it
+% is a mistake that you don't choose them. 
 
-\begin{exercise}
+For example, people often fail to give appropriate weight to
+low-probability outcomes with very high or very low utility. Many
+people worry about dying in a plane crash or a terrorist attack, and
+take steps to avoid these events, but don't think twice about driving
+to the mall, even after being informed that they are more likely to
+die on their way to the mall than on a plane trip or in a terror
+attack. This violates the norms of Bayesian rationality, and on
+reflection it does seem irrational.
+
+\begin{exercise1}
   In the National Lottery, a £2 ticket typically has an expected
   payoff of around £1. Many people are aware of this fact but still
   play the lottery. One explanation is that they are violating the MEU
-  Principle. Can you think of an alternative explanation? $\star$
-\end{exercise}
+  Principle. Can you think of an alternative explanation?
+\end{exercise1}
 
-Suppose you try to avoid plane trips not because you are afraid of a
-crash but because you care about your carbon footprint. Your friend
-argues that the effort is pointless since no plane is going to stay on
-the ground just because you don't fly. Is she right?
+Another example. Suppose you try to avoid plane trips not because you
+are afraid of a crash, but because you care about your carbon
+footprint. Your friend argues that your behaviour is irrational
+because avoiding plane trips actually won't affect any carbon
+emissions: no plane is going to stay on the ground just because you
+don't fly. Is she right?
 
 It is certainly unlikely that fewer flights will be scheduled as a
-result of a single person deciding not to take a plane. On the other
+result of a single person deciding not to go on a plane. On the other
 hand, the number of flights is sensitive to demand: if, one by one,
 fewer people decide to fly, at some point fewer flights will be
 scheduled. So there must be some chance that avoiding a single plane
-trip will reduce overall air traffic. To be sure, the chance is very
-low. On the other hand, the reduction in carbon emissions would be
-very significant. As a result, the \emph{expected} reduction in carbon
-emissions -- the probability-weighted average of the reduction in
-carbon emissions -- from avoiding a single flight is much lower than
-the flight's emissions, but not zero. It typically works out to be a
-little less than the flight's emissions divided by the number of seats
-on the plane. This is how much overall carbon emissions are reduced,
-on average, as a result of one passenger deciding not to take a
-flight. So your friend is wrong.
+trip will reduce overall air traffic. To be sure, the chance is low.
+On the other hand, the reduction in carbon emissions would be high. One
+can estimate the \emph{expected} reduction in carbon emissions: the
+probability-weighted average of the reduction in carbon emissions.
+Depending on the flight route, it typically works out to be a little
+less than the flight's emissions divided by the number of seats on the
+plane. This is how much overall carbon emissions are reduced, on
+average, as a result of one passenger deciding not to take a flight.
+And so it makes perfect sense to avoid plane trips if you want to
+reduce your carbon footprint. Your friend is wrong.
 
 Even Nobel-price winning decision theorists are not immune to this
-kind of mistake. In 1980, John Harsanyi published a paper in which he
+kind of error. In 1980, John Harsanyi published a paper in which he
 argued that utilitarian citizens who care a lot about the common good
 would still have little incentive to participate in elections, given
-that any individual vote is almost certain not to make a
-difference. Here is one of Harsanyi's simplified examples.
+that any individual vote is almost certain not to make a difference.
+Here is one of Harsanyi's simplified examples.
 
 \begin{example}
   ``1000 voters have to decide the fate of a socially very desirable
@@ -174,11 +191,11 @@ whose aim is to bring about the best overall result for everyone,
 defeat of the measure is likely, since ``each voter will vote only if
 he is reasonably sure that all other 999 voters will vote''.
 
-Harsanyi is making the same mistake as your hypothetical friend
-above. To flesh out the scenario, let's assume that each voter would
-lose 1 degree of pleasure by voting. For the case to be interesting,
-we can assume that the very desirable measure $M$ would more than
-offset the cost of voting, so that the group of 1000 is better off if
+Harsanyi is making the same mistake as your hypothetical friend above.
+To flesh out the scenario, let's assume that each voter would lose 1
+degree of pleasure by voting. For the case to be interesting, we can
+assume that the very desirable measure $M$ would more than offset the
+cost of voting, so that the group of 1000 voters is better off if
 everyone votes than if everyone stays at home. Since the total degree
 of pleasure in the society is reduced by 1000 if everyone votes, the
 measure $M$ must therefore increase the total degree of pleasure in
@@ -189,23 +206,21 @@ it would clearly be sensible for her (in line with the MEU Principle)
 to stay at home. But she doesn't need to be ``reasonably sure'', as
 Harsanyi claims, that all other 999 will vote, to make it worthwhile
 for her to go out and vote -- just as you don't need to be reasonably
-sure that fewer flights will be scheduled if you don't take a
-plane. If you do the math, you can see that voting maximizes expected
-utility even if the probability of all others voting is as low as
-0.001.
+sure that fewer flights will be scheduled if you don't take a plane.
+If you do the math, you can see that voting maximizes expected utility
+even if the probability of all others voting is as low as 0.001.
 
-\begin{exercise}
+\begin{exercise3}
   Do the math. That is, describe the decision matrix for a voter in
   Harsanyi's scenario, and confirm that voting maximizes expected
   utility if the probability of all others voting is
-  0.001. $\star\star\star$
-\end{exercise}
+  0.001.
+\end{exercise3}
 
 \section{The long run}
 
-The last argument for the MEU Principle that I want to mention relates
-to a consequence of the probability axioms we haven't used until now:
-the \textbf{law of large numbers}.
+The last argument for the MEU Principle that I want to mention looks
+at the long-term consequences of maximizing expected utility.
 
 Suppose you repeatedly toss a fair coin, keeping track of the total
 number of heads and tails. You will find that over time, the
@@ -218,14 +233,15 @@ independent tosses of a coin is 0.377. For 100 tosses, it is 0.028;
 for 1000, it is less than 0.000001. After 1000 tosses, the probability
 that the proportion of tails lies between 45\% and 55\% is 0.999.
 
-In general, the law of large numbers states that if there is a sequence
-of ``trials'' $T_1,T_2,\ldots,T_n$ each of which can result in the
-same outcomes, and the probability of the outcomes is the same in each
-trial and independent of the earlier trials, then the probability that
-the percentage of any outcome (across all trials) differs from its
-probability by more than an arbitrarily small amount $\epsilon$
-converges to 0 as the number of trials gets larger and larger. Loosely
-speaking: in the long run, probabilities turn into proportions.
+In general, the probability axioms entail that if there is a sequence
+of ``trials'' $T_1,T_2,T_3\ldots$ with the same possible outcomes
+(like heads and tails) and the same probabilities for the outcomes,
+independent of earlier outcomes, then the probability that the
+\emph{proportion} of any outcome in the sequence differs from its
+\emph{probability} by more than an arbitrarily small amount $\epsilon$
+converges to 0 as the number of trials gets larger and larger. This is
+known as the \textbf{law of large numbers}. Loosely speaking: in the
+long run, probabilities turn into proportions.
 
 How is that relevant to the MEU Principle? Well, consider a bet on a
 fair coin flip: if the coin lands heads, you get £1, otherwise you get
@@ -233,71 +249,73 @@ fair coin flip: if the coin lands heads, you get £1, otherwise you get
 the law of large numbers entails that the percentage of heads will
 (with high probability) converge to 50\%. So if you buy the bet each
 time, you can be confident that you will loose £0.40 in about half the
-trials and win £0.60 in the other half. The \emph{expected payoff}
-turns into the \emph{average payoff}; the \emph{expected utility}
-turns into the \emph{average utility}. In this kind of scenario, the
-MEU Principle thus effectively says that you should prefer options
-with greater average utility to options with lower average
+trials and win £0.60 in the other half. The £0.10 \emph{expected
+  payoff} turns into the \emph{average payoff}. In this kind of
+scenario, the MEU Principle effectively says that you should prefer
+acts with greater average utility over acts with lower average
 utility. Which seems obviously correct.
 
 In reality, of course, there are limits to how often one can encounter
 the very same decision problem. ``In the long run, we are all dead'',
-as John Maynard Keynes quipped. The practical relevance of the present
+as John Maynard Keynes quipped. The practical relevance of the above
 argument therefore derives not just from the law of large numbers, but
 from the fact that probabilities can be expected to converge to
-proportions \emph{reasonably fast}: it doesn't take trillions of
-tosses until the percentage of heads is almost certain to exceed 40\%
+proportions \emph{reasonably fast}: it does not take millions of
+tosses until the percentage of heads is almost certain to exceed 40\%.
 
-Even so, the argument as it stands only supports the MEU Principle in
-rather unusual cases where an agent faces the same decision problem
-again and again and again (and where she regards the states in each
-problem as probabilistically independent of the earlier
-states). Outside gambling and investing, most of the choices we face
-are not like that. You won't have an opportunity to marry the same
-person, under the same circumstances, hundreds or thousands of times.
+The argument also assumes that the same decision problem is faced over
+and over. In practice, this rarely happens. But the argument can be
+generalised. Suppose an agent faces a sequence of $n$ decision
+problems, which may involve different outcomes, different states, and
+different probabilities. One can show that if the states in the
+various problems are probabilistically independent and the relevant
+probabilities and utilities are not too extreme, then the
+\emph{average} utility is still likely to converge to the
+\emph{expected} utility, and it will do so relatively fast.
 
-In response, one can try to broaden the relevance of the argument. For
-example, the law of large numbers doesn't require that the repeated
-``trials'' involve literally the same acts, states, and outcomes; it
-is enough if the utilities and probabilities associated with each act
-are the same -- or even just roughly the same.
+% \begin{exercise}
+%   If you play roulette in a casino, the possible outcomes vary wildly:
+%   you might lose a lot or you might win even more. Nonetheless,
+%   roulette operators have fairly stable income streams and almost
+%   never run out of money. How is that possible?  $\star$
+% \end{exercise}
 
-\begin{exercise}
-  If you play roulette in a casino, the possible outcomes vary wildly:
-  you might lose a lot or you might win even more. Nonetheless,
-  roulette operators have fairly stable income streams and almost
-  never run out of money. How is that possible?  $\star$
-\end{exercise}
-
-Long-run considerations offer some support to the MEU Principle; but
-they also point towards a possibly serious problem.
+% Long-run considerations offer some support to the MEU Principle; but
+% they also point towards a possibly serious problem.
 
 From what I said, you might expect that professional gamblers and
 investors generally put their money on the options with greatest
-expected payoff. But they do not. (Those who do don't remain
-professional gamblers or investors for long.) To see why, imagine you
-are offered to invest in a startup company that tries to find a cure
-for snoring. If they succeed, your investment will pay back
-tenfold. If they don't, the investment is lost. The chance of success
-is 20\%, so the expected return is $0.2 \times 1000\% + 0.8 \times 0\% =
-200\%$. Even if this exceeds the expected return of all other
-investment possibilities, you would be mad to put all your money into
-that company. If you repeatedly faced that kind of decision and went
-all-in each time, then after ten rounds you would be bankrupt with a
-probability of $1-0.2^{10} = 0.9999998976$.%
+expected payoff, which would give them the greatest overall profit in
+the long run. But they do not. -- Those who do don't remain
+professional gamblers or investors for long. To see why, imagine you
+are offered to invest in a startup company that attempts to find a
+cure for snoring. If the company succeeds, your investment will pay
+back tenfold. If they don't, the investment is lost. The chance of
+success is 20\%, so the expected return is
+$0.2 \cdot 1000\% + 0.8 \cdot 0\% = 200\%$. Even if this exceeds the
+expected return of all other investment possibilities, you would be
+mad to put all your money into that company. If you repeatedly face
+that kind of decision and go all-in each time, then after ten rounds
+you are bankrupt with a probability of $1-0.2^{10} = 0.9999998976$.%
 \cmnt{%
   (With the remaining 0.0000001024 probability your wealth would have
   increased 1,000,000,000,000\%.)%
 } %
 
-Sensible investors balance expected returns and risks. A safe
-investment with lower expected returns is often preferred to a risky
-investment with greater expected returns. Should we therefore adjust
-the MEU Principle, so that agents can factor in risk in addition to
-expected utility?
+This does not contradict the law of large numbers. In the startup
+example, you are not facing the same decision problem again and
+again. If you lose all your money in the first round, you don't have
+anything left to invest in later rounds. Still, the example shows that
+maximizing expected utility does not always mean maximizing long-term
+actual utility. More importantly, it suggests that there is something
+wrong with the MEU Principle. Sensible investors balance expected
+returns and risks. A safe investment with lower expected returns is
+often preferred to a risky investment with greater expected returns.
+Shouldn't we adjust the MEU Principle, so that agents can factor in
+risk in addition to expected utility?
 
-\begin{exercise}
-  Each year, an investor is given £100,000, which she can invest
+\begin{exercise2}
+  Every year, an investor is given £100,000, which she can invest
   either in a risky startup of the kind described (a different one
   each year), or put in a bank account at 0\% interest. If she always
   chooses the second option, she will have £1,000,000 after ten years.
@@ -306,28 +324,30 @@ expected utility?
     (after ten years) if she always chooses the first option, without
     reinvesting previous profits? (Hint: Compute the chance that she
     would do worse.)
-  \item[(b)] How does the answer to (a) mesh with the claim (in the
-    text) that an investor who always goes with the risky option is
-    virtually guaranteed to go bankrupt before long?
+  \item[(b)] How does the answer to (a) mesh with my claim in the text
+    that an investor who always goes with the risky option is
+    virtually guaranteed to go bankrupt?
   \end{enumerate}
-  $\star\star$
-\end{exercise}
+\end{exercise2}
 
 \section{Risk aversion}
 
-Aversion to risk is very common, and it does not seem
-irrational. Let's see if it poses a genuine threat to the MEU
-Principle.
+Aversion to risk is common, and does not seem irrational. Let's see if
+it poses a genuine threat to the MEU Principle.
 
-A risk averse agent might prefer £100 for sure to a lottery with an
-80\% chance of £0 and a 20\% chance of £1000. But we can account for
-these preferences without giving up the MEU Principle. We only need to
-assume that, for this agent, the difference in utility between £1000
-and £100 is less than five times the difference in utility between
-£100 and £0. For example, if $U(\text{£0}) = 0$, $U(\text{£100}) = 1$,
-and $U(\text{£1000}) = 4$, then the lottery has expected utility $0.8
-\times 0 + 0.2 \times 4 = 0.8$, which is less than the guaranteed
-utility of the £100.
+The standard way to measure risk aversion is to offer people gambles.
+Consider a lottery with an 80\% chance of £0 and a 20\% chance of
+£1000. The lottery's expected payoff is £200. Given a choice between
+the lottery and £100 for sure, a risk averse agent might prefer the
+£100. Can we account for these preferences, without giving up the MEU
+Principle?
+
+Yes. We only need to assume that, for this agent, the difference in
+utility between £1000 and £100 is less than five times the difference
+in utility between £100 and £0. For example, if $U(\text{£0}) = 0$,
+$U(\text{£100}) = 1$, and $U(\text{£1000}) = 4$, then the lottery has
+expected utility $0.8 \cdot 0 + 0.2 \cdot 4 = 0.8$, which is less than
+the guaranteed utility of the £100.
 
 \cmnt{%
 More generally, as long as a risk averse agent doesn't violate the
@@ -336,18 +356,18 @@ a utility function relative to which she ranks all options by their
 expected utility.%
 } %
 
-Along these lines, the standard way to model monetary risk aversion in
-economics is to assume that utility is a ``concave function of
-money'', meaning that the amount of utility an extra £100 would add to
-an outcome of £1000 is less than the amount of utility the same £100
-would add to an lesser outcome of, say, £100. We have already
-encountered this phenomenon in chapter \ref{ch:utility}, where we saw
-that for most people, money has declining marginal utility: the more
-you have, the less utility you get from an extra £100. According to
-standard economics, risk aversion is the flip side of declining
-marginal utility.
+Along these lines, the standard model of risk aversion in economics is
+to assume that utility is a ``concave function of money'', meaning
+that the amount of utility an extra £100 would add to an outcome of
+£1000 is less than the amount of utility the same £100 would add to an
+lesser outcome of, say, £100. We have already encountered this
+phenomenon in chapter \ref{ch:utility}, where we saw that for most
+people, money has declining marginal utility: the more you have, the
+less utility you get from an extra £100. According to standard
+economics, risk aversion is the flip side of declining marginal
+utility.
 
-That may seem strange. Intuitively, the fact that the same amount of
+This should seem strange. Intuitively, the fact that the same amount of
 money becomes less useful the more money you already have has nothing
 to do with risk. Money could have declining marginal utility even for
 an agent who loves risk. Conversely, an agent might value every penny
@@ -356,25 +376,25 @@ as much as the previous one, but shy away from risks.
 The problem is that risk neutrality combined with declining marginal
 utility seems to support the exact same choices as risk aversion
 combined with non-declining marginal utility. So if an agent's utility
-function is defined through her preferences or choice dispositions --
-by the von Neumann and Morgenstern method, perhaps -- then the
-intuitive difference between risk aversion and declining marginal
-utility seems to collapse.
+function is defined through her preferences or choice dispositions
+over monetary gambles -- by the von Neumann and Morgenstern method,
+perhaps -- then the intuitive difference between risk aversion and
+declining marginal utility collapses.
 
 You can spin this both ways. You can conclude that we should reject
 the intuitive difference between risk aversion and declining marginal
 utility. Or you can hold on to the intuitive difference and conclude that
-utilities cannot be defined through preferences.
+utilities cannot be defined through preferences over monetary gambles.
 
 In any case, things are not so simple. The following scenario, due to
-Maurice Allais, seems to show that risk aversion is not equivalent to
-declining marginal utility after all, and that it is incompatible with the MEU
-Principle.
+Maurice Allais, shows that risk aversion is not equivalent to
+declining marginal utility after all. It also appears to show that
+risk aversion is incompatible with the MEU Principle.
 
 \begin{example}[Allais's Paradox]\label{ex:allais}
   A ball is drawn from an urn containing 80 red balls, 19 green balls,
-  and 1 blue ball. Consider first the choice between the following two
-  gambles. Which do you prefer?
+  and 1 blue ball. Consider first a choice between the following two
+  lotteries. Which do you prefer?
 
   \begin{center}
   \begin{tabular}{|r|c|c|c|}\hline
@@ -384,7 +404,7 @@ Principle.
   \end{tabular}
   \end{center}
   %
-  Next, consider the alternative gambles $C$ and $D$, based on the
+  Next, consider the alternative lotteries $C$ and $D$, based on the
   same draw from the urn. Which of these do you prefer?
  
   \begin{center}
@@ -400,14 +420,15 @@ Principle.
 The MEU Principle does not settle the answer to either question. But
 it seems to rule out a combination of preferences many people in fact
 express, namely a preference for $B$ over $A$, and for $C$ over
-$D$. Why might you have these preferences? Notice that the second
-choice is essentially one between £1000 for sure and a gamble in which
-you might get either £1000 (most likely) or £0 (least likely) or
-£1200. If you're moderately risk averse, it makes sense to take the
-sure £1000. By contrast, in the first choice the most likely outcome
-is £0 either way, and it seems reasonable to take the gamble with the
-greater possible payoff (£1200 vs.\ £1000), even though the
-probability of the payoff is slightly lower.
+$D$.
+
+Why might you have these preferences? Notice that the second choice is
+essentially one between £1000 for sure and a gamble in which you might
+get either £1000 (most likely) or £0 (least likely) or £1200. If
+you're risk averse, it makes sense to take the sure £1000. By
+contrast, in the first choice the most likely outcome is £0 either
+way, and it seems reasonable to take the 19\% chance of getting £1200
+rather than the 20\% chance of getting £1000.
 
 You can easily check that there is no way of assigning utilities to
 monetary payoffs that makes these preferences conform to the MEU
@@ -421,7 +442,7 @@ be a lottery that pays £1200 if a green ball is drawn (otherwise
 probability 0.2 and otherwise to £0. Similarly, $B$ is a lottery that
 leads to $L_2$ with probability 0.2 and otherwise to £0. By the
 Independence axiom, if $L_1 \succsim L_2$, then $A \succsim B$. By
-parallel reasoning with $C$ and $D$, it follows that
+parallel reasoning with $C$ and $D$, it follows from Independence that
 \begin{enumerate}
   \itemsep0em 
 \item if $L_1 \succsim L_2$, then $A \succsim B$ and $C \succsim D$; and
@@ -429,11 +450,10 @@ parallel reasoning with $C$ and $D$, it follows that
 \end{enumerate}
 No matter how you rank $L_1$ and $L_2$, you can't have $B \succ A$ and $C \succ D$.
 
-\begin{exercise}
+\begin{exercise2}
   Does the preference of $B$ to $A$ and $C$ to $D$ violate strong
   separability, weak separability, or neither? (Explain briefly.)
-  $\star\star$
-\end{exercise}
+\end{exercise2}
 
 \cmnt{%
   Weatherson: The STP says that if $A\land C \epref B\land C$ and
@@ -456,29 +476,27 @@ No matter how you rank $L_1$ and $L_2$, you can't have $B \succ A$ and $C \succ 
   positive. Dito for C=at least one of the coins lands heads.''
 } %
 
-The fact that many people prefer $A$ to $B$ and $C$ to $D$ in Allais's
-Paradox is, by itself, not a problem for the MEU Principle. We have
-already acknowledged that people's preferences are sometimes
-irrational. Maybe we've just found another example. The problem is
-that the Allais preferences seem to make perfect sense for an agent
-who is risk averse.
+Now, the fact that many people prefer $B$ to $A$ and $C$ to $D$ in
+Allais's Paradox is, by itself, not a problem for the MEU Principle.
+After all, these people may simply be irrational. The problem is that
+the Allais preferences seem to make perfect sense for an agent who is
+risk averse.
 
-One might respond that rational agents shouldn't be averse to
-risk. But that would go against the Humean spirit of our model: we
-don't want to make substantive assumptions about what people should
-care about. Moreover, there are other problem cases in which this line
-of response is untenable. The following case goes back to Peter
-Diamond.
+One might respond that rational agents should not be averse to risk.
+But that would go against the Humean spirit of our model: we don't
+want to make substantive assumptions about what people should care
+about. Moreover, there are other problem cases in which this line of
+response is untenable. The following case goes back to Peter Diamond.
 
 \begin{example}\label{ex:diamond}
   A mother has a treat that she can give either to her daughter Abbie
   or to her son Ben. She considers three options: giving the treat to
-  Abbie, giving it to Ben, and tossing a fair coin and giving the
-  treat to Abbie on heads and to Ben on tails. Her decision problem
-  might be summarized by the following matrix (assuming for simplicity
-  that if the mother decides to give the treat directly to one of her
+  Abbie, giving it to Ben, and tossing a fair coin, so that Abbie gets
+  the treat on heads and Ben on tails. Her decision problem might be
+  summarized by the following matrix (assuming for simplicity that if
+  the mother decides to give the treat directly to one of her
   children, she nonetheless tosses the coin, just for fun).
-
+%
   \begin{center}
     \begin{tabular}{|r|c|c|}\hline
     \gr & \gr \text{Heads} & \gr \text{Tails} \\\hline
@@ -487,7 +505,8 @@ Diamond.
     \gr \text{Let coin decide ($C$)} & \text{Abbie gets treat} & \text{Ben gets treat} \\\hline 
     \end{tabular}
   \end{center}
-  
+%
+  \noindent
   The mother's preferences are $C \succ A$, $C \succ B$, $A \succ B$.
 \end{example}
 
@@ -498,11 +517,11 @@ mother prefers $C$ because $C$ is the most fair of the three
 options. It would be absurd to claim that rational agents cannot
 value fairness.
 
-\begin{exercise}
+\begin{exercise3}
   Which of the von Neumann and Morgenstern axioms do the mother's
   preferences in example \ref{ex:diamond} appear to violate? (Explain
-  briefly.)  $\star \star \star$
-\end{exercise}
+  briefly.)  
+\end{exercise3}
 
 \cmnt{%
 
@@ -523,38 +542,38 @@ that vary between the outcomes).
 
 The matrices in example \ref{ex:allais} (Allais's Paradox) specify how
 much money you get depending on your choice and the drawn ball. But if
-you're genuinely risk averse, then arguably you don't just care about
-how much money you will have. 
+you're genuinely risk averse, then you don't just care about how much
+money you will have. You also care about risk. So we need to add more
+information to the outcomes.
 
-What else might you care about? There are two kinds of answers, and
-thus two ways of redescribing the outcomes. The first adds to the
-monetary payoffs further things that will happen as a result of the
-relevant choices and draws.
+There are two ways of doing that. The first adds to the monetary
+payoffs further things that will happen as a result of the relevant
+choices and draws.
 
 Consider the bottom right cell of the second matrix in example
-\ref{ex:allais}: what will happen if you chose $D$ and the blue ball
+\ref{ex:allais}. What will happen if you chose $D$ and the blue ball
 is drawn? You get £0. But you'd plausibly also feel frustrated about
 your bad luck: there was a 99\% chance of getting at least £1000, and
 you got £0! You might also feel regret about your choice: if only you
 had chosen the safe alternative $C$, you'd now have £1000. You
-probably don't like feelings of frustration and regret. If so, they
-should be added to the outcome. The outcome in the bottom right cell
-of the second matrix would then say something like `£0 and
+probably don't like feelings of frustration and regret. If so, these
+feelings should be added to the outcome. The outcome in the bottom
+right cell of the second matrix would then say something like `£0 and
 considerable frustration/regret'. By contrast, consider the bottom
 right cell of the first matrix. If you choose $B$ and the blue ball is
 drawn, you get £0. But the chance of getting £0 was 81\%, so you'll be
 much less frustrated about your bad luck. You may still regret not
 having taken $A$, but since $A$ was just as unsafe as $B$, you
 probably wouldn't think you made a terrible mistake. So the outcome in
-that cell should say something like `£0 and a little
+that cell might say something like `£0 and a little
 frustration/regret'. With these changes, the preference for $B$ over
 $A$, and for $C$ over $D$ is easily reconciled with the MEU Principle.
 
-\begin{exercise}
+\begin{exercise1}
   Assign utilities to the outcomes in the two matrices, with the
   changes just described, so that $EU(B) > EU(A)$ and $EU(C) >
-  EU(D)$. $\star$
-\end{exercise}
+  EU(D)$. 
+\end{exercise1}
 
 The problem with this first type of response is that it doesn't always
 work. For example, suppose you face Allais's Paradox towards the end
@@ -569,10 +588,10 @@ The second strategy for redescribing outcomes gets around this
 problem. As before, we want to distinguish the outcomes in the bottom
 right cell of the two decision matrices. So let's ask again what will
 happen if you choose $D$ and the blue ball is drawn. One thing that
-will happen is that you got £0. You may or may not experience
+will happen is that you get £0. You may or may not experience
 frustration and regret. But here's another thing that is guaranteed to
 happen: you \emph{will have chosen a risky option instead of a safe
-  alternative}. If you're risk averse, then plausibly (indeed,
+  alternative}. If you are risk averse, then plausibly (indeed,
 obviously!) you care about whether your choices are risky. So we
 should put that into the outcome. By contrast, the outcome in the
 bottom right cell of the first matrix does not have this feature --
@@ -580,10 +599,15 @@ that you will have chosen a risky option instead of a safe alternative
 -- because the alternative $A$ is not safe.  So we can once again
 distinguish the two outcomes.
 
-In general, the first strategy appeals only to local features of the
-outcomes: to causal consequence of the relevant choice. The second
-strategy also allows for more global, history-dependent attributes in
-the outcomes. To choose $D$ rather than $C$ \emph{is} to choose a
+In general, the first strategy appeals only appeals to things that
+happen as a causal consequence of the relevant choice. Let's call such
+attributes \textbf{local}. So on the first strategy for redescribing
+outcomes, the outcomes must only involve local propositions whose
+truth is a causal consequence of the relevant act in the relevant
+state.
+
+By contrast, the second strategy also allows for non-local attributes
+in the outcomes. To choose $D$ rather than $C$ \emph{is} to choose a
 risky option instead of a safe alternative. That you chose a risky
 option is not a causal consequence of your choice; it does not depend
 on the causal structure of the world; it is not a separate event that
@@ -591,16 +615,16 @@ happens after your choice.
 
 Let's say (following Lara Buchak) that outcomes are
 \textbf{individuated locally} if outcomes are only distinguished by
-features that are a genuine causal consequence of the relevant act. If
-outcomes are not individuated locally, they are \textbf{individuated
-  globally}. 
+features that are a causal consequence of the relevant act in the
+relevant state. If outcomes are not individuated locally, they are
+\textbf{individuated globally}.
 
-\begin{exercise}\label{e:diamond}
+\begin{exercise1}\label{e:diamond}
   Redescribe the outcomes in example \ref{ex:diamond} so that the
-  mother's preferences conform to the MEU Principle. $\star$
-\end{exercise}
+  mother's preferences conform to the MEU Principle.
+\end{exercise1}
 
-\begin{exercise}
+\begin{exercise2}
   \leavevmode\vspace{-2em}
   \begin{enumerate}
   \itemsep0em 
@@ -608,10 +632,9 @@ outcomes are not individuated locally, they are \textbf{individuated
     individuate the outcomes locally or globally?
   \item[(b)] Either way, can you find another answer to the exercise that
     individuates outcomes the other way?
-    $\star\star$
   \end{enumerate}
   \vspace{-2em}
-\end{exercise}
+\end{exercise2}
 
 If global individuation of outcomes is allowed, we can defuse the
 threat of Allais's Paradox, even in cases without regret or
@@ -683,9 +706,11 @@ intrinsic features of the cakes.
 But why should one go with localism in the first place? What is wrong
 with a global individuation of outcomes?
 
-\begin{exercise}
-  Risk and fairness are two non-local attributes many people care
-  about. Can you think of another such attribute? $\star\star$
+\begin{exercise2}
+  Risk and fairness are two non-local attributes that many people care
+  about. Can you think of another such attribute?
+  % Decision is my own idea.
+  % Conforms to norms.
   \cmnt{%
     On the face of it, this constraint looks implausible and
     arbitrary. Many people seem to care about non-local attributes,
@@ -706,7 +731,7 @@ with a global individuation of outcomes?
     might require you to leave the last slice of cake to others, and
     so on. Localism does not allow for such motives.
   } %
-\end{exercise}
+\end{exercise2}
 
 \cmnt{%
 \begin{exercise}
@@ -735,15 +760,16 @@ with a global individuation of outcomes?
   have to think about the role of outcomes in expected utility theory.
 } %
 
-The formalism of expected utility theory was originally developed to
-compute the monetary value of gambles: a gamble with expected payoff
-£100 was assumed to be equivalent in value to £100. Bernoulli showed
-that this assumption is false since money has declining marginal
-utility. But Bernoulli did not reject expected utility
-theory. Instead, he argued that we should distinguish between the
-monetary payoff itself and the utility of that payoff for an agent. A
-gamble is worth £100 if the gamble's expected \emph{utility} equals
-the \emph{utility} of £100.
+To understand the prevalence of localism, we need to go back in
+history. The formalism of expected utility theory was originally
+developed to compute the monetary value of gambles: a gamble with
+expected payoff £100 was assumed to be equivalent in value to £100.
+Bernoulli showed that this assumption is false, since money has
+declining marginal utility. But Bernoulli did not reject expected
+utility theory. Instead, he argued that we should distinguish between
+the monetary payoff itself and the utility of that payoff for an
+agent. A gamble is worth £100 if the gamble's expected \emph{utility}
+equals the \emph{utility} of £100.
 
 For a while, people then understood utility to measure the degree of
 pleasure or welfare a choice might bring about. It was only in
@@ -758,11 +784,12 @@ rational agents only care about their personal pleasure or welfare.
 
 But as we saw in chapter \ref{ch:utility}, the second shift never
 fully caught on. Many authors still assume that utility is a measure
-of pleasure or welfare or wealth. On that conception, if one act leads
-to a particular amount of pleasure or welfare or wealth in a given
-state of the world, and another act leads to the very same amount of
-pleasure or welfare or wealth in some other state of the world, then
-the utility of these outcomes is trivially the same. 
+of the pleasure or welfare or wealth that results from a choice. On
+that conception, if an act $A$ leads to a particular amount of
+pleasure/welfare/wealth in state $S_1$, and act $B$ leads to
+the very same amount of pleasure/welfare/wealth in state $S_2$, then
+the outcome of choosing $A$ in $S_1$ must have the same utility as the
+outcome of choosing $B$ in $S_2$.
 \cmnt{%
 
   Another bad reason is that the bearers of utility are standardly
@@ -775,12 +802,11 @@ the utility of these outcomes is trivially the same.
 
 } %
 
-So that is one explanation for the widespread acceptance of
-localism. If we were interested in modelling selfish agents who only
-care about their future pleasure or welfare, localism would be
-harmless. But that is not our topic. We want to model agents who may
-care about other things -- risk, for example, or fairness, or other
-people's welfare.
+This is one explanation for the widespread acceptance of localism. If
+we were interested in modelling selfish agents who only care about
+their future pleasure or welfare, localism would be harmless. But that
+is not our topic. We want to model agents who may care about other
+things -- risk, for example, or fairness, or other people's welfare.
 
 \cmnt{%
   Is fairness an example, contra Buchak? Not clear: whether an act is
@@ -794,31 +820,36 @@ people's welfare.
 } %
 
 Even on the preference-based conception of utility, however, there is
-some pressure to endorse localism. Recall that in von Neumann and
-Morgenstern's method to determine the utility of some outcome $c$ in
-comparison to other outcomes $a$ and $b$, we consider the agent's
-preferences over certain lotteries between these outcomes -- for
-example, whether she prefers a fair lottery between $a$ and $c$ to
-$b$. But if $a$, $b$, and $c$ have non-local attributes, then these
-lotteries may well be logically impossible.
+some pressure to endorse localism. Recall von Neumann's method for
+determining the utility of a reward $c$ in comparison to other rewards
+$a$ and $b$. The method considers the agent's preferences over certain
+lotteries between these rewards. For example, we would check whether
+she prefers a fair lottery between $a$ and $c$ to $b$. But if $a$,
+$b$, and $c$ have non-local attributes, then these lotteries may well
+be logically impossible.
 
 The problem is that anything that comes about as the result of a
 lottery inevitably has the non-local attribute of coming about as a
-result of that lottery. So if one thing you value or disvalue about a
-given outcome $c$ is that it doesn't come about as the result of a
-chance process, then a lottery between $a$ and $c$ would have to be a
-chance process that can lead to an outcome that doesn't come about
-through a chance process. That kind of lottery is logically
-impossible.
+result of that lottery. Suppose we wanted to use von Neumann's method
+to determine the utility function for the mother in example
+\ref{ex:diamond}. Let $a$ and $b$ be the outcomes of directly giving
+the treat to Abby or Ben, respectively. If the mother cares about
+fairness, then one relevant (non-local) aspect of $a$ and $b$ is that
+who gets the treat is not decided by a chance process. By von
+Neumann's method, we should now ask whether the mother prefers some
+other outcome $c$ to a \emph{lottery between $a$ and $b$}. This
+lottery would be a chance process that leads to outcomes which don't
+come about through a chance process. That's logically impossible.
 
 Things are even worse for Savage. Savage assumes that for any possible
-outcomes $a$ and $b$ and state $S$ the agent has preferences
+outcomes $a$ and $b$ and any state $S$, the agent has preferences
 concerning prospects of the form $\bet{S}{a}{b}$. But if the agent is
 allowed to care about arbitrary attributes, then one of these
 attributes might well be (or entail) $S$. And if, say, $b$ entails
-$S$, then there can't be any prospect $\bet{S}{a}{b}$ that leads to
-$a$ if $S$ and to $b$ if $\neg S$. So Savage requires not just
-localism but what is known as  ``state independence'' of utilities.
+$S$, then there can't be any prospect $\bet{S}{a}{b}$, for such a
+prospect would lead to $a$ if $S$ and to $b$ if $\neg S$. Savage's
+approach therefore requires a particular kind of localism, known as
+``state independence'' of utilities.
 
 \cmnt{%
   If we individuate outcomes as including their entire histories, then
@@ -836,9 +867,11 @@ localism but what is known as  ``state independence'' of utilities.
 
 } %
 
-The upshot is that if we are interested in a general model of
-practical rationality, we arguably can't build that model on the
-foundations of von Neumann and Morgenstern or Savage (or Ramsey). 
+The upshot is that if we want to allow agents to care about non-local
+attributes such as risk and fairness -- as we should if we are
+interested in a general model of practical rationality -- then we
+can't build that model on the foundations of von Neumann and
+Morgenstern or Savage (or Ramsey).
 
 But we don't have to give up the idea that utilities (and credences)
 might be derived from preferences, or that the MEU Principle might be
@@ -848,18 +881,18 @@ developed by Ethan Bolker and Richard Jeffrey in the 1960s.
 
 In the Bolker/Jeffrey construction, the objects of utility are taken
 to be arbitrary propositions, not ``rewards'' or ``outcomes'' or
-lotteries between rewards or outcomes. No restrictions at all are
-imposed on an agent's basic values. Like Savage, Bolker and Jeffrey
-show that if an agent's preferences between propositions satisfy
-certain axioms, then they can be represented by a probabilistic
-credence function $\Cr$ and a utility function $U$ that satisfies
-Jeffrey's axiom -- which, in turn, supports the MEU Principle by the
-argument outlined in section \ref{sec:why-meu}. I will not explain all
-the axioms or the details of the construction. I do want to mention
-though that since preferences are defined between arbitrary
-propositions, the gap between preferences and choice dispositions is
-even larger in the Bolker/Jeffrey construction than it was for von
-Neumann and Morgenstern or Savage. %
+lotteries between rewards or outcomes. No restrictions are imposed on
+an agent's basic desires. Like Savage, Bolker and Jeffrey show that if
+an agent's preferences between propositions satisfy certain axioms,
+then they can be represented by a probabilistic credence function
+$\Cr$ and a utility function $U$ that satisfies Jeffrey's axiom --
+which, in turn, supports the MEU Principle by the argument outlined in
+section \ref{sec:why-meu}. I will not explain all the axioms or the
+details of the construction. However, I do want to mention that
+since preferences are now defined between arbitrary propositions, the gap
+between preferences and choice dispositions is even larger in the
+Bolker/Jeffrey construction than it was for von Neumann and
+Morgenstern or Savage. %
 \cmnt{%
   for many propositions $A$ and $B$, the hypothesis that someone faces
   a choice between $A$ and $B$ will be logically impossible, because
@@ -867,15 +900,15 @@ Neumann and Morgenstern or Savage. %
 } %
 
 This brings me to one final point in favour of localism. Localism
-promises to give the MEU Principle predictive power. If the same
-outcome never occurs in different decisions faced by an agent, we
-could never find out, just from the agent's choices, that she violates
-transitivity, independence, or any of the other classical axioms. No
-matter what the agent does, there will always be some utility function
-relative to which all her choices maximize expected utility. And if
-outcomes can be individuated globally, then we can always find
-differences between outcomes in different decision problems. Localism
-promises to block this threat of trivialization.
+promises to give the MEU Principle predictive power. Localism ensures
+that the very same outcome can figure in different decision problems.
+If outcomes can be individuated globally, then we can always find
+differences between outcomes in different decision problems. And then
+we can never find out, just from the agent's choices, that she
+violates transitivity, independence, or any of the other classical
+axioms. No matter what the agent does, there will always be some
+utility function relative to which all her choices maximize expected
+utility. Localism blocks this threat of trivialization.
 
 But should we want to block the threat? Shouldn't we rather accept that on
 a broadly Humean conception of practical rationality, no pattern of
@@ -887,15 +920,16 @@ without any assumptions about the agent's beliefs and desires.
 
 Localism in effect encodes one such assumption: that the agent only
 cares about local features of outcomes. But the assumption is not only
-implausible, it also hardly weakens the trivialization problem. For
+implausible, it also barely helps with the trivialization worry. For
 even if we restrict ourselves to local properties, we can almost
 always find differences between outcomes in different decision
 problems. I suspect this explains why in practice, psychologists and
-social scientists tend to fall back on the 19th century conception of
+social scientists often fall back on the 19th century conception of
 utility as a measure of personal wealth or welfare. That gives the MEU
 Principle considerable predictive power. It also renders the principle
 obviously false, both as a normative principle about what people
-should do and as a descriptive principle about people's actual behaviour.
+should do and as a descriptive principle about people's actual
+behaviour.
 
 \cmnt{%
   But we have to appreciate that we can't make interesting predictions

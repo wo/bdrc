@@ -18,75 +18,61 @@
 
 } %
 
-In chapter \ref{ch:utility} we saw that the utility of a proposition
-for an agent generally depends on the agent's beliefs. That's because
-most propositions can be true in different ways, and some of these
-ways are more desirable than others. The set of possible worlds in
-which you win the lottery contains worlds where you are happy and
-worlds where you are miserable. If you desire to win the lottery, then
-you probably assign higher degree of belief to worlds of the first
-kind than to worlds of the second.
+At the end of chapter \ref{ch:utility} we saw that the utility of a
+proposition for an agent is determined by two factors: the agent's
+credences, and the agent's basic desires, which are reflected in the
+utility assigned to the agent's ``concerns''.
 
-But now suppose winning the lottery is the \emph{only} thing you care
-about. You don't care about being happy, having meaningful
-relationships, being free from pain, etc. In that case, your utility
-for winning the lottery does not depend on your beliefs. All the
-worlds in which you win the lottery are equally good, because they all
-have everything you want.
+For example, suppose all you ultimately care about is that you and
+your friends are happy, and let's pretend this is an all-or-nothing
+matter. All worlds in which you and your friends are happy then are
+equally desirable for you, no matter what else happens at these
+worlds. In the terminology of chapter \ref{ch:utility}, the set of
+these worlds has ``uniform utility''. The same is true for the worlds
+in which you are happy and your friends are unhappy, and for the
+worlds in which you are unhappy and your friends are happy, and for
+the worlds in which you and your friends are all unhappy. These four
+sets of worlds are your ``concerns''.
 
-What if you care about two things, say, winning the lottery and being
-happy? Then your utility for winning the lottery once again depends on
-your beliefs, since the worlds in which you win the lottery vary with
-respect to your happiness. But consider the more specific propositions
-\emph{that you win the lottery and are happy} and \emph{that you win
-  the lottery and are not happy}. The utility of these propositions
-does not depend on your beliefs. All the worlds in which you win the
-lottery and are unhappy are equally good, since they agree in the only
-two respects you care about. (Let's pretend for simplicity that being
-happy, like winning the lottery, is an all-or-nothing matter.)
+In general, if there are $n$ propositions $A_1,A_2,\ldots,A_n$ that
+you ultimately care about, then any conjunction that can be formed
+from these propositions and their negations (such as
+$A_1 \land \neg A_2 \land A_3 \land \ldots \land \neg A_n$) has
+uniform utility, and is one of your concerns.
 
-In general, if there are $n$ propositions $A_1,A_2,\ldots,A_n$ that you
-ultimately care about -- if these are your only \emph{basic desires}
--- then any conjunction that can be formed from these propositions and
-their negations (such as $A_1 \land \neg A_2 \land A_3 \land \ldots
-\land \neg A_n$) has uniform utility.
+If we know an agent's credence function, and the utility she assigns
+to her concerns, we can use Jeffrey's axiom to compute the agent's
+utility for any proposition. The utilities assigned to the agent's
+concerns represent the agent's basic, belief-independent desires,
+whereas the utilities assigned to other propositions typically
+represent a combination of basic desires and beliefs.
 
-In section \ref{sec:basic-desire}, we generalized to the worst case
-and assumed that an agent's basic desires are modelled by her utility
-function for individual possible worlds. A possible world is a
-maximally specific proposition and thus guaranteed to fix everything
-the agent cares about.
-
-For real agents, however, it is clear that their value function,
-construed as a utility assignment to individual worlds, is not
-psychologically primitive. The value you assign to a possible world is
-determined by a limited number of basic desires pertaining to certain
-aspects of the world: whether it is a world in which you are happy,
-whether you are in pain, how your friends are doing, etc. Your net
-utility for the world somehow aggregates the good aspects and the bad
-aspects, the ``costs'' and the ``benefits''. Let's try to spell out
-this intuition.
+In this chapter, we will look at how the utility of a concern might be
+determined. It will be useful to have a label for an agent's utility
+function restricted to concerns. I will call it the agent's
+\textbf{value function}. So an agent's value function specifies to
+what extent the agent desires all the combinations of propositions she
+ultimately cares about. The value function represents the agent's
+belief-independent desires. 
 
 \section{Additivity}\label{sec:additivity}
 
-Instead of looking at aspects of entire worlds, I'll start with a more
-manageable case. Suppose you are looking for a flat to rent. You care
-about various aspects such as size, location, and price. We'll call
-these aspects \textbf{attributes}. If the attributes comprise all the
-features (of a flat) that matter to you, then your preferences between
-possible flats is determined by your preferences between combinations
-of these attributes: if you prefer one flat to another, that's because
-you prefer the combined attributes of the first to those of the
-second.
+Let's start with a toy example. You are looking for a flat to rent.
+You care about various aspects of a flat such as size, location, and
+price. We'll call these aspects \textbf{attributes}. If a set of
+attributes comprises all the features (of a flat) that matter to you,
+then your preferences between possible flats are determined by your
+preferences between combinations of these attributes: if you prefer
+one flat to another, that's because you prefer the combined attributes
+of the first to those of the second.
 
-Thus we can represent your desires with respect to flats by a value
-function that is defined not over possible flats but over possible
-combinations of attributes. We'll write these combinations as lists
-enclosed in angular brackets. For example, `$\t{40 \m^2,
-  \text{central}, \text{£500}}$' stands for any flat with a size of 40
-$\m^2$, central location, and monthly costs of £500. If these are all
-the attributes you care about, then your value function will assign
-the same value to all such flats.
+So the desirability of any possible flat is determined by the
+desirability of every possible combination of attributes. We'll write
+these combinations as lists enclosed in angular brackets. For example,
+`$\t{40 \m^2, \text{central}, \text{£500}}$' stands for any flat with
+a size of 40 $\m^2$, central location, and monthly costs of £500. If
+these are all the attributes you care about, then your utility
+function will assign the same value to all such flats.
 
 \cmnt{%
   An \textbf{attribute}, on this usage, is not a particular property
@@ -97,25 +83,27 @@ the same value to all such flats.
   £320, and so on.%
 } %
 
-It's the same with possible worlds. If all you care about is your
-present degree of pleasure and the degree of pleasure of your three
-best friends, then we can represent your basic desires by a value
-function that assigns numbers to lists like $\t{10, 1, 2, 3}$,
-specifying degrees of pleasure for you and your friends (in some fixed
-order). Every such list effectively specifies a maximal conjunction of
-propositions you care about.
+It's the same with possible worlds. If all you care about is the
+degree of pleasure of you and your three best friends, then we can
+represent your basic desires by a value function that assigns numbers
+to lists like $\t{10, 1, 2, 3}$, specifying degrees of pleasure for
+you and your friends (in some fixed order). Each such list effectively
+specifies one of your concerns: a maximal conjunction of propositions
+you care about.
 
-So we have a value function for your flat search that assigns a
-desirability score to possible combinations of size, location, and
-price. If you're like most people, we can we say more about how these
-scores are determined on the basis of the individual attributes. For
-example, you probably prefer cheaper flats to more expensive flats,
-and larger ones to smaller ones. A natural method for determining the
-overall score for a given flat is to first assign scores to each
-attribute of the flat and then add up these scores. For example, a
-cheap but small flat in a good location gets a high score for price, a
-low score for size, and a high score for location, which amounts to an
-overall OK score.
+Return to the flats. Assuming you only care about size, location, and
+price, there will be some value function that assigns a desirability
+score to possible combinations of size, location, and price. If you're
+like most people, we can we say more about how these scores are
+determined on the basis of the individual attributes. For example, you
+probably prefer cheaper flats to more expensive flats, and larger ones
+to smaller ones.
+
+A natural method for determining the overall score for a given flat
+goes as follows. First, assign scores to each attribute of the flat.
+Then add up these scores. For example, a cheap but small flat in a
+good location gets a high score for price, a low score for size, and a
+high score for location, which amounts to a medium overall score.
 
 More formally, the present idea is to define your value for any given
 attribute list as the sum of \textbf{subvalues} assigned to individual
@@ -137,11 +125,12 @@ all the attributes: that size, location, and price are equally
 important to you. To allow for different weights, you might think, we
 should include scaling factors $w_S, w_L, w_P$, like so:
 \[
-V(\t{40 \m^2, \text{central}, \text{£500}}) = w_s \times V_{S}(40 \m^2) +
-w_L \times V_{L}(\text{central}) + w_P \times V_{P}(\text{£500}).
+V(\t{40 \m^2, \text{central}, \text{£500}}) = w_s \cdot V_{S}(40 \m^2) +
+w_L \cdot V_{L}(\text{central}) + w_P \cdot V_{P}(\text{£500}).
 \]
-For what follows however it will prove convenient to fold the weights
-into the subvalues. Thus $V_S(200 \m^2)$ should reflect not only how
+
+However, we can get omit the weights by folding them into the
+subvalues. That is, we will let $V_S(200 \m^2)$ measure not just how
 awesome it would be to have a 200 $\m^2$ flat, but also how important
 this feature is compared to price and location.
 
@@ -152,15 +141,15 @@ this feature is compared to price and location.
   flats.%
 } %
 
-\begin{exercise}\label{e:subv-not-u}
+\begin{exercise1}\label{e:subv-not-u}
   Like utility functions, subvalue functions assign numbers to sets of
   possible worlds that may vary in desirability. But unlike utility
   functions, subvalue functions are insensitive to belief. This
-  explains why, if you can afford to pay more than £300 in monthly
-  rent, then $V_{P}(\text{£300})$ is plausibly high, while the utility
-  you assign to renting a flat for £300 is low. Can you spell out the
-  explanation?  $\star$
-\end{exercise}
+  explains why, if you can afford to pay £600 in monthly
+  rent, then $V_{P}(\text{£300})$ is plausibly high, even though the
+  \emph{utility} you assign to renting a flat for £300 is low. Can you
+  spell out the explanation?
+\end{exercise1}
 
 \cmnt{%
   If we want to decompose the overall desirability of a given flat
@@ -186,7 +175,7 @@ this feature is compared to price and location.
   account what else is likely to be the case if a flat has four rooms.
 } %
 
-\begin{exercise}
+\begin{exercise2}
   Additivity greatly simplifies an agent's psychology. Suppose an
   agent's basic desires pertain to 10 propositions
   $A_1,A_2,\ldots,A_{10}$. There are $2^{10} = 1024$ conjunctions of
@@ -195,8 +184,8 @@ this feature is compared to price and location.
   \land A_9 \land \neg A_{10}$). To store the agent's value function
   in a database, we would therefore need to store up to 1024
   numbers. By contrast, how many numbers would we need to store if the
-  value function is additive?  $\star \star$
-\end{exercise}
+  value function is additive?
+\end{exercise2}
 
 
 \section{Separability}
@@ -204,9 +193,8 @@ this feature is compared to price and location.
 Under what conditions is value determined by adding subvalues? How are
 different subvalue functions related to one another? What do subvalue
 functions represent anyway? We can get some insight into these
-questions by following an idea from the previous chapter and
-investigating at how an agent's value function might be derived from
-her preferences.
+questions by following an idea from the previous chapter and study how
+an agent's value function might be derived from her preferences.
 
 For the moment, we want to set aside the influence of the agent's
 beliefs, so we are not interested in an agent's preferences between
@@ -224,14 +212,14 @@ rankings.
  
 So assume we have preference relations $\succ$, $\succsim$, $\sim$
 between some lists of attributes. To continue the illustration in
-terms of flats, if you prefer a central 40 $\m^2$ flat for £500 to a
+terms of flats, if you prefer a central \mbox{40 $\m^2$} flat for £500 to a
 central 60 $\m^2$ for £800, then
 \[
  \t{40 \m^2, \text{central}, \text{£500}} \succ
  \t{60 \m^2, \text{central}, \text{£800}}.
 \]
 
-Above we've assumed that you prefer cheaper flat to more expensive
+Above we've assumed that you prefer cheaper flats to more expensive
 flats, so that $V_P$ is a decreasing function of the monthly costs:
 the higher the costs $c$, the lower $V_p(c)$. But of course you don't
 prefer \emph{any} cheaper flat to \emph{any} more expensive flat. You
@@ -264,7 +252,7 @@ still get $\t{A_1,A_2',\ldots,A_n'} > \t{A_1',A_2',\ldots,A_n'}$. In
 that case, let's say that your preferences between $A_1$ and $A_1'$ are
 \emph{independent} of the other attributes.
 
-In the example of the flats, your preference of £400 over £500 is
+In the example of the flats, your preference of £400 over £500 is plausibly
 independent of the other attributes, for whenever two possible flats
 agree in size and location, but one costs £400 and the other £500, you
 prefer the one for £400.
@@ -299,23 +287,22 @@ your ranking of $\t{50 \m^2, \text{central}, -}$ and $\t{40 \m^2,
   \text{beach}, -}$ depends on how the blank (`$-$') is filled in, and
 so your preferences aren't strongly separable.
 
-\begin{exercise}
+\begin{exercise2}
   Suppose all you care about is the degree of pleasure of you and your
   three friends. And suppose you prefer states in which you four
   experience equal pleasure to states in which your degrees of
   pleasure are very different. For example, you prefer $\t{2,2,2,2}$
   to $\t{2,2,2,8}$, and you prefer $\t{8,8,8,8}$ to $\t{8,8,8,2}$.
   Are your preferences weakly separable? Are they strongly separable?
-  $\star$
-\end{exercise}
+\end{exercise2}
 
 \cmnt{%
   Explain why strong entails weak?%
 } %
 
-\begin{exercise}
+\begin{exercise2}
   Which of the following preferences violate weak separability or
-  strong separability, based on the information provided? $\star\star$
+  strong separability, based on the information provided?
 
   \medskip
   
@@ -335,7 +322,7 @@ so your preferences aren't strongly separable.
    In c., there's a counterex to w.s.: hold fixed A,C in rows 1 and 3.
 
  } %
-\end{exercise}
+\end{exercise2}
 
 In 1960, G\'erard Debreu proved that strong separability is exactly what is
 needed to ensure additivity.
@@ -365,10 +352,10 @@ combinations is uncountably infinite; we'll ignore that. Curiously,
 the result also requires that there are at least three attributes that
 matter to the agent. For two attributes, a different condition called
 `double-cancellation' is required instead of
-separability. (Double-cancellation says that if $\t{A_1,B_1} \succsim
+separability. Double-cancellation says that if $\t{A_1,B_1} \succsim
 \t{A_2,B_2}$ and $\t{A_2,B_3} \succsim \t{A_3,B_1}$ then $\t{A_2,B_3}
 \succsim \t{A_3,B_2}$. But let's just focus on cases with at least
-three relevant attributes.)
+three relevant attributes.
 
 One consequence of Debreu's theorem may also be worth noting: if the
 agent's preferences are defined over a sufficiently rich set of
@@ -382,7 +369,7 @@ preferences should be represented by an additive utility (or value)
 function. The utilities representing strongly separable preferences
 would then have an interval scale.
 
-\begin{exercise}
+\begin{exercise3}
   Show that whenever $V$ additively represents an agent's preferences,
   then so does any function $V'$ that differs from $V$ only by the
   choice of zero and unit. That is, assume that $V$ additively
@@ -393,7 +380,7 @@ would then have an interval scale.
   \]
   Assume $V'$ differs from $V$ only by a different choice of unit and
   zero, which means that there are numbers $x>0$ and $y$ such that
-  $V'(\t{A_1,A_2,\ldots,A_n}) = x\times V(\t{A_1,A_2,\ldots,A_n}) +
+  $V'(\t{A_1,A_2,\ldots,A_n}) = x\cdot V(\t{A_1,A_2,\ldots,A_n}) +
   y$. From these assumptions, show that there are subvalue functions
   $V_1',V_2',\ldots,V_n'$ such that
   \[
@@ -405,7 +392,7 @@ would then have an interval scale.
     preferences, then so does any function $V'$ that differs only by
     the choice of zero and unit. The converse can also be shown, but
     it's a little harder: if there are \emph{no} numbers $x>0$ and $y$
-    for which $V'(\t{A_1,A_2,\ldots,A_n}) = x\times
+    for which $V'(\t{A_1,A_2,\ldots,A_n}) = x\cdot
     V(\t{A_1,A_2,\ldots,A_n}) + y$, then $V'$ does \emph{not}
     additively represent the agent's preferences.) $\star \star \star$
   }%
@@ -428,8 +415,7 @@ would then have an interval scale.
     are increasing linear transformations. Hence additive separability
     implies cardinality.
   } %
-  $\star\star\star$
-\end{exercise}
+\end{exercise3}
 
 
 
@@ -557,13 +543,13 @@ etc. his means that you
 } %
 
 
-\begin{exercise}
-  Imagine you could freely choose 4 courses for next semester. You
+\begin{exercise2}
+  Imagine you can freely choose four courses for next semester. You
   assess each course by a range of criteria (such as whether the
   course will teach you anything useful). On this basis, you determine
-  an overall ranking of the courses and sign up for the top 4. Why
-  might this not be a good idea? $\star \star$
-\end{exercise}
+  an overall ranking of the courses and sign up for the top four. Why
+  might this not be a good idea?
+\end{exercise2}
 
 \cmnt{%
 
@@ -677,14 +663,13 @@ Harder if morality imposes fixed side constraints.
 According to psychological hedonism, the only thing people ultimately
 care about is their personal pleasure. But pleasure isn't constant. So
 the hedonist conjecture leaves open how people rank different ways
-pleasure can be distributed over a lifetime. Unless an agent just cares
-about her pleasure at a single point in time, a basic desire for
+pleasure can be distributed over a lifetime. Unless an agent just
+cares about her pleasure at a single point in time, a basic desire for
 pleasure is really a concern for a lot of things: pleasure now,
 pleasure tomorrow, pleasure the day after, and so on. We can think of
-these as the ``attributes'' of the agent's value function. The value a
-hedonist assigns to a possible world is determined by somehow
-aggregating the value of pleasure experienced at different times in
-that world.
+these as the ``attributes'' in the agent's value function. The
+hedonist's value function somehow aggregates the value of pleasure
+experienced at different times.
 
 To keep things simple, let's pretend that pleasure does not vary
 within any given day. We might then model a hedonist value function as
@@ -704,7 +689,8 @@ pleasure the agent has on other days. It follows by Debreu's theorem
 that the value the agent assigns to a time stream can be determined as
 the sum of the subvalues she assign to the individual parts of the
 stream. That is, if $p_1$, $p_2$, \ldots, $p_n$ are the agent's
-degrees of pleasure on days $1, 2, \ldots, n$ respectively, then
+degrees of pleasure on days $1, 2, \ldots, n$ respectively, then there
+are subvalue functions $V_1,V_2,\ldots,V_n$ such that
 \[
 V(\t{p_1,p_2,\ldots,p_n}) = V_1(p_1) + V_2(p_2) + \ldots + V_n(p_n).
 \]
@@ -728,8 +714,8 @@ It is not hard to show that if preferences over time streams are
 separable and stationary (as well as transitive and complete), then
 they can be represented by a value function of the form
 \[
-V(\t{A_1,\ldots,A_n}) = V_1(A_1) + \delta \times V_1(A_2) +
-\delta^2 \times V_1(A_3) \ldots + \delta^{n-1} \times V_1(A_n),
+V(\t{A_1,\ldots,A_n}) = V_1(A_1) + \delta \cdot V_1(A_2) +
+\delta^2 \cdot V_1(A_3) \ldots + \delta^{n-1} \cdot V_1(A_n),
 \]
 where $\delta$ is some number. The interesting thing here is that the
 subvalue function for all times equals the subvalue function $V_1$ for
@@ -756,7 +742,7 @@ one unit of pleasure today is worth twice as much as one unit of
 pleasure tomorrow, four times as much as one unit of pleasure the day
 after tomorrow, and so on. 
 
-\begin{exercise}
+\begin{exercise1}
   Consider the following streams of pleasure:
   \begin{enumerate}
     \itemsep-0.3em 
@@ -770,8 +756,8 @@ after tomorrow, and so on.
   that $V_1(p) = p$ for all degrees of pleasure $p$, how would a
   hedonist agent with separable and stationary preferences rank these
   streams, provided that (a) $\delta = 1$, (b)
-  $\delta < 1$, (c) $\delta > 1$? $\star$
-\end{exercise}
+  $\delta < 1$, (c) $\delta > 1$? (You need to give three answers.)
+\end{exercise1}
 
 Even if you're not a hedonist, you probably care about some things
 that can occur (and re-occur) at different times: talking to friends,
@@ -786,7 +772,7 @@ requirements of rationality. Some have even suggested that the only
 rationally defensible discounting factor is 1, on the ground that we
 should be impartial with respect to different parts of our life.
 
-The main argument in favour of stationarity is that -- under certain
+One argument in favour of stationarity is that -- under certain
 modelling assumptions -- it is required to protect the agent from a
 kind of disagreement with her future self. To illustrate, suppose you
 prefer getting £100 now to getting £105 tomorrow, but you also prefer
@@ -800,11 +786,11 @@ $\t{\text{£0}, \text{£0}, \text{£100}, \text{£0}, \ldots}$ to
 $\t{\text{£0}, \text{£0}, \text{£0}, \text{£105}, \ldots}$, and so on;
 so £100 in 10 days should be preferred to £105 in 11 days. Now suppose
 your (non-stationary) preferences remain the same for the next 10
-days. At the end of this time, you then still prefer £100 now over £105
-tomorrow. But your new ``now'' is your old ``in 10 days''. So your new
-preferences disagree with those of your earlier self in the sense that
-what you now regard as better is what your earlier self regarded as
-worse. That kind of disagreement is called \textbf{time
+days. At the end of this time, you then still prefer £100 now over
+£105 tomorrow. But your new ``now'' is your old ``in 10 days''. So
+your new preferences disagree with those of your earlier self in the
+sense that what you now regard as better is what your earlier self
+regarded as worse. That kind of disagreement is called \textbf{time
   inconsistency}.
 
 Empirical studies show that time inconsistency is very common, and
@@ -814,7 +800,7 @@ exercise, but choose burgers and TV for today.
 
 On the other hand, many violations of stationarity and even
 separability across time look perfectly sensible. For example, suppose
-you value having a glass of wine every now an then. But only now and
+you value having a glass of wine every now and then. But only now and
 then; you don't want to have wine every day. It follows that your
 preferences violate both separability and stationarity. You violate
 stationarity because even though you might prefer a stream
@@ -826,10 +812,9 @@ regard having wine in $n$ days as desirable depends on whether you
 will have wine right before or after these days. 
 
 Even if an agent only cares about pleasure, it is not obvious why a
-rational agent might not, for instance, prefer relatively constant
-levels or pleasure over wildly fluctuating levels, or the other way
-round. Either preference would violate both stationarity and
-separability.
+rational agent might not (say) prefer relatively constant levels or
+pleasure over wildly fluctuating levels, or the other way round.
+Either preference would violate both stationarity and separability.
 
 \cmnt{%
   What's going on in these examples? Do we have time inconsistency? We
@@ -841,7 +826,7 @@ separability.
   pre-histories. Preferences are defined only over future streams.%
 } %
 
-On the standard way of modelling preferences over time streams (which
+On standard ways of modelling preferences over time streams (which
 ignores what happened in the past), these preferences are time
 inconsistent. But that kind of time inconsistency does not look
 problematic.
@@ -935,11 +920,10 @@ rationally prefer the safe option $A$ just because it is safe --
 because the utility distribution $\t{10,10}$ is more even than
 $\t{\text{-10},30}$. Much more on that in the next chapter.
 
-\begin{exercise}
+\begin{exercise2}
   Where in their axioms do Savage and von Neumann and Morgenstern
   postulate a kind of separability across states?
-  $\star$
-\end{exercise}
+\end{exercise2}
 
 \section{Harsanyi's ``proof of utilitarianism''}
 
@@ -968,10 +952,12 @@ states:
 %
 
 Unlike classical utilitarianism, however, the Pareto Condition offers
-little moral guidance. For instance, it does not tell us whether it
-would be better or worse to harvest the organs of an innocent person
-in order to save ten others, given that the person to be sacrificed
-ranks the options differently than those who would be saved.
+little moral guidance. For instance, while classical utilitarianism
+suggests that one should harvest the organs of an innocent person in
+order to save ten others, the Pareto Condition does not settle whether
+it would be better or worse to harvest the organs, given that the
+person to be sacrificed ranks the options differently than those who
+would be saved.
 
 \cmnt{%
 
@@ -987,7 +973,7 @@ ranks the options differently than those who would be saved.
 
 } %
 
-\begin{exercise}[The Condorcet Paradox]
+\begin{exercise1}[The Condorcet Paradox]
   A ``democratic'' strengthening of the Pareto condition might say
   that whenever \emph{a majority} of people prefer $A$ to $B$, then
   $A$ is better than $B$. But consider the following scenario. There
@@ -996,7 +982,7 @@ ranks the options differently than those who would be saved.
   $A$. Person 3 prefers $C$ to $A$ to $B$. If betterness is decided by
   majority vote, is $A$ better than $B$? How about $A$ and $C$, and
   $B$ and $C$?
-\end{exercise}
+\end{exercise1}
 
 In 1955, John Harsanyi proved a remarkable theorem that seemed to
 rescue, and indeed vindicate, classical utilitarianism. 

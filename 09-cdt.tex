@@ -2,12 +2,18 @@
 
 \section{Evidential decision theory}\label{sec:edt}
 
-To compute the expected utility of an agent's options, we need an
-adequate representation of her decision problem in terms of states,
-acts, and outcomes. One requirement on an adequate representation is
-that the states are independent of the acts. Exercise \ref{e:exam}
-illustrated why this requirement is needed: a student, wondering
-whether to study for an exam, drew up the following matrix.
+The traditional method for evaluating an agent's options in a decision
+situation begins by setting up a decision matrix which identifies the
+relevant states, acts, and outcomes. The expected utility of each act
+is then computed as the weighted average of the utility of the
+possible outcomes, weighted by the probability of the corresponding
+states.
+
+Finding an adequate decision matrix is not always easy. Among other
+things, we have to make sure that the propositions we choose as the
+states are independent of the acts. Exercise \ref{e:exam} illustrated
+why this is needed: a student, wondering whether to study for an exam,
+drew up the following matrix.
 \begin{center}
   \begin{tabular}{|r|c|c|}\hline
     \gr & \gr Will Pass (0.5) & \gr Won't Pass (0.5) \\\hline
@@ -15,11 +21,12 @@ whether to study for an exam, drew up the following matrix.
     \gr Don't Study & Pass \& Fun (5) & Fail \& Fun (-2) \\\hline
   \end{tabular}
 \end{center}
-To the student's delight, not studying comes out as the dominant
-option. But her matrix is inadequate because the states `Will Pass'
-and `Won't Pass' are not independent of the acts. 
+To the student's delight, the expected utility of studying (-3.5) is
+lower than that of not studying (1.5). The student is wrong, because
+the states `Will Pass' and `Won't Pass' in her matrix are not
+independent of the acts.
 
-But what exactly does independence require? There are several notions
+What exactly does independence require? There are several notions
 of independence.
 \begin{itemize}
 \itemsep0em
@@ -29,17 +36,17 @@ of independence.
 \item $A$ and $B$ are \textbf{probabilistically independent} relative
   to some credence function $\Cr$ if $\Cr(B/A) = \Cr(B)$. (See section
   \ref{sec:conditional}.)  
-\item $A$ and $B$ are \textbf{causally independent} if it is certain
-  that whether or not one of them is true has no causal influence
-  over whether the other is true.
+\item $A$ and $B$ are \textbf{causally independent} if, whether or not
+  one of them is true is has no causal influence over whether the
+  other is true.
 \end{itemize}
 
-\begin{exercise}
-  I the student's decision problem, is it reasonable to assume that
-  the states are logically independent of the acts? Is it reasonable
-  to assume that they are causally independent? Is it reasonable to
-  treat them as probabilistically independent? $\star$
-\end{exercise}
+\begin{exercise1}
+  I the student's decision matrix, is it reasonable to assume that the
+  states (`Will Pass', `Won't Pass') are logically independent of the
+  acts? Is it reasonable to assume that they are causally independent?
+  Is it reasonable to treat them as probabilistically independent?
+\end{exercise1}
 
 When we require that the states should be independent of the acts, we
 don't just mean logical independence. But it is not obvious whether we
@@ -51,15 +58,15 @@ independence (also known as `evidential independence'), we get
 independence, we get \textbf{causal decision theory} (CDT).
 
 Both forms of decision theory say that rational agents maximize
-expected utility, but they mean slightly different things by `expected
-utility'. Remember how expected utility is defined: if act $A$ leads
-to outcomes $O_1,\ldots,O_n$ respectively in states $S_1,\ldots,S_n$,
-then, by definition,
+expected utility, and they both appear to use the same definition of
+expected utility: if act $A$ leads to outcomes $O_1,\ldots,O_n$
+in states $S_1,\ldots,S_n$ respectively, then
 \[
-EU(A) = U(O_1) \times \Cr(S_1) + \ldots + U(O_n) \times \Cr(S_n).
+EU(A) =_\text{def} U(O_1) \cdot \Cr(S_1) + \ldots + U(O_n) \cdot \Cr(S_n).
 \]
-Since EDT and CDT disagree on what the states should look like, they
-disagree on how to define expected utility. If we require the states
+But EDT and CDT disagree on what counts as an adequate state. Each
+camp accuses the other of making a similar mistake as the student who
+used `Will Pass' and `Won't Pass' as the states. If we require states
 to be probabilistically independent of the acts, the definition
 defines \textbf{evidential expected utility}; if we require causal
 independence, it defines \textbf{causal expected utility}.
@@ -94,9 +101,9 @@ independence, it defines \textbf{causal expected utility}.
   \end{center}
 
   In the new matrix, not studying no longer dominates. Indeed,
-  studying has expected utility $1 \times 0.2 + 1 \times 0.7 + (-8) \times
-  0.1 = 0.1$, while not studying has expected utility $5 \times 0.2 + (-2)
-  \times 0.7 + (-2) \times 0.1 = -0.6$. So studying maximizes expected utility.
+  studying has expected utility $1 \cdot 0.2 + 1 \cdot 0.7 + (-8) \cdot
+  0.1 = 0.1$, while not studying has expected utility $5 \cdot 0.2 + (-2)
+  \cdot 0.7 + (-2) \cdot 0.1 = -0.6$. So studying maximizes expected utility.
 } %
 
 Before we look at examples where the two notions come apart, I want to
@@ -138,29 +145,27 @@ vary with the acts. Like so:
   \end{tabular}
 \end{center}
 %
-On this new method, we no longer care about the absolute,
-unconditional probability of the states. Instead, we register the
-agent's credence in the states conditional on each act. The
-student is 90\% confident that she will pass \emph{if she studies}
-and 20\% confident that she will pass \emph{if she doesn't
-  study}.%
-\cmnt{%
-  (Remember that 0.2 is the student's credence in hypothesis that the
-  exam is easy, and 0.9 is her credence in the hypothesis that the
-  exam is either easy or hard.)  %
-} %
-To compute the expected utility of each act we then simply multiply
-the utilities and credences in each cell and add up the products. So
-the expected utility of studying is $1 \times 0.9 + (-8) \times 0.1 =
-0.1$; for not studying we get $5 \times 0.2 + (-2) \times 0.8 = -0.6$.
+`$Cr=0.9$' in the top left cell indicates that the student is 90\%
+confident that she will pass \emph{if she studies}. By contrast, she
+is only 20\% confident that she will pass \emph{if she doesn't study},
+as indicated by `$\Cr=0.2$' in the bottom left cell. We no longer care
+about the absolute, unconditional probability of the states. To
+compute the expected utility of each act we simply multiply the
+utilities and credences in each cell and add up the products. So the
+expected utility of studying is $1 \cdot 0.9 + (-8) \cdot 0.1 = 0.1$;
+for not studying we get $5 \cdot 0.2 + (-2) \cdot 0.8 = -0.6$.
 
-In general, on this new method, if there are $n$ states $S_1,\ldots,
-S_n$ (which may or may not be independent of the acts), and a given
-act $A$ leads to outcomes $O_1,\ldots,O_n$ respectively in these
-states, then the expected utility of $A$ is computed as
+In general, the \textbf{new method} for computing expected utilities
+goes as follows. As before, we set up a decision matrix that
+distinguishes all relevant acts and outcomes, but we no longer care
+whether the states are independent of the acts (in any sense). If an
+act $A$ leads to outcomes $O_1,\ldots,O_n$ in states $S_1,\ldots,S_n$
+respectively, then the expected utility of $A$ is computed as
 \[
-EU(A) = U(O_1) \times \Cr(S_1/A) + \ldots + U(O_n) \times \Cr(S_n/A).
+EU(A) = U(O_1) \cdot \Cr(S_1/A) + \ldots + U(O_n) \cdot \Cr(S_n/A).
 \]
+Here the unconditional credences $\Cr(S_i)$ in the old method have
+been replaced by conditional credences $\Cr(S_i/A)$.
 
 \cmnt{%
 
@@ -172,7 +177,7 @@ EU(A) = U(O_1) \times \Cr(S_1/A) + \ldots + U(O_n) \times \Cr(S_n/A).
     $O_1,\ldots,O_n$ respectively in these states, then the
     \textbf{conditional expected utility} of $A$ is defined as
     \[
-    CEU(A) = \Cr(S_1/A) \times U(O_1) + \ldots + \Cr(S_n/A) \times U(O_n).
+    CEU(A) = \Cr(S_1/A) \cdot U(O_1) + \ldots + \Cr(S_n/A) \cdot U(O_n).
     \]
   \end{genericthm}
 
@@ -182,7 +187,7 @@ EU(A) = U(O_1) \times \Cr(S_1/A) + \ldots + U(O_n) \times \Cr(S_n/A).
 
 } %
 
-\begin{exercise}
+\begin{exercise2}
   You have a choice of going to party $A$ or party $B$. You prefer
   party $A$, but you'd rather not go to a party if Bob is there. Bob,
   however, wants to go where you are, and there's a 50\% chance that
@@ -203,71 +208,96 @@ EU(A) = U(O_1) \times \Cr(S_1/A) + \ldots + U(O_n) \times \Cr(S_n/A).
   \item[(a)] Explain why this is not an adequate matrix for computing
     expected utilities by the old method.
   \item[(b)] Use the new method to compute the expected utilities.
-  $\star\star$
   \end{enumerate}
   \vspace{-2em}
-\end{exercise}
+\end{exercise2}
 
-A nice feature of the new method is that the expected utility of an
-act does not depend on the set of states we've used in the
-computation, as long as the states distinguish all possible outcomes
-of the act (so that for each state, there is exactly one outcome that
-is certain to result from the act in that state). This feature is a
-weak form of what is sometimes called \textbf{partition invariance}.
+% A nice feature of the new method is that the expected utility of an
+% act turns out to not depend on which states we've used in the
+% computation.
+%as long as the states distinguish all possible outcomes
+%of the act (so that for each state, there is exactly one outcome that
+%is certain to result from the act in that state).
+% This is known as \textbf{partition invariance}.
 
-Partition invariance implies that expected utility as defined by the
-new method is equivalent to evidential expected utility. That is, if
-we compute expected utilities by the new method, using states that may
-or may not be independent of the acts, we always get the same result
-as if we apply the old method, using states that are probabilistically
-independent of the acts.
-
-To see why, suppose $S_1,\ldots,S_n$ is a set of states (each of which
-determines an outcome for each act) that are probabilistically
-independent of the acts. By definition, the evidential expected
-utility of any act $A$ is
+We can go one step further. Suppose the outcomes $O_1,\ldots,O_n$ that
+might result from act $A$ are all distinct, so that $A$ leads to a
+outcome $O_1$ only if $S_1$ obtains, to outcome $O_2$ only if $S_2$
+obtains, and so on. On the assumption that the agent chooses $A$, it
+is then certain that $S_1$ is true iff $O_1$ is true, that $S_2$ is
+true iff $O_2$ is true, and so on. It follows that
+$\Cr(S_1/A) = \Cr(O_1/A)$, $\Cr(S_2/A) = \Cr(O_2/A)$, etc.
+Substituting these terms in the new formula for $EU(A)$, we get
 \[
-EU(A) = U(O_1) \times \Cr(S_1) + \ldots + U(O_n) \times \Cr(S_n).
+EU(A) = U(O_1) \cdot \Cr(O_1/A) + \ldots + U(O_n) \cdot \Cr(O_n/A).
 \]
-According to our new method, the expected utility of $A$ is
-\[
-EU(A) = U(O_1) \times \Cr(S_1/A) + \ldots + U(O_n) \times \Cr(S_n/A).
-\]
-But if the states are probabilistically independent of the acts, then
-in all these terms, $\Cr(S_i) = \Cr(S_i/A)$. So the two definitions
-coincide.
+So we can equivalently compute the expected utility of $A$ directly in
+terms of outcomes, without even mentioning any states.
 
-This is an argument in favour of EDT because the new method is often
-much simpler and more intuitive than the old definition in terms of
-unconditional probabilities. On the new method, we don't need to worry
-about the states any more. Indeed, we can drop the concept of a state
-altogether. To compute the expected utility of an act, we can simply
-figure out all the outcomes $O_1,\ldots, O_n$ that the act might bring
-about, consider how likely each of the outcomes is on the supposition
-that the act is chosen, and then take the sum of the products:
+To derive the equivalence, I have assumed that same outcome never
+occurs in different states. But the equivalence still holds if we drop
+that assumption. For example, suppose $A$ leads to $O_1$ in both $S_1$
+and $S_2$ (and in no other state). On the assumption that the agent
+chooses $A$, it is then certain that $O_1$ is true iff $S_1\lor S_2$
+is true. Since the states are mutually incompatible, it follows that
+$\Cr(O_1/A) = \Cr(S_1/A)+\Cr(S_2/A)$. And this means that we can
+substitute
+\[
+  U(O_1)\cdot \Cr(S_1/A) + U(O_1)\cdot \Cr(S_2/A)
+\]
+in the new formula for expected utility by
+\[
+  U(O_1)\cdot \Cr(O_1/A).
+\]
+
+% The preceding para could be an exercise.
+
+The upshot is that the new method is equivalent to a
+\textbf{state-free method} for computing expected utilities. Here we
+only need to figure out all the outcomes $O_1,\ldots, O_n$ that a
+given act might bring about. We then consider how likely each of the
+\emph{outcomes} is on the supposition that the act is chosen, and take
+the sum of the products:
 %
 \[
-EU(A) = U(O_1) \times \Cr(O_1/A) + \ldots + U(O_n) \times \Cr(O_n/A).
+EU(A) = U(O_1) \cdot \Cr(O_1/A) + \ldots + U(O_n) \cdot \Cr(O_n/A).
 \]
-%
-\begin{exercise}
-  Explain why this state-free formula for computing expected utilities
-  is an instance of the new method as described before. $\star\star$
-  \cmnt{%
-    Explain better!%
-  } %
-\end{exercise}
+In practice, this method is often simpler and more intuitive than
+the old method.
 
-\begin{exercise}
+\begin{exercise1}
   You have two options. You can get £10 for sure (utility 1), or flip
   a fair coin and get £20 on heads (utility 1.8) or £0 on tails
   (utility 0). The coin will not be flipped if you take the £10.  In
   cases like this, it is hard to find a suitable set of states. Use
-  the state-free version of the new method instead. $\star$
-\end{exercise}
+  the state-free method.
+\end{exercise1}
 
+I have shown that the new method and the state-free method always
+yield the same result. I will now show that if we compute the expected
+utility of an act by one of these methods, what we get is the act's
+\emph{evidential} expected utility, as defined above. The
+user-friendliness of the new methods is therefore an argument in
+favour of EDT.
 
-
+The proof is easy. The evidential expected utility of an act $A$ is
+defined as
+\[
+U(O_1) \cdot \Cr(S_1) + \ldots + U(O_n) \cdot \Cr(S_n),
+\]
+where $O_1,\ldots,O_n$ are the outcomes that result from $A$ in states
+$S_1,\ldots,S_n$ respectively, and the states are probabilistically
+independent of the acts. By the new method, we would instead compute
+the expected utility as
+\[
+U(O_1) \cdot \Cr(S_1/A) + \ldots + U(O_n) \cdot \Cr(S_n/A).
+\]
+But since the states are probabilistically independent of the acts, in
+all these terms, $\Cr(S_i) = \Cr(S_i/A)$. So the two methods here
+yield the same result. But we know that \emph{any} application of the
+new method yields the same result as the state-free method. It follows
+that any application of either the new method or the state-free method
+yields the same result as the old method as understood by EDT.
 
 \cmnt{%
 
@@ -323,37 +353,36 @@ EU(A) = U(O_1) \times \Cr(O_1/A) + \ldots + U(O_n) \times \Cr(O_n/A).
 } %
 
 A third advantage of EDT is that it provides a powerful argument in
-support of the MEU Principle (foreshadowed in section
-\ref{sec:why-meu}). In short, the argument is that the evidential
-\emph{expected utility} of an act equals the act's \emph{utility}. The
-principle to maximize evidential expected utility is therefore
-equivalent to the principle that one should choose acts that are most
-desirable in light of one's total beliefs and desires. And that sounds
-very plausible.
+support of the MEU Principle, which I mentioned section
+\ref{sec:why-meu}. The argument is that the evidential \emph{expected
+  utility} of an act equals the act's \emph{utility}. The principle to
+maximize evidential expected utility is therefore equivalent to the
+principle that one should choose acts that are most desirable in light
+of one's total beliefs and desires. And that sounds very plausible.
 
-Here is why, on the evidential conception, $EU(A) = U(A)$. Suppose $A$
-has $O_1,\ldots, O_n$ as (distinct) possible outcomes. Then $A$ is
-logically equivalent to the disjunction of all conjunctions of $A$
-with the outcomes: $(A \land O_1) \lor \ldots \lor (A \land O_n)$.
-\cmnt{%
-  I should have let students prove this earlier.
-} %
-By Jeffrey's axiom for utility, 
+Here is another proof that an act's utility equals its evidential
+expected utility, using the state-free method for computing evidential
+expected utilities. Suppose $A$ has $O_1,\ldots, O_n$ as (distinct)
+possible outcomes. Then $A$ is logically equivalent to the disjunction
+of all conjunctions of $A$ with the outcomes:
+$(A \land O_1) \lor \ldots \lor (A \land O_n)$.
+% I should have let students prove this earlier!
+By Jeffrey's axiom for utility,
 \[
-U(A) = U(A\land O_1) \times \Cr(A \land O_1/A) + \ldots +
-       U(A\land O_n) \times \Cr(A \land O_n/A).
+U(A) = U(A\land O_1) \cdot \Cr(A \land O_1/A) + \ldots +
+       U(A\land O_n) \cdot \Cr(A \land O_n/A).
 \]
 Since $\Cr(A \land O_i/A) = \Cr(O_i/A)$, this simplifies to
 \[
-U(A) = U(A\land O_1) \times \Cr(O_1/A) + \ldots +
-       U(A\land O_n) \times \Cr(O_n/A).
+U(A) = U(A\land O_1) \cdot \Cr(O_1/A) + \ldots +
+       U(A\land O_n) \cdot \Cr(O_n/A).
 \]
 Moreover, if the outcomes specify everything that matters to the
 agent, then $U(A \land O_i) = U(O_i)$. So we can simplify once more:
 \[
-U(A) = U(O_1) \times \Cr(O_1/A) + \ldots + U(O_n) \times \Cr(O_n/A).
+U(A) = U(O_1) \cdot \Cr(O_1/A) + \ldots + U(O_n) \cdot \Cr(O_n/A).
 \]
-But that is just how our new method computes $EU(A)$. 
+The right-hand side is the state-free definition of evidential expected utility.
 
 \cmnt{%
   It's not ideal that vNM etc also appeal to $U(A)$...
@@ -385,7 +414,7 @@ But that is just how our new method computes $EU(A)$.
   and $U(\emph{Fail \& Fun}$, weighted by the conditional
   probability of the two outcomes:
   \[
-  U(PF \lor FF) = U(PF)\times \Cr(PF/PF \lor FF) + U(FF)\times \Cr(FF/PF\lor FF).
+  U(PF \lor FF) = U(PF)\cdot \Cr(PF/PF \lor FF) + U(FF)\cdot \Cr(FF/PF\lor FF).
   \]
   
 \end{exercise}
@@ -396,18 +425,17 @@ But that is just how our new method computes $EU(A)$.
 In 1960, the physicist William Newcomb invented the following puzzle.
 
 \begin{example}[Newcomb's Problem]
-  In front of you is a blue box and a transparent box. The transparent
-  box contains £1000. You can't see what's in the blue box. You have
-  two options. One is to take the blue box and keep whatever is
-  inside. Your second option is to take \emph{both} the blue box and
-  the transparent box and keep their content. But there's a catch. A
-  demon has tried to predict what you will do. If she predicted that
-  you will take both boxes, then she put nothing in the blue box. If
-  she predicted that you will take just the blue box, she put
-  £1,000,000 in the box. The demon is very good at predicting this
-  kind of choice. Your options have been offered to many people
-  in the past, and the demon's predictions have almost always been
-  correct.
+  In front of you are a black box and a transparent box. You can see
+  that transparent box contains £1000. You can't see what's in the
+  black box. You have two options. One is to take (only) the black box
+  and keep whatever is inside. Your second option is to take the black
+  box \emph{and} the transparent box and keep their contents. A demon
+  has tried to predict what you will do. If she predicted that you
+  will take both boxes, then she put nothing in the black box. If she
+  predicted that you will take just the black box, she put £1,000,000
+  in the box. The demon is very good at predicting this kind of
+  choice. Your options have been offered to many people in the past,
+  and the demon's predictions have almost always been correct.
 \end{example}
 
 What should you do, assuming you want to get as much money as
@@ -419,19 +447,19 @@ matrix adequately represents your decision problem, according to CDT.
 %
 \begin{center}
   \begin{tabular}{|r|c|c|}\hline
-    \gr & \gr £1,000,000 in blue box & \gr £0 in blue box \\\hline
-    \gr Take only blue box & £1,000,000 & £0 \\\hline
+    \gr & \gr £1,000,000 in black box & \gr £0 in black box \\\hline
+    \gr Take only black box & £1,000,000 & £0 \\\hline
     \gr Take both boxes & £1,001,000 & £1000 \\\hline
   \end{tabular}
 \end{center}
 %
 Note that the states are causally independent of the acts, as CDT
-requires: whether you take both boxes or just the blue box -- in
+requires: whether you take both boxes or just the black box -- in
 philosophy jargon, whether you \emph{two-box} or \emph{one-box} -- is
 certain to have no causal influence over what's in the boxes. This is
 crucial to understanding Newcomb's Problem. By the time of your
 choice, the content of the boxes is settled. The demon won't magically
-change what's in the blue box in response to your choice; her only
+change what's in the black box in response to your choice; her only
 superpower is predicting people's choices.
 
 It is obvious from the decision matrix that taking both boxes
@@ -439,22 +467,22 @@ maximizes causal expected utility, since it dominates one-boxing: it
 is better in every state. We don't need to fill in the precise
 utilities and probabilities.
 
-Turning to EDT, we do need to specify a few more details. Let's say you
-are 95\% confident that there is a million in the blue box if you
-one-box, and 5\% confident that there is a million in the blue box if
+Turning to EDT, we do need to specify a few more details. Let's say
+you are 95\% confident that there is a million in the black box if you
+one-box, and 5\% confident that there is a million in the black box if
 you two-box. Let's also assume (for simplicity) that your utility is
-proportional to the amount of money you will get. The evidential
-expected utility of the two options then works out as follows (`1B' is
-one-boxing, `2B' is two-boxing):
+proportional to the amount of money you will get. Using the new
+method, the evidential expected utility of the two options then works
+out as follows (`1B' is one-boxing, `2B' is two-boxing):
 \begin{align*}
-  EU(\text{1B}) &= U(\text{£1,000,000})\times
-  \Cr(\text{£1,000,000}/\text{1B}) + U(\text{£0})\times
+  EU(\text{1B}) &= U(\text{£1,000,000})\cdot
+  \Cr(\text{£1,000,000}/\text{1B}) + U(\text{£0})\cdot
   \Cr(\text{£0}/\text{1B})\\
-  &= 1,000,000 \times 0.95 + 0 \times 0.05 = 950,000.\\
-  EU(\text{2B}) &= U(\text{£1,001,000})\times
-  \Cr(\text{£1,001,000}/\text{2B}) + U(\text{£1000})\times
+  &= 1,000,000 \cdot 0.95 + 0 \cdot 0.05 = 950,000.\\
+  EU(\text{2B}) &= U(\text{£1,001,000})\cdot
+  \Cr(\text{£1,001,000}/\text{2B}) + U(\text{£1000})\cdot
   \Cr(\text{£1000}/\text{2B})\\
-  &= 1,001,000 \times 0.05 + 1000 \times 0.95 = 51,000.
+  &= 1,001,000 \cdot 0.05 + 1000 \cdot 0.95 = 51,000.
 \end{align*}
 One-boxing comes out as significantly better than two-boxing.
 
@@ -462,13 +490,12 @@ So CDT says that you should two-box, and EDT says you should
 one-box. Who has it right? Philosophers have been debating the
 question for over 50 years, with no consensus in sight.
 
-Some think one-boxing is obviously the right choice. The argument is
-simple: you're almost certain to get more if you one-box than if you
-two-box. Look at all the people that have been offered the choice in
-the past. Those who one-boxed almost always walked away with a
-million, while those who two-boxed walked away with a
-thousand. Wouldn't you rather be in the first group than in the
-second? 
+Some think one-boxing is obviously the right choice. After all, you're
+almost certain to get more if you one-box than if you two-box. Look at
+all the people that have been offered the choice in the past. Those
+who one-boxed almost always walked away with a million, while those
+who two-boxed walked away with a thousand. Wouldn't you rather be in
+the first group than in the second? It's your choice!
 
 \cmnt{%
   Another argument for one-boxing is that (as we have seen) it is
@@ -477,37 +504,37 @@ second?
   Theory. %
 } %
 
-Others think it equally obvious that you should take both boxes.  The
-main argument for two-boxing is also simple: if you take both boxes,
-you are guaranteed to get £1000 more than whatever you'd get if you
-took just the blue box. Remember that the content of the boxes is
-settled. The blue box either contains a thousand or a million.  And
-since one-boxing and two-boxing will both give you the blue box, it is
-settled that you will get however much is in that box. The only thing
-that isn't settled -- the only thing over which you have any control
--- is whether you also get the £1000 from the transparent box. And if
-you prefer more money to less money, then clearly (so the argument)
-you should take the additional £1000.
+Others think it equally obvious that you should take both boxes. If
+you take both boxes, you are guaranteed to get £1000 more than
+whatever you'd get if you took just the black box. Remember that the
+content of the boxes is settled. The black box either contains a
+thousand or a million. And since one-boxing and two-boxing will both
+give you the black box, it is settled that you will get however much
+is in that box. The only thing that isn't settled -- the only thing
+over which you have any control -- is whether you also get the £1000
+from the transparent box. And if you prefer more money to less money,
+then clearly (so the argument) you should take the additional £1000.
 
-The argument may be strengthened by the following observation. Imagine
-you have a friend who helped the demon prepare the boxes. Your friend
-knows what's in the blue box. You've agreed to a secret signal by
-which she will let you know whether it would be better for you to
-choose both boxes or just the blue box. If you trust your friend, it
-seems that you should follow her advice. But what will she signal?  If
-the box is empty, she will advise you to take both boxes, so that you
-get at least the thousand. If the box contains a million, she will
-also advise you to take both boxes, so that you get £1,001,000 rather
-than £1,000,000. Either way, she will signal to you that you should
-take both boxes. But this means you can follow your friend's advice
-without even looking at her signal. Indeed, you can (and ought to)
-follow her advice even if she doesn't actually exist.
+The argument for two-boxing can be strengthened by the following
+observation. Imagine you have a friend who helped the demon prepare
+the boxes. Your friend knows what's in the black box. You've agreed to
+a secret signal by which she will let you know whether it would be
+better for you to choose both boxes or just the black box. If you
+trust your friend, it seems that you should follow her advice. But
+what will she signal? If the box is empty, she will advise you to take
+both boxes, so that you get at least the thousand. If the box contains
+a million, she will also advise you to take both boxes, so that you
+get £1,001,000 rather than £1,000,000. Either way, she will signal to
+you that you should take both boxes. But this means you can follow
+your friend's advice without even looking at her signal. Indeed, you
+can (and ought to) follow her advice even if she doesn't actually
+exist.
 
 Why should you follow the advice of your imaginary friend? Think about
-why we introduced the notion of expected utility in the first
-place. In chapter \ref{ch:overview}, we distinguished between what an
-agent ought to do \emph{in light of all the facts}, and what she ought
-to do \emph{in light of her beliefs}. In the miner problem (example
+why we introduced the notion of expected utility in the first place.
+In chapter \ref{ch:overview}, we distinguished between what an agent
+ought to do \emph{in light of all the facts}, and what she ought to do
+\emph{in light of her beliefs}. In the miner problem (example
 \ref{ex:miners}), the best choice in light of all the facts is to
 block whichever shaft the miners are actually in. But since you don't
 know where the miners are, you don't know what would be the best
@@ -517,21 +544,21 @@ arguably to block neither shaft. But in Newcomb's problem, you
 actually know what is best in light of all the facts: you know what
 someone who knows all relevant facts would advise you to do. She would
 advise you to two-box. (Equivalently, you know what you would decide
-to do if \emph{you} knew what's in the blue box: you would decide to
-two-box.) Plausibly, if you are certain that a certain act is best in
-light of all the facts, then you should choose that act.
+to do if \emph{you} knew what's in the black box: you would decide to
+two-box.) Plausibly, if you are certain that some act is best in light
+of all the facts, then you should choose that act.
 
-\begin{exercise}
+\begin{exercise2}
   Show that if you follow EDT, you would not want to know what's in
-  the blue box. You'd be willing to pay the demon £500 for not
-  revealing to you the content of the box. $\star\star$
-\end{exercise}
+  the black box. You'd be willing to pay the demon £500 for not
+  revealing to you the content of the box. 
+\end{exercise2}
 
 What about the fact that one-boxers are generally richer than
 two-boxers? Doesn't that show that the one-boxers are doing something
 right? Not so, say those who advocate two-boxing. The two-boxers who
 walked away with a mere thousand were never given a chance to get a
-million. They were confronted with an empty blue box and a transparent
+million. They were confronted with an empty black box and a transparent
 box containing £1000; it's hardly their fault that they didn't get a
 million. On the other hand, all those one-boxers who got a million
 were effectively given a choice between £1,001,000 and £1,000,000. The
@@ -565,26 +592,26 @@ thousand. It clearly doesn't follow that everyone should have pressed
 
 \section{More realistic Newcomb Problems?}
 
-Newcomb's Problem is clearly science fiction. No one ever faces that
-situation. So why should we care about the answer?
+Newcomb's Problem is  science fiction. Nobody ever faces that
+situation. Why should we care about the answer?
 
-Philosophers care because that the problem brings to light a more
+Philosophers care because the problem brings to light a more
 general issue: whether the norms of practical rationality must
 involve causal notions. Those who favour two-boxing in Newcomb's
 Problem argue that the apparent advantage of EDT, that it does not
 appeal to causal notions, is actually a flaw. In effect, EDT
 recommends choosing acts whose choice would be good news. One-boxing
 in Newcomb's Problem would be good news because it would provide
-strong evidence that the blue box (which you're certain to get)
+strong evidence that the black box (which you're certain to get)
 contains a million. By contrast, two-boxing would provide strong
-evidence that the blue box is empty; it would be bad news. But the aim
-of rational choice, say the objectors, is to \emph{bring about good
+evidence that the black box is empty; it would be bad news. But the aim
+of rational choice, say advocates of CDT, is to \emph{bring about good
   outcomes}, not to \emph{receive good news}. In Newcomb's Problem,
 one-boxing is evidence for something good, but it does not contribute in
-any way to bringing about that good. If the million is in the blue
+any way to bringing about that good. If the million is in the black
 box, then it got in there long before you made your choice.
 
-Arguably, this difference between EDT and CDT also shows up in more
+This difference between EDT and CDT can also show up in more
 realistic scenarios. Some versions of the Prisoner Dilemma (example
 \ref{ex:pd}) are plausible candidates. Suppose you only care about
 your own prison term. We can then represent the Prisoner Dilemma by
@@ -612,28 +639,28 @@ partner will also remain silent -- and note how much better the
 right-hand column is than the left-hand column. But that is no reason
 for you to remain silent.
 
-\begin{exercise}
+\begin{exercise1}
   Compute the evidential expected utility of confessing and remaining
-  silent. $\star$
-\end{exercise}
+  silent. 
+\end{exercise1}
 
 Another potential example are so-called \textbf{Medical Newcomb
   problems}. In the 1950s, it became widely known that the cancer rate
 is a lot higher among smokers than among non-smokers. Fearing that a
 causal link between smoking and cancer would hurt their profits,
-tobacco companies advocated an alternative explanation for the
+tobacco companies promoted an alternative explanation for the
 finding. The correlation between smoking and cancer, they suggested,
-is due to a common cause -- a genetic disposition that causes both a
+is due to a common cause: a genetic disposition that causes both a
 desire to smoke and cancer. The cancer, on that explanation, isn't
 caused by smoking, but directly by the genetic factors that happen
 to also cause smoking.
 
-Why would the tobacco companies be interested in promoting this
-hypothesis?  Because they assumed that if people believed that smoking
+Why would the tobacco industry be interested in promoting this
+hypothesis? Because they assumed that if people believed that smoking
 does not actually increase the risk of cancer, but merely indicates a
-genetic predisposition for cancer, then people would keep smoking. According
-to EDT, however, it seems that people should give up smoking either
-way, for on either hypothesis smoking is bad news.
+genetic predisposition for cancer, then people would keep smoking.
+According to EDT, however, it seems that people should give up smoking
+either way, for on either hypothesis smoking is bad news.
 
 Let's work through an example. Suppose you assign some (sub)value to
 smoking, but greater (sub)value to not having cancer, so that your
@@ -652,9 +679,9 @@ smoking is evidence for the cancer gene. So
 $\Cr(\text{cancer}/\text{smoking}) > \Cr(\text{cancer}/\neg
 \text{smoking})$. Let's say $\Cr(\text{cancer}/\text{smoking}) = 0.8$
 and $\Cr(\text{cancer}/\neg\text{smoking}) = 0.2$. It follows that the
-evidential expected utility of smoking is $-9 \times 0.8 + 1 \times 0.2
+evidential expected utility of smoking is $-9 \cdot 0.8 + 1 \cdot 0.2
 = -7$, while the evidential expected utility of not smoking is $-10
-\times 0.2 + 0 \times 0.2 = -2$.  According to EDT, then, you should
+\cdot 0.2 + 0 \cdot 0.2 = -2$.  According to EDT, then, you should
 stop smoking even if you buy the tobacco industry's
 explanation. Indeed, it should make no difference to you whether
 smoking causes cancer or merely indicates a predisposition for cancer.
@@ -689,7 +716,7 @@ because it assumes that the cancer gene would cause a noticeable
 ``tickle'' whose presence or absence provides all the relevant
 evidence. 
 
-\begin{exercise}
+\begin{exercise1}
   You wonder whether to vote in a large election between two
   candidates $A$ and $B$. You assign (sub)value 100 to $A$ winning and
   0 to $B$ winning. Voting would add a (sub)value of -1, since it
@@ -701,8 +728,8 @@ evidence.
   through the same process of deliberation as you, and will reach the
   same conclusion that you will reach. Does that change the causal
   expected utility of voting?  Does it change the evidential expected
-  utility? (Explain briefly, without computing anything.) $\star$
-\end{exercise}
+  utility? (Explain briefly, without computing anything.) 
+\end{exercise1}
 
 \cmnt{%
      make diff | not make diff
@@ -800,15 +827,15 @@ rational agents maximize causal expected utility.
 One way to define causal utility is the classical definition in terms
 of states, acts, and outcomes, where the states are required to be
 causally independent of the acts.  But we can also construct a version
-of CDT that looks more like EDT and shares at least a few of the
+of CDT that looks more like EDT and shares at least some of the
 attractive features of EDT. The key to this construction is a point I
 mentioned in section \ref{sec:conditional}: that there are two ways of
 supposing a proposition.
 
 What would have happened if the Nazi program to build nuclear weapons
 had succeeded in 1944? When we contemplate this question, we consider
-possible histories which are like the history of our world until 1944
-but then depart in some minimal way to allow the Nazi nuclear
+possible histories that are like the history of our world until 1944
+but then depart in some minimal way to allow the Nazi's nuclear
 weapon program to succeed. (The departure should be ``minimal''
 because we're not interested in worlds where, say, the Nazis learned
 how to build nuclear weapons from gigantic aliens who invaded the
@@ -820,11 +847,10 @@ actual world, it seems likely that Hitler would have used the nuclear
 weapons, possibly leading to an Axis victory in World War II.
 
 This is an example of \textbf{subjunctive supposition}. In general,
-when we subjunctively suppose an event, we consider what a world would
+in subjunctively supposing an event, we consider what a world would
 be like that closely resembles the actual world up to the relevant
 time, then departs minimally to allow for the event, and afterwards
 develops in accordance with the general laws of the actual world.
-
 Subjunctive supposition is a causal kind of supposition. When
 we subjunctively suppose that the Nazis had nuclear weapons, we
 consider what this event \emph{would have brought about}.
@@ -839,47 +865,43 @@ that something prevented the use of the weapons, an act of sabotage
 perhaps.
 
 In a probabilistic framework, $\Cr(B/A)$ is an agent's credence in $B$
-on the indicative supposition that $A$, and it usually equals $\Cr(B
-\land A)/\Cr(A)$. Let `$\Cr(B/\!/A)$' (with two dashes) denote an
-agent's credence in $B$ on the \emph{subjunctive} supposition that
+on the indicative supposition that $A$; if $\Cr(A)>0$ it equals
+$\Cr(B \land A)/\Cr(A)$. Let `$\Cr(B/\!/A)$' (with two dashes) denote
+an agent's credence in $B$ on the \emph{subjunctive} supposition that
 $A$. There is no simple analysis of $\Cr(B/\!/A)$ in terms of the
-agent's credence in $B$, $A$, or logical combinations of
-these. Whether $A$ would bring about $B$ is generally not a matter of
-logic, but depends on the laws of nature and various particular facts
-besides $A$ and $B$.
+agent's credence in $B$, $A$, or logical combinations of these.
+Whether $A$ would bring about $B$ is generally not a matter of logic,
+but depends on the laws of nature and various particular facts besides
+$A$ and $B$.
 
-That said, some have argued that the probability of an event $B$ on
-the subjunctive supposition that $A$ equals the probability of a
-corresponding conditional proposition: the proposition that $B$
-\emph{would have happened if $A$ had happened} (or that \emph{$B$
-  would happen if $A$ were to happen}, if the events are in the
-future). On this account, if `$A \boxright B$' expresses the
-conditional proposition, then $\Cr(B/\!/A) = \Cr(A \boxright
-B)$. Whether that clarifies anything depends on what more we can say
-about the proposition $A \boxright B$. We won't pursue the question
-any further.
+Some have suggested that the probability of $B$ on the subjunctive
+supposition that $A$ equals the probability of the corresponding
+\emph{subjunctive conditional}: the sentence `if $A$ were the case
+then $B$ would be the case'. So the proposal is that
+$\Cr(B/\!/A) = \Cr(A \boxright B)$, where `$A \boxright B$'
+abbreviates `if $A$ were the case then $B$ would be the case'. Whether
+this is a step forward depends on what more we can say about the
+proposition $A \boxright B$. We won't pursue the question any further.
 
 Now return to the new method for computing expected utilities from
 section \ref{sec:edt}. The idea was to use conditional probabilities
 instead of unconditional probabilities, which allowed us to drop the
 requirement that states and acts are independent:
 \[
-EU(A) = U(O_1) \times \Cr(S_1/A) + \ldots + U(O_n) \times \Cr(S_n/A).
+EU(A) = U(O_1) \cdot \Cr(S_1/A) + \ldots + U(O_n) \cdot \Cr(S_n/A).
 \]
-Here the conditional probabilities are indicative. But we could just
+Here the conditional probabilities are indicative. But we can just
 as well use subjunctive conditional probabilities, considering what
 the relevant act $A$ would be likely to bring about:
 \[
-EU(A) = U(O_1) \times \Cr(S_1/\!/A) + \ldots + U(O_n) \times \Cr(S_n/\!/A).
+EU(A) = U(O_1) \cdot \Cr(S_1/\!/A) + \ldots + U(O_n) \cdot \Cr(S_n/\!/A).
 \]
-That is a way of computing causal expected utilities.
-
-As before, it turns out that this way of computing expected utilities
-yields the same result no matter how we identify the states, as long as
-they distinguish all the outcomes. So again, we can take the outcomes
-themselves as states, which often proves convenient:
+As before, one can show (under plausible assumptions) that this method
+for computing expected utilities yields the same result as our
+original definition of causal expected utilities. It is also
+equivalent to a state-free method:
 \[
-EU(A) = U(O_1) \times \Cr(O_1/\!/A) + \ldots + U(O_n) \times \Cr(O_n/\!/A).
+EU(A) = U(O_1) \cdot \Cr(O_1/\!/A) + \ldots + U(O_n) \cdot \Cr(O_n/\!/A).
 \]
 
 
@@ -964,7 +986,7 @@ EU(A) = U(O_1) \times \Cr(O_1/\!/A) + \ldots + U(O_n) \times \Cr(O_n/\!/A).
   Evidential Decision Theory. Thus we can simply replace $\Cr(O_i/A)$
   by $\Cr(O_i/\!/A)$ in the rule for computing $EU^i$:
   \[
-  EU^s(A) = \Cr(S_1/\!/A) \times U(O_1) + \ldots + \Cr(S_n/\!/A) \times U(O_n).
+  EU^s(A) = \Cr(S_1/\!/A) \cdot U(O_1) + \ldots + \Cr(S_n/\!/A) \cdot U(O_n).
   \]
   And we can motivate the requirement to maximize $EU^s$ by pointing out
   that it is equivalent to a requirement to choose the most desirable
@@ -977,9 +999,8 @@ toss, a box has been filled with either £1,000,000 or £0. You can take
 the box or leave it. How much would you get if you were to take the
 box? It depends on what's inside. If the box contains £1,000,000, then
 you would get £1,000,000 on the (subjunctive) supposition that you
-take the box: taking the box would bring about getting £1,000,000. On
-the other hand, if the box contains £0, then you would get £0. Both
-possibilities have equal probability, so
+take the box. If the box contains £0, you would get £0 if you were to
+take the box. Both possibilities have equal probability, so
 \begin{gather*}
   \Cr(\text{£1,000,000}/\!/\text{Take box}) = 0.5\\
   \Cr(\text{£0}/\!/\text{Take box}) = 0.5.
@@ -992,7 +1013,7 @@ supposition that you take the box, you are certain to get however much
 is in the box. Any uncertainty about how much you would get
 boils down to uncertainty about how much is in the box.
 
-Let $x$ be your credence that the blue box in Newcomb's Problem
+Let $x$ be your credence that the black box in Newcomb's Problem
 contains a million. Accordingly,
 \begin{gather*}
   \Cr(\text{£1,000,000}/\!/1B) = x;\\
@@ -1000,10 +1021,10 @@ contains a million. Accordingly,
   \Cr(\text{£1,001,000}/\!/2B) = x;\\
   \Cr(\text{£1000}/\!/2B) = 1-x.
 \end{gather*}
-And thus, using the new method for computing causal expected utilities,
+Using the new method for computing causal expected utilities, it follows that
 \begin{gather*}
-  EU(1B) = 1,000,000 \times x + 0 \times (1-x);\\
-  EU(2B) = 1,001,000 \times x + 1000 \times (1-x).
+  EU(1B) = 1,000,000 \cdot x + 0 \cdot (1-x);\\
+  EU(2B) = 1,001,000 \cdot x + 1000 \cdot (1-x).
 \end{gather*}
 No matter what $x$ is, taking both boxes maximizes (causal) expected
 utility.
@@ -1015,13 +1036,13 @@ expected utility is equivalent to the method that uses unconditional
 probabilities of act-independent states.
 } %
 
-\begin{exercise}
+\begin{exercise3}
   Consider the third argument in favour of EDT from section
   \ref{sec:edt}: that an act's evidential expected utility equals the
   act's utility. Can we adapt this line of argument to CDT? How would
   we have to change the theory of utility from section
-  \ref{sec:structure-of-utility}? $\star\star\star$
-\end{exercise}
+  \ref{sec:structure-of-utility}? 
+\end{exercise3}
 
 
 
@@ -1131,7 +1152,7 @@ probabilities of act-independent states.
   \begin{genericthm}{The Imaging Axiom}
     If $A$ and $B$ are logically incompatible, then 
     \[ U(A \lor B) =
-    U(A)\times \Cr(A/\!/(A\lor B)) + U(B)\times \Cr(B/\!/(A \lor B)). \]
+    U(A)\cdot \Cr(A/\!/(A\lor B)) + U(B)\cdot \Cr(B/\!/(A \lor B)). \]
   \end{genericthm}
   
   But there is another one. Consider the proposition that Oswald
@@ -1190,8 +1211,7 @@ probabilities of act-independent states.
 \section{Unstable decision problems}\label{sec:unstable}
 
 A curious phenomenon that can arise in CDT is that the
-choiceworthiness of an option changes during deliberation, as the
-agent figures out what she ought to do.
+choiceworthiness of an option changes during deliberation.
 
 \begin{example}
   There are three boxes: one red, one green, one transparent. You can
@@ -1204,13 +1224,13 @@ agent figures out what she ought to do.
   put £90 in both the red and the green box.
 \end{example}
 
-Here's a matrix for the example. `$R$', `$G$', `$T$' are the three
+Here is a matrix for the example. `$R$', `$G$', `$T$' are the three
 options (red, green, transparent).
 \begin{center}
   \begin{tabular}{|r|c|c|c|}\hline
     \gr & \gr Predicted $R$ & \gr Predicted $G$ & \gr Predicted $T$ \\\hline
-    \gr $R$ & £200 & £100 & £90 \\\hline
-    \gr $G$ & £250 & £0   & £90 \\\hline
+    \gr $R$ & £90 & £130 & £100 \\\hline
+    \gr $G$ & £110 & £80   & £90 \\\hline
     \gr $T$ & £100 & £100 & £100 \\\hline
   \end{tabular}
 \end{center}
@@ -1222,14 +1242,13 @@ utility. So you should be tempted to choose the red box. But if you
 are tempted to choose the red box, then it is no longer rational to
 treat all three predictions as equally likely: you should become more
 confident that the demon predicted $R$. But if you are sufficiently
-confident that demon predicted $R$, then $R$ no longer maximizes
+confident that the demon predicted $R$, then $R$ no longer maximizes
 expected utility! Rather, you should then go for $G$. But if you're
 tempted to go for $G$, then again you should adjust your credences,
 and so on.
 
-\begin{exercise}
-  Where will this process of deliberation end? (Explain briefly.)
-  $\star\star$
+\begin{exercise2}
+  Can you see where this process of deliberation will end? (Explain briefly.)
   \cmnt{%
     if (a=='T') return 100;
 
@@ -1245,7 +1264,22 @@ and so on.
     
     if (a=='G') return u_g_given_r * p['R'] + u_g_given_g * p['G'] + u_g_given_t * p['T'];
   } %
-\end{exercise}
+  \cmnt{%
+    if (a=='T') return 100;
+
+    u_r_given_r = 90;
+    u_r_given_g = 130;
+    u_r_given_t = 100;
+    
+    if (a=='R') return u_r_given_r * p['R'] + u_r_given_g * p['G'] + u_r_given_t * p['T'];
+    
+    u_g_given_r = 110;
+    u_g_given_g = 80;
+    u_g_given_t = 90;
+    
+    if (a=='G') return u_g_given_r * p['R'] + u_g_given_g * p['G'] + u_g_given_t * p['T'];
+  } %
+\end{exercise2}
 
 It can even happen that whatever option you currently favour makes an
 alternative option look more appealing, so that it becomes impossible
@@ -1256,7 +1290,7 @@ to reach a decision.
   ``I am coming for you tomorrow'', he says. Terrified, the man buys a
   horse and rides all through the night to Aleppo. The next day, Death
   knocks on the door of the room where the man is hiding. ``I was surprised
-  to see you in Damascus yesterday'', Death explains, ``for I knew I
+  to see you in Damascus'', Death explains, ``for I knew I
   had an appointment with you here today.''
 \end{example}
 
@@ -1277,10 +1311,11 @@ staying in Damascus maximizes expected utility; for parallel reasons,
 you also can't rationally choose to stay in Damascus. But you only
 have these two options! How can both of them be wrong?
 
-\begin{exercise}
+\begin{exercise2}
   Let's modify the \emph{Death in Damascus} scenario by assuming that
   staying in Damascus would have some benefits, independently of
   whether Death will find you. So the matrix might look like this:
+  \vspace{-1mm}
   \begin{center}
     \begin{tabular}{|r|c|c|}\hline
     \gr & \gr Death in Aleppo & \gr Death in Damascus \\\hline
@@ -1288,8 +1323,9 @@ have these two options! How can both of them be wrong?
     \gr Stay in Damascus & life \& benefits (10) & death \& benefits (-95) \\\hline
     \end{tabular}
   \end{center}
-  Now what does CDT say you should do? What about EDT? $\star\star$
-\end{exercise}
+  \vspace{-1mm}
+  Now what does CDT say you should do? What about EDT? 
+\end{exercise2}
 
 
 \section{Further reading}
@@ -1325,7 +1361,7 @@ due to Brian Skyrms. A good introduction can be found in
 
 \begin{essay}
   Should a rational agent take both boxes in Newcomb's Problem or just
-  the blue box? Can you think of an argument for either side not
+  the black box? Can you think of an argument for either side not
   mentioned in the text?
 \end{essay}
 
