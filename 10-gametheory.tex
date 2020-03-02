@@ -3,11 +3,11 @@
 \section{Games}\label{sec:games}
 
 Game theory studies situations in which an agent faces one or more
-choices whose combined outcome depends on the choices of other
-agents. Such situations are called \textbf{games}, and the agents
-\textbf{players}. The Prisoner Dilemma (example \ref{ex:pd}) is a game in this sense,
-because the outcome of your choice (confessing or remaining silent)
-depends on what your partner decides to do.
+choices whose combined outcome depends on the choices of other agents.
+Such situations are called \textbf{games}, and the agents
+\textbf{players}. The Prisoner's Dilemma (example \ref{ex:pd}) is a game
+in this sense, because the outcome of your choice (confessing or
+remaining silent) depends on what your partner decides to do.
 
 Whenever an agent faces a choice in a game, the MEU Principle tells us
 that she ought to choose whichever option maximizes expected
@@ -17,23 +17,23 @@ where the states in a decision problem are other people's (real or
 potential) actions.
 
 One reason is that game theory can shed light on important political
-and social issues. The Prisoner Dilemma, for instance, illustrates a
+and social issues. The Prisoner's Dilemma, for instance, illustrates a
 common type of situation in which everyone pursuing their own interest
-leads to a worse result for everyone than what could have been
-achieved. Any such situation is nowadays called a Prisoner Dilemma,
+leads to a worse result for everyone than what could otherwise have been
+achieved. Any such situation is nowadays called a Prisoner's Dilemma,
 even if no prisoners are involved. For example, if you're a
 professional athlete, you have an incentive to use steroids, no matter
 whether your competitors do the same. Without strict controls, the
 outcome is that everyone uses steroids, even though everyone would
-prefer that no-one uses steroids. The athletes face a Prisoner
+prefer that no-one uses steroids. The athletes face a Prisoner's
 Dilemma. For another example, if you're a fisherman, you have an
 incentive to catch as many fish as you can, even though everyone would
 be better off if everyone restrained themselves to sustainable quotas.
 
-Thomas Hobbes (in effect) argued that the pervasiveness of Prisoner
+Thomas Hobbes (in effect) argued that the pervasiveness of Prisoner's
 Dilemmas justifies the subordination of people under a state. It is in
 everyone's interest to impose a system of control and punishment that
-ensures the best outcome in what would otherwise be a Prisoner
+ensures the best outcome in what would otherwise be a Prisoner's
 Dilemma.
 
 \cmnt{%
@@ -44,14 +44,14 @@ Dilemma.
 
 Another reason to study games is that a new set of conceptual tools
 and techniques become available if the outcomes depend on other
-people's choices. Thus game theorists typically don't specify the
+people's choices. For example, game theorists typically don't specify the
 probability of the states -- that is, of the other players'
 actions. Instead, they specify the utility of the outcomes for all
 players. Under certain assumptions, this is enough to figure out what
 each player will do.
 
-Here, for example, is how game theorists would write the game matrix
-for the original Prisoner Dilemma, assuming you and your partner only
+Here is how game theorists would write the matrix
+for the original Prisoner's Dilemma, assuming you and your partner only
 care about your own prison terms:
 \begin{center}
   \begin{tabular}{|r|c|c|}\hline
@@ -68,15 +68,15 @@ two-player matrix, the first number in each cell is always the utility
 for the row player (whom we'll call `Row'); the second is the utility
 for the column player (`Column').
 
-\begin{exercise}
-  Draw the game matrix for the original Prisoner Dilemma, assuming you
-  only care about your own prison term, but your partner cares equally
-  about both of you. $\star$
-\end{exercise}
+% \begin{exercise1}
+%   Draw the game matrix for the Prisoner Dilemma, assuming you
+%   only care about your own prison term, but your partner cares equally
+%   about both of you.
+% \end{exercise1}
 
-In the above matrix for the Prisoner Dilemma, it is clear that each
-player will confess, because confessing dominates remaining silent: it
-is better no matter what the other player does. 
+In the above matrix, it is clear that each player will confess,
+because confessing dominates remaining silent: it is better no matter
+what the other player does.
 
 Now consider the following matrix, for a different kind of game. 
 \begin{center}
@@ -159,8 +159,8 @@ utilities of all players, as well as all players' rationality, are
 common knowledge. This is obviously an idealization. We'll see below
 that it gives rise to some interesting puzzles.
 
-\begin{exercise}\label{e:elim-dom-strat}
-  Under the assumptions (1)--(3), what will Row and Column do in the following games? $\star\star$
+\begin{exercise2}\label{e:elim-dom-strat}
+  Under the assumptions (1)--(3), what will Row and Column do in the following games?
   \begin{center}
     \begin{tabular}{lll}
       a. \begin{tabular}[t]{|r|c|c|c|}
@@ -187,7 +187,7 @@ that it gives rise to some interesting puzzles.
       } %
     \end{tabular}
   \end{center}
-\end{exercise}
+\end{exercise2}
 
 \section{Nash equilibria}
 
@@ -281,8 +281,8 @@ $R_3$.
 } %
 
 
-\begin{exercise}\label{e:ne}
-  Identify the Nash equilibria in the following games. $\star$
+\begin{exercise1}\label{e:ne}
+  Identify the Nash equilibria in the following games.
   \begin{center}
     \begin{tabular}{lll}
       a. \begin{tabular}[t]{|r|c|c|}
@@ -310,14 +310,14 @@ $R_3$.
       } %
     \end{tabular}
   \end{center}
-\end{exercise}
+\end{exercise1}
 
-\begin{exercise}
+\begin{exercise2}
   Whenever the method from section \ref{sec:games}, which is called
   \textbf{elimination of dominated strategies}, identifies a
   combination of acts as a game's solution, then that combination of
-  acts is a Nash equilibrium. Can you explain why? $\star\star$
-\end{exercise}
+  acts is a Nash equilibrium. Can you explain why?
+\end{exercise2}
 
 \section{Zero-sum games}
 
@@ -374,12 +374,12 @@ is that it doesn't matter: they can arbitrarily choose among these
 options. Whatever they choose, they are guaranteed to end up at an
 equilibrium, and all the equilibria have the same utility.
 
-\begin{exercise}
+\begin{exercise3}
   Prove that this holds for all two-player zero-sum games: if
   $(R_i,C_j)$ and $(R_n,C_m)$ are Nash equilibria, then so are
   $(R_i,C_m)$ and $(R_n,C_j)$; moreover, all Nash equilibria have the
-  same utility. $\star \star \star$
-\end{exercise}
+  same utility. 
+\end{exercise3}
 
 Some games have no Nash equilibrium at all. Here is a matrix for
 Rock--Paper--Scissors, assuming both players only care about whether
@@ -395,14 +395,14 @@ they will win or lose.
 There is no equilibrium. So what should rational players do?
 
 Game theory says that they should randomly choose one of the three
-options, giving each option the same chance of being chosen. This is
-often interpreted literally, as if the agent had further options
-besides Rock, Paper, and Scissors -- to flip a coin or toss a die and
-let the result decide what to do. Such a randomized choice is called a
-\textbf{mixed strategy}. The strategy of playing Rock, Paper, or
-Scissors each with probability \nicefrac{1}{3} would be written
-`[\nicefrac{1}{3} Rock, \nicefrac{1}{3} Paper, \nicefrac{1}{3}
-Scissors]'.
+options, giving each option the same chance of being chosen.
+Interpreted literally, this seems to imply that the agents actually
+have further options besides Rock, Paper, and Scissors: to flip a
+coin or toss a die and let the result decide what to do. Such a
+randomized choice is called a \textbf{mixed strategy}. The strategy of
+playing Rock, Paper, or Scissors each with probability \nicefrac{1}{3}
+would be written `[\nicefrac{1}{3} Rock, \nicefrac{1}{3} Paper,
+\nicefrac{1}{3} Scissors]'.
 
 Suppose two players both play [\nicefrac{1}{3} Rock, \nicefrac{1}{3}
 Paper, \nicefrac{1}{3} Scissors]. Then neither could do better by
@@ -417,12 +417,12 @@ costs or benefits. If you like being in control and therefore prefer
 losing in Rock--Paper--Scissors to randomizing, then the game has no
 Nash Equilibrium, not even among mixed strategies.
 
-\begin{exercise}
+\begin{exercise2}
   Suppose your opponent plays [\nicefrac{1}{3} Rock, \nicefrac{1}{3}
   Paper, \nicefrac{1}{3} Scissors]. What is the expected utility of
   playing Rock? How about Paper and Scissors? What is the expected
   utility of playing [\nicefrac{1}{3} Rock, \nicefrac{1}{3}
-  Paper, \nicefrac{1}{3} Scissors]? $\star$
+  Paper, \nicefrac{1}{3} Scissors]? 
   \cmnt{%
     The slightly odd thing we observed above re-appears here in an
     extreme form: it is true that each player has no reason to deviate
@@ -434,7 +434,7 @@ Nash Equilibrium, not even among mixed strategies.
     components. But then how can her opponent be certain that she will
     play the equilibrium option?
   } %
-\end{exercise}
+\end{exercise2}
 
 \section{Harder games}
 
@@ -462,23 +462,23 @@ one of these equilibria. If you suspect that Bob will go to party B,
 and Bob suspects you will go to party A, then you'll go to B and Bob
 to A.
 
-Could this really happen? As you can check, going to party B maximizes
-expected utility if and only if your credence that Bob goes to B is at
-least 0.6. But could you be at least 60\% confident that Bob will go
-to B, given what you know about Bob's utilities? Well, Bob will go to
-B provided that \emph{he} is at least 60\% confident that \emph{you}
-will go to B. So to be at least 60\% confident that Bob will go to B,
-you only need to be at least 60\% confident that Bob is at least 60\%
-confident that you will go to B. Of course, Bob can figure out that
-you will go to B only if you are at least 60\% confident that he will
-go to B. So to be at least 60\% confident that Bob will go to B, you
-need to be at least 60\% confident that Bob is at least 60\% confident
-that you are at least 60\% confident that Bob will go to B. And so
-on. There is nothing incoherent about this state of mind. Nonetheless,
-we may wonder how you could have arrived at it. How could you have
-rationally arrived at a 60\% confidence that Bob is at least 60\%
-confident that you are at least 60\% confident that \ldots and so on
-and on forever?  \cmnt{%
+But could this actually happen, under assumptions (1)--(3)? As you may
+check, going to party B maximizes expected utility if and only if your
+credence that Bob goes to B is at least 0.6. But could you be at least
+60\% confident that Bob will go to B, given what you know about Bob's
+utilities? Well, Bob will go to B provided that \emph{he} is at least
+60\% confident that \emph{you} will go to B. So to be at least 60\%
+confident that Bob will go to B, you only need to be at least 60\%
+confident that Bob is at least 60\% confident that you will go to B.
+Of course, Bob can figure out that you will go to B only if you are at
+least 60\% confident that he will go to B. So to be at least 60\%
+confident that Bob will go to B, you need to be at least 60\%
+confident that Bob is at least 60\% confident that you are at least
+60\% confident that Bob will go to B. And so on. There is nothing
+incoherent about this state of mind. Nonetheless, we may wonder how
+you could have arrived at it. How could you have rationally arrived at
+a 60\% confidence that Bob is at least 60\% confident that you are at
+least 60\% confident that \ldots and so on and on forever? \cmnt{%
   Let x = Cr(B). Then EU(B) = 2x, EU(A) = (1-x)3 = 3-3x. The two are
   equal at 2x = 3-3x => 5x = 3 => x = 3/5.%
 } %
@@ -548,23 +548,23 @@ cost of dying if you both go straight. And suppose you know about
 Bob's insanity. Then you, as an expected utility maximizer, will have
 to swerve. And so Bob will win.
 
-There are rumours that during the cold war, the CIA leaked false
+There are stories that during the cold war, the CIA leaked false
 information to the Russians that the US President was an alcoholic,
 while the KGB falsified medical reports suggesting that Brezhnev was
 senile. Both sides tried to gain a strategic advantage over the other
 by indicating that they would irrationally retaliate against a nuclear
 strike even if they had nothing to gain any more.
 
-\begin{exercise}
+\begin{exercise1}
   What should you do in Chicken if you give equal credence to the
-  hypotheses that Bob will swerve and that he will go straight? $\star$
-\end{exercise}
+  hypotheses that Bob will swerve and that he will go straight?
+\end{exercise1}
 
-\begin{exercise}
+\begin{exercise3}
   A third Nash equilibrium in Chicken involves randomization. Can you
   find it?  What is the expected utility for both players if they play
-  that mixed strategy?  $\star\star\star$
-\end{exercise}
+  that mixed strategy?  
+\end{exercise3}
 
 \cmnt{%
   There is a large number of papers in game theory on ``equilibrium
@@ -606,7 +606,7 @@ strike even if they had nothing to gain any more.
 So far we've looked at games in which each player makes just one move
 and neither player knows about the other's move ahead of their
 choice. Game theory also studies games in which these assumptions are
-relaxed. Let's have a quick look at games with several moves in which
+relaxed. Let's have a quick look at games with several moves, assuming
 players always know what was played before.
 
 The standard representation of such games are tree-like diagrams
@@ -705,9 +705,8 @@ This process for solving games with multiple moves is called
   £2 more than the other player. In round 100, Bob no longer has an
   option to continue.
 \end{example}
-
-Now suppose you and Bob only care about how much money you get from
-the Centipede game. Here is a partial diagram.
+Suppose you and Bob don't care about each other; each of you only
+wants to get as much money as possible. Here is a partial diagram of the resulting game of Centipede.
 
 \begin{center}
 \begin{tikzpicture}[thick,
@@ -756,13 +755,14 @@ should be ended. Thus knowing at round 1 that Bob will end the game in
 round 2, you should end the game right away. So the ``solution'' is
 that you will get £2 and Bob gets £0.
 
-\begin{exercise}
-  Can you think of a real-life situation with a structure similar to
-  the centipede game? $\star\star$
-\end{exercise}
+% \begin{exercise2}
+%   Can you think of a real-life situation with a structure similar to
+%   the centipede game? 
+% \end{exercise2}
 
-When actual people play the Centipede game, almost no-one ends the game
-right away. Is this a sign of irrationality? Not necessarily.
+When actual people play the Centipede game, almost no-one ends the
+game right away. Is this a sign of either altruism or irrationality?
+Not necessarily.
 
 Let's look at your choice in round 1 from a decision theoretic
 perspective. It is clear what happens if you end the game: you'll get
@@ -770,15 +770,15 @@ perspective. It is clear what happens if you end the game: you'll get
 backward induction assumes that Bob would end the game. And if you
 could be certain that Bob would do that, then you should indeed end
 the game in round 1. But why should Bob end the game? Because, so the
-argument, he can be certain that you would end the game in round
-3. But the argument for ending in round 3 is exactly parallel to the
+argument, he can be certain that you would end the game in round 3.
+But the argument for ending in round 3 is exactly parallel to the
 argument for ending in round 1. Yet if Bob faces a choice in round 2,
-then he has just seen that you \emph{didn't} end the game in round
-1. So he arguably can't be sure you would end it in round 3. On the
+then he has just seen that you \emph{didn't} end the game in round 1.
+So he arguably can't be sure you would end it in round 3. On the
 contrary, he should be somewhat confident that you will continue in
-round 3. And then Bob should continue in round 2. Crucially, if all
-that is right, then continuing in round 1 maximizes expected utility,
-as it is likely to get you at least to round 3!
+round 3. And then Bob should continue in round 2. It follows that
+continuing in round 1 maximizes expected utility, as it is likely to
+get you at least to round 3!
 
 \cmnt{%
 
@@ -789,21 +789,22 @@ as it is likely to get you at least to round 3!
 
 } %
 
-\begin{exercise}
+\begin{exercise2}
   Change the Centipede game so that there's no fixed end
   point. Rather, each time a player chooses to continue, the game ends
   with a probability of 1\%. Does this change anything? How should
-  you play? $\star\star$
-\end{exercise}
+  you play? 
+\end{exercise2}
 
-\begin{exercise}
-  Suppose you repeatedly face a Prisoner Dilemma against the same
-  opponent, for an unknown number of rounds. You expect that your
-  opponent will remain silent in the first round and from then on
-  imitate whatever you will do. Given that, it seems reasonable that
-  you should remain silent. Does that mean you should choose an act
-  that doesn't maximize expected utility? $\star\star$
-\end{exercise}
+\begin{exercise2}
+  Suppose you repeatedly face the Prisoner's Dilemma with the same
+  partner, for an unknown number of rounds. You only care about your
+  own prison terms. You expect that your partner will remain silent in
+  the first round and from then on imitate whatever you did in the
+  previous round. In this case, you should arguably remain silent.
+  Does that mean you should choose an act that doesn't maximize
+  expected utility?
+\end{exercise2}
 
 
 \section{Evolutionary game theory}
@@ -969,7 +970,7 @@ relevant traits. Either way, the resulting \textbf{correlated play}
 dramatically changes the situation.
 
 For example, consider a population in which individuals repeatedly
-play a Prisoner Dilemma wherein they can either cooperate with each
+play a Prisoner's Dilemma wherein they can either cooperate with each
 other (remain silent, in the original scenario) or defect
 (confess). Since defectors always do better than cooperators in any
 encounter, it may seem that cooperation can never evolve. However,
@@ -982,16 +983,15 @@ In many species, one can find altruistic individuals who sacrifice
 their own fitness for the sake of others. Evolutionary game theory
 explains how this kind of altruism could have evolved.
 
-\begin{exercise}
+\begin{exercise1}
   Why can't we expect cooperative behaviour to take over completely in
   the scenario where cooperation spreads through correlated play?
-  $\star$
- \end{exercise}
+ \end{exercise1}
 
-\begin{exercise}
+\begin{exercise1}
   What are the Nash equilibria in the following game (ignoring
   randomization)? Could all the equilibria come about through an
-  evolutionary process? $\star$
+  evolutionary process? 
   \begin{center}
     \begin{tabular}{|r|c|c|}\hline
       \gr & \gr A & \gr B \\\hline
@@ -999,7 +999,7 @@ explains how this kind of altruism could have evolved.
       \gr B & 1,1 & 1,1 \\\hline
     \end{tabular}
   \end{center}
-\end{exercise}
+\end{exercise1}
 
 \section{Further reading}
 

@@ -10,6 +10,10 @@
 % but an algorithm/a computation. Maybe I should say "measure" or
 % "assignment".
 
+
+% Say in the questions how much I want students to write. Just 'yes'?
+% Also give the numbers? Write an essay?
+
 \section{Overview}
 
 \cmnt{%
@@ -40,9 +44,9 @@
   intentional stance’.)''
 } %
 
-In this course, we will study a general model of belief, desire, and
-rational choice. At the heart of the model lies a certain conception
-of how beliefs and desires combine to produce actions.
+We are going to study a general model of belief, desire, and rational
+choice. At the heart of this model lies a certain conception of how
+beliefs and desires combine to produce actions.
 
 Let's start with an example.
 %
@@ -67,12 +71,12 @@ question on which we will focus is therefore not what you should do
   light of your information}. In other words, we want to know what a
 rational agent would do in your state of uncertainty.
 
-A similar ambiguity arises for goals or values. Arguably, it is better
-to let one person die than to take a risk of ten people dying. But the
-matter isn't trivial, and many philosophers would disagree. Suppose
-you are one of these philosophers: you think it would be wrong to
-sacrifice the shortest miner. \emph{By your values}, it would be
-better to block either shaft $A$ or shaft $B$.
+A similar ambiguity arises for goals or values. Arguably, it is better to let
+one person die than to take a risk of ten people dying. But the matter isn't
+trivial, and many philosophers would disagree. Suppose you are one of these
+philosophers: you think it would be wrong to do nothing and sacrifice the
+shortest miner . \emph{By your values}, it would be better to block either shaft
+$A$ or shaft $B$.
 
 When we ask what an agent should do in a given decision problem, we
 will always mean what they should do in light of whatever they believe
@@ -83,7 +87,7 @@ reasonable. But it is best to treat these as separate questions.
 So we have three questions:
 \begin{enumerate}
   \itemsep0em 
-\item How should you act so as to further your goals in the light of
+\item How should you act so as to further your goals in light of
   your beliefs?
 \item What should you believe?
 \item What should you desire? What are rational goals or values?
@@ -95,14 +99,14 @@ clarified the questions and made some progress towards an answer.
 To begin, let me introduce a standard format for thinking about
 decision problems.
 
-\begin{exercise1}
+\begin{exercise2}
   In a surprise outbreak of small pox (a deadly infectious disease), a
   doctor recommends vaccination for an infant, knowing that around one
   in a million children die from the vaccination. The infant gets the
   vaccination and dies. Was the doctor's recommendation wrong? Or was
   it wrong in one sense and right in another? If so, can you explain
   these senses?
-\end{exercise1}
+\end{exercise2}
 
 
 \section{Decision matrices}\label{sec:decision-matrices}
@@ -172,7 +176,7 @@ understand how to read the matrix.
 Sometimes the ``states'' are actions of other people, as in the next
 example.
 
-\begin{example}[The Prisoner Dilemma]\label{ex:pd}
+\begin{example}[The Prisoner's Dilemma]\label{ex:pd}
   You and your partner have been arrested for some crime and are
   separately interrogated. If you both confess, you will both serve
   five years in prison. If one of you confesses and the other remains
@@ -181,7 +185,7 @@ example.
   obstruction of justice and will both serve one year.
 \end{example}
 
-The Prisoner Dilemma combines two decision problems: one for you and
+The Prisoner's Dilemma combines two decision problems: one for you and
 one for your partner. We could also think about a third problem which
 you face as a group. Let's focus on the decision you have to
 make. Your choice is between confessing and remaining silent. These
@@ -377,7 +381,7 @@ and utilities. We then have all we need to solve the decision problem
 -- to say what the agent should do in light of her goals and beliefs.
 
 Sometimes the task is easy because some act is best in every
-state. We've already seen an example in the Prisoner Dilemma, given
+state. We've already seen an example in the Prisoner's Dilemma, given
 that all you care about is minimizing your own prison term. The fully
 labelled matrix might look like this:
 
@@ -385,7 +389,7 @@ labelled matrix might look like this:
   \begin{tabular}{|r|c|c|}\hline
     \gr & \gr Partner confesses (0.5) & \gr Partner silent (0.5)\\\hline
     \gr Confess & 5 years (-5)& 0 years (0)\\\hline
-    \gr Remain silent & 8 years (-9)& 1 year (-1) \\\hline
+    \gr Remain silent & 8 years (-8)& 1 year (-1) \\\hline
   \end{tabular}
 \end{center}
 
@@ -396,9 +400,9 @@ state. An act is \textbf{dominant} if it dominates all other acts. If
 there's a dominant act, it is always the best choice (by the light of
 the agent).
 
-The Prisoner Dilemma is famous because it refutes the idea that good
+The Prisoner's Dilemma is famous because it refutes the idea that good
 things will always come about if people only look after their own
-interests. If both parties in the Prisoner Dilemma only care about
+interests. If both parties in the Prisoner's Dilemma only care about
 themselves, they end up 5 years in prison. If they had cared enough
 about each other, they could have gotten away with 1.
 
@@ -522,20 +526,18 @@ option with greatest expected utility.
 } %
 
 \begin{exercise1}
-  Assign utilities to the outcomes in the Prisoner Dilemma, assign
-  credences to the states, and compute the expected utility of the two
-  acts.
+  Imagine you found yourself in the Prisoner's Dilemma. Assign credences to the
+  states, and compute the expected utility of the two acts.
 \end{exercise1}
 
 \begin{exercise1}
-  Assign utilities to the outcomes in the Miner Problem, assign
-  credences to the states, and compute the expected utility of the
-  three acts.
+  Put (sensible) utilities and credences into the decision matrix for the Miner
+  Problem, and compute the expected utility of the three acts.
 \end{exercise1}
 
 \begin{exercise2}
   Explain why the following decision rule is not generally reasonable:
-  \emph{Identity the most likely state; then choose an act which
+  \emph{Identify the most likely state; then choose an act which
     maximizes utility in that state.} 
 \end{exercise2}
 

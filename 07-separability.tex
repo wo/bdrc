@@ -6,6 +6,11 @@
 
   Read Brown, Composition of reasons
 
+  Read Weirich 2001 and 2015 on ``intrinsic utility'' (the two books)
+
+  Should I explain that in ordinary FP explanations we only give relevant
+  ``basic desires'', as Pettit mentioned?
+  
 } %
 
 \section{The construction of value}\label{sec:construction-value}
@@ -18,42 +23,41 @@
 
 } %
 
-At the end of chapter \ref{ch:utility} we saw that the utility of a
-proposition for an agent is determined by two factors: the agent's
-credences, and the agent's basic desires, which are reflected in the
-utility assigned to the agent's ``concerns''.
+At the end of chapter \ref{ch:utility} we saw that the utility of a proposition
+for an agent is determined by two factors: the agent's credences, and the
+agent's basic desires, which are reflected in the utility assigned to the
+agent's ``concerns''. In this chapter, we will explore how the utility of a
+concern might be determined.
 
-For example, suppose all you ultimately care about is that you and
-your friends are happy, and let's pretend this is an all-or-nothing
-matter. All worlds in which you and your friends are happy then are
-equally desirable for you, no matter what else happens at these
-worlds. In the terminology of chapter \ref{ch:utility}, the set of
-these worlds has ``uniform utility''. The same is true for the worlds
-in which you are happy and your friends are unhappy, and for the
-worlds in which you are unhappy and your friends are happy, and for
-the worlds in which you and your friends are all unhappy. These four
-sets of worlds are your ``concerns''.
+Suppose you have two basic desires: being rich and being famous. All worlds in
+which you are both rich and famous are then equally desirable for you, no matter
+what else happens in them. The set of these worlds has ``uniform utility''. The
+same is true for the worlds in which you are neither rich nor famous, and for
+the worlds in which you are rich but not famous, and for the worlds in which you
+are not rich but famous. The four sets of worlds are your ``concerns''.
 
-In general, if there are $n$ propositions $A_1,A_2,\ldots,A_n$ that
-you ultimately care about, then any conjunction that can be formed
-from these propositions and their negations (such as
-$A_1 \land \neg A_2 \land A_3 \land \ldots \land \neg A_n$) has
-uniform utility, and is one of your concerns.
+In general, a concern is a proposition that settles everything an agent
+ultimately cares about. If there are $n$ propositions $A_1,A_2,\ldots,A_n$ that the
+agent ultimately cares about, then any conjunction that can be formed from these
+propositions and their negations (such as
+$A_1 \land \neg A_2 \land A_3 \land \ldots \land \neg A_n$) has uniform utility,
+and is one of the agent's concerns.
 
-If we know an agent's credence function, and the utility she assigns
-to her concerns, we can use Jeffrey's axiom to compute the agent's
-utility for any proposition. The utilities assigned to the agent's
-concerns represent the agent's basic, belief-independent desires,
-whereas the utilities assigned to other propositions typically
-represent a combination of basic desires and beliefs.
+It will be useful to have a label for an agent's utility function restricted to
+concerns. I will call it the agent's \textbf{value function}. So an agent's
+value function specifies to what extent the agent desires all the combinations
+of propositions she ultimately cares about. The value function represents the
+agent's belief-independent desires.
 
-In this chapter, we will look at how the utility of a concern might be
-determined. It will be useful to have a label for an agent's utility
-function restricted to concerns. I will call it the agent's
-\textbf{value function}. So an agent's value function specifies to
-what extent the agent desires all the combinations of propositions she
-ultimately cares about. The value function represents the agent's
-belief-independent desires. 
+In the above example, your value function might assign 10 to the proposition
+that you are rich and famous ($R \land F$), 5 to $R \land \neg F$, 5 to
+$\neg R \land F$, and 0 to $\neg R \land \neg F$. Intuitively, we can explain
+where these numbers come from by assuming that being rich and being famous both
+have an intrinsic value of 5 for you; $R \land F$ has value 10 because it has
+both of these features; $R \land \neg F$ has only one and so has value 5.
+
+The aim of the present chapter is to spell out this kind of explanation, and
+to investigate under what conditions it is possible.
 
 \section{Additivity}\label{sec:additivity}
 
@@ -99,13 +103,13 @@ determined on the basis of the individual attributes. For example, you
 probably prefer cheaper flats to more expensive flats, and larger ones
 to smaller ones.
 
-A natural method for determining the overall score for a given flat
-goes as follows. First, assign scores to each attribute of the flat.
-Then add up these scores. For example, a cheap but small flat in a
-good location gets a high score for price, a low score for size, and a
-high score for location, which amounts to a medium overall score.
+A natural method for determining the overall score for a given flat is to first
+assign a score to each of the flat's attributes; adding these scores yields the
+overall score for the flat. A cheap but small flat in a good location, for
+example, gets a high score for price, a low score for size, and a high score for
+location, which amounts to a medium overall score.
 
-More formally, the present idea is to define your value for any given
+More formally, the present idea is to define the value of any given
 attribute list as the sum of \textbf{subvalues} assigned to individual
 attributes in the list. That is, if $V_{S}(40 \m^2)$ is the score you
 assign to a size of 40 m$^2$, $V_{L}(\text{central})$ is the score for
@@ -129,8 +133,8 @@ V(\t{40 \m^2, \text{central}, \text{£500}}) = w_s \cdot V_{S}(40 \m^2) +
 w_L \cdot V_{L}(\text{central}) + w_P \cdot V_{P}(\text{£500}).
 \]
 
-However, we can get omit the weights by folding them into the
-subvalues. That is, we will let $V_S(200 \m^2)$ measure not just how
+However, we can omit the weights by folding them into the
+subvalues. We will let $V_S(200 \m^2)$ measure not just how
 awesome it would be to have a 200 $\m^2$ flat, but also how important
 this feature is compared to price and location.
 
@@ -175,7 +179,7 @@ this feature is compared to price and location.
   account what else is likely to be the case if a flat has four rooms.
 } %
 
-\begin{exercise2}
+\begin{exercise3}
   Additivity greatly simplifies an agent's psychology. Suppose an
   agent's basic desires pertain to 10 propositions
   $A_1,A_2,\ldots,A_{10}$. There are $2^{10} = 1024$ conjunctions of
@@ -185,7 +189,7 @@ this feature is compared to price and location.
   in a database, we would therefore need to store up to 1024
   numbers. By contrast, how many numbers would we need to store if the
   value function is additive?
-\end{exercise2}
+\end{exercise3}
 
 
 \section{Separability}
@@ -243,14 +247,14 @@ other positions. That is, if
 \[
    \t{A_1,A_2,\ldots,A_n} > \t{A_1',A_2,\ldots,A_n},
 \]
-then you prefer $A_1$ to $A_1'$ conditional on $A_2,\ldots,A_n$. Now
-suppose your preferences between $A_1$ and $A_1'$ are the same
-conditional on any way of filling in the other attributes. That is, if
+then you prefer $A_1$ to $A_1'$ conditional on $A_2,\ldots,A_n$. Now suppose
+your preferences between $A_1$ and $A_1'$ are the same conditional on any way of
+filling in the other attributes. In other words, if
 $\t{A_1,A_2,\ldots,A_n} > \t{A_1',A_2,\ldots,A_n}$, and we replace
-$A_2,\ldots,A_n$ by arbitrary alternatives $A_2',\ldots,A_n'$, we
-still get $\t{A_1,A_2',\ldots,A_n'} > \t{A_1',A_2',\ldots,A_n'}$. In
-that case, let's say that your preferences between $A_1$ and $A_1'$ are
-\emph{independent} of the other attributes.
+$A_2,\ldots,A_n$ by arbitrary alternatives $A_2',\ldots,A_n'$, we still get
+$\t{A_1,A_2',\ldots,A_n'} > \t{A_1',A_2',\ldots,A_n'}$. In that case, let's say
+that your preferences between $A_1$ and $A_1'$ are \emph{independent} of the
+other attributes.
 
 In the example of the flats, your preference of £400 over £500 is plausibly
 independent of the other attributes, for whenever two possible flats
@@ -262,9 +266,11 @@ position (not just $A_1$ and $A_1'$) are independent of the other
 attributes. Moreover, suppose your preferences between any attributes
 in the second position are independent of the other attributes. And so
 on for all positions. Then your preferences between attribute lists
-are called \textbf{weakly separable}. So weak separability means that
-your preference between two attribute lists that differ only in one
-position does not depend on the attributes in the other positions.
+are called \textbf{weakly separable}.
+
+Weak separability means that your preference between two attribute lists that
+differ only in one position does not depend on the attributes in the other
+positions.
 
 Consider the following preferences between four possible flats.
 \begin{gather*}
@@ -289,7 +295,7 @@ so your preferences aren't strongly separable.
 
 \begin{exercise2}
   Suppose all you care about is the degree of pleasure of you and your
-  three friends. And suppose you prefer states in which you four
+  three friends. And suppose you prefer states in which you all
   experience equal pleasure to states in which your degrees of
   pleasure are very different. For example, you prefer $\t{2,2,2,2}$
   to $\t{2,2,2,8}$, and you prefer $\t{8,8,8,8}$ to $\t{8,8,8,2}$.
@@ -329,9 +335,9 @@ needed to ensure additivity.
 
 To state Debreu's result, let's say that an agent's preferences over
 attribute lists have an \textbf{additive representation} if there is a
-value function $V$ assigning numbers to the lists and there are
-subvalue functions $V_1, V_2, \ldots, V_n$ assigning numbers to
-attributes in the individual positions of the lists such that the
+value function $V$, assigning numbers to the lists, and there are
+subvalue functions $V_1, V_2, \ldots, V_n$, assigning numbers to
+attributes in the individual positions of the lists, such that the
 following two conditions are satisfied. First, the preferences are
 represented by $V$. That is, for any two lists $A$ and $B$,
 \[
@@ -357,17 +363,15 @@ separability. Double-cancellation says that if $\t{A_1,B_1} \succsim
 \succsim \t{A_3,B_2}$. But let's just focus on cases with at least
 three relevant attributes.
 
-One consequence of Debreu's theorem may also be worth noting: if the
-agent's preferences are defined over a sufficiently rich set of
-possibilities, then the value function $V$ that additively represents
-the preferences is unique except for the choice of unit and
-zero. Additivity therefore opens the way to another potential response
-to the ordinalist challenge. The ordinalists claimed that utility
-assignments are arbitrary as long as they respect the agent's
-preference order. In response, one might argue that strongly separable
-preferences should be represented by an additive utility (or value)
-function. The utilities representing strongly separable preferences
-would then have an interval scale.
+One corollary of Debreu's theorem may also be worth noting: if the agent's
+preferences are defined over a sufficiently rich set of possibilities, then the
+value function $V$ that additively represents her preferences is unique except
+for the choice of unit and zero. Additivity therefore opens the way to another
+potential response to the ordinalist challenge. The ordinalists claimed that
+utility assignments are arbitrary as long as they respect the agent's preference
+order. In response, one might argue that strongly separable preferences should
+be represented by an additive utility (or value) function. The utilities
+representing strongly separable preferences would then have an interval scale.
 
 \begin{exercise3}
   Show that whenever $V$ additively represents an agent's preferences,
@@ -717,10 +721,9 @@ they can be represented by a value function of the form
 V(\t{A_1,\ldots,A_n}) = V_1(A_1) + \delta \cdot V_1(A_2) +
 \delta^2 \cdot V_1(A_3) \ldots + \delta^{n-1} \cdot V_1(A_n),
 \]
-where $\delta$ is some number. The interesting thing here is that the
-subvalue function for all times equals the subvalue function $V_1$ for
-the first time, scaled by the exponential \textbf{discounting factor}
-$\delta^i$.
+where $\delta$ is a fixed number. The interesting thing here is that the
+subvalue function for all times equals the subvalue function $V_1$ for the first
+time, scaled by the exponential \textbf{discounting factor} $\delta^i$.
 
 \cmnt{%
 
@@ -734,13 +737,12 @@ $\delta^i$.
 
 } %
 
-So if a hedonist agent has strongly separable and stationary
-preferences, then the only remaining question is to what extent she
-discounts future pleasure. If $\delta = 1$, she values pleasure
-equally no matter when it occurs. If $\delta = \nicefrac{1}{2}$, then
-one unit of pleasure today is worth twice as much as one unit of
-pleasure tomorrow, four times as much as one unit of pleasure the day
-after tomorrow, and so on. 
+So if a hedonist agent has strongly separable and stationary preferences, then
+the only remaining question is to what extent she discounts future pleasure. If
+$\delta = 1$, she values pleasure equally no matter when it occurs. If
+$\delta = \nicefrac{1}{2}$, then one unit of pleasure tomorrow is worth half as
+much as one unit of pleasure today; the day after tomorrow it is worth a
+quarter, and so on.
 
 \begin{exercise1}
   Consider the following streams of pleasure:
@@ -793,23 +795,20 @@ sense that what you now regard as better is what your earlier self
 regarded as worse. That kind of disagreement is called \textbf{time
   inconsistency}.
 
-Empirical studies show that time inconsistency is very common, and
-many instances of it can certainly appear problematic. For example,
-people often prefer their future selves to study, eat well, and
-exercise, but choose burgers and TV for today.
+Empirical studies show that time inconsistency is fairly common. People often
+prefer their future selves to study, eat well, and exercise, but choose burgers
+and TV for today. These preference do look problematic.
 
-On the other hand, many violations of stationarity and even
-separability across time look perfectly sensible. For example, suppose
-you value having a glass of wine every now and then. But only now and
-then; you don't want to have wine every day. It follows that your
-preferences violate both separability and stationarity. You violate
-stationarity because even though you might prefer a stream
-$\t{\text{wine}, \text{no wine}, \text{no wine}, \ldots}$ to
-$\t{\text{no wine}, \text{no wine}, \text{no wine}, \ldots}$, your
-preference reverses if both streams are prefixed with wine (or many
-instances of wine). You violate separability because whether you
-regard having wine in $n$ days as desirable depends on whether you
-will have wine right before or after these days. 
+On the other hand, other violations of stationarity and even separability across
+time look perfectly sensible. For example, suppose you value having a glass of
+wine every now and then. But only now and then; you don't want to have wine
+every day. It follows that your preferences violate both separability and
+stationarity. You violate stationarity because even though you might prefer a
+stream $\t{\text{wine}, \text{no wine}, \text{no wine}, \ldots}$ to $\t{\text{no
+    wine}, \text{no wine}, \text{no wine}, \ldots}$, your preference reverses if
+both streams are prefixed with wine (or many instances of wine). You violate
+separability because whether you regard having wine in $n$ days as desirable
+depends on whether you will have wine right before or after these days.
 
 Even if an agent only cares about pleasure, it is not obvious why a
 rational agent might not (say) prefer relatively constant levels or
@@ -826,10 +825,9 @@ Either preference would violate both stationarity and separability.
   pre-histories. Preferences are defined only over future streams.%
 } %
 
-On standard ways of modelling preferences over time streams (which
-ignores what happened in the past), these preferences are time
-inconsistent. But that kind of time inconsistency does not look
-problematic.
+On the standard way of modelling preferences over time streams (which ignores
+what happened in the past), these preferences are time inconsistent. But that
+kind of time inconsistency does not look problematic.
 
 What shows up in the more problematic kind of time inconsistency
 concerning studying, food, or exercise, is that preferences have a
@@ -890,19 +888,18 @@ decision theory implies that preferences between acts are (strongly)
 separable across states, meaning that the desirability of an act's outcome
 in one state does not depend on the outcomes in other states.
 
-Admittedly, this is an elaborate path to a fairly obvious result. I
-mention it for two reasons. First, it shows that the two responses to
-the ordinalist challenge are actually closely related. In effect,
-Ramsey, Savage, and von Neumann and Morgenstern assume that rational
-preferences are separable across states, and that these preferences
-should be represented additively, in terms of expected utilities.
+Admittedly, this is an elaborate path to a fairly obvious result. I mention it
+for two reasons. First, it shows that the two responses to the ordinalist
+challenge are actually closely related. In effect, Ramsey, Savage, and von
+Neumann assumed that rational preferences are separable across states, and that
+they should have an additive representation in terms of expected utility.
 
 Second, a general consequence of separability is that the relevant
 preferences are insensitive to certain ``shapes'' in the distribution
 of subvalues. In particular, separable preferences cannot prefer even
-distributions to uneven distributions. That points at a potential
-problem with the MEU Principle and any other decision rule that
-implies separability across states. For example, consider the
+distributions to uneven distributions. This may seem to raise a potential
+problem with the MEU Principle (and any other decision rule that
+implies separability across states). For example, consider the
 following schematic decision problem:
 %
 \begin{center}
@@ -927,16 +924,14 @@ $\t{\text{-10},30}$. Much more on that in the next chapter.
 
 \section{Harsanyi's ``proof of utilitarianism''}
 
-The ordinalist movement, which rejected the concept of utility as a
-well-defined numerical quantity, posed a challenge not only to the MEU
-Principle, but also to utilitarianism in ethics. According to
-utilitarianism, an act is right just in case it brings about the best
-available state of the world; a state of the world is better than
-an alternative just in case the sum of the utility of all people in
-that state is greater than in the alternative. Without a numerical
-(and not just ordinal) measure of utility, the second of these claims
-becomes meaningless. We would need a new criterion for ranking states
-of the world.
+The ordinalist movement, which rejected the quantitative concept of utility,
+posed a challenge not only to the MEU Principle, but also to utilitarianism in
+ethics. According to utilitarianism, an act is right just in case it brings
+about the best available state of the world; a state of the world is assumed to
+be better than an alternative just in case the sum of the utility of all people
+in that state is greater. Without a numerical (and not just ordinal) measure of
+utility, the second of these claims becomes meaningless. We would need a new
+criterion for ranking states of the world.
 
 One such criterion was proposed by Pareto. Recall that Pareto did not
 deny that people have preferences. So if we want to rank two states of
@@ -974,14 +969,13 @@ would be saved.
 } %
 
 \begin{exercise1}[The Condorcet Paradox]
-  A ``democratic'' strengthening of the Pareto condition might say
-  that whenever \emph{a majority} of people prefer $A$ to $B$, then
-  $A$ is better than $B$. But consider the following scenario. There
-  are three relevant states: $A,B,C$, and three people. Person 1
-  prefers $A$ to $B$ to $C$. Person 2 prefers $B$ to $C$ to
-  $A$. Person 3 prefers $C$ to $A$ to $B$. If betterness is decided by
-  majority vote, is $A$ better than $B$? How about $A$ and $C$, and
-  $B$ and $C$?
+  A ``democratic'' strengthening of the Pareto condition might say that whenever
+  \emph{a majority} of people prefer $A$ to $B$, then $A$ is better than $B$.
+  But consider the following scenario. There are three relevant states: $A,B,C$,
+  and three people. Person 1 prefers $A$ to $B$ to $C$. Person 2 prefers $B$ to
+  $C$ to $A$. Person 3 prefers $C$ to $A$ to $B$. If betterness is decided by
+  majority vote, which of $A$ and $B$ is better? How about $A$ and $C$, and $B$
+  and $C$?
 \end{exercise1}
 
 In 1955, John Harsanyi proved a remarkable theorem that seemed to
@@ -1001,11 +995,11 @@ for the choice of unit and zero.
 Second, Harsanyi assumes that the betterness order satisfies the
 Pareto condition (both for states and for lotteries).
 
-Finally, Harsanyi assumes that each person -- of which he assumes for
-simplicity that there is a fixed number $n$ -- has personal
-preferences between the relevant states and lotteries, and that these
-preferences also satisfy the von Neumann and Morgenstern axioms. So
-they are represented by $n$ personal utility functions.
+Finally, Harsanyi assumes that each person -- of which he assumes for simplicity
+that there is a fixed number $n$ -- has personal preferences between the
+relevant states and lotteries, and that these preferences also satisfy the von
+Neumann and Morgenstern axioms. So the personal preferences  are represented
+by $n$ personal utility functions.
 
 Note that the Pareto condition states a simple kind of separability
 across people. The assumption that social and personal utility rank
@@ -1029,7 +1023,7 @@ that the utility functions established by von Neumann and
 Morgenstern's representation theorem have arbitrary units and
 zeroes. So if according to one adequate representation of our
 preferences, my utility for a given state is 10 and yours is 0, then
-according to another equally adequate representation, my utility for
+according to another, equally adequate representation, my utility for
 the state is 10000 and yours -3. All Harsanyi's theorem tells us is
 that there is \emph{some} utility representation of our individual
 preferences relative to which our utilities add up to social
@@ -1059,20 +1053,29 @@ the premises.
 
 \section{Further reading}
 
-For an opinionated review of various positions on time (in)consistency, see
+The topic of this chapter is known as ``multi-attribute utility theory''. For an
+overview with further references and applications, see
 \begin{itemize}
-\item Tomasz Żuradzki: \href{https://philpapers.org/archive/URATAR.pdf}{``Time-biases  and  Rationality:  The Philosophical  Perspectives  on  Empirical Research  about  Time  Preference''} (2016)
+  \item Paul Weirich:
+  \href{https://doi.org/10.1007/978-94-007-1433-5_20}{``''Multi-Attribute
+    Approaches to Risk''} (2012).
 \end{itemize}
+
+On separability across time, have a look at
+\begin{itemize}
+  \item Johanna Thoma: ``Temptation and preference-based instrumental rationality'' (2018)
+\end{itemize}
+
+% For an opinionated review of various positions on time (in)consistency, see
+% \begin{itemize}
+% \item Tomasz Żuradzki: \href{https://philpapers.org/archive/URATAR.pdf}{``Time-biases  and  Rationality:  The Philosophical  Perspectives  on  Empirical Research  about  Time  Preference''} (2016)
+% \end{itemize}
 
 A lucid introduction to Harsanyi's argument for utilitarianism is
 \begin{itemize}
 \item John Broome: ``Utilitarianism and Expected Utility'' (1987)
 \end{itemize}
 
-Most of the remaining topics in this chapter covered elementary ideas
-from a subject known as ``multi-attribute utility theory''. I don't
-know any introduction to this subject that is reasonably short and
-good.
 
 \begin{essay}
   Is time inconsistency always irrational? Can you explain why, or why not? 
@@ -1085,6 +1088,9 @@ good.
   different kinds of motives pertain to different aspects of the
   world?
 \end{essay}
+
+% The importance of subvalues is emphasised in Pettit 1991.
+   
 
 \cmnt{%
 An interesting observation in behavioural economics concerns the

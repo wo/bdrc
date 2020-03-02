@@ -3,27 +3,28 @@
 \section{Models and reality}
 
 We have studied an abstract model of rational agents. The model
-assumes that the agents to be modelled have some idea of what the
+assumes that the agents have some idea of what the
 world might be like, which we represent by a credence function $\Cr$
 over a suitable space of propositions. We also assume that the agents
 have some goals or values or desires, which we represent by a utility
-function $U$ on the same space of propositions. The credence function
-is assumed to satisfy the formal rules of the probability calculus; it
-is assumed to evolve over time by conditionalizing on sensory
-information, and it is assumed to satisfy further constraints such as
-the Probability Coordination Principle. The utility function $U$ is
-assumed to satisfy Jeffrey's axiom, so that it is jointly determined
-by the agent's credences and the basic values assigned to individual
-possible worlds. The basic values may in turn be determined by
+function $U$ on the same space of propositions. An agent's credence
+function is assumed to satisfy the formal rules of the probability
+calculus; it is assumed to evolve over time by conditionalizing on
+sensory information, and it is assumed to satisfy further constraints
+such as the Probability Coordination Principle. The agent's utility
+function $U$ is assumed to satisfy Jeffrey's axiom, so that it is
+jointly determined by the agent's credences and the utility assigned
+to basic concerns. These utilities may in turn be determined by
 aggregating subvalues. When the agent faces a choice, she is assumed
 to choose an act which maximizes the credence-weighted average of the
 utility of the act's possible outcomes.
 
-There are different ways of filling in the details, and so our model
-is really a family of models. Should expected utility be understood
+There are different ways of filling in the details, so our model is
+really a family of models. Should expected utility be understood
 causally or evidentially? Should credences satisfy a restricted
 version of the Principle of Indifference? Should utilities conform to
-localism?  Should they be stationary? And so on.
+localism? Should they be stationary? Different answers yield different
+models.
 
 Each model in this family can be understood either
 \textbf{normatively} or \textbf{descriptively}. Understood
@@ -36,7 +37,7 @@ It is a commonplace in current economics and psychology that our
 models are descriptively inadequate: that real people are not expected
 utility maximizers. In itself, this is not necessarily a problem --
 not even for the descriptive interpretation of our model. Remember
-that ``all models are false''. With the possible exception of the
+that ``all models are wrong''. With the possible exception of the
 standard model of particle physics, the purpose of a model is
 generally to identify interesting and robust patterns in the
 phenomena, not to get every detail right.  Nonetheless, it is worth
@@ -46,10 +47,9 @@ could change to make it more realistic.
 Many examples of people supposedly failing to maximize expected
 utility are not really counterexamples to the descriptive adequacy of
 our model, since the examples rely on implausible restrictions on the
-agent's utility function. As we saw in chapter \ref{ch:risk}, our
-model can easily accommodate agents who care about risk or fairness or
-feelings of frustration, which explains the common preferences in
-Allais's paradox. We can similarly accommodate altruistic behaviour
+agent's utility function. As we saw in chapter \ref{ch:risk}, the
+expected-utility approach can easily accommodate agents who care about
+risk or fairness. We can similarly accommodate altruistic behaviour
 (section \ref{sec:decision-matrices}), the endowment effect (section
 \ref{sec:sources-utility}), or apparent failures of time consistency
 (section \ref{sec:separability-time}).
@@ -70,19 +70,18 @@ Allais's paradox. We can similarly accommodate altruistic behaviour
 But other phenomena are harder to accommodate. For example, suppose I
 offer you £100 for telling me the prime factors of 82,717. You have 10
 seconds. Can you do it? Probably not. All you'd have to do to get the
-money is utter `181 and 457', which is surely an available
-act. Moreover, that `181 and 457' is the correct answer logically
-follows from simpler facts of which you are highly confident. By the
-rules of probability, you should therefore be confident that `181 and
-457' is the correct answer. To maximize expected utility (assuming
-you'd like to get the £100), you should therefore utter these
-words. Yet you don't.
+money is utter `181 and 457', which is surely an available act.
+Moreover, that `181 and 457' is the correct answer logically follows
+from simpler facts of which you are highly confident. By the rules of
+probability, you should therefore be confident that `181 and 457' is
+the correct answer. As an exptected utility maximizer (assuming you'd like
+to get the £100), you would utter these words. Yet you don't.
 
-\begin{exercise}
+\begin{exercise2}
   Explain why, if some proposition $C$ logically follows from two
   other propositions $A$ and $B$, and $\Cr(A) > 0.9$ and $\Cr(B) >
-  0.9$, then $\Cr(C) > 0.81$. $\star\star$
-\end{exercise}
+  0.9$, then $\Cr(C) > 0.81$.
+\end{exercise2}
 
 In 1913, Ernst Zermelo proved that in the game of chess, there is
 either a strategy for the starting player, White, that guarantees
@@ -93,19 +92,24 @@ chess, and their only interest was in winning, they would agree to a
 draw or one of them would resign before the first move. Real people
 don't play like that.
 
-Another obvious respect in which real people deviate from our model is
-that real people often forget. In section \ref{sec:why-meu}, I
-mentioned forgetting to buy soap in the shop. That's a temporary kind
-of forgetting, because you later remember what you forgot. We also
-often lose information completely. As an ideal Bayesian agent, you
-would still know what you had for breakfast on 12 June 2006.
+Another respect in which real people plausibly deviate from our model
+is that they often overlook certain options. You go to the shop, but
+forget to buy soap. You walk along the highway because it doesn't
+occur to you that you could take the nicer route through the park. The
+relevant options (buying soap, taking the nicer route) are available
+to you, and they are better by the lights of your beliefs and desires,
+so it is a mistake that you don't choose them.
 
-\begin{exercise}
+Relatedly, real people are forgetful. I don't remember what I had for
+dinner last Monday. As an ideal Bayesian agent, I would still know
+what I had for dinner on every day of my life.
+
+\begin{exercise2}
   Show that if $\Cr_t(A) = 1$, and the agent conditionalizes on
   information $E$ with $\Cr_t(E) > 0$, then $\Cr_{t+1}(A) =
   1$. (Conditionalization was introduced in
-  section \ref{sec:conditionalization}.) $\star\star$
-\end{exercise}
+  section \ref{sec:conditionalization}.) 
+\end{exercise2}
 
 \cmnt{%
   Other issues are less clear. E.g., it is widely claimed that real
@@ -119,8 +123,8 @@ would still know what you had for breakfast on 12 June 2006.
   need an alternative model.
 } %
 
-So it's plausibly true that our model doesn't fit real agents in
-certain respects. There is indirect evidence for this from research on
+So we should admit that our model does not fit real agents in every
+respect. There is indirect evidence for this from research on
 artificial intelligence. The type of model we have studied is well
 known in these quarters, and forms the background for much recent
 research.%
@@ -139,9 +143,9 @@ address another common misunderstanding.
 
 Suppose you walk back to shop to buy soap. At any point on your way,
 you could decide to turn around, or start running, or check if your
-shoe laces are tied, or mentally compute $181 + 457$, or start humming
+shoe laces are tied, or mentally compute $181 \cdot 457$, or start humming
 the national anthem, or utter `Age quod agis', and so on. There are
-literally millions of things you could do. Many of these would lead to
+millions of things you could do. Many of these would lead to
 significantly different outcomes, especially if you consider long-term
 consequences. (Hitler almost certainly would not have existed if hours
 or even months before his conception, his mother had decided to run
@@ -155,19 +159,19 @@ infeasible.
 But the MEU Principle requires no such thing. The MEU Principle says
 that rational agents choose acts that maximize expected utility; it
 specifies \emph{which acts} an agent should choose, given her beliefs
-and desires. It says nothing about the internal process that leads
-agents to these choices. It definitely doesn't say that the agent must
+and desires. It says nothing about the internal processes that lead to
+these choices. It does not say that the agent must
 explicitly consider all her options and compute expected utilities.
 
-\begin{exercise}
+\begin{exercise2}
   The opposite is closer to the truth. Suppose an agent has a choice
   between turning left ($L$), turning right ($R$), and sitting down to
   compute the expected utility of $L$ and $R$ and then choosing
   whichever comes out best. Let $C$ be that third option. If computing
   expected utilities involves some costs in terms of effort or time,
   then either $L$ or $R$ generally has greater expected utility than
-  $C$. Explain why. $\star\star$
-\end{exercise}
+  $C$. Explain why.
+\end{exercise2}
 
 \cmnt{%
   The reason is simple. Let $A_1,\ldots,A_n$ be your ``basic''
@@ -211,42 +215,39 @@ explicitly consider all her options and compute expected utilities.
   utilities?
 } %
 
-So the MEU Principle does not require calculating expected
+The MEU Principle does not require calculating expected
 utilities. But that raises a puzzle. An agent who conforms to our
 model always chooses acts with greatest expected utility. How is she
 supposed to do that without calculating? It doesn't seem rational to
 choose one's acts randomly and maximize expected utility out of sheer
 luck.
 
-The answer (or at any rate a part of the answer) to this puzzle is
-that there are many circumstances in which simple decision methods
-reliably lead to choices that maximize expected utility. As the
-psychologist Gerd Gigerenzer once pointed out, if you want to catch a
-flying ball, an efficient alternative to computing the ball's
+Part of the answer is that in many circumstances, simple alternatives
+to computing expected utilities reliably lead to optimal choices. As
+the psychologist Gerd Gigerenzer once pointed out, if you want to
+catch a flying ball, an efficient alternative to computing the ball's
 trajectory -- which is generally intractable -- is to move around in
 such a way that the angle between you and the ball remains within a
 certain range. This ensures that you'll eventually stand where the
-ball will arrive. The point is that one can often fall back on simple
-heuristics in order to reliably perform a certain task. If you desire
-to catch the ball, following Gigerenzer's heuristic will maximize
-expected utility. You don't need to consciously compute anything, and
-you don't need to conceptualize what you're doing as maximizing
-expected utility.
+ball will arrive. If you desire to catch the ball, following
+Gigerenzer's heuristic will maximize expected utility. You don't need
+to consciously compute anything, and you don't need to conceptualize
+what you're doing as maximizing expected utility.
 
-\begin{exercise}
+\begin{exercise1}
   Suppose you're a musician in the middle of a performance. Trying to
   compute the expected utility of all the notes you could play next
   would probably derail your play. Even if it wouldn't, it would
   completely change your experience of playing, probably for the
   worse. Give another example where conceptualizing one's acts as
   maximizing expected utility would undermine the value of performing
-  the acts. $\star$
-\end{exercise}
+  the acts. 
+\end{exercise1}
 
 One reason why many decision problems don't require sophisticated
-computations is that a certain act clearly dominates all the
-others. Whether that is the case depends on the agent's utility
-function. So you can reduce the computational costs of decision-making
+computations is that a certain act clearly dominates all the others.
+Whether that is the case depends on the agent's utility function. It
+follows that you can reduce the computational costs of decision-making
 by tweaking your utilities. For example, suppose you assign
 significant (sub)value to obeying orders. Doing whatever you're
 ordered to do is then a reliable way of maximizing expected utility,
@@ -277,7 +278,7 @@ shop.%
   planning. You formed the intention of going to the shop.%
 } %
 %
-Once an intention or plan if formed, we assign value to executing the
+Once an intention or plan is formed, we are motivated to execute the
 plan. Revising a plan or overturning a commitment has negative
 (sub)value. Consequently, once you've formed an intention, simply
 following it reliably maximizes expected utility. You don't need to
@@ -289,7 +290,7 @@ Habits can play a similar role. Most of us spend little effort
 deciding whether or not to brush our teeth in the morning; we do it
 out of habit. Habitual behaviour is computationally cheap, and it can
 reliably maximize expected utility -- especially if we assign
-(sub)value to the habitual behaviour. And we do, at least on a
+(sub)value to habitual behaviour. And we do, at least on a
 motivational conception of desire: habits motivate.
 
 The upshot is that various cognitive strategies that are often
@@ -332,24 +333,24 @@ Principle.
   \begin{center}
   \begin{tabular}{|r|c|c|c|}\hline
     \gr & \gr Red & \gr Green & \gr Blue \\\hline
-    \gr $C$ & £1000 & £1000 & £0 \\\hline
+    \gr $C$ & £1000 & £0 & £1000 \\\hline
     \gr $D$ & £0 & £1000 & £1000 \\\hline
   \end{tabular}
   \end{center}
 \end{example}
-
-Many subjects prefer $A$ to $B$ and $D$ to $C$. Like in Allais's
+%
+Many people prefer $A$ to $B$ and $D$ to $C$. Like in Allais's
 Paradox, there is no way of assigning utilities to the monetary
 outcomes that supports these preferences.
 
-\begin{exercise}
+\begin{exercise1}
   Assume the outcomes in Ellsberg's paradox are described correctly
   and you prefer more money to less. By the Probability Coordination
   Principle, $\Cr(\emph{Red}) = \nicefrac{1}{3}$. What would your
   credences in \emph{Green} and \emph{Blue} have to look like so that
   $EU(A) > EU(B)$? What would they have to look like so that $EU(D) >
-  EU(C)$? $\star$
-\end{exercise}
+  EU(C)$? 
+\end{exercise1}
 
 In Ellsberg's Paradox, risk aversion doesn't seem to be at issue. What
 makes the difference is that you know the objective probability of
@@ -366,27 +367,27 @@ function, the outcome wrongly labelled `£1000' in $A$ is actually
 better than the corresponding outcome in $C$, because only the former
 involves having chosen a lottery.
 
-\begin{exercise}
+\begin{exercise1}
   The explanation of the Ellsberg preferences that I just outlined
   makes the preferences conform to the MEU Principle by redescribing
   the outcomes. Is the redescription global or local in the sense of
-  chapter \ref{ch:risk}? $\star$
-\end{exercise}
+  chapter \ref{ch:risk}? 
+\end{exercise1}
 
 But why would agents prefer lotteries? Perhaps because such a
 preference can reduce computational costs. If you know the objective
-probabilities of the outcomes, it is easy to figure out the credence
-you should give to the outcomes: it should match the objective
+probabilities of the states, it is easy to figure out the credence you
+should give to the states: it should match the objective
 probabilities. If you don't know the objective probabilities, a lot
 more work may be required to figure out the extent to which your total
-evidence supports the occurrence of the various outcomes. In
-Ellsberg's Paradox, $\Cr(\text{Red})$ is a easier to figure out than
-$\Cr(\text{Green})$ and $\Cr(\text{Blue})$. If you have a preference
-for lotteries, you don't need to figure out $\Cr(\text{Green})$ and
-$\Cr(\text{Blue})$: from eyeballing the options, you can already see
-that the expected monetary payoff of $A$ and $B$ is approximately the
-same (ditto for $C$ and $D$); a preference for lotteries then clearly
-favours $A$ (and $D$).
+evidence supports the various states. In Ellsberg's Paradox,
+$\Cr(\text{Red})$ is a easier to figure out than $\Cr(\text{Green})$
+and $\Cr(\text{Blue})$. If you have a preference for lotteries, you
+don't need to figure out $\Cr(\text{Green})$ and $\Cr(\text{Blue})$:
+from eyeballing the options, you can already see that the expected
+monetary payoff of $A$ and $B$ is approximately the same (ditto for
+$C$ and $D$); a preference for lotteries then clearly favours $A$ (and
+$D$).
 
 
 \section{Reducing computational costs}
@@ -396,28 +397,28 @@ rendering our models computationally tractable.
 
 Imagine we are designing an artificial agent, with a probabilistic
 representation of her environment and a number of goals or
-desires. Let's assume we want the agent to have credences and
-utilities in 50 logically independent propositions
+desires. Let's assume the agent should assign credences and
+utilities to 50 logically independent propositions
 $A_1,\ldots,A_{50}$ (an absurdly small number).
 How large of a database do we need for that?
 
 You might think that we need 50 records for the probabilities and 50
 for the utilities. But we generally can't compute $Cr(A \land B)$ or
-$\Cr(A \lor B)$ from $\Cr(A)$ and $\Cr(B)$. Nor can we compute $U(A
-\land B)$ or $U(A \lor B)$ from $U(A)$ and $U(B)$. In order to fix the
-agent's entire credence and utility functions (without further
-assumptions about these functions), we need to store at least the
-probability and utility they assign to every ``possible world'' --
-that is, to every maximally consistent conjunction of
-$A_1,\ldots,A_{50}$ and their negations.
+$\Cr(A \lor B)$ from $\Cr(A)$ and $\Cr(B)$. Nor can we compute
+$U(A \land B)$ or $U(A \lor B)$ from $U(A)$ and $U(B)$. To be able to
+determine the agent's entire credence and utility functions (without
+further assumptions), we need to store at least the probability and
+utility they assign to every ``possible world'' -- that is, to every
+maximally consistent conjunction of $A_1,\ldots,A_{50}$ and their
+negations.
 
-\begin{exercise}
+\begin{exercise3}
   Explain why the probability of every proposition that can be defined
   in terms of $A_1,\ldots,A_{50}$ can be computed from the probability
   assigned to the possible worlds. Then explain why the utility of all
   such propositions can be computed from the probability and utility
-  assigned to the worlds. $\star\star\star$
-\end{exercise}
+  assigned to the worlds. 
+\end{exercise3}
 
 \cmnt{%
   Since every proposition that can be defined in terms of
@@ -428,12 +429,12 @@ $A_1,\ldots,A_{50}$ and their negations.
 } %
 
 There are $2^{50} = 1,125,899,906,842,624$ maximally consistent
-conjunctions of $A_1,\ldots,A_{50}$ and their negations.  So we need a
-database with $2,251,799,813,685,248$ records. (I'm exaggerating a
-little. Once we've fixed the probability of the first
-1,125,899,906,842,623 worlds, the probability of the last world is 1
-minus the sum of the others, so we really only need
-$2,251,799,813,685,247$ records.)
+conjunctions of $A_1,\ldots,A_{50}$ and their negations. Since we need
+to store credences and utilities, we therefore need a database with
+$2,251,799,813,685,248$ records. (I'm exaggerating a little. Once
+we've fixed the probability of the first 1,125,899,906,842,623 worlds,
+the probability of the last world is 1 minus the sum of the others, so
+we really only need $2,251,799,813,685,247$ records.)
 
 We'll need to buy a lot of hard drives for our agent if we want to
 store 2 quadrillion floating point numbers. Worse, updating all these
@@ -442,20 +443,18 @@ utilities on their basis, will take a very long time, and use a large
 amount of energy.
 
 In chapter \ref{ch:separability}, we've encountered two tricks for
-simplifying the representation of an agent's basic value function --
-the utility function for individual worlds. First, if the agent cares
-about some features of the world and not about others, it is enough to
-store the agent's value for sets of worlds that agree in all respects
-that matter to the agent; all worlds within such a set will have the
-same value as the set itself (section
-\ref{sec:construction-value}). For example, if our agent only cares
-about the possible combinations of 20 among the 50 propositions
-$A_1,\ldots,A_n$, we only need to store $2^{20}$ values. Second, and
-more dramatically, if the agent's preferences are separable, we can
-cut down the number of utility records from $2^{20}$ to $2 \cdot 20 =
-40$, because the value of any combination of the 20 propositions and
-their negations can be determined by adding up the relevant subvalues
-(section \ref{sec:additivity}).
+simplifying the representation of an agent's utility function. First,
+if the agent cares about some features of the world and not about
+others, it is enough to store the agent's utility for her
+``concerns'': the maximally consistent conjunctions of the features
+she cares about (section \ref{sec:basic-desire}). For example,
+if our agent only cares about the possible combinations of 20 among
+the 50 propositions $A_1,\ldots,A_n$, we only need to store $2^{20}$
+values. Second, and more dramatically, if the agent's preferences are
+separable, we can further cut down the number of utility records from
+$2^{20}$ to $2 \cdot 20 = 40$, because the value of any combination of
+the 20 propositions and their negations can be determined by adding up
+the relevant subvalues (section \ref{sec:additivity}).
 
 Similar tricks are available for the agent's credence
 function. Mirroring the first trick, we could explicitly store only
@@ -481,9 +480,10 @@ probability.
 Independence is often plausible. Whether the next charging station is
 100 meters away plausibly doesn't depend on whether the outside
 temperature is above 20\celsius. But for many other propositions,
-independence is implausible. On the supposition that the temperature
-is above 20\celsius, it may well be more likely that the window is
-open, or that there are people on the street; so
+independence is implausible. On the supposition that it is warm
+outside, it may well be more likely that the window is open, or that
+there are people on the street, than on the supposition that it isn't
+warm. If the agent is unsure whether it is warm, it follows that
 $\Cr(\emph{Open}/\emph{Warm}) > \Cr(\emph{Open})$, and
 $\Cr(\emph{People}/\emph{Warm}) > \Cr(\emph{People})$. So we can't
 assume probabilistic independence across all the 50 propositions
@@ -636,10 +636,9 @@ techniques have in recent years had a great influence on our models of
 human cognition. There is evidence that when our brain processes
 sensory information or decides on a motor action, it employs the same
 techniques computer scientists have found useful in approximating the
-Bayesian ideal. Thus it has been suggested that various quirks of
-human perception and decision-making are consequences of the shortcuts
-our brain uses to approximate conditionalization and computing
-expected utilities.%
+Bayesian ideal. Several quirks of human perception and decision-making
+can apparently be seen as consequences of the shortcuts our brain uses
+to approximate conditionalization and computing expected utilities.%
 \cmnt{%
   The family of techniques known as \textbf{predictive processing} has
   even been taken to offer an entire new perspective on many aspects
@@ -677,7 +676,7 @@ decision-making. The most influential of these alternatives is
 Tversky.
 
 Prospect theory has to be understood on the background of a highly
-restricted version of decision theory still popular in economics. The
+restricted version of decision theory that dominates economics. The
 highly restricted theory only deals with choices between lotteries,
 with known objective probabilities. The outcomes of these lotteries
 are identified with monetary wealth or commodity bundles. (Even local
@@ -806,15 +805,15 @@ wrong when processing verbal information about probabilities.
 
 Reference dependence may also raise a genuine challenge. To be sure,
 most forms of reference dependence are harmless. Our model can easily
-allow for people who care especially about how much they will have in
+accommodate people who care especially about how much they will have in
 comparison to what they had before, or in comparison to what their
 peers have. But sometimes, the reference point is affected by
 intuitively irrelevant features of the context, and that is harder to
 square with our model.
 
-\begin{exercise}
+\begin{exercise1}
   When people compete in sports, average performance sometimes seems
-  to function as a reference point insofar as the effort people put in
+  to function as a reference point, insofar as the effort people put in
   to avoid performing below average is higher than the effort they put
   in to exceed the average.%
   \cmnt{%
@@ -822,8 +821,7 @@ square with our model.
   } %
   Can you explain this observation by ``redescribing the outcomes'' in
   the model we have studied, without appealing to reference points?
-  $\star$
-\end{exercise}
+\end{exercise1}
 
 \cmnt{%
   Decision theory can also accommodate for a related fact that even
@@ -856,7 +854,7 @@ the description. Perhaps people assign basic value to choosing options
 terms of deaths. However, on reflection, most people would certainly
 deny that the verbal description of an outcome is of great concern to
 them. As in the case of decision weights, a more adequate model would
-arguably have to take into account incomplete grasp of a verbally
+arguably have to take into account our incomplete grasp of a verbally
 described scenario. When hearing about survivors, we focus on a
 certain attribute of the outcome, on all the people who are
 saved. That attribute is desirable. When hearing about deaths, a
@@ -902,11 +900,18 @@ attribute selection into account.
 \cmnt{%
   Christian List and Franz Dietrich have a model that involves such
   context-dependent selection of salient features. See esp. 2016.
+
+  Busemeyer et al. (2006) describe a choice mechanism they call ‘decision field
+  theory’, whereby an agent only ever evaluates one aspect of an option at any
+  one moment in time. Over time, attention shifts stochastically to other
+  aspects of the option, and the evaluation is integrated into the previous
+  evaluation. Once some threshold is reached, a decision is announced.
+
 } %
 
 \section{Imprecise credence and utility}\label{sec:imprecise}
 
-I'm going to toss three dice. Would you rather get £10 if the sum of
+I'm going to toss three dice. Would you rather get £1000 if the sum of
 the numbers on the dice is at least 10 or if all three numbers are
 different? You'd probably need some time to give a final answer. You
 know that the six possible results for every dice have equal
@@ -914,32 +919,33 @@ probability, and that the results are independent. But it takes some
 effort to infer from that which of the two events I described is more
 likely.
 
-A real agent's cognitive system can't explicitly store her credence and
-utility for every proposition. It can only store a limited number of
-\textbf{constraints} on credences and utilities. A constraint rules
+A real agent's cognitive system can't explicitly store her credence
+and utility for every proposition. It can only store a limited number
+of \textbf{constraints} on credences and utilities. A constraint rules
 out some credences and utilities, but not others. For example, that
 outcomes of die tosses are probabilistically independent is a
-constraint; it entails that the probability that three dice will land
-six is the product of the probabilities for the individual dice:
+constraint; among other things, it entails that the probability of
+three sixes is the product of the probabilities for the individual
+dice:
 $\Cr(\text{Six}_1 \land \text{Six}_2 \land \text{Six}_3) =
 \Cr(\text{Six}_1)\Cr(\text{Six}_2)\Cr(\text{Six}_3)$, but it does not
 fix what these probabilities are.
 
 So far, we have assumed that taken together, the constraints stored by
 an agent's cognitive system are rich enough to determine a unique
-credence and utility function. But maybe they don't.  Maybe there are
-questions on which you don't have a settled opinion even on
-reflection. Or suppose you don't have time for lengthy reflection, or
-you're too tired.  In such cases, it would arguably be wrong to model
-your attitudes in terms of a single, precise credence function, and a
-single, precise utility functions.
+credence and utility function. But maybe they don't. Maybe there are
+questions on which you don't have a settled opinion, even in
+principle, after ideal reflection. Or suppose you don't have time for
+lengthy reflection, or you're too tired. In such cases, it would
+arguably be wrong to model your attitudes in terms of a single,
+precise credence function, and a single, precise utility functions.
 
-Across several disciplines, researchers have developed models that
-relax the assumption of precise credences and utilities. The standard
-approach is to use \textbf{sets of credence and utility functions}
-instead of single functions. The functions in the set are all those
-that meet the constraints. Intuitively, each member of the set is a
-\emph{refinement} or \emph{precisification} of the agent's
+Across several disciplines, researchers have developed models which
+relax the assumption of unique and precise credences and utilities.
+The standard approach is to use \textbf{sets of credence and utility
+  functions} instead of single functions. The functions in the set are
+all those that meet the constraints. Intuitively, each member of the
+set is a \emph{refinement} or \emph{precisification} of the agent's
 indeterminate state of mind.
 
 The use of sets of credence functions is often motivated by
@@ -949,7 +955,7 @@ probability is 80\%, you might say that's too high; 5\% seems too
 low. But 20\% might seem just as plausible to you as 21\%. It would
 therefore be wrong to model your state of mind by single and precise
 probability. Rather, we should say that your credence is a whole range
-of numbers:
+of numbers, like so:
 \[
 \Cr(\emph{Snow}) = [0.1, 0.5].
 \]
@@ -1015,9 +1021,9 @@ capacity to walk? You may well have no clear preference, even after
 considerable reflection. Does that mean you're exactly indifferent?
 Not necessarily. If you were, you should definitely prefer losing the
 capacity to hear \emph{and getting £1} to losing the capacity to
-walk. In reality, the added £1 probably doesn't make any difference.
+walk. In reality, the added £1 probably doesn't make a difference.
 
-\begin{exercise}
+\begin{exercise2}
   Suppose we define `$\sim$' in terms of `$\succ$', as follows: $A\sim
   B \Leftrightarrow (A \not\succ B) \land (B \not\succ
   A)$. Completeness is then logically guaranteed. But other
@@ -1025,8 +1031,8 @@ walk. In reality, the added £1 probably doesn't make any difference.
   mind between certain propositions. For example, it is possible to
   have $A \succsim B$, $B \succsim C$, and $C \succsim A$,
   contradicting transitivity. Explain why (assuming that $A \succsim B
-  \Leftrightarrow (A \succ B) \lor (A \sim B)$). $\star\star$
-\end{exercise}
+  \Leftrightarrow (A \succ B) \lor (A \sim B)$).
+\end{exercise2}
 
 \cmnt{%
   Chang thinks parity is different from incomparability. I don't think so.%
@@ -1063,12 +1069,12 @@ $A$ has greatest expected utility; according to others, you should
 choose $B$. What should you do? A popular ``permissivist'' answer is
 that you are permitted to choose either option.
 
-\begin{exercise}
-  Explain how the preference of $A$ to $B$ and $D$ to $C$ in
+\begin{exercise2}
+  Explain how the preference of $A$ over $B$ and $D$ over $C$ in
   Ellsberg's paradox might be justified by the permissivist approach,
   without redescribing the outcomes. (What is the expected utility of
-  the four options?)  $\star\star$
-\end{exercise}
+  the four options?) 
+\end{exercise2}
 
 But now consider the following scenario. You are offered two bets $A$
 and $B$, one after the other, on a proposition $H$ about which you
@@ -1145,6 +1151,13 @@ section \ref{sec:imprecise}:
 \begin{itemize}
 \item Saemus Bradley: \href{https://plato.stanford.edu/entries/imprecise-probabilities/}{``Imprecise Probabilities''} (2014)
 \end{itemize}
+
+% There is fairly solid evidence that when mentalistic preferences over anything
+% but very coarse-grained objects are elicited, these are typically constructed
+% “on the fly”. See Lichtenstein and Slovic (2006) for an overview and Bettman
+% (1979) for an early proponent. -- This is on how storing basic desires and
+% additivity can simplify.
+
 
 \cmnt{%
 

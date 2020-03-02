@@ -111,21 +111,21 @@ The main assumption probability theory makes about propositions
 (the objects that are assigned probabilities) is the following.
 %
 \begin{genericthm}{Booleanism}
-  Whenever some proposition $A$ has a probability, then so does its
-  negation $\neg A$ (`not $A$'). Whenever two propositions $A$ and $B$
-  both have a probability, then so does their conjunction $A \land B$
+  Whenever some proposition $A$ has a probability (that probability may be 0),
+  then so does its negation $\neg A$ (`not $A$'). Whenever two propositions $A$
+  and $B$ both have a probability, then so does their conjunction $A \land B$
   (`$A$ and $B$') and their disjunction $A \lor B$ (`$A$ or $B$').
 \end{genericthm}
 %
-The Bayesian approach to belief therefore implies that if a rational
-agent has a definite degree of belief in some propositions, then she
-also has a definite degree of belief in any proposition that can be
-construed from the original propositions in terms of negation,
-conjunction, and disjunction. Having a degree of belief in a
-proposition therefore shouldn't be understood as making a conscious
-judgement about the proposition. If you judge that it's likely to rain
-and unlikely to snow, you don't thereby make a conscious judgement
-about, say, $\emph{rain} \lor (\neg \emph{rain} \land \emph{snow})$.
+The Bayesian approach to belief therefore implies that if a rational agent has a
+definite degree of belief in some propositions, then she also has a definite
+degree of belief in any proposition that can be construed from the original
+propositions in terms of negation, conjunction, and disjunction. Having a degree
+of belief in a proposition therefore shouldn't be understood as making a
+conscious judgement about the proposition. If you judge that it's likely to rain
+and unlikely to snow, you don't thereby make a conscious judgement about, say,
+the hypothesis that it is \emph{either not raining or not both snowing and
+  raining}.
 
 What sorts of things are propositions? Probability theory doesn't say.
 In line with our discussion in the previous chapter, we will
@@ -140,7 +140,7 @@ Edinburgh; one possibility (one possible state of the world) is that
 it is 10\celsius. How is this possibility related to the possibility
 that it is 50\fahrenheit? Since 10\celsius = 50\fahrenheit, the second
 possibility is not an \emph{alternative} to the first. It is the very
-same possibility, expressed in a different unit. The sentences `It is
+same possibility, expressed with a different unit. The sentences `It is
 10\celsius' and `It is 50\fahrenheit' are different ways of picking
 out the same possible state of the world.
 
@@ -159,18 +159,16 @@ equivalent propositions are not just equivalent, but identical.
   the same state of the world.
 } %
 
-Possible states of the world can be more or less specific. That the
-temperature is 10\celsius is more specific than that it is between
-7\celsius and 12\celsius. It is often useful to think of unspecific
-states as sets of more specific states. We can think of the
-possibility that it is between 7\celsius and 12\celsius as a
-collection of several possibilities: \{ 7\celsius, 8\celsius,
-9\celsius, 10\celsius, 11\celsius, 12\celsius \}, or even more if we
-consider fractional values. The unspecific possibility obtains just in
-case one of the more specific possibilities obtains. The most specific
-states are also known as \textbf{possible worlds} (in philosophy, and
-as `outcomes' in most other disciplines). So we'll sometimes model
-propositions as sets of possible worlds.
+Possible states of the world can be more or less specific. That the temperature
+is 10\celsius is more specific than that it is between 7\celsius and 12\celsius.
+It is often useful to think of unspecific states as sets of more specific
+states. We can think of the possibility that it is between 7\celsius and
+12\celsius as a collection of several possibilities: \{ 7\celsius, 8\celsius,
+9\celsius, 10\celsius, 11\celsius, 12\celsius \}, or even more if we consider
+fractional values. The unspecific possibility obtains just in case one of the
+more specific possibilities obtains. The most specific states are known as
+\textbf{possible worlds} (in philosophy, and as `outcomes' in most other
+disciplines). So we'll sometimes model propositions as sets of possible worlds.
 
 I should warn that the word `proposition' has many uses in
 philosophy. In this course, all we mean by `proposition' is `object of
@@ -197,7 +195,8 @@ possible worlds is not supposed to be an informative reduction.
   \item[(a)] What is the conjunction $A \land B$ of two propositions,
     in set theory terms?
   \item[(b)] What is the disjunction $A \lor B$?
-  \item[(c)] What does it mean if a proposition $A$ is a subset of a proposition $B$?
+  \item[(c)] Which logical relationship corresponds to a proposition $A$ being a
+    subset of a proposition $B$?
   \end{exlist}
 \end{exercise2}
 
@@ -264,16 +263,16 @@ This follows from the Kolmogorov axioms. Here is the proof. Let $A$ be
 any proposition. Then $A \lor \neg A$ is logically necessary. So by
 axiom (ii),
 \[
-  \Cr(A \lor \neg A) = 1
+  \Cr(A \lor \neg A) = 1.
 \]
 Moreover, $A$ and $\neg A$ are logically incompatible. So by axiom
 (iii),
 \[
-  \Cr(A \lor \neg A) = \Cr(A) + \Cr(\neg A)
+  \Cr(A \lor \neg A) = \Cr(A) + \Cr(\neg A).
 \]
 Combining these two equations yields
 \[
-  1 = \Cr(A) + \Cr(\neg A)
+  1 = \Cr(A) + \Cr(\neg A).
 \]
 From that, simple algebraic rearrangement give us the Negation Rule.
 
@@ -405,13 +404,12 @@ this, axiom (iii) -- which is known as the axiom of \textbf{Finite
 % \end{genericthm}
 %
 In this course, we will try to stay away from troubles arising from
-infinities, so for our purposes, the weaker axiom (iii) will be enough.
+infinities, so for our purposes the weaker axiom (iii) will be enough.
 
 \begin{exercise3}
   Prove from Kolmogorov's axioms that if $A$ entails $B$, then
-  $\Cr(A)$ can not be greater than $\Cr(B)$. (You may use the rules we
-  have already derived. Hint: if $A$ entails $B$, then $A$ is
-  equivalent to $A \land B$.)
+  $\Cr(A)$ cannot be greater than $\Cr(B)$. (You may use the rules we
+  have already derived.)% Hint: if $A$ entails $B$, then $A$ is equivalent to $A \land B$.
 \end{exercise3}
 
 
@@ -477,15 +475,8 @@ will write $\Cr(A/B)$ for the \textbf{(indicative) conditional
 this is the agent's credence that $A$ is true \emph{if} (or
 \emph{given that} or \emph{supposing that}) $B$ is true.
 
-% xxx add this
-
-% Note that the slash `/' is not a connective. `$A/B$' does not
-% designate a proposition. Conditional credence is a function of two
-% propositions; the slash is used to separate the two arguments. (So
-% `$\Cr((A/B) \lor C)$' is nonsense, since the expression to the
-% left of the slash (`$(A$') and the expression to the right
-% (`$) \lor C$') are not well-formed sentences.)
-
+(The slash '/' is not a connective. $\Cr(A/B)$ is not an agent's credence in a
+special proposition designated by `$A/B$'.)
 
 \cmnt{%
   I said that when we indicatively suppose that Shakespeare didn't
@@ -532,7 +523,7 @@ Ratio Formula is true, and on this point both sides agree.
 The second concept I want to introduce is that of probabilistic
 independence. We say that propositions $A$ and $B$ are
 \textbf{(probabilistically) independent} (for the relevant agent at
-the relevant time) if $\Cr(A/B) = \Cr(A)$. Intuitively, if $A$ and $B$
+the relevant time) iff $\Cr(A/B) = \Cr(A)$. Intuitively, if $A$ and $B$
 are independent, then it makes no difference to your credence in $A$
 whether or not you suppose $B$, so your unconditional credence in $A$
 is equal to your credence in $A$ conditional on $B$.
@@ -552,8 +543,9 @@ why that is the case.
 \end{exercise1}
 
 \begin{exercise2}
-  Using the Ratio Formula, show that if $A$ is (probabilistically)
-  independent of $B$, then $B$ is independent of $A$.
+  Using the Ratio Formula and the Equivalence Rule, show that if $A$ is
+  (probabilistically) independent of $B$, then $B$ is independent of $A$
+  (assuming that $\Cr(A)$ and $\Cr(B)$ are greater than 0).
 \end{exercise2}
 
 \begin{exercise2}
@@ -639,9 +631,9 @@ we have effectively double-counted the $A \land B$ worlds. So we need
 to subtract $\Cr(A \land B)$.
 
 \begin{exercise1}
-  Show that two propositions $A$ and $B$ are independent if and only
-  if $Cr(A \land B) = Cr(A) \cdot Cr(B)$. (Some authors use this as
-  the definition of independence.) 
+  Show that two propositions $A$ and $B$ with positive credence are independent
+  if and only if $Cr(A \land B) = Cr(A) \cdot Cr(B)$. (Some authors use this as
+  the definition of independence.)
 \end{exercise1}
 
 \begin{exercise2}\label{e:chain-rule}
@@ -764,9 +756,9 @@ in the trick die hypothesis conditional on seeing a six should be
 } %
 
 \begin{exercise3}
-  A stranger tells you that she has two children. You ask if at least
-  one of them is a boy. The stranger says yes. How confident should
-  you be that the other child is also a boy? (Assume both sexes are
+  A stranger tells you that she has two children. You ask if at least one of
+  them is a boy. The stranger says yes. How confident should you be that the
+  other child is also a boy? (Assume there are only two sexes, and that they are
   equally common and independent among siblings.)
 \end{exercise3}
 

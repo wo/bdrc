@@ -1,5 +1,8 @@
 \chapter{Probabilism}\label{ch:probabilism}
 
+% re-read refereed/Erkenntnis 2019 Comparativism about credence for literature
+% and presentation.
+
 \section{Justifying the probability axioms}
 
 The hypothesis that rational degrees of belief satisfy the
@@ -189,11 +192,12 @@ disposed to enter bets that amount to a guaranteed loss.
 
 \section{The Dutch Book theorem}
 
-In what follows, we are going to assume that if an agent is not
-willing to buy a bet for £$x$, then she would be be willing to sell
-the bet for that price. Selling a bet means offering it to somebody
-else. The idea is that if you judge a bet to worth less than £$x$,
-then you should be happy to offer someone the bet for a price of £$x$.
+In what follows, we are going to assume a slightly strengthened form of the
+betting interpretation: we will assume that if an agent is not willing to buy a
+bet for £$x$, then she would be be willing to sell the bet for that
+price. Selling a bet means offering it to somebody else. The idea is that if you
+judge a bet to worth less than £$x$, then you should be happy to offer someone
+the bet for a price of £$x$.
 
 \begin{exercise1}
   Suppose your degree of belief in rain is $0.8$ (and in not-rain 0.2)
@@ -295,11 +299,11 @@ satisfy the Ratio Formula.
  show?
 } %
 
-\begin{exercise3}
+\begin{exercise2}
   Suppose I believe that it is raining to degree 0.6 and that it is
   not raining also to degree 0.6. Describe a Dutch Book you could make
   against me, assuming the betting interpretation.
-\end{exercise3}
+\end{exercise2}
 
 \section{Problems with the betting interpretation}\label{sec:problem-betting}
 
@@ -329,11 +333,11 @@ practically useful, but it would not be epistemically justified;
 it would not reflect your evidence.) Why should we think
 differently about the hypothetical Dutchman? 
 
-Second, the threat of financial exploitation only awaits
-non-probabilistic agents who value bets by their expected monetary
-payoff and thus willing buy or sell any bet if the expected monetary
-payoff of the transaction is positive. This is entailed by the betting
-interpretation, but on reflection it is untenable.
+Second, the threat of financial exploitation only awaits non-probabilistic
+agents who value bets by their expected monetary payoff and so are willing buy
+or sell any bet if the expected monetary payoff of the transaction is
+positive. This kind of disposition is entailed by the betting interpretation,
+but on reflection it is untenable.
 
 Consider the following gamble.
 \begin{example}[The St.\ Petersburg Paradox]
@@ -379,7 +383,7 @@ In economics terminology, what Bernoulli realised is that money has
 \textbf{declining marginal utility}. The `marginal utility' of a good
 for an agent is how much she desires an extra unit of the good. To say
 that the marginal utility of money is declining therefore means that
-the more money you have, the less you value an additional pound.
+the more money you have, the less you value an additional ducat or pound.
 
 Concretely, Daniel Bernoulli suggested that $n$ units of money provide
 not $n$ but $\log(n)$ units of utility, so that doubling your wealth
@@ -456,12 +460,13 @@ hereby stipulate, values any bet she might be offered by the bet's
 expected monetary payoff. I also stipulate that $\beta$ follows the
 MEU Principle.
 
-My first philosophical premise is that \emph{if $\alpha$'s belief
-  state is epistemically rational, then so is $\beta$'s}. The idea is
-that if you want to know whether an agent's beliefs are epistemically
-rational, you don't need to know anything about her desires or the way
-she makes choices. But that's the only (possible) difference between
-$\alpha$ and $\beta$. 
+My first philosophical premise is that \emph{if $\alpha$'s belief state is
+  epistemically rational, then so is $\beta$'s}. The idea is that if you want to
+know if someone's beliefs are epistemically rational, then you need to know what
+her beliefs are and maybe how she acquired those beliefs, but you don't need to
+know what this person desires or how she chooses between available acts.
+If there's a difference between $\alpha$ and $\beta$, then by assumption it lies
+in these irrelevant aspects.
 
 As we saw at the end of the previous section, we can't assume that if
 $\beta$'s credence in a proposition is $x$, then she will pay up to
@@ -538,7 +543,7 @@ primitives. Even on that view, however, more must be said about the
 numerical representation of credence. That we represent degrees of
 belief by numbers between 0 and 1 is clearly a matter of convention:
 whatever is represented by these numbers could just as well be
-represented by numbers between 0 and 100, by the rotation of a line,
+represented by numbers between 0 and 100, by the orientation of a line,
 or in various other ways. So we need to explain the convention of
 assigning numbers to whatever an agent's credence function represents.
 
@@ -557,7 +562,7 @@ you are more confident that it is sunny than that it is raining, then
 $\emph{Sunny} \succ \emph{Rainy}$. Let `$A \sim B$' mean that the
 agent is equally confident in $A$ and in $B$. From these, we can
 define a third relation `$\succsim$' by stipulating that
-$A \succsim B \Leftrightarrow (A \succ B) \lor (A \sim B)$.
+$A \succsim B$ iff $(A \succ B) \lor (A \sim B)$.
 
 What can we assume about the formal structure of these relations?
 First of all, if you're more confident in $A$ than $B$, then you can't
