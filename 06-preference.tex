@@ -579,7 +579,7 @@ arbitrary lotteries or rewards.
 \begin{genericthm}{Continuity}
   For any $A$, $B$, and $C$, if $A \succ B$ and $B \succ C$ then
   there are lotteries $L_1$ and $L_2$ between $A$ and $C$ such
-  that $L_1 \succ B$ and $B \succ L_2$.
+  that $A \succ L_1 \succ B$ and $B \succ L_2 \succ C$.
 \end{genericthm}
 \vspace{-2mm}
 \begin{genericthm}{Independence (of Irrelevant Alternatives)}
@@ -824,6 +824,8 @@ definition of credence, any agent who obeys these axioms automatically
 has probabilistic credences. If you don't have probabilistic
 credences, you violate the axioms.
 
+% this goes by too fast
+
 \begin{exercise2}
   Can you spell out the argument for probabilism I just outlined in
   more detail, in parallel to the argument for the MEU Principle I
@@ -870,10 +872,11 @@ agents are not confronted with all the choices from which von Neumann
 or Savage would derive their utility function.
 
 \begin{exercise2}
-  Suppose we define `$A \succ B$' as `the agent has been confronted
-  with a choice between $A$ and $B$, and chose $A$'; similarly for
-  `$A\sim B$' and `$A \succsim B$'. Which of the von Neumann and
-  Morgenstern axioms then become highly implausible?
+  Suppose we define `$A \sim B$' as `the agent has faced a choice between $A$
+  and $B$ and expressed indifference', and `$A \succ B$' as `the agent has faced
+  a choice between $A$ and $B$ and expressed a preference for $A$. Which of the
+  von Neumann and Morgenstern axioms then become highly implausible (no matter
+  what exactly we mean by ``expressing'' indifference or preference)?
 \end{exercise2}
 
 But now one of the problems for the betting interpretation, from
