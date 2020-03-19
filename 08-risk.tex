@@ -62,10 +62,7 @@ states.
 Choosing $A$ effectively means choosing to bring about $O_1 \lor O_2$;
 choosing $B$ means choosing to bring about $O_3 \lor O_4$. Let's
 assume the four outcomes are logically incompatible with each other.
-(We can always make them incompatible by adding more information. For
-example, if $O_1$ and $O_2$ are not incompatible, we can redefine them
-as $O_1 \land S_1$ and $O_2 \land S_2$, respectively.)
-
+(We can always make them incompatible by adding more information.)
 By Jeffrey's axiom,
 \[
 U(O_1 \lor O_2) = U(O_1)\cdot \Cr(O_1/O_1 \lor O_2) + U(O_2)\cdot \Cr(O_2/O_1 \lor O_2).
@@ -85,7 +82,7 @@ Together, the previous two observations entail that
   \Cr(O_1/O_1 \lor O_2) = \Cr(S_1/A).
 \]
 But in a well-defined decision matrix, the states must be independent
-of the acts. So it looks like we can simplify further:
+of the acts. This suggests that $\Cr(S_{1}/A) = \Cr(S_{1})$. So we have
 \[
   \Cr(O_1/O_1 \lor O_2) = \Cr(S_1).
 \]
@@ -94,12 +91,11 @@ instance of Jeffrey's axiom can therefore be rewritten as follows:
 \[
 U(A) = U(O_1)\cdot \Cr(S_1) + U(O_2)\cdot\Cr(S_2).
 \]
-This says that the \emph{expected utility} of act $A$ equals the
-\emph{utility} of $A$! Since utility is defined as a measure of
-desirability, the MEU principle therefore says that rational agents
-prefer to bring about more desirable propositions rather than less
-desirable propositions. (We will reconsider the present argument in
-chapter \ref{ch:cdt}.)
+This says that the \emph{utility} of act $A$ equals the \emph{expected utility}
+of $A$! Since utility is defined as a measure of (all-things-considered)
+desirability, the MEU principle therefore says that rational agents prefer to
+bring about the most desirable propositions among those they can bring about.
+(We will reconsider the present argument in chapter \ref{ch:cdt}.)
 
 We have seen three arguments in favour of the MEU Principle. I will
 mention two more, before I turn to objections.
@@ -263,15 +259,13 @@ from the fact that probabilities can be expected to converge to
 proportions \emph{reasonably fast}: it does not take millions of
 tosses until the percentage of heads is almost certain to exceed 40\%.
 
-The argument also assumes that the same decision problem is faced over
-and over. In practice, this rarely happens. But the argument can be
-generalised. Suppose an agent faces a sequence of $n$ decision
-problems, which may involve different outcomes, different states, and
-different probabilities. One can show that if the states in the
-various problems are probabilistically independent and the relevant
-probabilities and utilities are not too extreme, then the
-\emph{average} utility is still likely to converge to the
-\emph{expected} utility, and it will do so relatively fast.
+The above argument also assumes that the same decision problem is faced over and
+over. In practice, this rarely happens. But the argument can be generalised.
+Suppose an agent faces a sequence of decision problems, which may involve
+different outcomes, different states, and different probabilities. One can show
+that if the states in the various problems are probabilistically independent and
+the relevant probabilities and utilities are not too extreme, then over time,
+maximizing expected utility is likely to maximize average (or total) utility.
 
 % \begin{exercise}
 %   If you play roulette in a casino, the possible outcomes vary wildly:
@@ -283,23 +277,21 @@ probabilities and utilities are not too extreme, then the
 % Long-run considerations offer some support to the MEU Principle; but
 % they also point towards a possibly serious problem.
 
-From what I said, you might expect that professional gamblers and
-investors generally put their money on the options with greatest
-expected payoff, which would give them the greatest overall profit in
-the long run. But they do not. -- Those who do don't remain
-professional gamblers or investors for long. To see why, imagine you
-are offered to invest in a startup company that attempts to find a
-cure for snoring. If the company succeeds, your investment will pay
-back tenfold. If they don't, the investment is lost. The chance of
-success is 20\%, so the expected return is
-$0.2 \cdot 1000\% + 0.8 \cdot 0\% = 200\%$. Even if this exceeds the
-expected return of all other investment possibilities, you would be
-mad to put all your money into that company. If you repeatedly face
-that kind of decision and go all-in each time, then after ten rounds
-you are bankrupt with a probability of $1-0.2^{10} = 0.9999998976$.%
+From what I said, you might expect that professional gamblers and investors
+generally put their money on the options with greatest expected payoff, which
+would give them the greatest overall profit in the long run. But they do not. --
+Those who do don't remain professional gamblers or investors for long. To see
+why, imagine you are offered to invest in a startup company that attempts to
+find a cure for snoring. If the company succeeds, your investment will pay back
+tenfold. If the startup fails, the investment is lost. The chance of success is
+20\%, so the expected return is $0.2 \cdot 1000\% + 0.8 \cdot 0\% = 200\%$. Even
+if this exceeds the expected return of all other investment possibilities, you
+would be mad to put all your money into the startup. If you repeatedly face that
+kind of decision and go all-in each time, then after ten rounds you are bankrupt
+with a probability of $1-0.2^{10} = 0.9999998976$.%
 \cmnt{%
-  (With the remaining 0.0000001024 probability your wealth would have
-  increased 1,000,000,000,000\%.)%
+  (With the remaining 0.0000001024 probability your wealth would have increased
+  1,000,000,000,000\%.)%
 } %
 
 This does not contradict the law of large numbers. In the startup
@@ -315,8 +307,8 @@ Shouldn't we adjust the MEU Principle, so that agents can factor in
 risk in addition to expected utility?
 
 \begin{exercise2}
-  Every year, an investor is given £100,000, which she can invest
-  either in a risky startup of the kind described (a different one
+  Every year, an investor is given £100,000, which she can either invest
+  in a risky startup of the kind described (a different one
   each year), or put in a bank account at 0\% interest. If she always
   chooses the second option, she will have £1,000,000 after ten years.
   \begin{enumerate}
@@ -359,7 +351,7 @@ expected utility.%
 Along these lines, the standard model of risk aversion in economics is
 to assume that utility is a ``concave function of money'', meaning
 that the amount of utility an extra £100 would add to an outcome of
-£1000 is less than the amount of utility the same £100 would add to an
+£1000 is less than the amount of utility the same £100 would add to a
 lesser outcome of, say, £100. We have already encountered this
 phenomenon in chapter \ref{ch:utility}, where we saw that for most
 people, money has declining marginal utility: the more you have, the
@@ -416,23 +408,23 @@ risk aversion is incompatible with the MEU Principle.
   \end{center}
 
 \end{example}
-
+%
 The MEU Principle does not settle the answer to either question. But
 it seems to rule out a combination of preferences many people in fact
 express, namely a preference for $B$ over $A$, and for $C$ over
 $D$.
 
 Why might you have these preferences? Notice that the second choice is
-essentially one between £1000 for sure and a gamble in which you might
+essentially a choice between £1000 for sure and a gamble in which you might
 get either £1000 (most likely) or £0 (least likely) or £1200. If
 you're risk averse, it makes sense to take the sure £1000. By
 contrast, in the first choice the most likely outcome is £0 either
 way, and it seems reasonable to take the 19\% chance of getting £1200
 rather than the 20\% chance of getting £1000.
 
-You can easily check that there is no way of assigning utilities to
+You can  check that there is no way of assigning utilities to
 monetary payoffs that makes these preferences conform to the MEU
-Principle. In fact, the preference for $B$ over $A$ and $C$ over $B$
+Principle. In fact, the preference for $B$ over $A$, and $C$ over $B$
 appears to violate the Independence axiom both in von Neumann and
 Morgenstern's form and in Savage's form. To see this (for the von
 Neumann and Morgenstern version), let $L_1$ be a lottery that pays
@@ -599,12 +591,11 @@ that you will have chosen a risky option instead of a safe alternative
 -- because the alternative $A$ is not safe.  So we can once again
 distinguish the two outcomes.
 
-In general, the first strategy appeals only appeals to things that
-happen as a causal consequence of the relevant choice. Let's call such
-attributes \textbf{local}. So on the first strategy for redescribing
-outcomes, the outcomes must only involve local propositions whose
-truth is a causal consequence of the relevant act in the relevant
-state.
+In general, the first strategy appeals only appeals to things that happen as a
+causal consequence of the relevant choice. Let's call such attributes
+\textbf{local}. On the first strategy for redescribing outcomes, we expand the
+original outcomes by local propositions whose truth is a causal consequence of
+the relevant act in the relevant state.
 
 By contrast, the second strategy also allows for non-local attributes
 in the outcomes. To choose $D$ rather than $C$ \emph{is} to choose a
@@ -615,7 +606,7 @@ happens after your choice.
 
 Let's say (following Lara Buchak) that outcomes are
 \textbf{individuated locally} if outcomes are only distinguished by
-features that are a causal consequence of the relevant act in the
+local attributes -- propositions whose truth is a causal consequence of the relevant act in the
 relevant state. If outcomes are not individuated locally, they are
 \textbf{individuated globally}.
 
@@ -657,7 +648,7 @@ Principle. We must either declare the preferences irrational or revise
 the MEU Principle.
 
 Many such revisions to the MEU Principle have been proposed. An
-especially elegant recent example is Lara Buchak's \emph{Risk-Weighted
+elegant recent example is Lara Buchak's \emph{Risk-Weighted
   Expected Utility Theory}. On Buchak's model, the choiceworthiness of an
 act is not determined by the agent's credences and utilities, the
 latter of which pertain only to local attributes of outcomes. Instead,
@@ -772,7 +763,7 @@ agent. A gamble is worth £100 if the gamble's expected \emph{utility}
 equals the \emph{utility} of £100.
 
 For a while, people then understood utility to measure the degree of
-pleasure or welfare a choice might bring about. It was only in
+pleasure or welfare that a choice might bring about. It was only in
 response to the ordinalist challenge of the early 20th century that
 utility was -- officially -- no longer defined as a measurable
 quantity causally downstream from the choice, but as reflecting the
@@ -819,7 +810,7 @@ things -- risk, for example, or fairness, or other people's welfare.
   because it assumes agents only care about one global feature: risk.%
 } %
 
-Even on the preference-based conception of utility, however, there is
+However, even on the preference-based conception of utility, there is
 some pressure to endorse localism. Recall von Neumann's method for
 determining the utility of a reward $c$ in comparison to other rewards
 $a$ and $b$. The method considers the agent's preferences over certain
