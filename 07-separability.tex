@@ -2,6 +2,13 @@
 
 \cmnt{%
 
+  I need to be clearer about the connection between separability and localism:
+  /If/ the individual elements of a stream capture all I care about, then
+  separability is highly plausible. If I prefer an even over an uneven
+  distribution of ``outcomes'' then I don't just care about these ``outcomes''.
+  The problem is that if we enrich the outcomes by the condition of evenness
+  then we can't even consider permutations of the outcomes any more.
+  
   Maybe I should call the basic desires ``reasons'', a la Dietrich and List?
 
   Read Brown, Composition of reasons
@@ -10,6 +17,11 @@
 
   Should I explain that in ordinary FP explanations we only give relevant
   ``basic desires'', as Pettit mentioned?
+
+  mcclennen1990rationality pp.47f. mentions the connection between additive
+  representations of preferences over commodities and the independence axiom for
+  preferences over gambles. He points at krantz1971foundations as a classical
+  text on multi-attribute utility theory.
   
 } %
 
@@ -145,7 +157,7 @@ this feature is compared to price and location.
   flats.%
 } %
 
-\begin{exercise2}\label{e:subv-not-u}
+\begin{exercise}{2}\label{e:subv-not-u}
   Like utility functions, subvalue functions assign numbers to sets of
   possible worlds that may vary in desirability. But unlike utility
   functions, subvalue functions are insensitive to belief. This
@@ -153,7 +165,7 @@ this feature is compared to price and location.
   rent, then $V_{P}(\text{£300})$ is plausibly high, even though the
   \emph{utility} you assign to renting a flat for £300 is low. Can you
   spell out the explanation?
-\end{exercise2}
+\end{exercise}
 
 \cmnt{%
   If we want to decompose the overall desirability of a given flat
@@ -179,7 +191,7 @@ this feature is compared to price and location.
   account what else is likely to be the case if a flat has four rooms.
 } %
 
-\begin{exercise3}
+\begin{exercise}{3}
   Additivity greatly simplifies an agent's psychology. Suppose an
   agent's basic desires pertain to 10 propositions
   $A_1,A_2,\ldots,A_{10}$. There are $2^{10} = 1024$ conjunctions of
@@ -189,7 +201,7 @@ this feature is compared to price and location.
   in a database, we would therefore need to store up to 1024
   numbers. By contrast, how many numbers would we need to store if the
   value function is additive?
-\end{exercise3}
+\end{exercise}
 
 
 \section{Separability}
@@ -293,20 +305,20 @@ your ranking of $\t{50 \m^2, \text{central}, -}$ and $\t{40 \m^2,
   \text{beach}, -}$ depends on how the blank (`$-$') is filled in, and
 so your preferences aren't strongly separable.
 
-\begin{exercise2}
+\begin{exercise}{2}
   Suppose all you care about is the degree of pleasure of you and your
   three friends. And suppose you prefer states in which you all
   experience equal pleasure to states in which your degrees of
   pleasure are very different. For example, you prefer $\t{2,2,2,2}$
   to $\t{2,2,2,8}$, and you prefer $\t{8,8,8,8}$ to $\t{8,8,8,2}$.
   Are your preferences weakly separable? Are they strongly separable?
-\end{exercise2}
+\end{exercise}
 
 \cmnt{%
   Explain why strong entails weak?%
 } %
 
-\begin{exercise2}
+\begin{exercise}{2}
   Which of the following preferences violate weak separability or
   strong separability, based on the information provided?
 
@@ -328,7 +340,7 @@ so your preferences aren't strongly separable.
    In c., there's a counterex to w.s.: hold fixed A,C in rows 1 and 3.
 
  } %
-\end{exercise2}
+\end{exercise}
 
 In 1960, G\'erard Debreu proved that strong separability is exactly what is
 needed to ensure additivity.
@@ -373,7 +385,7 @@ order. In response, one might argue that strongly separable preferences should
 be represented by an additive utility (or value) function. The utilities
 representing strongly separable preferences would then have an interval scale.
 
-\begin{exercise2}
+\begin{exercise}{2}
   Show that whenever $V$ additively represents an agent's preferences,
   then so does any function $V'$ that differs from $V$ only by the
   choice of zero and unit. That is, assume that $V$ additively
@@ -419,7 +431,7 @@ representing strongly separable preferences would then have an interval scale.
     are increasing linear transformations. Hence additive separability
     implies cardinality.
   } %
-\end{exercise2}
+\end{exercise}
 
 
 
@@ -547,13 +559,13 @@ etc. his means that you
 } %
 
 
-\begin{exercise2}
+\begin{exercise}{2}
   Imagine you can freely choose four courses for next semester. You
   assess each course by a range of criteria (such as whether the
   course will teach you anything useful). On this basis, you determine
   an overall ranking of the courses and sign up for the top four. Why
   might this not be a good idea?
-\end{exercise2}
+\end{exercise}
 
 \cmnt{%
 
@@ -744,7 +756,7 @@ $\delta = \nicefrac{1}{2}$, then one unit of pleasure tomorrow is worth half as
 much as one unit of pleasure today; the day after tomorrow it is worth a
 quarter, and so on.
 
-\begin{exercise1}
+\begin{exercise}{1}
   Consider the following streams of pleasure:
   \begin{enumerate}
     \itemsep-0.3em 
@@ -759,7 +771,7 @@ quarter, and so on.
   hedonist agent with separable and stationary preferences rank these
   streams, provided that (a) $\delta = 1$, (b)
   $\delta < 1$, (c) $\delta > 1$? (You need to give three answers.)
-\end{exercise1}
+\end{exercise}
 
 Even if you're not a hedonist, you probably care about some things
 that can occur (and re-occur) at different times: talking to friends,
@@ -917,10 +929,10 @@ rationally prefer the safe option $A$ just because it is safe --
 because the utility distribution $\t{10,10}$ is more even than
 $\t{\text{-10},30}$. Much more on that in the next chapter.
 
-\begin{exercise2}
+\begin{exercise}{2}
   Where in their axioms do Savage and von Neumann and Morgenstern
   postulate a kind of separability across states?
-\end{exercise2}
+\end{exercise}
 
 \section{Harsanyi's ``proof of utilitarianism''}
 
@@ -968,7 +980,7 @@ would be saved.
 
 } %
 
-\begin{exercise1}[The Condorcet Paradox]
+\begin{exercise}{1}[The Condorcet Paradox]
   A ``democratic'' strengthening of the Pareto condition might say that whenever
   \emph{a majority} of people prefer $A$ to $B$, then $A$ is better than $B$.
   But consider the following scenario. There are three relevant states: $A,B,C$,
@@ -976,7 +988,7 @@ would be saved.
   $C$ to $A$. Person 3 prefers $C$ to $A$ to $B$. If betterness is decided by
   majority vote, which of $A$ and $B$ is better? How about $A$ and $C$, and $B$
   and $C$?
-\end{exercise1}
+\end{exercise}
 
 In 1955, John Harsanyi proved a remarkable theorem that seemed to
 rescue, and indeed vindicate, classical utilitarianism. 
@@ -1073,7 +1085,7 @@ On separability across time, have a look at
 
 A lucid introduction to Harsanyi's argument for utilitarianism is
 \begin{itemize}
-\item John Broome: ``Utilitarianism and Expected Utility'' (1987)
+  \item John Broome: ``General and Personal Good: Harsanyi's Contribution to the Theory of Value'' (2015)
 \end{itemize}
 
 

@@ -1,5 +1,8 @@
 \chapter{Bounded Rationality}
 
+% see \cite{fritz2015standard} for models in which the probability function an
+% agent "uses" is constrained by what they attend to, with applications.
+
 \section{Models and reality}
 
 We have studied an abstract model of rational agents. The model
@@ -77,11 +80,11 @@ probability, you should therefore be confident that `181 and 457' is
 the correct answer. As an exptected utility maximizer (assuming you'd like
 to get the £100), you would utter these words. Yet you don't.
 
-\begin{exercise2}
+\begin{exercise}{2}
   Explain why, if some proposition $C$ logically follows from two
   other propositions $A$ and $B$, and $\Cr(A) > 0.9$ and $\Cr(B) >
   0.9$, then $\Cr(C) > 0.81$.
-\end{exercise2}
+\end{exercise}
 
 In 1913, Ernst Zermelo proved that in the game of chess, there is
 either a strategy for the starting player, White, that guarantees
@@ -104,12 +107,12 @@ Relatedly, real people are forgetful. I don't remember what I had for
 dinner last Monday. As an ideal Bayesian agent, I would still know
 what I had for dinner on every day of my life.
 
-\begin{exercise2}
+\begin{exercise}{2}
   Show that if $\Cr_t(A) = 1$, and the agent conditionalizes on
   information $E$ with $\Cr_t(E) > 0$, then $\Cr_{t+1}(A) =
   1$. (Conditionalization was introduced in
   section \ref{sec:conditionalization}.) 
-\end{exercise2}
+\end{exercise}
 
 \cmnt{%
   Other issues are less clear. E.g., it is widely claimed that real
@@ -163,7 +166,7 @@ and desires. It says nothing about the internal processes that lead to
 these choices. It does not say that the agent must
 explicitly consider all her options and compute expected utilities.
 
-\begin{exercise2}
+\begin{exercise}{2}
   The opposite is closer to the truth. Suppose an agent has a choice
   between turning left ($L$), turning right ($R$), and sitting down to
   compute the expected utility of $L$ and $R$ and then choosing
@@ -171,7 +174,7 @@ explicitly consider all her options and compute expected utilities.
   expected utilities involves some costs in terms of effort or time,
   then either $L$ or $R$ generally has greater expected utility than
   $C$. Explain why.
-\end{exercise2}
+\end{exercise}
 
 \cmnt{%
   The reason is simple. Let $A_1,\ldots,A_n$ be your ``basic''
@@ -234,7 +237,7 @@ Gigerenzer's heuristic will maximize expected utility. You don't need
 to consciously compute anything, and you don't need to conceptualize
 what you're doing as maximizing expected utility.
 
-\begin{exercise1}
+\begin{exercise}{1}
   Suppose you're a musician in the middle of a performance. Trying to
   compute the expected utility of all the notes you could play next
   would probably derail your play. Even if it wouldn't, it would
@@ -242,7 +245,7 @@ what you're doing as maximizing expected utility.
   worse. Give another example where conceptualizing one's acts as
   maximizing expected utility would undermine the value of performing
   the acts. 
-\end{exercise1}
+\end{exercise}
 
 One reason why many decision problems don't require sophisticated
 computations is that a certain act clearly dominates all the others.
@@ -343,14 +346,14 @@ Many people prefer $A$ to $B$ and $D$ to $C$. Like in Allais's
 Paradox, there is no way of assigning utilities to the monetary
 outcomes that supports these preferences.
 
-\begin{exercise1}
+\begin{exercise}{1}
   Assume the outcomes in Ellsberg's paradox are described correctly
   and you prefer more money to less. By the Probability Coordination
   Principle, $\Cr(\emph{Red}) = \nicefrac{1}{3}$. What would your
   credences in \emph{Green} and \emph{Blue} have to look like so that
   $EU(A) > EU(B)$? What would they have to look like so that $EU(D) >
   EU(C)$? 
-\end{exercise1}
+\end{exercise}
 
 In Ellsberg's Paradox, risk aversion doesn't seem to be at issue. What
 makes the difference is that you know the objective probability of
@@ -367,12 +370,12 @@ function, the outcome wrongly labelled `£1000' in $A$ is actually
 better than the corresponding outcome in $C$, because only the former
 involves having chosen a lottery.
 
-\begin{exercise1}
+\begin{exercise}{1}
   The explanation of the Ellsberg preferences that I just outlined
   makes the preferences conform to the MEU Principle by redescribing
   the outcomes. Is the redescription global or local in the sense of
   chapter \ref{ch:risk}? 
-\end{exercise1}
+\end{exercise}
 
 But why would agents prefer lotteries? Perhaps because such a
 preference can reduce computational costs. If you know the objective
@@ -398,7 +401,7 @@ rendering our models computationally tractable.
 Imagine we are designing an artificial agent, with a probabilistic
 representation of her environment and a number of goals or
 desires. Let's assume the agent should assign credences and
-utilities to 50 logically independent propositions
+utilities to a total of 50 logically independent propositions
 $A_1,\ldots,A_{50}$ (an absurdly small number).
 How large of a database do we need for that?
 
@@ -412,13 +415,13 @@ utility they assign to every ``possible world'' -- that is, to every
 maximally consistent conjunction of $A_1,\ldots,A_{50}$ and their
 negations.
 
-\begin{exercise3}
+\begin{exercise}{3}
   Explain why the probability of every proposition that can be defined
   in terms of $A_1,\ldots,A_{50}$ can be computed from the probability
   assigned to the possible worlds. Then explain why the utility of all
   such propositions can be computed from the probability and utility
   assigned to the worlds. 
-\end{exercise3}
+\end{exercise}
 
 \cmnt{%
   Since every proposition that can be defined in terms of
@@ -431,7 +434,7 @@ negations.
 There are $2^{50} = 1,125,899,906,842,624$ maximally consistent
 conjunctions of $A_1,\ldots,A_{50}$ and their negations. Since we need
 to store credences and utilities, we therefore need a database with
-$2,251,799,813,685,248$ records. (I'm exaggerating a little. Once
+$2,251,799,813,685,248$ records. (I am exaggerating. Once
 we've fixed the probability of the first 1,125,899,906,842,623 worlds,
 the probability of the last world is 1 minus the sum of the others, so
 we really only need $2,251,799,813,685,247$ records.)
@@ -811,7 +814,7 @@ peers have. But sometimes, the reference point is affected by
 intuitively irrelevant features of the context, and that is harder to
 square with our model.
 
-\begin{exercise1}
+\begin{exercise}{1}
   When people compete in sports, average performance sometimes seems
   to function as a reference point, insofar as the effort people put in
   to avoid performing below average is higher than the effort they put
@@ -821,7 +824,7 @@ square with our model.
   } %
   Can you explain this observation by ``redescribing the outcomes'' in
   the model we have studied, without appealing to reference points?
-\end{exercise1}
+\end{exercise}
 
 \cmnt{%
   Decision theory can also accommodate for a related fact that even
@@ -1023,7 +1026,7 @@ Not necessarily. If you were, you should definitely prefer losing the
 capacity to hear \emph{and getting £1} to losing the capacity to
 walk. In reality, the added £1 probably doesn't make a difference.
 
-\begin{exercise2}
+\begin{exercise}{2}
   Suppose we define `$\sim$' in terms of `$\succ$', as follows: $A\sim
   B \Leftrightarrow (A \not\succ B) \land (B \not\succ
   A)$. Completeness is then logically guaranteed. But other
@@ -1032,7 +1035,7 @@ walk. In reality, the added £1 probably doesn't make a difference.
   have $A \succsim B$, $B \succsim C$, and $C \succsim A$,
   contradicting transitivity. Explain why (assuming that $A \succsim B
   \Leftrightarrow (A \succ B) \lor (A \sim B)$).
-\end{exercise2}
+\end{exercise}
 
 \cmnt{%
   Chang thinks parity is different from incomparability. I don't think so.%
@@ -1069,12 +1072,12 @@ $A$ has greatest expected utility; according to others, you should
 choose $B$. What should you do? A popular ``permissivist'' answer is
 that you are permitted to choose either option.
 
-\begin{exercise2}
+\begin{exercise}{2}
   Explain how the preference of $A$ over $B$ and $D$ over $C$ in
   Ellsberg's paradox might be justified by the permissivist approach,
   without redescribing the outcomes. (What is the expected utility of
   the four options?) 
-\end{exercise2}
+\end{exercise}
 
 But now consider the following scenario. You are offered two bets $A$
 and $B$, one after the other, on a proposition $H$ about which you

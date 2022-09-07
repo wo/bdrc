@@ -36,7 +36,7 @@ epistemology, statistics, decision theory, and other areas, is that
 rational degrees of belief obey the formal rules of the probability
 calculus. For that reason, degrees of belief are also called
 \textbf{subjective probabilities} or even just \textbf{probabilities}.
-But this terminology can gives rise to confusion because the word
+But this terminology can give rise to confusion because the word
 `probability' has other, and more prominent, uses.
 
 Textbooks in science and statistics often define probability as
@@ -179,7 +179,7 @@ model in more detail. Also, by `possible world' I just mean `maximally
 specific proposition'. The identification of propositions with sets of
 possible worlds is not supposed to be an informative reduction.
 
-\begin{exercise2}
+\begin{exercise}{2}
   First a reminder of some terminology from set theory: 
   The \textbf{intersection} of two sets $A$ and $B$ is the set of
   objects that are in both $A$ and $B$. The \textbf{union} of two sets
@@ -198,13 +198,13 @@ possible worlds is not supposed to be an informative reduction.
   \item[(c)] Which logical relationship corresponds to a proposition $A$ being a
     subset of a proposition $B$?
   \end{exlist}
-\end{exercise2}
+\end{exercise}
 
-\begin{exercise2}
+\begin{exercise}{2}
   The objects of probability can't all be construed as possible states
   of the world: it follows from Booleanism that at least one object of
   probability is always \emph{impossible}. Can you explain why?
-\end{exercise2}
+\end{exercise}
   
 
 Let's return to probability theory. I said a probability measure is a
@@ -312,13 +312,13 @@ matter to an agent's subjective probabilities. If an agent's credences
 satisfy the Kolmogorov axioms, then she must give the same credence to
 logically equivalent propositions.
 
-\begin{exercise3}\label{exerc:partition}
+\begin{exercise}{3}\label{exerc:partition}
   Prove from Kolmogorov's axioms that
   $\Cr(A) = \Cr(A\land B) + \Cr(A \land \neg B)$. (Like the proofs
   above, each step of your proof should either be an instance of an
   axiom, or an application of the rules we have already established,
   or it should follow from earlier steps by simple logic and algebra.)
-\end{exercise3}
+\end{exercise}
 
 Next, let's show that axiom (iii) generalizes to three disjuncts:
 
@@ -375,7 +375,7 @@ probability of the individual worlds. Since each world has probability
 \nicefrac{1}{36}, and there are nine relevant worlds, your credence
 that both dice land on a number less then 4 should therefore be
 $9 \cdot \nicefrac{1}{36} = \nicefrac{9}{36} = \nicefrac{1}{4}$.
-\begin{exercise1}
+\begin{exercise}{1}
   What credence should you give to the following propositions, in the
   scenario with the two dice?
   \begin{exlist}
@@ -383,7 +383,7 @@ $9 \cdot \nicefrac{1}{36} = \nicefrac{9}{36} = \nicefrac{1}{4}$.
   \item Exactly one die lands 6.
   \item The sum of the numbers that will come up is equal to 5.
   \end{exlist}
-\end{exercise1}
+\end{exercise}
 
 What if there are infinitely many worlds? Then things become tricky.
 It would be nice if we could say that the probability of a proposition
@@ -406,11 +406,11 @@ this, axiom (iii) -- which is known as the axiom of \textbf{Finite
 In this course, we will try to stay away from troubles arising from
 infinities, so for our purposes the weaker axiom (iii) will be enough.
 
-\begin{exercise3}
+\begin{exercise}{3}
   Prove from Kolmogorov's axioms that if $A$ entails $B$, then
   $\Cr(A)$ cannot be greater than $\Cr(B)$. (You may use the rules we
   have already derived.)% Hint: if $A$ entails $B$, then $A$ is equivalent to $A \land B$.
-\end{exercise3}
+\end{exercise}
 
 
 \section{Conditional credence}\label{sec:conditional}
@@ -537,18 +537,18 @@ are causally independent, then the events are normally also
 independent in the agent's degrees of belief. You may want to ponder
 why that is the case. 
 
-\begin{exercise1}
+\begin{exercise}{1}
   Assume $\Cr(\emph{Snow}) = 0.3$, $\Cr(\emph{Wind}) = 0.6$, and $\Cr(\emph{Snow} \land
   \emph{Wind}) = 0.2$. What is $\Cr(\emph{Snow}/\emph{Wind})$? What is $\Cr(\emph{Wind}/\emph{Snow})$? 
-\end{exercise1}
+\end{exercise}
 
-\begin{exercise2}
+\begin{exercise}{2}
   Using the Ratio Formula and the Equivalence Rule, show that if $A$ is
   (probabilistically) independent of $B$, then $B$ is independent of $A$
   (assuming that $\Cr(A)$ and $\Cr(B)$ are greater than 0).
-\end{exercise2}
+\end{exercise}
 
-\begin{exercise2}
+\begin{exercise}{2}
   A fair die will be tossed, and you give equal credence to all six
   outcomes. Let $A$ be the proposition that the die lands either 1 or
   6. Let $B$ be the proposition that the die lands an odd number (1,3,
@@ -560,7 +560,7 @@ why that is the case.
   \item[(c)] $A$ is independent of $B \land C$.
   \item[(d)] $B$ is independent of $C$.
   \end{exlist}
-\end{exercise2}
+\end{exercise}
 
 \section{Some more rules of probability}
 
@@ -630,26 +630,26 @@ comprise the $B$-worlds. So if we add together $\Cr(A)$ and $\Cr(B)$,
 we have effectively double-counted the $A \land B$ worlds. So we need
 to subtract $\Cr(A \land B)$.
 
-\begin{exercise1}
+\begin{exercise}{1}
   Show that two propositions $A$ and $B$ with positive credence are independent
   if and only if $Cr(A \land B) = Cr(A) \cdot Cr(B)$. (Some authors use this as
   the definition of independence.)
-\end{exercise1}
+\end{exercise}
 
-\begin{exercise2}\label{e:chain-rule}
+\begin{exercise}{2}\label{e:chain-rule}
   Prove from the Ratio Formula that $\Cr(A \land B \land C) = \Cr(A/B
   \land C) \cdot \Cr(B/C) \cdot \Cr(C)$.
   \vspace{-2mm}
-\end{exercise2}
+\end{exercise}
 
-\begin{exercise1}
+\begin{exercise}{1}
   In 1999, a British woman was convicted of the murder of her two
   sons, who she claimed died from Sudden Infant Death Syndrome
   (SIDS). The eminent paediatrician Sir Roy Meadow explained to the
   jury that 1 in 8500 infants die from SIDS and hence the chance of
   SIDS affecting both sons was 1/8500 $\cdot$ 1/8500 = 1 in 73
   million. What is wrong with Sir Meadow's reasoning? 
-\end{exercise1}
+\end{exercise}
 
 To conclude, I'll mention two more rules that play a special role in
 Bayesian approaches to belief. The first goes back to a suggestion by Thomas
@@ -755,12 +755,12 @@ in the trick die hypothesis conditional on seeing a six should be
   Diagram in Morin p.92 helps.
 } %
 
-\begin{exercise3}
+\begin{exercise}{3}
   A stranger tells you that she has two children. You ask if at least one of
   them is a boy. The stranger says yes. How confident should you be that the
   other child is also a boy? (Assume there are only two sexes, and that they are
   equally common and independent among siblings.)
-\end{exercise3}
+\end{exercise}
 
 \cmnt{%
 1/3. 

@@ -1,88 +1,44 @@
 \chapter{Modelling Rational Agents}\label{ch:overview}
 
-% I should briefly mention the rules for matrices: states exclusive
-% and exhaustive, outcomes comprehensive, acts comprehensive and
-% exclusive, states independent of acts. Might mention that missing
-% options is a common practical problem.
-
-% A good student found it odd to call utility and credence functions
-% "functions" because that suggests not just an input-output mapping
-% but an algorithm/a computation. Maybe I should say "measure" or
-% "assignment".
-
-
-% Say in the questions how much I want students to write. Just 'yes'?
-% Also give the numbers? Write an essay?
-
 \section{Overview}
 
-\cmnt{%
-  Dan Ross: ``There is a dense and intricate web of connections associated with
-  ‘rationality’ in the Western cultural tradition, and the word has
-  often been used to normatively marginalize characteristics as normal
-  and important as emotion, femininity and empathy''.
-  
-  ``In this article, ‘economic rationality’ will be used in the
-  technical sense shared within game theory, microeconomics and formal
-  decision theory, as follows. An economically rational player is one
-  who can (i) assess outcomes, in the sense of rank-ordering them with
-  respect to their contributions to her welfare; (ii) calculate paths
-  to outcomes, in the sense of recognizing which sequences of actions
-  are probabilistically associated with which outcomes; and (iii)
-  select actions from sets of alternatives (which we'll describe as
-  ‘choosing’ actions) that yield her most-preferred outcomes, given
-  the actions of the other players. We might summarize the intuition
-  behind all this as follows: an entity is usefully modeled as an
-  economically rational agent to the extent that it has alternatives,
-  and chooses from amongst these in a way that is motivated, at least
-  more often than not, by what seems best for its purposes. (For
-  readers who are antecedently familiar with the work of the
-  philosopher Daniel Dennett, we could equate the idea of an
-  economically rational agent with the kind of entity Dennett
-  characterizes as intentional, and then say that we can usefully
-  predict an economically rational agent's behavior from ‘the
-  intentional stance’.)''
-} %
-
-We are going to study a general model of belief, desire, and rational
-choice. At the heart of this model lies a certain conception of how
-beliefs and desires combine to produce actions.
+We are going to study a general model of belief, desire, and rational choice. At
+the heart of this model lies a certain conception of how beliefs and desires
+combine to produce actions.
 
 Let's start with an example.
 %
 \begin{example}[The Miner Problem]\label{ex:miners}
-  Ten miners are trapped in a shaft and threatened by rising water.
-  You don't know whether the miners are in shaft $A$ or in shaft
-  $B$. You can block the water from entering one shaft, but you can't
-  block both. If you block the correct shaft, all ten will survive.
-  If you block the wrong shaft, all of them will die. If you do
-  nothing, one miner (the shortest of the ten) will die.
+  Ten miners are trapped in a shaft and threatened by rising water. You don't
+  know whether the miners are in shaft $A$ or in shaft $B$. You can block the
+  water from entering one shaft, but you can't block both. If you block the
+  correct shaft, all ten will survive. If you block the wrong shaft, all of them
+  will die. If you do nothing, one miner (the shortest of the ten) will die.
 \end{example}
 
 What should you do?
 
-There's a sense in which the answer depends on the location of the
-miners. If the miners are in shaft $A$, it's best to block shaft $A$;
-if they are in $B$, you should block $B$. The problem is that you need
-to make your choice without knowing where the miners are. You can't
-let your choice be guided by the unknown location of the miners. The
-question on which we will focus is therefore not what you should do
-\emph{in light of all the facts}, but what you should do \emph{in
-  light of your information}. In other words, we want to know what a
-rational agent would do in your state of uncertainty.
+There's a sense in which the answer depends on the location of the miners. If
+the miners are in shaft $A$, it's best to block shaft $A$; if they are in $B$,
+you should block $B$. The problem is that you need to make your choice without
+knowing where the miners are. You can't let your choice be guided by the unknown
+location of the miners. The question on which we will focus is not what you
+should do \emph{in light of all the facts}, but what you should do \emph{in
+  light of your information}. We want to know what a rational agent would do in
+your state of uncertainty.
 
 A similar ambiguity arises for goals or values. Arguably, it is better to let
-one person die than to take a risk of ten people dying. But the matter isn't
-trivial, and many philosophers would disagree. Suppose you are one of these
-philosophers: you think it would be wrong to do nothing and sacrifice the
-shortest miner . \emph{By your values}, it would be better to block either shaft
-$A$ or shaft $B$.
+one person die than to take a high risk of ten people dying. But the matter
+isn't trivial, and many philosophers would disagree. Suppose you are one of
+these philosophers: you think it would be wrong to do block neither shaft and
+sacrifice the shortest miner. \emph{By your values}, it would be better to block
+either shaft $A$ or shaft $B$.
 
-When we ask what an agent should do in a given decision problem, we
-will always mean what they should do in light of whatever they believe
-about their situation and of whatever goals or values they happen to
-have. We will also ask whether those beliefs and goals are themselves
-reasonable. But it is best to treat these as separate questions.
+When we ask what an agent should do in a given decision situation, we will always
+mean what they should do in light of whatever they believe about their situation
+and of whatever goals or values they happen to have. We will also ask whether
+those beliefs and goals are themselves reasonable. But it is best to treat these
+as separate questions.
 
 So we have three questions:
 \begin{enumerate}
@@ -96,48 +52,51 @@ These are big questions. By the end of this course, we will not have
 found complete and definite answers, but we will at least have
 clarified the questions and made some progress towards an answer.
 
-To begin, let me introduce a standard format for thinking about
-decision problems.
-
-\begin{exercise2}
-  In a surprise outbreak of small pox (a deadly infectious disease), a
-  doctor recommends vaccination for an infant, knowing that around one
-  in a million children die from the vaccination. The infant gets the
-  vaccination and dies. Was the doctor's recommendation wrong? Or was
-  it wrong in one sense and right in another? If so, can you explain
-  these senses?
-\end{exercise2}
+\begin{exercise}{2}
+  In a surprise outbreak of small pox (a deadly infectious disease), a doctor
+  recommends vaccination for an infant, knowing that around one in a million
+  children die from the vaccination. The infant gets the vaccination and dies.
+  There's a sense in which the doctor's recommendation was wrong, and a sense in
+  which it was right. Can you explain these senses?
+\end{exercise}
 
 
 \section{Decision matrices}\label{sec:decision-matrices}
 
-In decision theory, decision problems are traditionally decomposed
-into three ingredients, called `acts', `states', and `outcomes'.
+In decision theory, decision problems are traditionally decomposed into three
+ingredients, called `acts', `states', and `outcomes'.
 
-The \textbf{acts} are the options between which the agent has to
-choose. In the Miner Problem, there are three acts: \emph{blocking
-  shaft $A$}, \emph{blocking shaft $B$}, and \emph{doing nothing}.
-(`Possible act' would be a better name: if, say, you decide to do
-nothing, then blocking shaft $A$ is not an actual act; it's not
-something you do, but it's something you could have done.)
+The \textbf{acts} are the options between which the agent has to choose. In the
+Miner Problem, there are three acts: block shaft $A$, block shaft $B$, and
+block neither shaft. (`Possible act' would be a better name: if, say, you
+decide to block shaft $B$, then blocking shaft $A$ is not an actual act; it's
+not something you do, but it's something you could have done.)
 
-The \textbf{outcomes} are whatever might come about as a result of the
-agent's choice. In the Miner Problem, there are three relevant
-outcomes: all miners survive, all miners die, and all but one
-survive. (Again, only one of these will actually come about, the
-others are merely possible outcomes.)
+The \textbf{outcomes} are whatever might come about as a result of the agent's
+choice. In the Miner Problem, there are three relevant outcomes: all miners
+survive, all miners die, and all but one survive. (Again, only one of these will
+actually come about; the others are merely possible outcomes.)
 
-Each of the three acts leads to one of the outcomes. But you don't
-know how the outcomes are associated with the acts. For example, you
-don't know whether blocking shaft $A$ would lead to all miners
+Each of the acts leads to one of the outcomes, but the decision-maker often
+doesn't know how the outcomes are associated with the acts. In the Miner
+Problem, you don't know whether blocking shaft $A$ would lead to all miners
 surviving or to all miners dying. It depends on where the miners are.
 
-This dependency between acts and outcomes is captured by the states. A
-\textbf{state} is a possible circumstance on which the result of the
-agent's choice depends. In the Miner Problem, there are two relevant
-states: that the miners are in shaft $A$, and that the miners are in
-shaft $B$. (In real decision problems, there are often many more
-states, just as there are many more acts.)
+The dependency between acts and outcomes is captured by the ``states''.
+Informally, a \textbf{state} specifies the external circumstances that determine
+which choice would lead to which outcome. In the Miner Problem, there are two
+relevant states: that the miners are in shaft $A$, and that they are in shaft
+$B$. (In real decision problems, there are often many more states, just as there
+are many more acts.)
+
+% I should briefly mention the rules for matrices: states exclusive
+% and exhaustive, outcomes comprehensive, acts comprehensive and
+% exclusive, states independent of acts. Might mention that missing
+% options is a common practical problem.
+
+%
+% - in Kap.1 sagen, dass Handlungen und Zustaende nicht unabhaengig sein muessen, wenn man MEU anders berechnet, wie wir spaeter sehen.
+%
 
 We can now summarize the Miner Problem in a table, called a
 \textbf{decision matrix}:
@@ -229,10 +188,10 @@ your goal is to minimize the combined prison term for you and your
 partner, then remaining silent is better no matter what your partner
 does.
 
-\begin{exercise1}\label{e:rock}
+\begin{exercise}{1}\label{e:rock}
   Draw the decision matrix for the game \emph{Rock, Paper, Scissors},
   assuming all you care about is whether you win.
-\end{exercise1}
+\end{exercise}
 
 \cmnt{%
 \begin{exercise}
@@ -369,10 +328,10 @@ personal wealth or welfare. That's not how we will use the term. Real
 people don't just care about themselves, and there is nothing wrong
 with that.
 
-\begin{exercise1}
+\begin{exercise}{1}
   Add utilities and (reasonable) credences to your decision matrix for
   \emph{Rock, Paper, Scissors}. 
-\end{exercise1}
+\end{exercise}
 
 \section{Solving decision problems}\label{sec:solving}
 
@@ -525,26 +484,26 @@ option with greatest expected utility.
   and goals on the one hand with behaviour on the other.
 } %
 
-\begin{exercise1}
+\begin{exercise}{1}
   Imagine you found yourself in the Prisoner's Dilemma. Assign credences to the
   states, and compute the expected utility of the two acts.
-\end{exercise1}
+\end{exercise}
 
-\begin{exercise1}
+\begin{exercise}{1}
   Put (sensible) utilities and credences into the decision matrix for the Miner
   Problem, and compute the expected utility of the three acts.
-\end{exercise1}
+\end{exercise}
 
-\begin{exercise2}
+\begin{exercise}{2}
   Explain why the following decision rule is not generally reasonable:
   \emph{Identify the most likely state; then choose an act which
     maximizes utility in that state.} 
-\end{exercise2}
+\end{exercise}
 
-\begin{exercise3}
+\begin{exercise}{3}
   Show that if there is a dominant act, then it maximizes
   expected utility.
-\end{exercise3}
+\end{exercise}
 
 \cmnt{%
   \begin{exercise}
@@ -554,7 +513,7 @@ option with greatest expected utility.
   \end{exercise}
 } %
 
-\begin{exercise3}\label{e:exam}
+\begin{exercise}{3}\label{e:exam}
   When applying dominance reasoning or the MEU Principle, it is
   important that the decision matrix is set up correctly. 
 
@@ -577,9 +536,9 @@ option with greatest expected utility.
 
   Can you draw an adequate decision matrix for the student's decision
   problem? 
-\end{exercise3}
+\end{exercise}
 
-\begin{exercise2}[Pascal's Wager]\label{e:pascal}
+\begin{exercise}[Pascal's Wager]{2}\label{e:pascal}
   The first recorded use of the MEU Principle outside gambling dates
   back to 1653, when Blaise Pascal presented the following argument
   for leading a pious life. (I paraphrase.)
@@ -593,12 +552,12 @@ option with greatest expected utility.
   Draw the matrix for the decision problem as Pascal conceives it and
   verify that a pious life has greater expected utility than an
   impious life.
-\end{exercise2}
+\end{exercise}
 
-\begin{exercise2}
+\begin{exercise}{2}
   Has Pascal identified the acts, states, and outcomes correctly? If
   not, what did he get wrong?
-\end{exercise2}
+\end{exercise}
 
 \cmnt{%
 \begin{exercise}

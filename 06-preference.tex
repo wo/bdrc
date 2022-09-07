@@ -2,8 +2,50 @@
 
 \cmnt{%
 
+  ``Women loved this impetual Irish adventurer who would rather fight than eat
+  and vice-versa.'' (Perelman)
+  
   Introduce ``cardinal''.
 
+  I use ``prospect'' for Savage-type conditional events. McClennen uses the word
+  for a distribution of objective probabilities over outcomes. Am I misusing the
+  term?
+  
+  On the connection between preference and choice dispositions: One problem here
+  arises from indifference. An agent might choose A over B even though she is
+  indifferent. Savage 1972:17 points out that this casts doubt on the idea that
+  one could define A > B as 'if the agent were required to choose between A and
+  B, they would choose A'. One might respond that if an agent is indifferent,
+  then it is not the case that /would/ choose A, nor that they would choose B,
+  assuming a Lewisian analysis of counterfactuals -- see \cite[20,
+  n.5]{ahmed2014evidence}. However, (1) other facts about the world might still
+  settle what the agent would do (after all, indifference doesn't imply
+  indeterminism), (2) assuming strong centering, the problem still arises for
+  pairs of options between which the agent actually made a choice.
+
+  Also, we can't assume that the states and the outcomes are somehow given. We
+  might say that the state partition should be any partition which the agent
+  believes to be (causally or evidentially) independent of their choice, but
+  then we are already assuming information about the agent's beliefs (Ahmed
+  p.33f.). Alternatively, we might say that the states should always be
+  construed as Lewisian dependency hypotheses (say), but this makes most
+  functions from states to acts unintelligible. (compare Gilboa 2009:114ff,
+  Joyce 1999:118f., cited in Ahmed 34n16.)
+
+  I might streamline/fix up this chapter by looking at Ahmed's ch.1.
+  Specifically:
+
+  - Ahmed says he'll write f > g for 'the agent prefers f to g', $f \geq g$ for
+  'the agent does not prefer g to f', and '$f \sim g$ for 'the agent prefers
+  neither to the other'.
+
+  - Ahmed lists the axioms in a form that is closer to that of Kreps, but
+  provably equivalent to Savage's. He gives a nice motivation for some of them
+  (p.20f.).
+
+  - He notes that the inclusion of constant acts in the domain of preference
+  effectively extends preferences from acts to outcomes.
+  
 }%
 
 \section{The ordinalist challenge}
@@ -270,14 +312,14 @@ By contrast, if utility has an interval scale, then different measures
 of utility will never disagree on the ranking of acts in a decision
 problem. A ratio scale is not required. 
 
-\begin{exercise1}
+\begin{exercise}{1}
   In the Mushroom Problem as described by the matrix on page
   \pageref{mushroom-matrix} (section \ref{mushroom-matrix}), not
   eating the mushroom has greater expected utility than eating the
   mushroom. Describe a different assignment of utilities to the four
   outcomes which preserves their ordering but gives eating the mushroom
   greater expected utility than not eating.
-\end{exercise1}
+\end{exercise}
 
 \cmnt{%
   Exercise: prove that if $U$ is a positive linear transform of $U'$,
@@ -290,7 +332,7 @@ problem. A ratio scale is not required.
   in $U'$.%
 } %
 
-\begin{exercise2}
+\begin{exercise}{2}
   Suppose two utility functions $U$ and $U'$ differ merely by their
   choice of unit and zero. It follows that there are numbers $x>0$ and
   $y$ such that, for any $A$, $U(A) = x\cdot U'(A) + y$. \cmnt{%
@@ -320,7 +362,7 @@ problem. A ratio scale is not required.
     \]
     Which is to say that $EU'(A) > EU'(B)$. 
   } %
-\end{exercise2}
+\end{exercise}
   
 So if we want to rescue the MEU Principle from ordinalist skepticism,
 we don't need to explain what makes it the case that your utility for
@@ -394,11 +436,11 @@ $a$ and $b$ such that $b \succ a$ and set $U(a) = 0$ and $U(b) = 1$.
 This corresponds to Celsius choosing zero as the temperature at which
 water freezes and 100 as the temperature at which water boils.
 
-\begin{exercise2}
+\begin{exercise}{2}
   If the agent is indifferent between all rewards, then our procedure
   stalls at this step. Nonetheless, we can easily find a utility
   function for such an agent. What does it look like? 
-\end{exercise2}
+\end{exercise}
 
 Having fixed the utility of two rewards $a$ and $b$, here is how we
 can determine the utility of any other reward $c$. We distinguish
@@ -424,17 +466,17 @@ Principle, the expected utility of the gamble is%
 the agent obeys the MEU Principle, we can infer that the agent's utility for $c$
 is \nicefrac{1}{2}.
 
-\begin{exercise1}
+\begin{exercise}{1}
   Suppose an agent's utility is 0 for $a$, 1 for $b$, and
   \nicefrac{1}{2} for $c$. Draw a decision matrix representing a
   choice between $c$ and $L$, and verify that both options have
   expected utility \nicefrac{1}{2}.
-\end{exercise1}
+\end{exercise}
 
-\begin{exercise2}
+\begin{exercise}{2}
   Why do we need to assume that the agent obeys the Probability
   Coordination Principle?
-\end{exercise2}
+\end{exercise}
 
 If the agent isn't indifferent between $L$ and $c$, we try other
 lotteries, until we find one for which the agent is indifferent
@@ -472,10 +514,10 @@ $U(c) = \nicefrac{1}{x}$.
   = 1/(1-x)$.%
 } %
 
-\begin{exercise2}
+\begin{exercise}{2}
   Can you complete the argument for the case where the agent prefers
   both $a$ and $b$ to $c$?
-\end{exercise2}
+\end{exercise}
 
 In this manner, we can determine the agent's utility for all rewards from her
 preferences between rewards and lotteries. And so we can answer the ordinalist
@@ -650,7 +692,7 @@ argument could be spelled out as follows.
   have a closer look at the axioms.
 } %
 
-\begin{exercise1}
+\begin{exercise}{1}
   (An example due to John Broome.) Maurice would choose to go to Rome
   if he were offered a choice between Rome and going to the mountains,
   because the mountains frighten him. Offered a choice between staying
@@ -659,7 +701,7 @@ argument could be spelled out as follows.
   mountaineering and staying at home, he would choose the mountains
   because it would be cowardly, he believes, to stay at home. Which of
   the axioms does Maurice appear to violate?
-\end{exercise1}
+\end{exercise}
 
 
 \section{Utility and credence from preference}
@@ -826,11 +868,11 @@ credences, you violate the axioms.
 
 % this goes by too fast
 
-\begin{exercise2}
+\begin{exercise}{2}
   Can you spell out the argument for probabilism I just outlined in
   more detail, in parallel to the argument for the MEU Principle I
   spelled out at the end of section \ref{sec:vnm}?
-\end{exercise2}
+\end{exercise}
 
 
 \cmnt{%
@@ -871,13 +913,13 @@ can't just look at the agent's actual choice behaviour, since most
 agents are not confronted with all the choices from which von Neumann
 or Savage would derive their utility function.
 
-\begin{exercise2}
+\begin{exercise}{2}
   Suppose we define `$A \sim B$' as `the agent has faced a choice between $A$
   and $B$ and expressed indifference', and `$A \succ B$' as `the agent has faced
   a choice between $A$ and $B$ and expressed a preference for $A$. Which of the
   von Neumann and Morgenstern axioms then become highly implausible (no matter
   what exactly we mean by ``expressing'' indifference or preference)?
-\end{exercise2}
+\end{exercise}
 
 But now one of the problems for the betting interpretation, from
 section \ref{sec:problem-betting}, returns with a vengeance. If an
@@ -933,7 +975,7 @@ their options.
   Also, what if you're not aware of a certain option?%
 } %
 
-Moreover, if an agent choose $A$ over an alternative $B$, we can't infer that
+What's more, if an agent chooses $A$ over an alternative $B$, we can't infer that
 she genuinely prefers $A$. Perhaps she is indifferent and chooses $A$ merely
 because she has to make a choice. Arguably, choice dispositions can't tell apart
 $A \succ B$ and $A \sim B$.

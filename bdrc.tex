@@ -1,4 +1,4 @@
-\documentclass{../wobook2017}
+\documentclass{bdrc}
 
 \definecolor{commentcol}{rgb}{0.0, 0.2, 0.1}
 %\newcommand{\cmnt}[1]{{\small\color{commentcol}#1}}
@@ -13,158 +13,23 @@
 \newcommand{\Cr}{\text{Cr}}
 \newcommand{\Cro}{\text{Cr$_{\text{old}}$}}
 \newcommand{\Crn}{\text{Cr$_{\text{new}}$}}
-
 \newcommand{\m}{\text{m}}
 
-% custom list format in exercises:
-\usepackage[shortlabels]{enumitem} % \begin{enumerate}[(a)]
-\newenvironment{exlist}{\vspace{-2mm}\begin{enumerate}[(a)]\itemsep-1.5mm}{\end{enumerate}\vspace{-5mm}}
+\usepackage[type={CC}, modifier={by-nc-sa}, version={4.0}, imageposition=left, imagewidth=20mm, imagedistance=3mm]{doclicense}
 
 \begin{document}
 
-\begingroup
-\thispagestyle{empty}
-
-\begin{center}
-
-%\renewcommand{\bfdefault}{sb}%
-%\fontfamily{put}\bfseries
-
-{\huge Belief, Desire, and Rational Choice\par}
-
-\vspace{10mm}
-
-{\Large Wolfgang Schwarz}
-
-\vspace{10mm}
-
-{\normalsize \textit{\today}}
-
-%\renewcommand{\bfdefault}{bx}%
-\end{center}
-
-\vfill
-\endgroup
-{
-\small
-
-\noindent \copyright\ \the\year\ Wolfgang Schwarz
-
-\noindent \textsc{www.umsu.de/bdrc/}
-
-\noindent Licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
-
-% I need to ask more questions like the backwards induction question,
-% which students like because it tells them what to write.
-
-% Nimtz:
-%
-% - in Kap.1 sagen, dass Handlungen und Zustaende nicht unabhaengig sein muessen, wenn man MEU anders berechnet, wie wir spaeter sehen.
-%
-% - Alltagsnaehere Beispiele? In anderen Zug umsteigen? usw.
-
-}
-
-%\pagestyle{empty} % No headers
-
-\tableofcontents 
-
-%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
-
-%\pagestyle{fancy} % Print headers again
-
-\cmnt{%
-When your teacher says something that you don't understand, don't be
-shy about asking; that's why you're in class! If you've been listening
-but not understanding, then your question is not a "stupid question."
-Moreover, you probably aren't alone in your lack of understanding --
-there are probably a dozen other students in your classroom who are
-confused about precisely the same point, and are even more shy and
-inarticulate than you. Think of yourself as their spokesperson; you'll
-be doing them all a favor if you ask your question. You'll also be
-doing your teacher a favor -- your teacher doesn't always know which
-points have been explained clearly enough and which points have not;
-your questions provide the feedback that your teacher needs.
-
-In any subject, if you want to do good work, you have to work
-carefully, and then you have to check your work. In English, this is
-called "proofreading"; in computer science, this is called
-"debugging."
-
----
-	
-``I've found that the best way to learn something is to play with that
-thing. Doesn't matter if it's an essay, a sentence, a formula, a
-function, an algorithm, or whatever. The most essential thing is to
-play with it. Turn it around in your head, try to apply it to
-different circumstances - even ones where it would seem nonsensical''
-
-Include review exercises that simply ask to explain a concept again etc.
-
-Can I make this exercise-based, like the MacQuarie MUMS notes?
-
----
-
-
-Don't tell students to learn things because they will be needed later
-on. Give them a problem, let them discover that they need more
-technique, then introduce the topic. Always make them squirm a bit
-before introducing techniques, so that they appreciate its use.
-
-It's okay to jump around a bit, using as much probability theory as
-required for one task, then move on, and later return to learn more
-for another task, etc. Make sure you often zoom out to the big
-picture.
-
-Go on tangents. Don't be afraid to mention things that seem way over
-their head. E.g. infinitesimals and surreal numbers. Be playful by
-asking questions: does conditionalisation have an inverse? what if
-there are infinitely many possibilities? Talk about history.
-
-so then i started using a worksheet, like with some bits of the text
-from the required reading on it, and some discussion questions
-starting with comprehension and going into philosophical questions,
-and then after the reading stuff on the previous week's lectures in
-general. that worked a lot better because it meant that the small
-groups were able to work independently by just working through the
-sheet, and i could go around and join each group one by one and listen
-in or help / redirect if necessary. so that was good, a lot less
-effort for me and probably easier for them. next week i think i will
-try it with the last ten or fifteen minutes with a whole-class
-discussion maybe just having the groups report back to each other?
-
-xxx exams are "tests" not exames, this is 100 percent coursework
-
-xxx practicing and recalling are the best tools for learning, much
-better than re-reading etc. Retrieval is key to learning.
-
-
-
-  Should make it in 3 iterations of depth. In the 3rd, add a section
-  on modeling in philosophy, attitude reports, and the problem of
-  logical omniscience. (Point out that if we follow ordinary AAs, we
-  don't get a clear picture of rational attitudes because AAs often
-  omit the MOPs which are crucial to our rational response to evidence
-  and to consistency: Pierre has inconsistent ordinary-language
-  beliefs, but there's a clear underlying consistency.)
-  
-31. You have a collection of tasks to perform, each of which has a certain probability of failure. If you ever fail on one of the tasks, then you have to start again at all the tasks. (An example: you want to make a Youtube video in one take in which you successfully perform five tricks of varying difficulty.) In what order should you do the tasks if you want to minimize the expected time it will take to eventually succeed?
-
-For more on this question, including an entertaining Youtube video, see this comment of Julia Wolf on my second blog post. She got the question from a Google Buzz post of Terence Tao.
-
-
-} %
-
-\input{01-overview}
-\input{02-probability}
-\input{03-probabilism}
-\input{04-furtherconstraints}
-\input{05-utility}
-\input{06-preference}
-\input{07-separability}
-\input{08-risk}
-\input{09-cdt}
-\input{10-gametheory}
-\input{11-bounded}
+\include{title}
+\include{01-overview}
+\include{02-probability}
+% \input{03-probabilism}
+% \input{04-furtherconstraints}
+% \input{05-utility}
+% \input{06-preference}
+% \input{07-separability}
+% \input{08-risk}
+% \input{09-cdt}
+% \input{10-gametheory}
+% \input{11-bounded}
 
 \end{document}
