@@ -1,0 +1,4 @@
+#+title: Belief, Desire, and Rational Choice
+
+These are lecture notes for a course on decision theory, with detours into Bayesian epistemology and Bayesian value theory.
+
