@@ -20,7 +20,7 @@
 % \usepackage{amssymb}
 
 % ============= additional packages =============
-
+% 
 \usepackage{enumerate} % for enumerate with roman and alphabetical labels:
 \usepackage{fancyvrb,paralist}
 \usepackage{multirow,rotating}
@@ -28,7 +28,9 @@
 \usepackage{mdwlist}
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage{graphicx} % for including pictures
+\usepackage[table,xcdraw]{xcolor}
 \usepackage{tikz}
+\usepackage{scalerel} % \scaleto for tiny letters
 
 % ============= fonts ==============
 % 
@@ -98,12 +100,6 @@
 % }
 % \usepackage[grey,avantgarde]{quotchap}% For a nice grey number at each new chapter, also allows for chapter quotes
 
-% ============= custom symbols =============
-
-\newcommand{\celsius}{\ensuremath{^\circ\mkern-1mu \mathrm{C}}\xspace}
-\newcommand{\fahrenheit}{\ensuremath{^\circ\mkern-1mu \mathrm{F}}\xspace}
-\renewcommand{\t}[1]{\ensuremath{\langle #1 \makebox[.2ex]{}\rangle}}
-
 % ============= text formatting tweaks =============
 
 \usepackage{url,ellipsis}
@@ -122,10 +118,90 @@
 
 % ============= tables =============
 
+% TODO: I should use nicetabular from the nicematrix package to make the
+% decision tables nicer (e.g. rules that show up properly in pdf readers), but
+% that requires a more recent latex installation.
+
 \usepackage{booktabs}
-\renewcommand{\arraystretch}{1.1} % more space between table rows
+% \renewcommand{\arraystretch}{1.1} % more space between table rows
 \usepackage{tabularx}
+% \usepackage{colortbl}
 \newcommand{\gr}{\cellcolor{gray!20}}
+% \usepackage{nicematrix}
+% \usetikzlibrary{matrix,positioning,fit,backgrounds,calc}
+\usepackage{environ}
+% \usepackage{xstring}
+% \usepackage{etoolbox}
+
+\NewEnviron{dmatrix}[1]{%
+  \medskip
+  \begin{center}
+  % \setlength{\arrayrulewidth}{1pt} 
+    \arrayrulecolor{lightgray}
+    \def\arraystretch{1.2} % horizontal padding
+    \begin{tabular}{|>{\columncolor{gray!20}}#1|}
+      % \arrayrulecolor{lightgray}
+      \rowcolor{gray!20}
+      \BODY
+    \end{tabular}
+  \end{center}
+  \medskip
+}
+
+\NewEnviron{inlinedmatrix}[1]{%
+    \arrayrulecolor{lightgray}
+    \def\arraystretch{1.1} % horizontal padding
+    \begin{tabular}[t]{|>{\columncolor{gray!20}}#1|}
+      \rowcolor{gray!20}
+      \BODY
+    \end{tabular}
+}
+
+% \makeatletter
+% \tikzset{savecols/.style={execute at end matrix={
+%     \xdef#1{\the\pgf@matrix@numberofcolumns}}},
+% saverows/.style={execute at end matrix={
+%     \xdef#1{\the\pgfmatrixcurrentrow}}}}
+% \makeatother
+% \tikzset{ 
+%     dtable/.style={
+%         matrix of nodes,
+%         % row sep=-\pgflinewidth,
+%         % column sep=-\pgflinewidth,
+%         % nodes in empty cells,
+%         nodes={draw=gray, align=center, minimum height=1.3em, inner sep=0.5mm, anchor=center},
+%         inner sep=0pt, draw,
+%         text depth=0.5ex,
+%         text height=2ex,
+%         % every node/.append style={
+%         %   draw=lightgray,
+%         % },
+%         column 1/.style={
+%             nodes={fill=gray!10,}
+%         },
+%         row 1/.style={
+%             nodes={fill=gray!10}
+%         }
+%     }
+% }
+% \NewEnviron{dmatrix}{%
+%   \begin{center}
+%   \begin{tikzpicture}
+%    \matrix (m) [dtable,saverows=\rows,savecols=\cols]
+%    {
+%      \BODY
+%    };
+%    % \foreach \col in {1,...,\cols} {
+%    %   \draw (m-1-\col.north west) -- (m-\rows-\col.south west);
+%    %   \ifnum\col=\cols
+%    %      \draw (m-1-\col.north east) -- (m-\rows-\col.south east);
+%    %   \fi
+%    % }
+%  \end{tikzpicture}
+%   \end{center}
+% }
+
+% \AtBeginEnvironment{dmatrix}{\catcode`\&\active}
 
 % ============= page headers =============
 
@@ -141,7 +217,6 @@
 
 % ============= colors and links =============
 
-\usepackage{xcolor,colortbl,graphicx} 
 \definecolor{linkcol}{rgb}{0,0.1,0.4}
 \definecolor{citecol}{rgb}{0,0.2,0.2}
 \usepackage[colorlinks=true,
@@ -178,8 +253,8 @@
   beforeafter skip=\baselineskip,
 }
 
-% Definition environment with counter:
-\NewTColorBox[auto counter,number within=chapter]{example}{o}{
+% Example (optional title and "label=ex:foo"):
+\NewTColorBox[auto counter,number within=chapter]{example}{d() o}{
   enhanced,
   breakable,
   enhanced jigsaw,
@@ -196,6 +271,7 @@
   fontupper=\normalfont,
   title=Example~\thetcbcounter,
   IfValueTF={#1}{after title={\;(#1)}}{},
+  IfValueTF={#2}{#2}{},
 }
                                              
 % Essay question:                                             
@@ -210,11 +286,11 @@
   boxrule=0.3mm,
   attach boxed title to top left={yshift=-1mm, xshift=1mm},
   beforeafter skip=.9\baselineskip,
-  title=Essay Quesion~\thetcbcounter,
+  title=Essay Question~\thetcbcounter,
 }
 
 % Exercises:                                             
-\NewTColorBox[auto counter,number within=chapter]{exercise}{ o m }{
+\NewTColorBox[auto counter,number within=chapter]{exercise}{ o m o }{
   % e.g. \begin{exercise}{3} or \begin{exercise}[The Prisoners' Dilemma]{3}
   breakable,
   enhanced jigsaw,
@@ -228,6 +304,7 @@
   beforeafter skip=.9\baselineskip,
   title=Exercise~\thetcbcounter,
   IfValueTF={#1}{after title={\;(#1) \foreach \n in {1,...,#2}{$\dagger$}\!}}{after title=\;{\foreach \n in {1,...,#2}{$\dagger$}\!}},
+  IfValueTF={#3}{#3}{},
 }
 
 % important box with title (no number):
@@ -249,8 +326,29 @@
   title=#1,
 }
 
+% Sources and further reading:
+\newtcolorbox{sources}{
+  enhanced,
+  breakable,
+  enhanced jigsaw,
+  % parbox=false,
+  before upper=\setlength{\parskip}{0.5em},
+  colback=terra!1!white,
+  colframe=terra!10!white,
+  boxrule=0.3mm,
+  beforeafter skip=\baselineskip,
+  titlerule=-0.5mm,
+  toptitle=1.3mm,
+  fonttitle=\upshape\bfseries\sffamily,
+  fontupper=\small,
+  colbacktitle=terra!2!white,
+  coltitle=terra!30!black,
+  % fontupper=\normalfont,
+  title=Sources and Further Reading,
+}
+
 % custom list format in exercises:
-\usepackage[shortlabels]{enumitem} % \begin{enumerate}[(a)]
+\usepackage[shortlabels]{enumitem} % \begin{enumerate}[(a)] and \itemsep
 \newenvironment{exlist}{\vspace{-2mm}\begin{enumerate}[(a)]\itemsep-1.5mm}{\end{enumerate}\vspace{-5mm}}
 \newcommand{\beginwithlist}{\vspace{1mm}}
 

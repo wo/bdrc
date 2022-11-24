@@ -14,6 +14,13 @@
 \newcommand{\Cro}{\text{Cr$_{\text{old}}$}}
 \newcommand{\Crn}{\text{Cr$_{\text{new}}$}}
 \newcommand{\m}{\text{m}}
+\newcommand{\EU}{\text{EU}}
+\renewcommand{\U}{\text{U}}
+\newcommand{\celsius}{\ensuremath{^\circ\mkern-1mu \mathrm{C}}\xspace}
+\newcommand{\fahrenheit}{\ensuremath{^\circ\mkern-1mu \mathrm{F}}\xspace}
+\renewcommand{\t}[1]{\ensuremath{\langle #1 \makebox[.2ex]{}\rangle}}
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
 
 \usepackage[type={CC}, modifier={by-nc-sa}, version={4.0}, imageposition=left, imagewidth=20mm, imagedistance=3mm]{doclicense}
 
@@ -22,14 +29,14 @@
 \include{title}
 \include{01-overview}
 \include{02-probability}
-% \input{03-probabilism}
-% \input{04-furtherconstraints}
-% \input{05-utility}
-% \input{06-preference}
-% \input{07-separability}
-% \input{08-risk}
-% \input{09-cdt}
-% \input{10-gametheory}
-% \input{11-bounded}
+\include{03-probabilism}
+\include{04-furtherconstraints}
+\include{05-utility}
+\include{06-preference}
+\include{07-separability}
+\include{08-risk}
+\include{09-cdt}
+\include{10-gametheory}
+\include{11-bounded}
 
 \end{document}

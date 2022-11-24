@@ -1,128 +1,89 @@
 \chapter{Further Constraints on Rational Belief}\label{ch:constraints}
 
-% Exercises too hard/tedious for weak students
-
-\cmnt{%
-
-  I could add a section on confirmation and uniqueness. The two go
-  nicely together, since the problem of subjectivity for SBCT
-  effectively assumes uniqueness; and those who emphasize subjectivity
-  by pointing at values etc in science effectively argue against
-  uniqueness.
-
-} %
-
-\cmnt{%
-
-  Students found this section too hard, and the anthropic section
-  confusing. Maybe replace that section with a slightly more in-dept
-  discussion of induction, separated from indifference. (One very good
-  student didn't understand the problem that indifference creates for
-  induction. Weaker students didn't understand the bird example at
-  all.)
-
-  In the induction section, I might explain convergence: if we begin
-  with three hypotheses about the color distribution of ravens, and
-  observe a few ravens, we'll move towards the same distribution. But
-  not if one of the initial hypotheses is ``first 100 black, next
-  green''.
-
-} %
-
 \section{Belief and perception}
 
-We have looked at two assumptions about rational belief. The first,
-the MEU Principle, relates an agent's beliefs and desires to her
-choices. The second, probabilism, imposes an internal, structural
-constraint on rational beliefs: that they satisfy the axioms of
-probability. But there is more.
+We have looked at two assumptions about rational belief. The first, the MEU
+Principle, relates an agent's beliefs to her desires and choices. The second,
+probabilism, imposes an internal, structural constraint on rational beliefs:
+that they conform to the rules of probability. There is more.
 
-\begin{example}[The Litmus Test]\label{ex:litmus}
+\begin{example}(The Litmus Test)[label=ex:litmus]
   You are unsure whether a certain liquid is acidic. Remembering that
   acid turns litmus paper red, you dip a piece of litmus paper into
   the liquid. The paper turns red.
 \end{example}
+%
+\noindent%
+Seeing the red paper should increase your confidence that the liquid is
+acidic. But as far as probabilism and the MEU Principle are concerned, you could
+just as well remain unsure whether the liquid is acidic or even become certain
+that it is \emph{not} acidic, as long as your new credences are probabilistic
+and your choices maximize expected utility (by the light of your beliefs and
+desires).
 
-When you see the paper turn red, your credence in the hypothesis that
-the liquid is acidic should increase. But as far as probabilism and
-the MEU Principle are concerned, you could just as well remain unsure
-whether the liquid is acidic or even become certain that it is
-\emph{not} acidic, as long as your new credences are probabilistic and
-your choices maximize expected utility (by the light of your beliefs
-and desires).
+So there are further norms on rational belief. In particular, there are norms on
+how beliefs change in response to perceptual experience. Like the MEU Principle,
+and unlike probabilism, these norms state a connection between beliefs and
+something other than belief -- here, perceptual experience. Loosely speaking,
+the MEU Principle describes the causal ``output'' of beliefs: the effects an
+agent's beliefs have on her behaviour. Now we turn to the ``input'' side. We
+want to know what sorts of experiences might cause a rational agent to have
+such-and-such beliefs.
 
-So there are further norms on rational belief. In particular, there
-are rules for how beliefs should change in response to perceptual
-experience. Like the MEU Principle (and unlike probabilism), these
-rules state a connection between beliefs and something other than
-belief -- perceptual experience. Informally speaking, the MEU Principle
-describes the causal ``output'' of beliefs: the effects an agent's
-beliefs (and desires) have on her behaviour. Now we turn to the
-``input'' side. We want to know how a rational agent gets to have
-such-and-such beliefs in the first place.
+To state a connection between perceptual experience and belief, we need a way to
+identify  kinds of perceptual experience. How do we do that?
 
-To state a connection between perceptual experience and belief, we
-need a way to identify different kinds of perceptual experience. How
-do we do that? We could identify perceptual experiences by their
-phenomenology, by ``what it's like'' to have the experience. But there
-is no canonical standard for expressing phenomenal qualities. Besides,
-we may want our norm to handle unconscious perceptions and the
-perceptions of artificial agents for whom it is doubtful whether they
-have any phenomenal experience.
+We could try to identify the experiences by their phenomenology, by
+``what it's like'' to have the experience. But there is no canonical standard
+for expressing phenomenal qualities. Besides, we may want our norm to handle
+unconscious perceptions and the perceptions of artificial agents for whom it is
+doubtful whether they have any phenomenal experience.
 
-An alternative to identifying perceptions by their phenomenology is to
-identify them by their physiology, by the neurochemical or electrical
-events that take place in the agent's sense organs. But that would go
-against the spirit of our general approach, which is to single out
-high-level patterns in rational cognition that are neutral on
-details of biological or electrical implementation.
+We could alternatively identify perceptions by their physiology, by the
+neurochemical or electrical events that take place in the agent's sense organs.
+But that would go against the spirit of our general approach, which is to single
+out high-level patterns and remain neutral on details of biological or
+electrical implementation.
 
-The usual strategy is therefore to identify perceptions neither by
-their phenomenology nor by their physiology, but by their effect on
-rational belief. The idea is that perceptual experiences provide an
-agent with direct information about certain aspects of the world, so
-we can distinguish perceptual experiences by the information they
-provide. In the Litmus Test example, your visual experience tells you
-that the litmus paper has turned red. It does not directly tell you
-that the liquid is acidic; this is something you infer from the
-experience with the help of your background beliefs.
+The usual strategy is to identify perceptual experiences by the information they
+provide to the agent's belief system. In the Litmus Test, for example, we might
+assume that the information you receive from your visual system is that the
+paper has turned red. You don't directly receive the information that the liquid
+is acidic. This is something you infer from the experience with the help of your
+background beliefs.
 
-In the simplest and best known version of this model, we assume that
-the information conveyed to an agent by a given experience is captured
-by some proposition of which the agent becomes certain. The model can
-be extended to allow for cases in which the perceptual information is
+In the simplest and best known version of this model, we assume that the
+information conveyed to an agent by their perceptual experiences can always be
+captured by a single proposition of which the agent becomes certain. The model
+can be extended to allow for cases in which the perceptual information is
 uncertain and equivocal, but we will stick to the simplest version.
-
-
 
 \section{Conditionalization}\label{sec:conditionalization}
 
-So assume through perceptual experience an agent learns some
-proposition $E$ (for ``evidence''), of which she rationally becomes
-certain. How should the rest of her beliefs change to take into
-account the new information?
+Suppose a perceptual experience provides an agent with some information $E$ (for
+``evidence''). How should the rest of the agent's beliefs change to take into account
+the new information?
 
-Return to the Litmus Test. Let $\Cro$ be your credence function before
-you dipped the paper into the liquid, and $\Crn$ your credence
-function after seeing the paper turn red. If you are fairly confident
-that red litmus paper indicates acidity, you will also be confident,
-before dipping the paper, that the liquid is acidic \emph{on the
-  supposition that} the paper will turn red. So your initial degrees
-of belief might have been as follows.
+Return to the Litmus Test. Let $\Cro$ be your credence function before you
+dipped the paper into the liquid, and $\Crn$ your credence function when you see
+the paper turn red. If you are fairly confident that red litmus paper indicates
+acidity, you will also be confident, before dipping the paper, that your liquid
+is acidic \emph{on the supposition that} the paper will turn red. Your initial
+degrees of belief might have been as follows.
 
 \begin{quote}
 $\Cro(\emph{Acid}) = \nicefrac{1}{2}$.\newline
-$\Cro(\emph{Acid}/\emph{Red}) = \nicefrac{9}{10}$.
+$\Cro(\emph{Acid}\;/\;\emph{Red}) = \nicefrac{9}{10}$.
 \end{quote}
 
-What is your new credence in \emph{Acid}, once you learn that the
-paper has turned red? Plausibly, it should be \nicefrac{9}{10}. Your
-previous conditional credence in \emph{Acid} given \emph{Red} should
-turn into your new unconditional credence in \emph{Acid}.
+What is your new credence in \emph{Acid}, once you learn that the paper has
+turned red? Plausibly, it should be $\nicefrac{9}{10}$. Your previous conditional
+credence in \emph{Acid} given \emph{Red} should turn into your new unconditional
+credence in \emph{Acid}.
 
-This kind of belief change is called \textbf{conditionalization}: we
-say that you conditionalized \textbf{on} the information
-\emph{Red}. Let's formulate the general rule.
+This kind of belief change is called \textbf{conditionalization}. We say that
+you conditionalize \textbf{on} the information \emph{Red}. Let's formulate the
+general rule.
 
 \begin{genericthm}{The Principle of Conditionalization}
   Upon receiving information $E$, a rational agent's new credence
@@ -132,14 +93,12 @@ say that you conditionalized \textbf{on} the information
     \Cr_\text{new}(A) = \Cr_\text{old}(A/E).
   \]
 \end{genericthm}
-%
-Here it is understood that the agent's perceptual experience leaves no
-room for doubts about $E$, and that $E$ is the \emph{total}
-information the agent acquires, rather than part of her new
-information. For example, if you see the paper turn red but at the
-same time notice the smell of ammonium hydroxide, which you know is
-alkaline, your credence in the \emph{Acid} hypothesis may not
-increase to 0.9.
+
+Here it is understood that the agent's experience leaves no room for doubts
+about $E$, and that $E$ is the \emph{total} information the agent acquires,
+rather than part of her new information. If you see the paper turn red but at
+the same time notice a whiff of ammonium hydroxide, which you know is alkaline,
+your credence in the \emph{Acid} hypothesis may not increase to 0.9.
 
 \begin{exercise}{1}
   Assume $\Cro(\emph{Snow}) = 0.3$, $\Cro(\emph{Wind}) = 0.6$, and
@@ -149,119 +108,121 @@ increase to 0.9.
 \end{exercise}
 
 \cmnt{%
-  The next exercise should be clarified: show from the definition of
-  conditionalization and the probability rules that ...%
-} %
-
 \begin{exercise}{2}
   Show from the definition of conditionalization and the rules of
   probability that if $\Crn$ results from $\Cro$ by conditionalizing
   on some information $E$ with $\Cro(E) > 0$, then $\Crn(E) = 1$.
 \end{exercise}
+}
 
-
-\cmnt{%
-  Add exercise showing that stepwise conditioning equals cumulative
-  conditioning?%
-} %
+\begin{exercise}{2}
+  Show that conditionalizing first on $E_{1}$ and then on $E_{2}$ is equivalent
+  to conditionalizing in one step on $E_{1} \land E_{2}$. That is, if $\Cr_{1}$
+  results from $\Cr_{0}$ by conditionalising on $E_{1}$, and $\Cr_{2}$ results
+  from $\Cr_{1}$ by conditionalizing on $E_{2}$, then for any $A$,
+  $\Cr_{2}(A) = \Cr_{0}(A \;/\; E_{1} \land E_{2})$. (You may assume that
+  $\Cr_{0}(E_{1} \land E_{2}) > 0$.)
+\end{exercise}
 
 \begin{exercise}{3}
   Assume that $\Crn$ results from $\Cro$ by conditionalizing on some
   information $E$ with $\Cro(E) > 0$, and that $\Cro$ satisfies the
   Kolmogorov axioms. Using the probability rules, show that $\Crn$
-  then also satisfies the Kolmogorov axioms. (You may use any of the
-  derived rules from chapter 2. Hint for Kolmogorov's axiom (ii): if
+  also satisfies the Kolmogorov axioms. (You may use any of the
+  derived rules from chapter 2. Hint for axiom (ii): if
   $A$ is logically necessary, then $A\land E$ is logically equivalent
   to $E$.)
 \end{exercise}
 
-
-The Principle of Conditionalization seems obvious enough. It is also
-supported by a range of arguments. For example, one can show that an
-agent who violates the Principle is vulnerable to a ``diachronic Dutch
-Book'' -- a collection of bets, some offered before the arrival or the
-new information and some afterwards, that together amount to a sure
-loss. As you may have guessed, all these arguments are
-controversial. Let's skip them and instead look at some applications.
+% The Principle of Conditionalization seems obvious enough. It is also supported
+% by a range of arguments. One can, for example, show that an agent who violates
+% the Principle is (under certain conditions) vulnerable to a ``diachronic Dutch
+% Book'' -- a collection of bets, some offered before the arrival or the new
+% information and some afterwards, that together amount to a sure loss. As you may
+% have guessed, all these arguments are controversial. We'll instead look at some
+% more applications.
 
 When computing $\Cr_\text{new}(A)$, it is often helpful to expand
-$\Cr_\text{old}(A/E)$ with the help of Bayes' Theorem. The Principle
-of Conditionalization then turns into the following (equivalent) norm,
-known as \textbf{Bayes' Rule}:
+$\Cr_\text{old}(A/E)$ with the help of Bayes' Theorem. The Principle of
+Conditionalization then turns into the following (equivalent) norm, known as
+\textbf{Bayes' Rule}:
 %
 \[
 \Cr_{\text{new}}(A) = \frac{\Cr_{\text{old}}(E/A) \cdot \Cr_{\text{old}}(A)}{\Cr_{\text{old}}(E)}, \text{ provided $\Cr_\text{old}(E) > 0$}.
 \]
-%
-The usefulness of this formulation comes from the fact that it is
-often much easier to evaluate the probability $\Cro(E/A)$ of the
-evidence $E$ conditional on some hypothesis $A$  than to
-evaluate the probability $\Cro(A/E)$ of the hypothesis $A$ conditional
+
+This formulation is useful because it is often easier to evaluate
+$\Cro(E/A)$, the probability of the evidence $E$ conditional on some hypothesis
+$A$, than to evaluate $\Cro(A/E)$, the probaility of the hypothesis conditional
 on the evidence.
 
-Let's do an example.
+Here is an example.
 \begin{example}\label{ex:base}
-  2\% of women in a certain population have breast cancer. A test is
-  developed that correctly detects 95\% of cancer cases but also gives
-  a false positive result in 10\% of cases without the cancer. A woman
-  from the population takes the test, and gets a positive result. How
-  confident should you be that the woman has breast cancer?
+  2\% of women in a certain population have breast cancer. A test is developed
+  that correctly detects 95\% of cancer cases but also gives a positive
+  result in 10\% of non-cancer cases. A woman from the population comes into
+  your practice, takes the test, and gets a positive result. How confident
+  should you be that the woman has breast cancer?
 \end{example}
 
-Let's imagine that you know all the statistical information before
-learning test result. Knowing that the woman is from a
-population in which 2\% of women have breast cancer, your initial
-credence in the hypothesis $C$ that the woman has breast cancer should
-plausibly be 0.02. So $\Cr_{old}(C) = 0.02$. Moreover, since you know
-that the test yields a positive result in 95\% of cancer cases,
-$\Cr_{\text{old}}(P/C) = 0.95$, where $P$ is the proposition that the
-test result is positive. Similarly, since the test yields a positive
-result in 10\% of non-cancer cases,
-$\Cr_{\text{old}}(P/\neg C) = 0.1$. Now we simply plug these numbers
-into Bayes' Rule, expanding the denominator by the Law of Total
-Probability:
+We assume that you are aware of all the statistical facts before you learn the
+test result. Knowing that the woman is from a population in which 2\% of women
+have breast cancer, your initial credence in the hypothesis, call it $C$, that
+the woman has cancer should plausibly be 0.02. So we have
+\[
+  \Cr_\text{old}(C) = 0.02.
+\]
+Since you know that the test yields a positive
+result in 95\% of cancer cases, we also have
+\[
+  \Cr_{\text{old}}(P/C) = 0.95,
+\]
+where $P$ says that the test result is positive. Similarly, since the test
+yields a positive result in 10\% of non-cancer cases, we have
+\[
+  \Cr_{\text{old}}(P/\neg C) = 0.1.
+\]
+Now we simply plug these numbers into Bayes' Rule, expanding the denominator by
+the Law of Total Probability:
 %
 \begin{align*}
   \Cr_{\text{new}}(C) &= \frac{\Cr_{\text{old}}(P/C) \cdot
   \Cr_{\text{old}}(C)}{\Cr_\text{old}(P/C) \cdot \Cr_\text{old}(C) +
   \Cr_\text{old}(P/\neg C)\cdot \Cr_\text{old}(\neg C)}\\[3mm]
-  &= \frac{0.95 \cdot 0.02}{0.95 \cdot 0.02 + 0.1 \cdot 0.99} = \frac{0.019}{0.019 + 0.098} = 0.16.
+  &= \frac{0.95 \cdot 0.02}{0.95 \cdot 0.02 + 0.1 \cdot 0.98} = \frac{0.019}{0.019 + 0.098} = 0.16.
 \end{align*}
 
-The answer is much lower than many people think -- including many trained 
-physicians. But it makes intuitive sense. Imagine we
-took a large sample of 1000 women from the population. We would expect
-around 2\%, or 20 women, in the sample to have breast cancer. If we
-tested all women in the sample, we would expect around 95\% of those
-with cancer to test positive. That's 95\% of 20 = 19 women. Of the 980
-women without cancer, we would expect around 10\%, or 98 women, to
-test positive. The total number of women who would test positive would
-therefore be 19 + 98 = 117. Of these 117, 19 actually have cancer. So the
-chance that a woman who tests positive has cancer is 19/117 = 0.16. If
-you look back at the above application of Bayes' Theorem, you can see
-that it basically encodes this line of reasoning.
+After the positive test, your degree of belief that the woman has breast cancer
+should be 0.16. This is lower than many people initially think -- including many
+trained physicians. But it makes sense. Imagine we took a sample of 1000 women
+from the population. We would expect around 2\%, or 20 women, in the sample to
+have breast cancer. If we tested all women in the sample, we would expect around
+95\% of those with cancer to test positive. That's 95\% of 20 = 19 women. Of the
+980 women without cancer, we would expect around 10\% = 98 to test positive. The
+total number of positive tests would be around 19 + 98 = 117. Of these 117 women, 19
+actually have cancer. So the chance that an arbitrary woman who tests positive
+has cancer is 19/117 = 0.16. If you look back at the above application of Bayes'
+Theorem, you can see that it resembles this statistical line of reasoning.
 
-The tendency to overestimate the significance of tests in cases like example
-\ref{ex:base} is known as the \textbf{base rate fallacy} because it is
+The tendency to overestimate (or underestimate) probabilities in cases like
+example \ref{ex:base} is known as the \textbf{base rate fallacy}, because it is
 assumed to arise from neglecting the low ``base rate'' of 2\%.
 
-\begin{exercise}{2}
-  Box $A$ contains two black balls. Box $B$ contains one black ball
-  and one white ball. I choose a box at random and blindly draw a
-  ball. The ball is black. How confident should you be that I chose
-  box $A$? 
+\begin{exercise}{2}[label=e:balls]
+  Box $A$ contains two black balls. Box $B$ contains one black ball and one
+  white ball. I choose a box at random and blindly draw a ball. The ball is
+  black. How confident should you be that I have chosen box $A$?
 \end{exercise}
 
-\begin{exercise}{3}[The Prosecutor's Fallacy]\label{ex-prosecutor}
-  A murder has been committed on a remote island with a million
-  inhabitants. In a database of blood donors, detectives find a record
-  whose DNA seems to match the perpetrator's DNA from the crime
-  scene. The DNA test is very reliable: the probability that it finds
-  a match between distinct people is 1 in 100,000. So the person with
-  the matching DNA is arrested and brought to court. The prosecutor
-  argues that the probability that the defendant is innocent is
-  1/100,000. Is that correct? As a member of the jury, how confident
-  should you be in the defendant's guilt?
+\begin{exercise}[The Prosecutor's Fallacy]{3}\label{ex-prosecutor}
+  A murder has been committed on an island with a million inhabitants. In a
+  database of blood donors, detectives find a record whose DNA seems to match
+  the perpetrator's DNA from the crime scene. The DNA test is very reliable: the
+  probability that it finds a match between distinct people is 1 in 100,000. The
+  person with the matching DNA is arrested and brought to court. The prosecutor
+  argues that the probability that the defendant is innocent is 1/100,000. Is
+  this true? As a member of the jury, how confident should you be in the
+  defendant's guilt?
 \end{exercise}
 
 \cmnt{%
@@ -272,10 +233,8 @@ assumed to arise from neglecting the low ``base rate'' of 2\%.
   A scientist wants to test if there are small fish in a certain
   lake. She goes out and 
 \end{exercise}
-} %
-
-\cmnt{%
-\begin{exercise}[The Monty Hall problem]\label{ex-montyhall}
+  
+\begin{example}(The Monty Hall problem)[label=ex-montyhall]
   A game show host offers you a choice between three doors. Behind one
   of them is a prize. The host, who knows where the prize is,
   announces that after you've chosen a door, he will open one of the
@@ -284,112 +243,74 @@ assumed to arise from neglecting the low ``base rate'' of 2\%.
   opened another door, he offers you an opportunity to switch to the
   remaining door. If you want to maximise the chance of winning the
   prize, should you switch? (Explain briefly.) $\star\star$
-\end{exercise}
-} %
-
-\cmnt{%
-  Prove that as long as cr1 pHq and cr1pEq are both nonextreme, condi-
-  tionalizing on E increases the agent’s credence in H when H entails
-  E.
-} %
-
-\cmnt{%
-Not everyone agrees that rational degrees of belief always evolve by
-conditionalization.
-
-\begin{example}[The Sleeping Beauty Problem]
-  
 \end{example}
 
-Conditionalization seems to suggest 1/2. 
 } %
 
-\section{The Principle of Indifference}
+\section{Induction and Indifference}
 
-If an agent's beliefs evolve by conditionalization, can we be sure
-that her beliefs will adequately reflect all the evidence she receives
-over time? No. If the agent starts out with crazy beliefs,
-conditionalization will not make her sane.
+Suppose an agent's beliefs are probabilistic and change by conditionalization.
+Does this ensure that the beliefs are reasonable? No. If the agent starts out
+with sufficiently crazy beliefs, conditionalization will not make them sane.
 
 \begin{example}\label{ex:grue}
-  You are stranded on a remote island, which you find inhabited by a
-  strange kind of flightless bird. In the first ten days of your stay
-  on the island, you see 100 birds, all of which are green.
+  You are stranded on a remote island, which you find inhabited by a strange
+  kind of flightless bird. During the first ten days of your stay,
+  you see 100 birds, all of which are green.
 \end{example}
 %
-Plausibly, you should be fairly confident that the 101st bird will
-also be green. The Principle of Conditionalization does not ensure
-this. To see why, let $H$ be the proposition that the first 100 birds
-you encounter on the island are atypical in colour. Suppose when you
-first arrived on the island you were convinced of $H$ -- for no good
-reason. The observation of 100 green birds does not challenge that
-conviction, so after conditionalizing on these observations you are
-still confident in $H$. And if you believe that the first 100 birds
-you encountered were green and also atypical in colour, then
-you'll expect the 101st bird to have a different colour. So if we
-think you should be confident that the 101st bird will be green, we
-have to say that you should not be confident in $H$ before receiving
-any relevant evidence.
+\noindent%
+You should be fairly confident that the next bird will also be green. The
+Principle of Conditionalization does not ensure this. It might even make you
+confident that the next bird is pink. For suppose you were born with a firm
+conviction that if you are ever going to see 100 green birds on an island, then
+the next bird you would see is pink. Your observation of 100 green birds does
+not challenge this conviction. After conditionalizing on your observation of the
+100 green birds, you would become confident that the next bird you will
+encounter is pink.
 
-\cmnt{%
-  The next exercise is confusing. Strip it.
+What we see here is Hume's problem of induction. As Hume pointed out, there is
+no logical guarantee that the future will resemble the past, or that the
+unobserved parts of the world resemble the observed. The colour of the 101st
+bird is not entailed by the colour of the first 100 birds. To infer that the
+101st bird is probably green we need a further premise about the ``uniformity of
+nature''. Roughly, we need to assume that regularities in the part of the world
+that we have observed up to some time are likely to extend into the unobserved
+part of the world. If, for example, the first 100 birds we encounter on an
+island are all green, then other birds on the island are probably green as well.
+This assumption may be supported by earlier experiences. But, again, it won't be
+\emph{entailed} by these experiences. Ultimately, some such premise must be
+accepted as bedrock.
 
-\begin{exercise}
-  Show that whenever some proposition $H$ is not entailed by an
-  agent's evidence $E$, nor is its negation $\neg H$, then
-  conditionalizing on $E$ is compatible with \emph{any} credence in $H$:
-  for any $x \in [0,1]$ there is some credence $\Cr_\text{old}$ such
-  that $\Cr_\text{old}(H/E) = x$. $\star\star$
-\end{exercise}
-} %
+In Bayesian terms, the problem of induction suggests that we have to put
+restrictions on what an agent may believe \emph{without any relevant evidence}.
+Scientifically minded people sometimes feel uneasy about such restrictions, and
+therefore speak about the \textbf{problem of the priors}. An agent's
+\textbf{priors} (or ``ultimate priors'' or ``ur-priors'') are her credences at
+the start of her epistemic journey, before she conditionalizes on any evidence.
 
-What we see here is Hume's problem of induction. As Hume pointed out,
-there is no logical guarantee that the future will resemble the past,
-or that the unobserved parts of the world resemble the
-observed. The colour of the 101st bird is not entailed by the colour
-of the first 100 birds. To infer that the 101st bird is green we thus
-need a further premise about the ``uniformity of nature'': that the
-101st bird is likely to have the same colour as the first 100
-birds. How do we know this? We may have inferred it from our
-experiences at 100 other islands, but to conclude that the lessons
-from these islands carry over to the present island, we need another
-premise about the uniformity of nature. Ultimately, some such premise
-must be taken for granted.
-
-In Bayesian terms, this means that we have to impose constraints on
-what an agent may believe \emph{without any relevant
-  evidence}. Scientifically minded people sometimes feel uneasy about such
-constraints, and therefore speak about the \textbf{problem of the
-  priors}. An agent's \textbf{priors} (or ``ultimate priors'') are her
-credences before receiving any evidence. The problem of the priors is
-to explain what rational priors should look like. 
-
-So what should you believe if you have no evidence at all about a
-certain subject matter? A natural thought is that you should be
-maximally open-minded. For example, if you know that one of
-three people has committed a murder, but you have no further
-information about the case, then you should give equal credence to the
-three possibilities. More generally, the following principle looks
-appealing.
-
-\begin{genericthm}{The Principle of Indifference}
-  If $A_1,\ldots,A_n$ are $n$ propositions exactly one of which must
-  be true, and an agent has no evidence relevant to these
-  propositions, then her credence in each of the propositions should
-  be \nicefrac{1}{n}.
+What should an agent believe, at the beginning of her epistemic journey? It
+would be irrational to be convinced, without any evidence, that the first 100
+birds one might encounter on an island will be atypical in colour. Indeed, a natural
+thought is that without any relevant evidence, one should not be convinced of
+anything (except logical truths). One should be open-minded,
+dividing one's credence evenly between all ways the world might be:
+%
+\begin{genericthm}{The (naive) Principle of Indifference}
+  If $A_1,\ldots,A_n$ are $n$ propositions exactly one of which must be true,
+  then a rational prior credence function assigns the same probability
+  $\nicefrac{1}{n}$ to each of these propositions.
 \end{genericthm}
-
-Unfortunately, the Principle of Indifference can't be right, because it is
-inconsistent. For example, suppose you have no information about the
-colour of my hat. Here are two possibilities:
+%
+This, however, can't be right. Suppose you have no information about the colour
+of my hat. Here are two possibilities:
 \begin{enumerate*}
 \item[$R$:] The hat is red.
 \item[$\neg R$:] The hat is not red.
 \end{enumerate*}
-Exactly one of these must be true. By the Principle of Indifference,
-you should therefore give credence \nicefrac{1}{2} to both $R$ and
-$\neg R$. But we can also divide $\neg R$ into several
-possibilities:
+Exactly one of these must be true. By the naive Principle of Indifference, you
+should give credence $\nicefrac{1}{2}$ to $R$ and $\nicefrac{1}{2}$ to $\neg R$.
+But we can also divide $\neg R$ into several possibilities:
 \begin{enumerate*}
 \item[$R$:] The hat is red.
 \item[$B$:] The hat is blue.
@@ -397,168 +318,529 @@ possibilities:
 \item[$Y$:] The hat is yellow.
 \item[$O$:] The hat has some other colour.
 \end{enumerate*}
-Again exactly one of these must be true, so by the Principle of
-Indifference, you should give credence \nicefrac{1}{5} to each. So the
-Principle entails that your credence in $R$ should be \nicefrac{1}{2}
-and also that it should be \nicefrac{1}{5}!
+By the naive Principle of Indifference, you should give credence
+$\nicefrac{1}{5}$ to each of these possibilities. The Principle entails that
+your credence in $R$ should be $\nicefrac{1}{2}$ and also that it should be
+$\nicefrac{1}{5}$!
 
-Some have concluded that in cases like these, rationality really does
-require you to have \emph{several} credence functions: relative to one
-of your credence functions, $R$ has probability \nicefrac{1}{2},
-relative to another, it has probability \nicefrac{1}{5}. I'll set
-this view aside for now, but we will return to it in section
-\ref{sec:imprecise}.
+Some have concluded that in cases like these, rationality really does require
+you to have \emph{multiple} credence functions: relative to one of your credence
+functions, $R$ has probability $\nicefrac{1}{2}$, relative to another, it has
+probability $\nicefrac{1}{5}$. I'll set this view aside for now, but we will
+briefly return to it in section \ref{sec:imprecise}.
 
-Another response is to say more about the propositions
-$A_1,\ldots,A_n$ to which the Principle applies. Intuitively, you
-might say, the Principle does not hold for $R$ and $\neg R$ because
-these two propositions are not on a par: there are more ways of being
-non-red than there are of being red. Unfortunately, it is hard to make this
-intuition precise, and harder still to turn it into a general rule, as
-the following exercise illustrates.
+A more plausible response is to restrict the propositions $A_1,\ldots,A_n$ to
+which the requirement of indifference applies. Intuitively, you shouldn't be
+indifferent between $R$ and $\neg R$ because these two propositions are not on a
+par. There are more ways of being non-red than of being red. Unfortunately, it
+is hard to turn this intuition into a consistent general rule, as the following
+exercise illustrates.
 
 \begin{exercise}{2}\label{e:cubefactory}
-  A cube is hidden in a box. A sticker on the box reveals that the cube
-  has a side length of at least 2 cm, but less than 4 cm. So here are
-  two possibilities:
+  I have a wooden cube in my office whose side length is at least 2 cm and at
+  most 4 cm. That's all you know about the cube. We can distinguish two
+  possibilities:
   \begin{enumerate*}
-  \item[$S$:] The cube's side length lies between 2 cm and 3 cm (excluding 3).
-  \item[$L$:] The cube's side length lies between 3 cm and 4 cm (excluding 4).
+  \item[$S$:] The cube's side length is between 2 cm and 3 cm (excluding 3).
+  \item[$L$:] The cube's side length is between 3 cm and 4 cm.
   \end{enumerate*}
-  The intervals have the same length, so $S$ and $L$ are intuitively
-  on a par. We might infer that you should give credence
-  \nicefrac{1}{2} to both $S$ and $L$. But now observe that if a cube
-  has side length $x$, then the cube's volume is $x^3$.
+  The intervals have the same length, so $S$ and $L$ are intuitively on a par.
+  This suggests that you should give credence $\nicefrac{1}{2}$ to each of $S$
+  and $L$. But now observe that if a cube has side length $x$, then the cube's
+  volume is $x^3$.
   \begin{enumerate*}
   \item[(a)] Can you restate the propositions $S$ and $L$ in terms of
     volume?
-  \item[(b)] What should your credence in $S$ be if you treat equally
+  \item[(b)] What credence do you give to $S$ and $L$ if you treat equally
     sized ranges of volume as equally likely?
   \end{enumerate*}
-  \vspace{-5mm}
+  \vspace{-3mm}
 \end{exercise}
 
-Another problem with the Principle of Indifference is that it actually
-clashes with the ``uniformity of nature'' assumption required for
-inductive inference. Return to example \ref{ex:grue}. For simplicity,
-let's assume you know in advance that any bird on the island can only
-be green or red. So there are four possibilities regarding the first
-two birds you might see:
+There is another problem with indifference principles. Let's imagine we've found
+a rule for when two propositions are ``on a par'' so that we can consistently
+require an agent's priors to be indifferent between propositions that are on a
+par. We should still be cautious about endorsing the requirement, for is likely
+to clash with the ``uniformity of nature'' assumption required for inductive
+inference.
+
+Return to example \ref{ex:grue}. Assume, for simplicity, that birds can only be green
+or red. There are then four possibilities regarding the first two birds you
+might see:
 \begin{enumerate*}
 \item[$GG$:] Both birds are green.
-\item[$GR$:] The first bird is green, the second is red.
-\item[$RG$:] The first bird is red, the second is green.
+\item[$GR$:] The first bird is green, the second red.
+\item[$RG$:] The first bird is red, the second green.
 \item[$RR$:] Both birds are red. 
 \end{enumerate*}
-By the Principle of Indifference, you should give credence
-\nicefrac{1}{4} to each of these possibilities. (They are also
-intuitively on a par.) Now what happens when you see the first bird,
-which is green? Your evidence $E$ rules out $RG$ and $RR$. By the
-Principle of Conditionalization, your new credence in $GG$ equals your
-previous credence in $GG$ conditional on $E$, which (as you should
-check) is \nicefrac{1}{2}. So after having seen the first green bird,
-your credence in the hypothesis that the next bird will be green is
-\nicefrac{1}{2}.  By the same reasoning, your credence in the
-hypothesis that the third bird will be green after having seen two
-green birds, is also \nicefrac{1}{2}. In general, no matter how many
-green birds you see, your credence in the next bird being green will
-remain at \nicefrac{1}{2}. In other words, the Principle of
-Indifference makes it impossible to draw inductive inferences from
-experience.
+Intuitively, these four possibilities are on a par. An indifference principle
+might say that you should give credence $\nicefrac{1}{4}$ to each.
 
-Despite these problems, many instances of the Principle of
-Indifference look very plausible. If you're investigating a murder,
-and judge that suspect $A$ is three times as likely as suspect $B$ to
-be the murderer, then there had better be some reason for this
-judgement. In the absence of any relevant evidence, your judgement
-would be irrational. Several authors have attempted to turn examples
-like this into a fully general principle which, unlike the classical
-Principle of Indifference, is consistent and allows for inductive
-inference, but there is no agreement on whether this can be done and
-on what the resulting principle should look like. In this form, at
-least, the ``problem of the priors'' remains open.
+Now what happens when you see the first bird, which is green? Your evidence
+rules out $RG$ and $RR$. If you conditionalize on your evidence, your new
+credence will be divided evenly between the remaining possibilities $GG$ and
+$GR$ (as you may check). Your credence that the next bird is green will be
+$\nicefrac{1}{2}$. By the same reasoning, if your prior credence is evenly
+divided between all possible colour distributions among the first three birds
+($GGG$, $GGR$, etc.), then after having seen two green birds, your ``posterior''
+credence that the next (fourth) bird is green will still be $\nicefrac{1}{2}$. And so
+on. No matter how many green birds you see, you won't think that this tells you
+anything about the next bird.
+
+If we want an observation of 100 green birds to raise your credence in the next
+bird being green, we have to assume that your prior credence in the ``uniform''
+hypothesis
+$GG
+{\scriptstyle G}
+{\scriptscriptstyle G}
+\scaleto{G}{3pt}
+\scaleto{G}{2pt}
+\scaleto{GG}{1.2pt}
+\scaleto{GG}{0.8pt}
+\scaleto{GG}{0.5pt}
+\scaleto{GG}{0.3pt}
+\scaleto{GGGGGGG}{0.2pt}
+\scaleto{
+  GGGGGGGGGG
+  GGGGGGGGGG
+  GGGGGGGGGG
+}{0.1pt}
+\scaleto{GGGGGGG}{0.2pt}
+\scaleto{GG}{0.3pt}
+\scaleto{GG}{0.5pt}
+\scaleto{GG}{0.8pt}
+\scaleto{GG}{1.2pt}
+\scaleto{G}{2pt}
+\scaleto{G}{3pt}
+{\scriptscriptstyle G}{\scriptstyle G}GGG$
+(that's 101 `$G$'s) should be greater than your prior
+credence in the ``non-uniform'' hypothesis
+$GG
+{\scriptstyle G}
+{\scriptscriptstyle G}
+\scaleto{G}{3pt}
+\scaleto{G}{2pt}
+\scaleto{GG}{1.2pt}
+\scaleto{GG}{0.8pt}
+\scaleto{GG}{0.5pt}
+\scaleto{GG}{0.3pt}
+\scaleto{GGGGGGG}{0.2pt}
+\scaleto{
+  GGGGGGGGGG
+  GGGGGGGGGG
+  GGGGGGGGGG
+}{0.1pt}
+\scaleto{GGGGGGG}{0.2pt}
+\scaleto{GG}{0.3pt}
+\scaleto{GG}{0.5pt}
+\scaleto{GG}{0.8pt}
+\scaleto{GG}{1.2pt}
+\scaleto{G}{2pt}
+\scaleto{G}{3pt}
+{\scriptscriptstyle G}{\scriptstyle G}GGR$.
+
+Intuitively, the problem is that there are at least as many irregular worlds as
+regular worlds. If you spread your credence evenly over all ways the world might
+be, you'll end up giving too much credence to irregular worlds. You won't be
+able to learn by induction.
+
+Rational priors should be open-minded, but biased towards regular worlds. There
+is no agreement on how to make this precise. (We will meet an intriguing partial
+answer in the following section.) As such, the ``problem of the priors'' remains
+open.
+
+% Despite these problems, many instances of the Principle of
+% Indifference look very plausible. If you're investigating a murder,
+% and judge that suspect $A$ is three times as likely as suspect $B$ to
+% be the murderer, then there had better be some reason for this
+% judgement. In the absence of any relevant evidence, your judgement
+% would be irrational. Several authors have attempted to turn examples
+% like this into a fully general principle which, unlike the classical
+% Principle of Indifference, is consistent and allows for inductive
+% inference, but there is no agreement on whether this can be done and
+% on what the resulting principle should look like. In this form, at
+% least, the ``problem of the priors'' remains open.
 
 \section{Probability coordination}
 
-\cmnt{%
-  The Principle of Indifference tries to identify a uniquely rational
-  credence function for any agent without relevant evidence: if you
-  don't know anything about a subject matter, spread your credence
-  evenly over all possibilities. Many philosophers deny that the norms
-  of rationality are that demanding.
-} %
-
-We turn from the highly controversial Principle of Indifference to
-another norm for rational priors that is almost universally accepted
-among Bayesians. The norm connects subjective probability with
-objective probability, and plays a central role in Bayesian
-confirmation theory and Bayesian statistics.
+We turn from the highly controversial Principle of Indifference to another norm
+that is almost universally accepted among Bayesians. This norm connects
+subjective probability with objective probability, and is often expressed
+as a norm on priors.
 
 \begin{genericthm}{The Probability Coordination Principle}
-  If an agent has no evidence about some proposition $A$, then her
-  credence in $A$ on the supposition that the objective probability of
-  $A$ is $x$, should be $x$:
+  An agent's prior credence in a proposition $A$, on the supposition that the
+  objective probability of $A$ is $x$, should equal $x$:
   \[
-    \Cr_0(A / \text{Pr}(A)\!=\!x) = x
+    \Cr_0(A \;/\; \text{Pr}(A)\!=\!x) = x.
   \]
 \end{genericthm}
 %
-Here `Pr' stands for any kind of objective probability, such as
-relative frequency or quantum physical chance. I've added a subscript
-`0' to `$\Cr$' to indicate that the agent in question has no evidence
-relevant to $A$. With `Pr' understood as quantum physical chance, the
-Probability Coordination Principle is also known as the `Principal
-Principle' (or rather, it's a special case of that Principle).
+\noindent%
+Here, $\Cr_{0}$ is a rational prior credence function, and Pr is any kind of
+objective probability, such as relative frequency or quantum physical chance.
 
-We have unwittingly assumed the Probability Coordination Principle all
-along. In example \ref{ex:base}, for instance, we assumed that if all you
-know about a woman is that she is from a population in which 2\% of
-women have breast cancer, then your credence in the hypothesis that she has
-breast cancer should be 0.02. This is clearly not entailed by the
-Kolmogorov axioms. It is, however, entailed by the Probability
-Coordination Principle, assuming that your credence can be modelled as
-resulting from a prior state, in which you had no evidence at all
-about the woman, by conditionalizing on the statistical information
-that the cancer rate is 2\%.
+The Probability Coordination Principle implies that if a rational agent has
+discovered the objective probabilities -- if she has conditionalized on
+$\text{Pr}(A)\!=\!x$ -- and she doesn't have other relevant information about
+$A$, then she will align her degrees of belief with the objective probabilities:
+her degree of belief in $A$ will match the known objective probability.
 
-To see why the Probability Coordination Principle is stated in terms
-of conditional credence, consider a typical case of testing scientific
-hypotheses. Often such hypotheses only make statistical predictions:
-they entail that under circumstances $C$, there is a probability of
-$x$ that outcome $O$ will occur.
+We have unwittingly assumed this all along. In example \ref{ex:base}, we assumed
+that if you know that a woman is from a population in which 2\% of women have
+cancer, and you have no other relevant information about her, then your
+credence that she has cancer should be 0.02. This is
+not entailed by the Kolmogorov axioms. We need the Probability
+Coordination Principle to connect your information about relative frequency to
+your degree of belief.
 
-Concretely, suppose you are undecided between two theories, $H_1$ and
-$H_2$, giving credence \nicefrac{1}{2} to each. $H_1$ says that under
-circumstances $C$, the probability of $O$ is 0.9; $H_2$ says it is
-0.3. You set up an experiment with circumstances $C$ and observe
-outcome $O$. How does that affect your credence in $H_1$ and $H_2$? By
-Bayes' Rule,
+The Probability Coordination Principle can be used even if the agent doesn't
+have full information about the objective probabilities. In exercise
+\ref{e:balls}, you had to evaluate $\Cr(\emph{Black}\;/\;B)$, where $B$ is the
+hypothesis that I have drawn a ball from a box containing one black ball and one
+white ball, and \emph{Black} is the hypothesis that the ball is black. Assuming
+that the draw is random (in some objective sense), $B$ entails that
+$\text{Pr}(\emph{Black}) = \nicefrac{1}{2}$. You don't know whether $B$ is true,
+but we can infer, by the Probability Coordination Principle, that
+$\Cr(\emph{Black} \;/\; B) = \nicefrac{1}{2}$.
+
+
+\cmnt{%
+  Consider a typical case of testing scientific hypotheses. Often such
+  hypotheses only make statistical predictions: they entail that under
+  circumstances $C$, there is a probability of $x$ that outcome $O$ will occur.
+
+  Concretely, suppose you are undecided between two theories, $H_1$ and $H_2$,
+  giving credence \nicefrac{1}{2} to each. $H_1$ says that under circumstances
+  $C$, the probability of $O$ is 0.9; $H_2$ says it is 0.3. You set up an
+  experiment with circumstances $C$ and observe outcome $O$. How does that
+  affect your credence in $H_1$ and $H_2$? By Bayes' Rule,
 \[
-\Cr_{\text{new}}(H_1) = \frac{\Cr_{\text{old}}(O/H_1) \cdot
-  \Cr_{\text{old}}(H_1)}{\Cr_\text{old}(O/H_1)\cdot \Cr_\text{old}(H_1) +
-  \Cr_\text{old}(O/H_2)\cdot \Cr_\text{old}(H_2)}.
+  \Cr_{\text{new}}(H_1) = \frac{\Cr_{\text{old}}(O/H_1) \cdot \Cr_{\text{old}}(H_1)}{\Cr_\text{old}(O/H_1)\cdot \Cr_\text{old}(H_1) + \Cr_\text{old}(O/H_2)\cdot \Cr_\text{old}(H_2)}.
 \]
-We know that $\Cr_\text{old}(H_1) = \Cr_\text{old}(H_2) =
-\nicefrac{1}{2}$. The Probability Coordination Principle tells us that
-$\Cr_{\text{old}}(O/H_1) = 0.9$ and $\Cr_{\text{old}}(O/H_2) = 0.3$. Thus 
+We know that $\Cr_\text{old}(H_1) = \Cr_\text{old}(H_2) = \nicefrac{1}{2}$. The
+Probability Coordination Principle tells us that $\Cr_{\text{old}}(O/H_1) = 0.9$
+and $\Cr_{\text{old}}(O/H_2) = 0.3$. Thus
 \[
 \Cr_{\text{new}}(H_1) = \frac{0.9 \cdot 0.5}{0.9 \cdot 0.5 + 0.3 \cdot 0.5} = 0.75.
 \]
 So your credence in $H_1$ should increase to \nicefrac{3}{4}, and your
 credence in $H_2$ should decrease to \nicefrac{1}{4}.
 
+} %
+In 1814, Pierre-Simon Laplace observed that the Probability Coordination
+Principle may help with Hume's problem of induction. Return to example
+\ref{ex:grue}, where you've encountered 100 green birds in the first few days on
+a remote island. Suppose you think that there's a certain objective
+  probability with which any given bird on the island is green (independently
+of the other birds). That probability might be 1, in which case all the birds
+are certain to be green. Or it might be 0. Or it might be anything in between 0
+and 1, in which case you would expect to find some red birds and some green
+birds. Now suppose you start out maximally open-minded about this probability,
+giving equal credence to all values from 0 to 1. Using the Probability
+Coordination Principle, one can then show -- the maths is beyond what we do in
+this course -- that after observing 100 green birds, your credence that the next
+bird is green will be around 0.99. You have learned by induction!
+
+In the previous section, we saw that indifference over \emph{outcomes}, over
+possible sequences of $G$ and $R$, makes inductive learning impossible. Laplace
+saw that indifference over (objective) \emph{probabilities of outcomes} has the
+opposite effect. By treating the outcomes as independent matters of objective
+probability, and giving equal credence to the objective probability, you end up
+giving comparatively low credence to irregular sequences.
+
+% \begin{exercise}{2}
+%   You want to find out if a coin is fair. At the start, your credence is evenly
+%   divided between three hypotheses: ($H$) the coin is biased 2:1 towards heads,
+%   ($T$) the coin is biased 2:1 towards tails, ($F$) the coin is fair. You toss
+%   the coin twice and it lands first heads and then tails. What is your new
+%   credence about the coin's bias? (If a coin is biased 2:1 towards heads, then
+%   heads has an objective probability of $\nicefrac{2}{3}$.)
+% \end{exercise}
+
+You may wonder where the Probability Coordination Principle comes from. Some say
+it is a basic norm of rationality. Others say that it must follow from more
+basic norms -- from a restricted indifference principle, for example, or even
+from probabilism alone. The issue turns on deep questions about the nature of
+objective probability. Those who regard Probability Coordination as basic tend
+to believe that the ultimate fabric of the physical world includes probabilistic
+quantities to which rational beliefs should be aligned, for reasons nobody can
+explain. Those who don't regard Probability Coordination as basic see no need to
+posit special physical quantities with a mysterious spell on rational credence.
+On a simple version of the alternative view, objective probability is nothing
+but relative frequency and the Probability Coordination Principle follows from
+plausible indifference requirements. We will not look further into these
+debates.
+
+% If the relevant objective probability Pr is relative frequency, the principle is
+% arguably entailed by an indifference requirement. Suppose all you know about an
+% individual $i$ is that it belongs to a group in which, say, 10\% of individuals
+% have a certain property. If there are 100 individuals in the group, 10 of them
+% have the property. Intuitively, you should be indifferent about which
 
 
-\begin{exercise}{2}
-  You are unsure whether a certain coin is biased 2:1 towards heads or
-  2:1 towards tails; initially you give credence \nicefrac{1}{2} to
-  each possibility. Then you toss the coin twice, and both times it
-  comes up heads. What is your new credence concerning the coin's
-  bias? (If a coin is biased 2:1 towards heads, then heads has an
-  objective probability of \nicefrac{2}{3}.) 
+
+
+\begin{exercise}{1}
+  Jacob Bernoulli (an uncle of Daniel and Nicolas Bernoulli, who we've met in
+  section \ref{sec:problem-betting}) proposed the following simplified version
+  of the Probability Coordination Principle: \emph{If a proposition has very low
+    objective probability, one may be certain that it is false}. What do you
+  think of this?
+  % see ch.4 of Skyrms & Diaconis
 \end{exercise}
 
+\section{Confirmation}%
+\label{sec:bct}
 
+An important question both in the philosophy of science and in scientific
+practice is how scientific hypotheses are confirmed or disconfirmed by empirical
+data. We can't directly observe that, say, spacetime is curved, that smoking
+causes cancer, or that dolphins evolved from land animals. Our evidence strongly
+\emph{supports} these assumptions, but it doesn't entail them. What is this
+relation of evidential support? What does it take for some evidence to support a
+hypothesis?
+
+Philosophers have tried to formulate general rules for evidential support, akin
+to the rules of deductive logic. The following rules, or ``conditions'' on when a
+hypothesis is confirmed by evidence, figure in an influential 1945
+paper by Carl Hempel.
+
+\begin{quote}
+  \textbf{Nicod's Condition}. Universal generalisations are confirmed by their
+  instances: an $F$ that is $G$ lends support to the hypothesis that all $F$s
+  are $G$s.
+
+  \textbf{Converse Consequence Condition}. If some evidence confirms a
+  hypothesis then it also confirms any theory (conjunction of hypotheses) that
+  entails the hypothesis.
+  
+  \textbf{Special Consequence Condition}. If some evidence confirms a theory
+  then it also confirms anything that is entailed by the theory.
+\end{quote}    
+
+This rule-based (or ``syntactical'') approach didn't work out well. Most rules
+that initially looked plausible turned out to have clear counterexamples. The
+few that remained are too weak to make sense of scientific reasoning.
+
+Consider Nicod's Condition. Normally, observation of a black raven lends
+support to the hypothesis that all ravens are black. But not always. Suppose
+your friend is on an expedition and you've agreed that if she comes across a
+white raven then she is going to send you a black raven, by mail, in a cage. One
+day, a parcel arrives: it's a black raven. In this context, observation of a
+black raven is strong evidence \emph{against} the hypothesis that all ravens are
+black.
+
+% I.J.\ Good: Suppose you are certain that in a certain forest there are
+% \emph{either} very few ravens all of which are black, \emph{or} a lot of
+% ravens 80 percent of which are black. You enter the forest and the first thing
+% you see is a black raven. Arguably, this supports the second hypothesis over
+% the first, and thus \emph{disconfirms} the hypothesis that all ravens in the
+% forest are black.
+
+% Hempel, in a footnote of his 1945 paper, even gives an example of a general
+% statement that is \emph{logically refuted} by any instance. (The example is
+% seriously contrived: the statement is
+% $\forall x\forall y(\neg(Rxy \land Ryx) \to (Rxy \land \neg Ryx))$. An
+% instance would be a pair of two objects $a,b$ such that $\neg(Rab \land Rba)$
+% and $(Rab \land \neg Rba)$. If you are so inclined, you can check if there is
+% any such pair, then the general statement must be false.)
+% 
+\begin{exercise}{2}
+  Show that the Converse Consequence Condition and the Special Consequence
+  Condition together entail that if some evidence confirms some hypothesis
+  then the same evidence confirms every hypothesis whatsoever.
+\end{exercise}
+
+A different kind of approach was suggested by Karl Popper. Popper noticed that
+although scientific theories are rarely entailed by empirical evidence, they can
+be \emph{refuted} by the evidence. A single white raven is enough to refute (or
+``falsify'') the hypothesis that all ravens are black. According to Popper, a
+theory is confirmed (or ``corroborated'', as he preferred to say) to the extent
+that it has withstood attempts at falsification.
+
+One problem for this \textbf{falsificationist} approach is that many scientific
+theories or hypotheses can't actually be falsified, because they don't have
+directly observable consequences. The (well-confirmed) hypothesis that
+smoking causes cancer, for example, doesn't imply that every single smoker gets
+cancer. It only predicts that smokers have a higher \emph{probability} of
+getting cancer, in some objective sense of `probability'. (The hypothesis is not
+about what people believe.) We can't directly observe that probability.
+
+To get around this issue, falsificationism may call upon its powerful ally,
+\textbf{``classical'' (or ``frequentist'') statistics}. According to classical
+statistics, a hypothesis can be rejected not only if it is logically
+incompatible with the evidence, but also if it renders the evidence
+\emph{sufficiently improbable}. Imagine, for example, that we randomly divide
+1000 children into two groups. One group is instructed to take up smoking, the
+other to refrain from smoking. In all other respects, we force the two groups to
+lead similar lives. 50 years later, we find more incidents of cancer in the
+smoking group than in the ``control group''. This could be just a coincidence.
+The tools of classical statistics allow us to compute the objective probability
+of the observed difference between the groups \emph{on the assumption that it is
+  a coincidence}. If this probability is sufficiently low, classical statistics
+tells us that we can reject the coincidence hypothesis. We can infer that
+smoking really does increase the risk of cancer.
+
+One obvious problem with this move is to explain when a probability is
+``sufficiently low''. Just how improbable must a hypothesis render the observed
+evidence to warrant rejecting the hypothesis? In the social sciences, any
+probability below 0.05 is usually deemed sufficiently low. In medicine, a
+threshold of 0.01 is preferred. Either choice looks unprincipled and arbitrary.
+Besides, what does it mean to ``reject'' a hypothesis? Should we become
+absolutely certain that the hypothesis is false -- even though we know that
+low-probability events happen all the time?
+
+Another problem with the frequentist approach is that it is only applicable to
+specific kinds of data. The cancer experiment I have just described has never
+been carried out, for obvious ethical and practical reasons. The actual data
+that support the link between smoking and cancer are, for the most part, of a
+kind for which the tools of classical statistics aren't designed because one
+can't easily compute informative objective probabilities.
+
+A deeper problem with the falsificationist/frequentist approach is that
+predictive success is not the only standard by which we evaluate scientific
+hypotheses.
+% Medical researchers prefer hypotheses that don't just posit a brute
+% connection, but also specify a plausible biological mechanisms.
+Physicists, for example, favour mathematically elegant theories, like
+Einstein's theory of General Relativity, that unify a diverse range of phenomena.
+Consider a rival hypothesis to Einstein's according to which the laws of General
+Relativity hold throughout all of space and time except tomorrow afternoon in my
+back garden, where nature obeys the laws of Aristotelian physics. This crackpot
+``theory'' is logically compatible with all existing observations, and it
+doesn't render any of them less probable than Einstein's. By falsificationist
+lights, Einstein's theory and mine are equally well confirmed. Is that true?
+If you want to predict what is going to happen tomorrow afternoon in my back
+garden, you would surely be insane to rely on my theory.
+
+A third approach to confirmation, besides the syntactical and the
+falsificationist approach, is \textbf{Bayesian Confirmation Theory}. It is by
+far the most popular approach in contemporary philosophy of science. (Its
+statistics ally is \textbf{Bayesian Statistics}.)
+
+Why do we care about whether, or to what extent, a hypothesis is
+confirmed by the evidence? Ultimately, it's because we want to know how much
+credence we should invest in the hypothesis. We want to know how confident we
+should be that smoking causes cancer, or that the laws of Aristotelian physics
+will be operative tomorrow in my garden.
+% So understood, the problem of confirmation arises not
+% just in science. We may wonder how confident we should be, in light of the
+% available evidence, that smoking causes cancer, or that a defendant in a trial
+% is guilty, or that an egg we purchased last month is still good.
+
+Bayesianism offers a simple, albeit schematic, answer. If $E$ is the relevant
+evidence, then the credence we should give to a hypothesis $H$ in light of $E$
+is $\Cr_{0}(H/E)$, where $\Cr_{0}$ is a rational prior credence function.
+
+In fact, Bayesians distinguish two notions of evidential support. We may ask
+about the \emph{absolute} degree to which a hypothesis is supported by the
+evidence, but we may also ask about the \emph{incremental} effect a single piece of
+data has on the credibility of the hypothesis. One black raven,
+for example, hardly makes it probable that all ravens are black. Still, under
+normal circumstances, it lends some support to the generalisation.
+
+\begin{genericthm}{The Bayesian analysis of confirmation}
+  $E$ \textbf{(absolutely) confirms} $H$ to the extent that $\Cr_{0}(H/E)$ is high.\\
+  $E$ \textbf{(incrementally) confirms} $H$ to the extent that $\Cr_{0}(H/E)$ exceeds $\Cr_{0}(H)$.
+  % One should really say: E incrementally confirms H in light of background data B to the extent that Cr0(H/EB) > Cr0(H/B).
+\end{genericthm}
+
+Without more information about the prior credence $\Cr_{0}$ these
+schematic analyses may not appear terribly useful. But let's have a closer look.
+
+On the Bayesian account, confirmation comes in degrees, and its degree is
+closely related to the conditional probability $\Cr_{0}(H/E)$. With the help of
+Bayes' Theorem, we can break this conditional probability into three parts,
+which we may understand as three components of Bayesian confirmation:
+\[
+   \Cr_{0}(H/E) = \frac{\Cr_{0}(E/H) \cdot \Cr_{0}(H)}{\Cr_{0}(E)}.
+\]
+
+The first component is $\Cr_{0}(E/H)$. This is the probability of the evidence
+given the hypothesis. The Bayesian analysis implies that, all else equal, the
+more probable the evidence is in light of a hypothesis, the more the evidence
+supports the hypothesis. Conversely, if a hypothesis renders the evidence
+unlikely, then (all else equal) the evidence is evidence against the hypothesis.
+In easy cases, we may use the tools of classical statistics to compute an
+objective probability for $E$ given $H$, and invoke the Probability Coordination
+Principle to determine $\Cr_{0}(E/H)$. But we don't have to go via objective
+probabilities. We can take into account all kinds of data. And we don't need an
+arbitrary cutoff at which the hypothesis is ``rejected''. 
+
+The second component, $\Cr_{0}(H)$, is the prior probability of the hypothesis.
+This is where simplicity, systematicity, and other such criteria enter the
+picture. My crackpot theory about my Aristotelian back garden deserves
+negligible prior probability. (Why? Because rational priors assume that nature is
+``uniform'', and my theory posits a bizarre kind of non-uniformity.)
+
+The third component, $\Cr_{0}(E)$, is the prior probability of the evidence.
+This occurs in the denominator, meaning that the \emph{lower} the prior
+probability of the evidence, the \emph{higher} the degree of confirmation. This
+makes sense. Einstein's theory of Relativity predicts that light is deflected
+when it travels past massive objects. The first observation of this effect, in
+1919, was deemed a great triumph for Einstein, because the observation was so
+surprising. It has low prior probability. By comparison, if an astrologer predicts that we will face personal
+challenges and make new acquaintances in the coming year, and the prediction
+comes true, this isn't a great triumph for astrology, because the prediction was
+highly probable all along.
+
+% If you expand this out using the law of total probability, you can see that
+% here we also consider how probable alternatives to $H$ would render the
+% evidence, and how plausible these alternatives are.
+
+% In the Bayesian account, the three components combine in a continuous,
+% multiplicative fashion. There are no arbitrary cut-offs at which a hypothesis is
+% ``rejected''. If the data are improbable in light of a hypothesis, this usually
+% reduces the probability of the hypothesis, but it's a gradual matter and it
+% depends on whether better theories are available. Sometimes there is no good
+% explanation for an apparently unlikely outcome, in which case the right response
+% is that it really is a coincidence.
+
+So we can say a lot without knowing what $\Cr_{0}$ looks like. Still, it would
+be good to know more. This brings us back to the questions we've discussed
+earlier in this chapter. Should rational priors satisfy some kind of
+indifference requirement? If so, what does that requirement look like? How,
+exactly, should priors be biased towards ``uniform'' worlds? Should they be
+aligned with some basic physical quantities?
+
+On a more general level, we may ask how tightly priors are constrained by the
+norms of rationality. Some hold that there is a unique rational prior credence
+function. Others say that rationality is ``permissive'', that it allows for a
+wide range of priors, each of which is as rational as the other. According to
+the permissive view, there is an irreducibly subjective element to rational
+credence: perfectly rational agents with the exact same evidence may arrive at
+different beliefs. There may, accordingly, be no objective answer to how
+strongly a scientific hypothesis is supported by the evidence.
+
+% When practising scientists use Bayesian methods, applying what is known as
+% \textbf{Bayesian statistics}, they usually don't start with a plausible
+% candidate for a completely ignorant prior credence function. Their ``priors''
+% are restricted to a certain range of hypotheses, and are chosen in part for
+% their computational tractability.
+
+\begin{exercise}{1}
+  Show that if a theory $H$ entails $E$, and both $E$'s prior probability is not
+  1, then $E$ incrementally confirms $H$.
+\end{exercise}
+
+\begin{exercise}[The raven paradox]{3}
+  The hypothesis that all ravens are black is logically equivalent to the
+  hypothesis that all non-black things are non-ravens. If universal
+  generalizations are normally confirmed by their instances, and logically
+  equivalent hypotheses are confirmed by the same data, then an observation of a
+  white shoe ought to support the hypothesis that all ravens are black. Does
+  it?
+\end{exercise}
+
+% \begin{exercise}{3}
+%   Many differences between priors can be ``washed out'' by suitable evidence.
+%   Imagine three people start out with different priors about a coin, which can
+%   be either fair or biased 2:1 towards heads, or biased 2:1 towards tails.  ...
+% \end{exercise}
+
+
+\cmnt{%
 
 \section{Anthropic reasoning}
 
@@ -568,7 +850,7 @@ up in cosmology and certain philosophical puzzles.
 
 The following puzzle is due to Nick Bostrom.
 
-\begin{example}[God's Coin Toss]\label{ex:godscoin}
+\begin{example}(God's Coin Toss)\label{ex:godscoin}
   At the beginning of time, God flips a fair coin. If the coin lands
   heads, she creates two people in two rooms, one with blue eyes and
   one with green eyes. If the coin lands tails, God creates only one
@@ -721,48 +1003,83 @@ $\Cr_0(\emph{Doom}/\emph{Exist} \land \emph{Early}) = \nicefrac{1}{2}$.
 
 So it would be comforting if the Dubious Principle were true after all.
 
-\cmnt{%
-  Add exercise: fine-tuning
 } %
-
-
-\section{Further reading}
-
-Chapter 15 of 
-\begin{itemize}
-\item Ian Hacking: \href{http://fitelson.org/confirmation/hacking_introduction_to_probability_and_inductive_logic.pdf}{\emph{An Introduction to Probability and Inductive Logic}} (2001)
-\end{itemize}
-goes into some more details about conditionalization. 
-
-Several philosophers have recently defended versions of the Principle
-of Indifference, and the more general claim that there is a unique
-rational prior credence function. A critical overview and discussion
-can be found in
-\begin{itemize}
-\item Christopher G.\ Meacham: \href{http://people.umass.edu/cmeacham/Meacham.Impermissive.Bayesiansim.pdf}{``Impermissive Bayesianism''} (2014).
-\end{itemize}
-
-\cmnt{%
-
-  Support indifference by giving up unique credence:
-  \cite{joyce05how}. Even more radical departure from the standard
-  Bayesian model (to accommodate indifference) is advocated in
-  \cite{norton08ignorance}.
-
-} %
-
-For more on the Doomsday Argument and related puzzles, see
-\begin{itemize}
-\item Nick Bostrom:
-  \href{http://www.anthropic-principle.com/preprints/cau/paradoxes.html}{``The
-    Doomsday Argument, Adam \& Eve, UN++, and Quantum Joe''} (2001).
-\end{itemize}
-(What I call the `Dubious Principle' is Bostrom's `Self-Indication Assumption', SIA.)
-
 \begin{essay}
-  Can you think of another way to block the Doomsday Argument, without
-  relying on the Dubious Principle?
+  Evaluate the hypothesis that there is a unique rational prior.
+  Assuming that beliefs evolve by conditionalising on the evidence, this is
+  equivalent to the hypothesis that rational agents with the same evidence
+  should have the same degrees of belief. Can you find an argument for or
+  against this view?
 \end{essay}
+
+\begin{sources}
+
+  Chapter 15 of Ian Hacking,
+  \href{http://fitelson.org/confirmation/hacking_introduction_to_probability_and_inductive_logic.pdf}{\emph{An Introduction to Probability and Inductive Logic}}
+  (2001) goes into some more details about conditionalization.
+
+  The cube exercise is due to Bas van Fraassen, \emph{Laws and Symmetry} (1989,
+  p.303). Similar problems for the Indifference Principle are often discussed
+  under the heading of `Bertrand's Paradox'. 
+
+  % Support indifference by giving up unique credence: \cite{joyce05how}. Even
+  % more radical departure from the standard Bayesian model (to accommodate
+  % indifference) is advocated in \cite{norton08ignorance}.
+
+  The Probability Coordination Principle is best known as the `Principal
+  Principle', introduced in David Lewis, ``A Subjectivist's Guide to Objective
+  Chance'' (1980). Lewis's formulation includes an important extra parameter for
+  ``admissible evidence'' that I have omitted. 
+
+  My claim that $\Cr(\text{101 }G\text{s} / \text{100 }G\text{s}) \approx 0.99$
+  is an application of Laplace's ``Rule of Succession''. Laplace's assumptions
+  can be weakened. For example, we don't need to assume that you start with a
+  uniform prior over the objective probabilities. (Search for ``Bayesian
+  convergence'' if you're interested in this.)
+  
+  Hempel's 1945 paper on confirmation is called ``Studies in the Logic of
+  Confirmation''. It comes in two parts, and also introduces the raven paradox.
+  Popper's falsificationist approach was first spelled out in his \emph{The
+    Logic of Discovery} (1935). Modern Bayesian Confirmation Theory begins with
+  Rudolf Carnap, \emph{Logical Foundations of Probability} (1950). Michael
+  Strevens's
+  \href{http://www.strevens.org/bct/BCT.pdf}{Lecture Notes on Bayesian Confirmation Theory}
+  (2017) provide a good introduction. The example of the black raven in the mail
+  is from Strevens. For a brief comparison between the frequentist
+  (``classical'') and the Bayesian approach to statistical inference, see
+  Matthew Kotzen, ``The Bayesian and Classical Approaches to statistical
+  inference'' (2022).
+
+  For an introduction to the debate over how wide the range of rational
+  priors might be, see Christopher G.\ Meacham,
+  \href{http://people.umass.edu/cmeacham/Meacham.Impermissive.Bayesiansim.pdf}{``Impermissive Bayesianism''}
+  (2014).
+
+
+% For more on the Doomsday Argument and related puzzles, see
+% \begin{itemize}
+% \item Nick Bostrom:
+%   \href{http://www.anthropic-principle.com/preprints/cau/paradoxes.html}{``The
+%     Doomsday Argument, Adam \& Eve, UN++, and Quantum Joe''} (2001).
+% \end{itemize}
+% (What I call the `Dubious Principle' is Bostrom's `Self-Indication Assumption', SIA.)
+
+  
+\end{sources}
+
+
+% Nice but hard question:
+%
+% 31. You have a collection of tasks to perform, each of which has a certain
+% probability of failure. If you ever fail on one of the tasks, then you have to
+% start again at all the tasks. (An example: you want to make a Youtube video in
+% one take in which you successfully perform five tricks of varying difficulty.)
+% In what order should you do the tasks if you want to minimize the expected
+% time it will take to eventually succeed?
+
+% For more on this question, including an entertaining Youtube video, see this
+% comment of Julia Wolf on my second blog post. She got the question from a
+% Google Buzz post of Terence Tao.
 
 
 \cmnt{%
