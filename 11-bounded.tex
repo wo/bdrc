@@ -1,5 +1,7 @@
 \chapter{Bounded Rationality}
 
+% Would be nice to fit the unmarked clock puzzle in here somehow.
+
 \section{Models and reality}
 
 We have studied an abstract model of rational agents. The model assumes that an
@@ -48,19 +50,23 @@ regret (chapter \ref{ch:risk}). We can accommodate altruistic behaviour (section
 \ref{sec:sources-utility}), and apparent failures of time consistency (section
 \ref{sec:separability-time}).
 
-Other phenomena are harder to accommodate. Suppose I offer you £100 for telling
-me the prime factors of 82,717. You have 10 seconds. Can you do it? Probably
-not. All you'd have to do, to get the money, is utter `181 and 457', which is
-surely an available act. Moreover, that `181 and 457' is the correct answer
+Other phenomena are harder to accommodate. People often make mistakes when
+evaluating the impact of inconclusive information. They don't take into account
+the ``base rate'' (section \ref{sec:conditionalization}) or the fact that the
+information comes from a biased source. They ignore evidence that goes against
+their opinions.
+
+More simply, most people are bad at maths. Suppose I offer you £100 for telling
+me the prime factors of 82,717. You have 10 seconds. All you'd have to do, to
+get the money, is utter `181 and 457'. Moreover, that this is the correct answer
 logically follows from simpler facts of which you are highly confident. By the
 rules of probability, you should be confident that `181 and 457' is the correct
-answer. As an expected utility maximizer (assuming you'd like to get the £100),
-you would utter these words. Yet you don't.
+answer. But you are not.
 
-\begin{exercise}{2}
-  Explain why, if some proposition $C$ logically follows from two other
-  propositions $A$ and $B$, and $\Cr(A) > 0.9$ and $\Cr(B) > 0.9$, then
-  $\Cr(C) > 0.81$.
+\begin{exercise}{3}
+  Explain why, if some proposition $C$ is entailed by two propositions $A$ and
+  $B$ whose probability is greater than 0.99, then the probability of $C$ is
+  greater than 0.98.
 \end{exercise}
 
 In 1913, Ernst Zermelo proved that in the game of chess, there is either a
@@ -83,8 +89,9 @@ last Monday. As an ideal Bayesian agent, I would still know what I had for
 dinner on every day of my life.
 
 \begin{exercise}{2}
-  Show that if $\Cr_t(A) = 1$, and the agent conditionalizes on information $E$
-  with $\Cr_t(E) > 0$, then $\Cr_{t+1}(A) = 1$. (Conditionalization was
+  Show that if an agent conditionalizes on some information $E$ then their
+  credence in $E$ will remain at 1 as long as the agent only changes their
+  beliefs by further applications of conditionalisation. (Conditionalization was
   introduced in section \ref{sec:conditionalization}.)
 \end{exercise}
 
@@ -99,12 +106,12 @@ dinner on every day of my life.
   would need an alternative model.%
 } %
 
-There is also strong indirect evidence that our model does not fit real agents
-in every respect. The evidence comes from research on artificial intelligence,
-where our model forms the background for much recent research. Various parts of
-the model -- including the MEU Principle and the Principle of Conditionalization
--- turn out to be computationally intractable. Real agents with limited
-cognitive resources, it seems, couldn't possibly conform to our model.
+There is also indirect evidence that our model does not fit real agents in every
+respect. The evidence comes from research on artificial intelligence, where our
+model forms the background for much recent research. Various parts of the model
+-- including the MEU Principle and the Principle of Conditionalization -- turn
+out to be computationally intractable. Real agents with limited cognitive
+resources, it seems, couldn't possibly conform to our model.
 
 \section{Avoiding computational costs}
 
@@ -113,16 +120,16 @@ another common misunderstanding.
 
 Suppose you walk back to the shop to buy soap. At any point on your way, you
 could change course. You could decide to turn around, or start running. You
-could check if your shoe laces are tied. You could mentally compute
-$181 + 457$, or start humming the national anthem. There are millions of
-things you could do. Many of these would lead to significantly different
-outcomes, especially if you consider long-term consequences. (Hitler almost
-certainly would not have existed if hours or even months before his conception,
-his mother had decided to run rather than walk to buy soap.) Some authors take
-the MEU Principle to imply that at each point on your walk, you should
-explicitly consider all your options, envisage all their possible outcomes,
-assess their utility and probability, and on that basis compute their expected
-utility. This is clearly unrealistic and infeasible.
+could check if your shoe laces are tied. You could mentally compute $181 + 457$,
+or start humming the national anthem. There are millions of things you could do.
+Many of these would lead to significantly different outcomes, especially if you
+consider long-term consequences. (Hitler almost certainly would not have existed
+if hours or even months before his conception, his father had decided to run
+rather than walk to buy soap.) Some authors take the MEU Principle to imply that
+at each point on your walk, you should explicitly consider all your options,
+envisage all their possible outcomes, assess their utility and probability, and
+on that basis compute their expected utility. This is clearly unrealistic and
+infeasible.
 
 But the MEU Principle requires no such thing. The MEU Principle says that
 rational agents choose acts that maximize expected utility; it specifies
@@ -140,45 +147,33 @@ utilities.
   expected utility than $C$. Explain why.
 \end{exercise}
 
-\cmnt{%
-  The reason is simple. Let $A_1,\ldots,A_n$ be your ``basic'' options, those
-  that don't involve computing expected utilities. In addition to these, we
-  assume, you have the option $C$ of computing the expected utilities of
-  $A_1,\ldots,A_n$ and then choosing whichever of them comes out best. Let $A_i$
-  be the best of the basic options. If you choose $C$, you are guaranteed to get
-  the same outcome as if you choose $A_i$ directly, except that you've also
-  spent some time and effort on computing expected utilities. Usually, that will
-  ensure that whatever outcome you get from $C$ is worse than what you would
-  have gotten from $A_i$. Thus $A_i$ has greater expected utility than $C$, and
-  you should not choose $C$.
-  
-  The argument just outlined is not fully general. There are unusual cases in
-  which $C$ would have greater expected utility than directly choosing $A_i$,
-  even though the computation has negative (sub)value. What do such cases look
-  like? $\star\star$
-
-  Unless they get some direct value from computing expected utilities, ideal
-  Bayesian agents don't compute expected utilities. Instead they directly choose
-  whichever option maximizes expected utility.
-  
-  That may seem strange. How is the agent supposed to arrive at her choice of
-  the best option, if not by figuring out that it maximizes expected utility? By
-  accident? That doesn't look rational. By magic?
-} %
-
 The MEU Principle does not require calculating expected utilities. But this
 raises a puzzle. An agent who conforms to our model always chooses acts with
 greatest expected utility. How are they supposed to do this without calculating?
 It doesn't seem rational to choose one's acts randomly and maximize expected
 utility by sheer luck.
 
-Part of the answer is that in many circumstances, simple alternatives to
-computing expected utilities reliably lead to optimal choices. As the
-psychologist Gerd Gigerenzer once pointed out, if you want to catch a flying
-ball, an efficient alternative to computing the ball's trajectory -- which is
-generally intractable -- is to move around in such a way that the angle between
-you and the ball remains within a certain range. This ensures that you'll
-eventually stand where the ball will arrive.
+Part of the answer is that our model abstracts away from cognitive limitations.
+Agents who conform to our model have no need to calculate anything. If their
+evidence entails that a certain act maximizes expected utility, then they are
+already certain that the act maximizes expected utility: anything that is
+entailed by their evidence automatically has credence 1.
+
+The idea that expected utility maximizers would constantly have to go through
+intricate computations also assumes that credences and utilities are
+conceptually prior to choices. On a preference-based approach, preferences and
+choices come first. The MEU Principle boils down to certain constraints on
+preferences, which in turn boil down to constraints on choices. One might hope
+that even real people, who aren't logically omniscient, can reliably satisfy
+these constraints without computing expected utilities.
+
+% In many circumstances, simple alternatives to computing expected utilities
+% reliably lead to optimal choices. As the psychologist Gerd Gigerenzer once
+% pointed out, if you want to catch a flying ball, an efficient alternative to
+% computing the ball's trajectory -- which is generally intractable -- is to move
+% around in such a way that the angle between you and the ball remains within a
+% certain range. This ensures that you'll eventually stand where the ball will
+% arrive.
 
 % If you desire to catch the ball,
 % following Gigerenzer's heuristic will maximize expected utility. You don't need
@@ -202,10 +197,10 @@ eventually stand where the ball will arrive.
   performing the acts.
 \end{exercise}
 
-One reason why many decision problems don't require sophisticated computations
-is that one of the acts clearly dominates the others. Whether this is the
-case depends on the agent's utility function. It follows that you can reduce the
-computational costs of decision-making by tweaking your utilities.
+In many decision situations, there is no need for sophisticated calculations
+because one of the acts clearly dominates the others. Whether this is the case
+depends on the agent's utility function. This suggests that wemight reduce the
+computational costs of decision-making by tweaking our utilities.
 
 For example, suppose you assign significant (sub)value to obeying orders. Doing
 whatever you're ordered to do is then a reliable way of maximizing expected
@@ -299,9 +294,9 @@ preferences.
 \begin{exercise}{1}
   Assume the outcomes in Ellsberg's paradox are described correctly and you
   prefer more money to less. By the Probability Coordination Principle,
-  $\Cr(\emph{Red}) = \nicefrac{1}{3}$. What would your credences in \emph{Green}
-  and \emph{Blue} have to look like so that $\EU(A) > \EU(B)$? What would they
-  have to look like so that $\EU(D) > \EU(C)$?
+  $\Cr(\text{Red}) = \nicefrac{1}{3}$. What would your credences in Green
+  and Blue have to be so that $\EU(A) > \EU(B)$? What would they
+  have to be so that $\EU(D) > \EU(C)$?
 \end{exercise}
 
 In Ellsberg's Paradox, risk aversion doesn't seem to be at issue. What makes the
@@ -336,6 +331,15 @@ figure out $\Cr(\text{Green})$ and $\Cr(\text{Blue})$: from eyeballing the
 options, you can already see that the expected monetary payoff of $A$ and $B$ is
 approximately the same (as is the expected payoff of $C$ and $D$); a preference
 for lotteries tips the balance in favour of $A$ (and $D$).
+
+% We still haven't fully resolved our puzzle. Should real agents follow the MEU
+% Principle, in hard cases, where no heuristic would help? If we say yes, then
+% we either say that should enter into lengthy computations, or that they should
+% follow the Principle by luck. Both seem bad. (Although one could argue that
+% normal people care about being in rational control of their choices, or that
+% they should: we don't want to make important choices randomly, but based on
+% good reasons. I.e., we actually put higher utility to the best choice
+% resulting from computation.) So the answer is probably 'no'. 
 
 \section{Reducing computational costs}\label{sec:ai}
 
@@ -394,7 +398,7 @@ of worlds, and assume that its credence is distributed uniformly within these
 sets. The trick can be extended to non-uniform distributions. For example,
 suppose our robot has imperfect information about how far it is from the next
 charging station. Instead of explicitly storing a probability for every possible
-distance (1 m, 2 m, 3 m, \ldots), we might assume that the robot's credence over
+distance (1m, 2m, 3m, \ldots), we might assume that the robot's credence over
 these possibilities follows a Gaussian distribution, which can be specified by
 two numbers (mean and variance). Researchers in artificial intelligence make
 heavy use of this trick.
@@ -409,46 +413,42 @@ propositions) by specifying their individual probability.
 Independence is sometimes plausible. Whether the next charging station is 100
 meters away plausibly doesn't depend on whether the outside temperature is above
 20\celsius. For many other propositions, however, independence is implausible.
-On the supposition that it is warm outside, it may well be more likely that the
-window is open, or that there are people on the street, than on the supposition
-that it isn't warm. If our agent is unsure whether it is warm, it follows that
-$\Cr(\emph{Open}/\emph{Warm}) > \Cr(\emph{Open})$, and
-$\Cr(\emph{People}/\emph{Warm}) > \Cr(\emph{People})$. We can't assume
-probabilistic independence across all the 50 propositions $A_1,\ldots,A_{50}$.
+On the supposition that it is warm outside ($W$), it may well be more likely
+that the window is open ($O$), or that there are people on the street ($P$),
+than on the supposition that it isn't warm ($\neg W$). If our agent is unsure
+whether it is warm, it follows that $\Cr(O/W) > \Cr(O)$, and
+$\Cr(P/W) > \Cr(P)$. We can't assume probabilistic independence across all the
+50 propositions $A_1,\ldots,A_{50}$.
 
 Even where independence fails, however, we often have \textbf{conditional
   independence}. If warm temperatures make it more likely that the window is
 open and that there are people on the street, then an open window is also
-evidence that there are people on the street:
-$\Cr(\emph{People}/\emph{Open}) > \Cr(\emph{People})$. So \emph{People} and
-\emph{Open} are not independent. However, \emph{on the supposition that it is
-  warm outside}, the window being open may no longer increase the probability of
-people on the street:
+evidence that there are people on the street: $\Cr(P/O) > \Cr(P)$. So $P$ and $O$
+are not independent. However, \emph{on the supposition that it is warm outside},
+the window being open may no longer increase the probability of people on the
+street:
 \[
-  \Cr(\emph{People}/\emph{Open} \land \emph{Warm}) = \Cr(\emph{People}/ \emph{Warm}).
+  \Cr(P/O \land W) = \Cr(P/ W).
 \]
-In this case, we say that \emph{People} and \emph{Open} are independent
-\emph{conditional on} \emph{Warm}.
+In this case, we say that $P$ and $O$ are independent \emph{conditional on} $W$.
 
-Now consider the possible combinations of \emph{Warm}, \emph{People},
-\emph{Open} and their negations. By the probability calculus (compare exercise
-\ref{e:chain-rule}),
+Now consider the possible combinations of $W$, $P$, $O$ and their negations. By
+the probability calculus (compare exercise \ref{e:chain-rule}),
 \[
-  \Cr(\emph{Warm} \land \emph{People} \land \emph{Open}) = \Cr(\emph{Warm}) \cdot \Cr(\emph{Open}/\emph{Warm}) \cdot \Cr(\emph{People}/\emph{Open} \land \emph{Warm}).
+  \Cr(W \land P \land O) = \Cr(W) \cdot \Cr(O/W) \cdot \Cr(P/O \land W).
 \]
 By the above assumption of conditional independence, this simplifies to
 \[
-  \Cr(\emph{Warm} \land \emph{People} \land \emph{Open}) = \Cr(\emph{Warm}) \cdot \Cr(\emph{Open}/\emph{Warm}) \cdot \Cr(\emph{People}/\emph{Warm}).
+  \Cr(W \land P \land O) = \Cr(W) \cdot \Cr(O/W) \cdot \Cr(P/W).
 \]
 
 In general, with the assumption of conditional independence, we can fix the
-probability of all combinations of \emph{Warm}, \emph{People}, \emph{Open}, and
-their negations by specifying the probability of \emph{Warm}, the probability of
-\emph{People} conditional on \emph{Warm} and on $\neg\emph{Warm}$, and the
-probability of \emph{Open} conditional on \emph{Warm} and on $\neg\emph{Warm}$.
-The number of required records shrinks from $2^3-1 = 7$ to 5. This may
-not look all that impressive, but the method really pays off if more than three
-propositions are involved.
+probability of all combinations of $W$, $P$, $O$, and their negations by
+specifying the probability of $W$, the probability of $P$ conditional on $W$ and
+on $\neg W$, and the probability of $O$ conditional on $W$ and on $\neg W$. The
+number of required records shrinks from $2^3-1 = 7$ to 5. This may not look all
+that impressive, but the method really pays off if more than three propositions
+are involved.
 
 The present technique for exploiting conditional independence to simplify
 probabilistic models is formalized in the theory of \textbf{Bayesian networks}
@@ -469,7 +469,7 @@ possible states at any given time, there will be
 $100^{10} = 100,000,000,000,000,000,000$ possible histories with length 10.
 Instead of storing individual probabilities for each of these possibilities, it
 helps to assume that a later state (probabilistically) depends only on its
-immediate predecessor, so that $\Cr(S_3/S_1 \land S_2) = \Cr(S_3/S_2)$. This is
+immediate predecessor, so that $\Cr(S_3\,/\,S_1 \!\land\! S_2) = \Cr(S_3/S_2)$. This is
 known as the \textbf{Markov assumption}. It reduces the number of records we'd
 need to store from $100^{10}$ to 990,100.%
 \cmnt{%
@@ -564,7 +564,7 @@ low-probability outcomes. Thus probability 0 events have weight 0, probability 1
 events have weight 1, but in between the weight curve is steep at the edges and
 flatter in the middle: probability 0.01 events might have weight 0.05,
 probability 0.02 events weight 0.08, \ldots, probability 0.99 events weight
-0.92. Among other things, this is meant to explain why people play the lottery,
+0.95. Among other things, this is meant to explain why people play the lottery,
 and why they tend to pay a high price for certainty: they prefer a settlement of
 £90000 over a trial in which they have a 99\% chance of getting £100000 but a
 1\% chance of getting nothing.%
@@ -607,8 +607,8 @@ Some have argued that the observations that motivate probability weighting are
 better explained by redescribing the outcomes and allowing people to care about
 things like risk or fairness. But there is evidence that people really do fail
 to coordinate their beliefs with known objective probabilities, especially if
-the probabilities are communicated verbally. People's decision weights tend
-to be closer to the objective probabilities if they have experienced the
+the probabilities are communicated verbally.  People's decision weights
+tend to be closer to the objective probabilities if they have experienced the
 probabilities as relative frequencies in repeated trials.%
 \cmnt{%
   \cite[331]{kahneman11thinking}%
@@ -658,7 +658,7 @@ to square with our model.
   prospect theory or rational choice theory \cite[287f.]{kahneman11thinking}.%
 } %
 
-The problematic type of reference dependence is closely related to so-called
+The problematic type of reference dependence is related to so-called
 \textbf{framing effects}. In experiments, people's choices can systematically
 depend on how one and the same decision problem is described. When presented
 with a hypothetical situation in which 1000 people are in danger of death, and a
@@ -717,36 +717,48 @@ kind of attribute selection into account.
 
 \section{Imprecise credence and utility}\label{sec:imprecise}
 
-I'm going to toss three dice. Would you rather get £1000 if the sum of the
-numbers on the dice is at least 10 or if all three numbers are different? You'd
-probably need some time to give a final answer. You know that the six possible
-results for every dice have equal probability, and that the results are
-independent. But it takes some effort to figure out which of the two events I
-described is more likely.
+% I'm going to toss three dice. Would you rather get £1000 if the sum of the
+% numbers on the dice is at least 10 or if all three numbers are different? You'd
+% probably need some time to give a final answer. You know that the six possible
+% results for every dice have equal probability, and that the results are
+% independent. But it takes some effort to figure out which of the two events I
+% described is more likely.
 
-A real agent's cognitive system can't explicitly store a credence and utility
-for every proposition. It can only store a limited number of
-\textbf{constraints} on credences and utilities. A constraint rules out some
-credences and utilities, but not others. That outcomes of die tosses are
-probabilistically independent is a constraint; it entails that the probability
-of three sixes is the product of the probabilities for the individual dice:
-$\Cr(\text{Six}_1 \land \text{Six}_2 \land \text{Six}_3) = \Cr(\text{Six}_1)\cdot \Cr(\text{Six}_2)\cdot \Cr(\text{Six}_3)$,
-but it does not fix what these probabilities are.
+% A real agent's cognitive system can't explicitly store a credence and utility
+% for every proposition. It can only store a limited number of
+% \textbf{constraints} on credences and utilities. A constraint rules out some
+% credences and utilities, but not others. That outcomes of die tosses are
+% probabilistically independent is a constraint; it entails that the probability
+% of three sixes is the product of the probabilities for the individual dice:
+% $\Cr(\text{Six}_1 \land \text{Six}_2 \land \text{Six}_3) = \Cr(\text{Six}_1)\cdot \Cr(\text{Six}_2)\cdot \Cr(\text{Six}_3)$,
+% but it does not fix what these probabilities are.
 
-Will the constraints stored by an agent's cognitive system always be rich enough
-to determine a unique credence and utility function? Perhaps not. There might
-well be questions on which you don't have a settled opinion, even in principle,
-after ideal reflection. Or suppose you don't have time for lengthy reflection,
-or you're too tired. It might be wrong to model your attitudes by a single,
-precise credence function, and a single, precise utility functions.
+% Will the constraints stored by an agent's cognitive system always be rich enough
+% to determine a unique credence and utility function? Perhaps not. There might
+% well be questions on which you don't have a settled opinion, even in principle,
+% after ideal reflection. Or suppose you don't have time for lengthy reflection,
+% or you're too tired. It might be wrong to model your attitudes by a single,
+% precise credence function, and a single, precise utility functions.
+
+One respect in which our model is often found unrealistic is that its credences
+and utilities are too precise. What is your credence that there will be a
+nuclear war before 2100? Is it 0.31832? Or 0.20993? Any such answer may seem
+wrong. You haven't made up your mind up to the 5th (let alone the 500th) decimal
+point.
 
 Across several disciplines, researchers have developed models that don't assume
-unique and precise credences and utilities. The standard approach is to use
-\textbf{sets of credence and utility functions} instead of single functions. If
-we think of your cognitive system as storing constraints, then the set comprises
-all the (pairs of) functions that meet these constraints. Intuitively, each
-member of the set is a \emph{refinement} or \emph{precisification} of your
-indeterminate state of mind.
+unique and precise credences and utilities. On this approach, your credence in a
+nuclear war might be given by a whole range of numbers -- perhaps by the
+interval [0.2, 0.5] that contains all numbers from 0.2 up to 0.5.
+
+If we want to specify rational norms for such ``imprecise'' credences, it helps
+to assume that they are determined by a set of precise credence functions. We
+would model your imprecise belief state by a set $\mathbb{C\!r}$ of credence
+functions that assign different numbers to the nuclear war hypothesis. For each
+number in [0.2, 0.5], there would be a member of $\mathbb{C\!r}$ that assigns this
+number to the nuclear war hypothesis. We can then implicitly constrain your
+imprecise credences by saying that each member of $\mathbb{C\!r}$ should satisfy
+the Kolmogorov axioms.
 
 % The idea is often motivated by consideration like the following. How likely do
 % you think it is that it will snow in Toronto on 7 January 2041? If someone
@@ -796,6 +808,12 @@ indeterminate state of mind.
 % of the axioms. And it is not implausible that real agents do violate some of
 % these axioms.
 
+% Intuitively, each member of $\mathbb{Cr}$ is a \emph{refinement} or
+% \emph{precisification} of your indeterminate state of mind.
+
+We can adopt a similar account of utility, replacing our single utility function
+$U$ by a set of utility functions $\mathbb{U}$.
+
 On a preference-based approach, ``imprecise'' credences and utilities naturally
 arise through violations of the Completeness axiom. Completeness says that for
 any propositions $A$ and $B$, you either prefer $A$ to $B$, or you prefer $B$ to
@@ -804,25 +822,26 @@ preference in terms of choice. Indeed, in a forced choice between $A$ and $B$,
 you will inevitably choose either $A$ or $B$; even indifference can be ruled
 out. But we've seen that if we want to measure credence and utility in terms of
 preference, then the relevant preference relation can't be directly defined in
-terms of choices. Once we take a step back from choice behaviour, it seems
-perfectly possible that you neither prefer $A$ to $B$, nor $B$ to $A$, and yet
-you're not indifferent between the two. You simply haven't made up your mind.
-The two propositions seem roughly ``on a par'', but you wouldn't say they are
-exactly equal in value.
+terms of choices. Once we take a step back from choice behaviour, it is
+conceivable that you neither prefer $A$ to $B$, nor $B$ to $A$, and yet you're
+not indifferent between the two. You simply haven't made up your mind. The two
+propositions seem roughly ``on a par'', but you wouldn't say they are exactly
+equal in value.
 
 % Chang thinks parity is different from incomparability. I don't think so.
 
-Here is a possible example. Would you rather lose your capacity to hear or your
-capacity to walk? You may well have no clear preference, even after considerable
-reflection. Does this mean that you're exactly indifferent? Not necessarily. If
-you were, you should definitely prefer losing the capacity to hear \emph{and
-  getting £1} to losing the capacity to walk. In reality, the added £1 may not
-make a difference.
+For example, would you rather lose your capacity to hear or your capacity to
+walk? You may well have no clear preference, even after considerable reflection.
+Does this mean that you're exactly indifferent? Not necessarily. If you were,
+you should definitely prefer losing the capacity to hear \emph{and getting £10}
+to losing the capacity to walk. In reality, the added £10 may not make a
+difference. 
 
 \begin{exercise}{2}
-  Suppose we define `$A\sim B$' as `not $A \succ B$ and not $B \succ A$'.
-  Completeness is then logically guaranteed. But Transitivity might fail, if you
-  haven't fully made up your mind. Explain why.
+  Suppose we define `$A\sim B$' as `not $A \succ B$ and not $B \succ A$'. It is
+  then logically guaranteed that either $A \succ B$ or $B\succ A$ or $A \sim B$.
+  But Transitivity might fail, if you haven't fully made up your mind. Explain
+  why.
 \end{exercise}
 
 Even if we give up completeness, however, we might still require
