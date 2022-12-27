@@ -1,0 +1,9 @@
+*.aux
+*.out
+*.log
+*.toc
+*.gz
+*.fdb_latexmk
+*.fls
+bdrc-*.pdf
+bdrc-literature*
