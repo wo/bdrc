@@ -7,3 +7,8 @@
 *.fls
 bdrc-*.pdf
 bdrc-literature*
+/.auctex-auto/
+/tmp/
+/html/*
+!/html/bdrc.css
+!/html/fonts/

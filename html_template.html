@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="bdrc.css" />
+    <script>
+    MathJax = {
+        tex: {
+            tags: "ams",
+            tagSide: "left",
+            macros: {
+                bet: ["[#1\\,?\\,#2\\,{:}\\,#3]", 3],
+                epref: "\\succsim",
+                pref: "\\succ",
+                dprefw: "\\precsim",
+                dpref: "\\prec",
+                incomp: "\\shortparallel",
+                Cr: "\\mathrm{Cr}",
+                Cro: "\\mathrm{Cr}_{\\mathrm{old}}",
+                Crn: "\\mathrm{Cr}_{\\mathrm{new}}",
+                m: "\\mathrm{m}",
+                EU: "\\mathrm{EU}",
+                U: "\\mathrm{U}",
+                t: ["\\langle #1 \\rangle", 1],
+                nicefrac: ["{}^{#1}\\!/\\!_{#2}", 2],
+                emph: ["\\textit{#1}", 1],
+                boxright: "\\mathbin{\\Box\\!\\rightarrow}",
+                celsius: "°\\text{C}",
+                fahrenheit: "°\\text{F}"
+            }
+        },
+        loader: {
+            paths: { fonts: 'mathjax-fonts' }
+        },
+        output: {
+            font: 'mathjax-stix2',
+            displayAlign: 'left',
+            displayIndent: '2em',
+            lineleading: 0.6
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const dropdownContent = document.querySelector('.dropdown-content');
+        hamburger.addEventListener('click', function() {
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        });
+        document.addEventListener('click', function(event) {
+            if (!hamburger.contains(event.target)) {
+                dropdownContent.style.display = 'none';
+            }
+        });
+        // Prevent clicks inside the dropdown from closing it
+        dropdownContent.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    });
+    </script>
+    <script type="text/javascript" async="async" id="MathJax-script" src="mathjax/tex-chtml-nofont.js"></script>
+</head>
+<body>
+    <header>
+        <div id="title">
+            <div class="dropdown">
+                <span class="hamburger">&#9776;</span>
+                <div class="dropdown-content">
+                {{toc}}
+                </div>
+            </div>
+            <a href="index.html">Belief, Desire, and Rational Choice</a>
+        </div>
+    </header>
+    <div class="content">
+    {{content}}
+    </div>
+    <footer>
+        <p>
+            © {{year}} Wolfgang Schwarz |
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">License</a> |
+            <a href="https://github.com/wo/bdrc">GitHub Source</a> |
+            <a href="http://umsu.de/bdrc/bdrc.pdf">PDF Version</a>
+        </p>
+    </footer>
+</body>
+</html>

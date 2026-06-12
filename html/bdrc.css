@@ -1,0 +1,989 @@
+/* Web Fonts
+   ========================================================================== */
+@font-face {
+    font-family: "Noto Serif";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/noto-serif-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+    font-family: "Noto Serif";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/noto-serif-latin-400-italic.woff2') format('woff2');
+}
+@font-face {
+    font-family: "Noto Serif";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/noto-serif-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+    font-family: "Noto Serif";
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/noto-serif-latin-700-italic.woff2') format('woff2');
+}
+
+/* CSS Custom Properties
+   ========================================================================== */
+:root {
+    /* Typography scale - increase --font-scale to make everything larger */
+    --font-scale: 1.15;        /* 1.15 × 16px browser default ≈ 18.4px */
+
+    /* Font families */
+    --font-body: "Noto Serif", "DejaVu Serif", Georgia, serif;
+    --font-mono: monospace, monospace;
+    --font-sans: sans-serif;
+
+    /* Colors */
+    --color-brand: #324851;
+    --color-brand-light: #34675c;
+    --color-text: #111;
+    --color-text-muted: #222;
+    --color-text-faint: #788;
+    --color-bg: #f4f4f4;
+    --color-bg-alt: #f9f9f9;
+    --color-bg-highlight: #eceeee;
+    --color-white: #fff;
+    --color-border: #ddd;
+
+    /* Box colors: "task" boxes (exercises, essay questions) vs "info" boxes
+       (examples, generic theorems, sources). */
+    --color-task: #7Fa176;       /* gold: exercises + essay questions (similar boxes) */
+    --color-example: #4A6F39;    /* green: worked examples */
+    --color-theorem: #0078a7;    /* slate blue: generic-theorem boxes */
+    --color-sources: #AAA44A;    /* mauve: sources / further reading */
+    --color-info: #324851;       /* plain boxes (justabox) */
+
+    /* Layout */
+    --content-width: 45rem;
+    --line-height: 1.7;
+}
+
+/* Base
+   ========================================================================== */
+html {
+    font-size: calc(100% * var(--font-scale));
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: var(--line-height);
+}
+
+@media print {
+    body {
+        max-width: none;
+    }
+}
+
+/* Header
+   ========================================================================== */
+header {
+    border-bottom: 3px solid var(--color-brand);
+    width: 100%;
+}
+
+#title {
+    max-width: var(--content-width);
+    margin: 0.6rem auto;
+    display: flex;
+    color: var(--color-brand);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+#title a {
+    color: var(--color-brand);
+    text-decoration: none;
+}
+
+/* Dropdown navigation
+   ========================================================================== */
+.dropdown {
+    position: absolute;
+    z-index: 10;
+    padding-right: 0.7em;
+    transform: translateX(-100%);
+}
+
+.dropdown .hamburger {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--color-bg-alt);
+    min-width: 28rem;
+    left: -0.6rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+    z-index: 100;
+    max-height: 31rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    line-height: 1.5;
+    padding: 0.6rem;
+}
+
+.dropdown-content a {
+    display: block;
+    color: var(--color-brand);
+    font-size: 1rem;
+    padding-top: 0.6rem;
+    text-decoration: none;
+}
+
+.dropdown-content a.sectionToc {
+    padding: 0;
+    font-weight: normal;
+}
+
+/* Main content
+   ========================================================================== */
+.content {
+    margin: 2.5rem auto;
+    max-width: var(--content-width);
+    padding: 0 0.6em;
+}
+
+/* Footer
+   ========================================================================== */
+footer {
+    background: var(--color-brand);
+    color: var(--color-white);
+    text-align: center;
+    padding: 1.25rem;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+footer a {
+    color: var(--color-white);
+}
+
+/* Table of contents (in-page)
+   ========================================================================== */
+.tableofcontents {
+    line-height: 1.5;
+    font-size: 1.05rem;
+}
+
+.tableofcontents a {
+    text-decoration: none;
+}
+
+.tableofcontents span.chapterToc {
+    padding-top: 0.3em;
+    display: inline-block;
+}
+
+/* Typography
+   ========================================================================== */
+h1, h2, h3, h4, h5 {
+    line-height: 1.4;
+}
+
+.chapterHead, .likechapterHead {
+    font-size: 1.7rem;
+}
+
+.sectionHead, .likesectionHead {
+    font-size: 1.5rem;
+    margin-top: 1.6em;
+}
+
+.subsectionHead, .likesubsectionHead {
+    font-size: 1.3rem;
+}
+
+.subsubsectionHead, .likesubsubsectionHead {
+    font-size: 1rem;
+}
+
+.partHead, .likepartHead {
+    font-size: 2rem;
+}
+
+.titlemark {
+    position: absolute;
+    z-index: -1;
+    padding-right: 0.7em;
+    color: var(--color-text-faint);
+    transform: translateX(-100%);
+}
+
+p {
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphenate-limit-chars: 10;
+    text-wrap: pretty;
+}
+
+div + p, p + div, p + p, p + pre, pre + p {
+    margin-top: 1em;
+}
+
+.tcolorbox p + p {
+    margin-top: 0.3em;
+}
+
+/* Links
+   ========================================================================== */
+a {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    word-break: break-word;
+    color: var(--color-brand-light);
+}
+
+a img {
+    border: 0;
+}
+
+a.locallink {
+    text-decoration: none;
+    background: var(--color-bg-highlight);
+}
+
+a.locallink:hover {
+    text-decoration: underline;
+}
+
+/* Utility classes
+   ========================================================================== */
+span.nowrap {
+    white-space: nowrap;
+}
+
+/* Chapter 4's tapering rows of 'G's (the uniform/non-uniform hypotheses),
+   rendered from \scaleto as sized spans. */
+.gtaper {
+    font-style: italic;
+    white-space: nowrap;
+}
+
+center {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+td center {
+    margin: 0;
+}
+
+.small-caps, .smallcaps {
+    font-variant: small-caps;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.overline {
+    text-decoration: overline;
+}
+
+/* Navigation
+   ========================================================================== */
+.nextchapter {
+    margin: 2.5rem 0;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--color-border);
+}
+
+@media print {
+    div.crosslinks {
+        visibility: hidden;
+    }
+}
+
+/* Images and figures
+   ========================================================================== */
+img[src$=".svg"] {
+    margin: 1.25rem 0 0 0;
+}
+
+div.figure, div.float, figure.float {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.figure img, div.float img {
+    text-align: center;
+}
+
+figure.figure {
+    text-align: center;
+}
+
+figcaption.caption {
+    margin-left: 3em;
+    margin-right: 1em;
+    text-align: center;
+    text-indent: -2em;
+}
+
+figcaption.caption span.id {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+img + figcaption, p + figcaption {
+    margin-top: 1em;
+}
+
+img.math {
+    vertical-align: middle;
+}
+
+img.cdots {
+    vertical-align: middle;
+}
+
+.overline img {
+    border-top: 1px solid #000;
+}
+
+.underline img {
+    border-bottom: 1px solid #000;
+    margin-bottom: 1pt;
+}
+
+.Canvas {
+    position: relative;
+}
+
+/* Lists
+   ========================================================================== */
+li.nobullet {
+    list-style-type: none;
+    margin-left: 0.5em;
+}
+
+span.itemlabel {
+    position: absolute;
+    padding-right: 0.6rem;
+    transform: translateX(-100%);
+}
+
+.enumerate1 { list-style-type: decimal; }
+.enumerate2 { list-style-type: lower-alpha; }
+.enumerate3 { list-style-type: lower-roman; }
+.enumerate4 { list-style-type: upper-alpha; }
+
+li p.indent {
+    text-indent: 0;
+}
+
+li p:first-child {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+li p ~ ol:last-child, li p ~ ul:last-child {
+    margin-bottom: 0.5em;
+}
+
+dl.enumerate {
+    align-items: top;
+    display: grid;
+    grid-template-columns: 3ch 1fr;
+    row-gap: 1ch;
+}
+
+dd.enumerate {
+    margin-left: 0;
+}
+
+dl.enumerate-enumitem {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 0.4em;
+    row-gap: 0.5ch;
+    margin-left: 1.25rem;
+    align-items: start;
+}
+
+dt.enumerate-enumitem {
+    text-align: right;
+    white-space: nowrap;
+}
+
+dd.enumerate-enumitem {
+    margin-left: 0.5rem;
+}
+
+.compactenum, dt.enumerate {
+    clear: left;
+    float: left;
+    margin-left: 2em;
+    margin-right: 0.2em;
+}
+
+/* Tables
+   ========================================================================== */
+div.tabular {
+    text-align: center;
+    padding: 0.6rem;
+}
+
+table.tabular {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.center div.tabular, div.tabular {
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+table.tabular td p {
+    margin-top: 0;
+}
+
+td p:first-child { margin-top: 0; }
+td p:last-child { margin-bottom: 0; }
+
+table[rules] {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+/* Table cell padding variants */
+div.td00 { margin: 0; }
+div.td01 { margin-left: 0; margin-right: 0.3rem; }
+div.td10 { margin-left: 0.3rem; margin-right: 0; }
+div.td11 { margin: 0 0.3rem; }
+
+td.td00 { padding: 0; }
+td.td01 { padding-left: 0; padding-right: 0.3rem; }
+td.td10 { padding-left: 0.3rem; padding-right: 0; }
+td.td11 { padding: 0 0.3rem; }
+
+/* Table lines */
+.hline, .hline hr, .cline hr {
+    border-top: 1px solid #000;
+}
+
+.cline hr, .hline hr {
+    height: 0;
+    margin: 0;
+    border: none;
+}
+
+.cline td, .hline td {
+    padding: 0;
+}
+
+.hline + .vspace:last-child {
+    display: none;
+}
+
+.hline:first-child {
+    border-bottom: 1px solid #000;
+    border-top: none;
+}
+
+tr.hline td hr {
+    display: none;
+}
+
+div.array {
+    text-align: center;
+}
+
+/* Decision tables: shade the header row and first column (the states and acts),
+   restoring the \rowcolor / \columncolor / \cellcolor shading tex4ht drops. */
+table.tabular td.gr, table.tabular th.gr {
+    background: #dde2e2;
+}
+
+/* Math display
+   ========================================================================== */
+div.math-display, div.par-math-display {
+    text-align: center;
+}
+
+span.pmatrix img {
+    vertical-align: middle;
+}
+
+div.pmatrix, div.eqnarray {
+    text-align: center;
+}
+
+table.pmatrix, table.eqnarray, table.eqnarray-star {
+    width: 100%;
+}
+
+span.bar-css {
+    text-decoration: overline;
+}
+
+/* Equations */
+.equation td, .equation-star td {
+    text-align: center;
+}
+
+table.equation, table.equation-star {
+    width: 100%;
+}
+
+td.equation {
+    margin: 1em 0;
+}
+
+td.equation-label {
+    text-align: center;
+    width: 5%;
+}
+
+td.eqnarray4 {
+    white-space: normal;
+    width: 5%;
+}
+
+td.eqnarray2 {
+    width: 5%;
+}
+
+/* Alignment environments */
+table.align, table.alignat, table.flalign, table.xalignat, table.xxalignat {
+    margin-left: 5%;
+    white-space: nowrap;
+    width: 95%;
+}
+
+table.align-star, table.alignat-star, table.flalign-star, table.xalignat-star {
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+}
+
+td.align-label {
+    text-align: center;
+    width: 5%;
+}
+
+td.align-odd {
+    padding-right: 0.3em;
+    text-align: right;
+}
+
+td.align-even {
+    padding-right: 0.6em;
+    text-align: left;
+}
+
+table.multline, table.multline-star, table.gather {
+    width: 100%;
+}
+
+td.gather, div.gather-star {
+    text-align: center;
+}
+
+/* Boxes and frames
+   ========================================================================== */
+.fbox {
+    border: 1px solid #000;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    text-indent: 0;
+}
+
+div.fbox {
+    display: table;
+}
+
+div.center div.fbox {
+    border: 1px solid #000;
+    clear: both;
+    padding: 0 0.2rem;
+    text-align: center;
+    text-indent: 0;
+}
+
+.framebox-c, .framebox-l, .framebox-r {
+    border: 1px solid #000;
+    padding: 0 0.2rem;
+    text-indent: 0;
+}
+
+.framebox-c { text-align: center; }
+.framebox-l { text-align: left; }
+.framebox-r { text-align: right; }
+
+div.minipage {
+    display: inline-block;
+    margin: 2rem 4rem 2rem 0;
+    vertical-align: top;
+    text-align: center;
+}
+
+div.minipage p {
+    text-align: center;
+}
+
+/* Alignment
+   ========================================================================== */
+div.center, div.center div.center {
+    margin-left: 1em;
+    margin-right: 1em;
+    text-align: center;
+}
+
+div.center p, footer p {
+    text-align: center;
+}
+
+div.center div {
+    text-align: left;
+}
+
+div.flushright, div.flushright div.flushright {
+    text-align: right;
+}
+
+div.flushleft, div.flushright div {
+    text-align: left;
+}
+
+.centerline, td.displaylines {
+    text-align: center;
+}
+
+.rightline {
+    text-align: right;
+}
+
+td.displaylines {
+    white-space: nowrap;
+}
+
+/* Verbatim and code
+   ========================================================================== */
+pre.verbatim {
+    clear: both;
+    font-family: var(--font-mono);
+    text-align: left;
+}
+
+code.verb, code.lstinline, pre.listings, pre.lstlisting, pre.lstinputlisting {
+    font-family: var(--font-mono);
+}
+
+pre.listings, pre.lstlisting {
+    margin: 0.5em 0;
+    white-space: pre-wrap;
+}
+
+pre.fancyvrb {
+    font-family: var(--font-mono);
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+div.verbatiminput {
+    font-family: var(--font-mono);
+    white-space: nowrap;
+}
+
+/* Footnotes
+   ========================================================================== */
+div.footnotes {
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-right: 15%;
+    margin-top: 2em;
+    padding: 0.5em 0 1em 0;
+}
+
+div.footnotes p {
+    margin: 0;
+    text-indent: 0;
+}
+
+span.footnote-mark a sup.textsuperscript,
+span.footnote-mark sup.textsuperscript {
+    font-size: 80%;
+}
+
+span.thank-mark {
+    vertical-align: super;
+}
+
+/* Margin notes
+   ========================================================================== */
+.marginpar, .reversemarginpar {
+    float: right;
+    font-size: 0.85rem;
+    margin-left: auto;
+    margin-top: 0.5em;
+    text-align: left;
+    text-decoration: underline;
+    width: 20%;
+}
+
+.marginpar p, .reversemarginpar p {
+    margin: 0.4em 0;
+}
+
+.reversemarginpar {
+    float: left;
+}
+
+/* Title and frontmatter
+   ========================================================================== */
+div.maketitle, h2.titleHead {
+    text-align: center;
+}
+
+div.maketitle {
+    margin-bottom: 2em;
+}
+
+div.author, div.date {
+    text-align: center;
+}
+
+div.thanks {
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-left: 10%;
+    text-align: left;
+}
+
+div.dedication, div.titlepage {
+    text-align: center;
+}
+
+div.titlepage {
+    margin-bottom: 2em;
+}
+
+h1.partHead {
+    text-align: center;
+}
+
+/* TOC styling
+   ========================================================================== */
+.likepartToc, .likepartToc a, .partToc, .partToc a {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 2;
+}
+
+.addchapToc a, .appendixToc, .appendixToc a,
+.chapterToc, .chapterToc a,
+.likechapterToc, .likechapterToc a {
+    font-weight: 700;
+    line-height: 2;
+}
+
+/* Bibliography
+   ========================================================================== */
+p.bibitem {
+    text-indent: -2em;
+}
+
+p.bibitem, p.bibitem-p {
+    margin: 0.6em 0 0.6em 2em;
+}
+
+p.bibitem-p {
+    text-indent: 0;
+}
+
+/* Paragraph headings
+   ========================================================================== */
+.paragraphHead, .likeparagraphHead {
+    font-weight: 700;
+    margin-top: 2em;
+}
+
+.subparagraphHead, .likesubparagraphHead {
+    font-weight: 700;
+}
+
+/* Captions
+   ========================================================================== */
+.caption td.id, .caption span.id {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+div.caption {
+    text-align: center;
+}
+
+/* Wrap figures
+   ========================================================================== */
+.wrapfig-r, .wrapfig-ir, .wrapfig-or, .wrapfig-ri, .wrapfig-ro {
+    float: right;
+    margin-left: 2em;
+    margin-top: 0.5em;
+    text-align: left;
+}
+
+.wrapfig-l, .wrapfig-il, .wrapfig-ol, .wrapfig-li, .wrapfig-lo {
+    float: left;
+    margin-right: auto;
+    margin-top: 0.5em;
+    text-align: left;
+}
+
+/* Miscellaneous LaTeX constructs
+   ========================================================================== */
+p.indent {
+    text-indent: 0;
+}
+
+.obeylines-h, .obeylines-v {
+    white-space: nowrap;
+}
+
+div.obeylines-v p {
+    margin: 0;
+}
+
+.rotatebox {
+    display: inline-block;
+}
+
+/* tcolorbox elements
+   ========================================================================== */
+.tcolorbox {
+    margin: 1.25rem 0;
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.2);
+}
+
+.tcolorbox .lowerbox {
+    margin-top: 0;
+}
+
+.tcolorbox dl.enumerate-enumitem {
+    margin-left: 0rem;
+}
+
+.tcolorbox > div.tcolorbox-content {
+    padding: 0.5em 1em;
+    color: var(--color-text-muted);
+}
+
+/* "Task" boxes: exercises and essay questions — filled title bar. */
+.exercise > div.tcolorbox-title,
+.essay > div.tcolorbox-title {
+    background: var(--color-task);
+    padding: 0.2rem 1.25rem;
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.exercise > div.tcolorbox-content,
+.essay > div.tcolorbox-content {
+    border: 1px solid var(--color-task);
+}
+
+/* Example boxes: filled terracotta heading bar. */
+.example > div.tcolorbox-title {
+    background: var(--color-example);
+    padding: 0.2rem 1.25rem;
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.example > div.tcolorbox-content {
+    border: 1px solid var(--color-example);
+}
+
+/* Generic-theorem boxes: filled slate-blue heading bar. */
+.genericthm > div.tcolorbox-title {
+    background: var(--color-theorem);
+    padding: 0.2rem 1.25rem;
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.genericthm > div.tcolorbox-content {
+    border: 1px solid var(--color-theorem);
+}
+
+/* Sources boxes: filled mauve heading bar. */
+.sources > div.tcolorbox-title {
+    background: var(--color-sources);
+    padding: 0.2rem 1.25rem;
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.sources > div.tcolorbox-content {
+    border: 1px solid var(--color-sources);
+}
+
+.justabox > div.tcolorbox-content {
+    border: 1px solid var(--color-info);
+}
+
+.sources {
+    font-size: 0.9rem;
+}
+
+/* Map tex4ht font classes to styles by font family, ignoring the size suffix
+   tex4ht appends (-12, -10x-x-109, -17x-x-143, …). Keying on the family rather
+   than a specific size means small (\small) and large contexts get styled too.
+   ========================================================================== */
+[class*="ec-lmr"],          /* Latin Modern Roman (upright and italic) */
+[class*="xydash"] {
+    font-size: inherit;     /* don't let the size suffix resize text */
+}
+
+[class*="ec-lmri"],         /* roman italic */
+[class*="cmmi"],            /* math italic */
+[class*="cmti"] {           /* text italic */
+    font-style: italic;
+}
+
+[class*="ec-lmbxi"] {       /* bold italic */
+    font-weight: 700;
+    font-style: italic;
+}
+
+[class*="ec-lmbx"] {        /* bold extended */
+    font-weight: 700;
+}
+
+[class*="ec-lmss"] {        /* sans serif */
+    font-family: var(--font-sans);
+}
+
+[class*="ec-lmssbx"] {      /* sans bold */
+    font-family: var(--font-sans);
+    font-weight: 700;
+}
+
+[class*="ec-lmtt"] {        /* typewriter */
+    font-family: var(--font-mono);
+}
