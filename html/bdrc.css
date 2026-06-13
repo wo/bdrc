@@ -33,37 +33,65 @@
    ========================================================================== */
 :root {
     /* Typography scale - increase --font-scale to make everything larger */
-    --font-scale: 1.15;        /* 1.15 × 16px browser default ≈ 18.4px */
+    --font-scale: 1.2;         /* 1.2 × 16px browser default ≈ 19.2px */
 
     /* Font families */
     --font-body: "Noto Serif", "DejaVu Serif", Georgia, serif;
     --font-mono: monospace, monospace;
     --font-sans: sans-serif;
 
-    /* Colors */
-    --color-brand: #324851;
-    --color-brand-light: #34675c;
-    --color-text: #111;
-    --color-text-muted: #222;
-    --color-text-faint: #788;
-    --color-bg: #f4f4f4;
-    --color-bg-alt: #f9f9f9;
-    --color-bg-highlight: #eceeee;
-    --color-white: #fff;
-    --color-border: #ddd;
+    /* Colors. Each value is light-dark(<light>, <dark>) and resolves according
+       to the page's used color-scheme — so one definition drives both themes.
+       The OS preference is followed by default (color-scheme: light dark, set
+       below); the theme toggle overrides it by pinning color-scheme on <html>
+       (see the [data-theme] rules). Palette is green-accented. */
+    --color-brand:        light-dark(#2E8B57, #61bc84);  /* headings, rule, title */
+    --color-brand-light:  light-dark(#357a52, #8fc7a4); /* links */
+    --color-text:         light-dark(#1a1a1a, #e0e0e0);
+    --color-text-muted:   light-dark(#222,    #e0e0e0);
+    --color-text-faint:   light-dark(#6a7a72, #8b9a90);
+    --color-bg:           light-dark(#f6f7f6, #1e1e1e);
+    --color-bg-alt:       light-dark(#fbfcfb, #2d2d2d);
+    --color-bg-highlight: light-dark(#e7efe9, #2d2d2d);
+    --color-white:        #fff;
+    --color-border:       light-dark(#d8ded9, #454545);
+    --color-rule:         light-dark(#222,    #6b6b6b);  /* tables, footnotes, frames */
+    --color-footer:       light-dark(#345e37, #2d2d2d);
+    --color-footer-text:  light-dark(#fff,    #e0e0e0);
 
-    /* Box colors: "task" boxes (exercises, essay questions) vs "info" boxes
-       (examples, generic theorems, sources). */
-    --color-task: #7Fa176;       /* gold: exercises + essay questions (similar boxes) */
-    --color-example: #4A6F39;    /* green: worked examples */
-    --color-theorem: #0078a7;    /* slate blue: generic-theorem boxes */
-    --color-sources: #AAA44A;    /* mauve: sources / further reading */
-    --color-info: #324851;       /* plain boxes (justabox) */
+    /* Box accent colors — analogous greens/teals/olives, so the callout boxes
+       harmonize while staying distinguishable. Each box sets --accent to one of
+       these; its tinted fill is derived from it via color-mix() against the
+       page background, so it adapts automatically to light/dark. */
+    --color-task:    light-dark(#2E8B57, #61bc84);  /* exercises + essay questions */
+    --color-example: light-dark(#4f7a2f, #8fc46b);  /* worked examples */
+    --color-theorem: light-dark(#2f8f86, #58c2b7);  /* generic-theorem boxes */
+    --color-sources: light-dark(#7d8a33, #c2cd6f);  /* sources / further reading */
+    --color-info:    light-dark(#345e37, #8FBC8F);  /* plain boxes (justabox) */
 
-    /* Layout */
-    --content-width: 45rem;
+    /* TikZ figures are pure-black line art on transparency, which vanishes on a
+       dark background. invert(0) is a no-op in light mode; in dark mode invert
+       turns the black strokes near-white. Driven by light-dark() so it follows
+       the toggle automatically. */
+    --svg-invert: light-dark(0, 0.9);
+
+    /* Layout. content-width is in rem, so it scales with --font-scale and the
+       *measure* (characters per line) is set by this number alone, regardless
+       of font size: chars/line ≈ content-width ÷ 0.5em. 38rem ≈ 76 chars. */
+    --content-width: 38rem;
     --line-height: 1.7;
+
+    /* Follow the OS theme by default; the toggle overrides this below. */
+    color-scheme: light dark;
+
+    /* Native controls (checkboxes, focus rings, …) pick up the brand colour. */
+    accent-color: var(--color-brand);
 }
+
+/* Theme toggle: pinning color-scheme makes every light-dark() above resolve to
+   the chosen side, overriding the OS preference. */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"]  { color-scheme: dark; }
 
 /* Base
    ========================================================================== */
@@ -100,6 +128,7 @@ header {
     max-width: var(--content-width);
     margin: 0.6rem auto;
     display: flex;
+    align-items: center;
     color: var(--color-brand);
     font-size: 1.4rem;
     font-weight: bold;
@@ -108,6 +137,41 @@ header {
 #title a {
     color: var(--color-brand);
     text-decoration: none;
+}
+
+/* Theme toggle: a two-segment Light|Dark pill, pushed to the right of the
+   title. The active theme's segment is filled, the other is the clickable
+   alternative — so the control shows the current state unambiguously. */
+.theme-toggle {
+    margin-left: auto;
+    display: inline-flex;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    overflow: hidden;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.theme-opt {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-faint);
+    font: inherit;
+    line-height: 1.7;
+    padding: 0.1em 0.65em;
+}
+
+.theme-opt.active {
+    background: var(--color-bg-highlight);
+    color: var(--color-brand);
+}
+
+.theme-opt:not(.active):hover {
+    color: var(--color-brand);
 }
 
 /* Dropdown navigation
@@ -121,13 +185,19 @@ header {
 
 .dropdown .hamburger {
     cursor: pointer;
+    /* The ☰ glyph carries its whitespace above the bars and none below, so it
+       sits low in its box; nudge it up to optically centre it on the title. */
+    display: inline-block;
+    position: relative;
+    top: -0.12em;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: var(--color-bg-alt);
-    min-width: 28rem;
+    min-width: min(28rem, 88vw);
+    max-width: 92vw;
     left: -0.6rem;
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
     z-index: 100;
@@ -162,8 +232,8 @@ header {
 /* Footer
    ========================================================================== */
 footer {
-    background: var(--color-brand);
-    color: var(--color-white);
+    background: var(--color-footer);
+    color: var(--color-footer-text);
     text-align: center;
     padding: 1.25rem;
     font-size: 0.8rem;
@@ -171,7 +241,7 @@ footer {
 }
 
 footer a {
-    color: var(--color-white);
+    color: var(--color-footer-text);
 }
 
 /* Table of contents (in-page)
@@ -194,6 +264,8 @@ footer a {
    ========================================================================== */
 h1, h2, h3, h4, h5 {
     line-height: 1.4;
+    /* Keep anchored headings (TOC jumps) clear of the viewport top. */
+    scroll-margin-top: 1.5rem;
 }
 
 .chapterHead, .likechapterHead {
@@ -251,6 +323,22 @@ a {
     hyphens: auto;
     word-break: break-word;
     color: var(--color-brand-light);
+    /* A lighter underline that clears the serif descenders. */
+    text-decoration-thickness: 0.07em;
+    text-underline-offset: 0.15em;
+}
+
+/* Visible keyboard-focus ring for links and controls. */
+a:focus-visible,
+.theme-opt:focus-visible,
+.hamburger:focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+::selection {
+    background: color-mix(in srgb, var(--color-brand) 22%, transparent);
 }
 
 a img {
@@ -320,6 +408,12 @@ img[src$=".svg"] {
     margin: 1.25rem 0 0 0;
 }
 
+/* TikZ figures (bdrc*.svg) are black line art; invert them in dark mode so the
+   strokes show. The license badge and other svgs are left untouched. */
+img[src^="bdrc"][src$=".svg"] {
+    filter: invert(var(--svg-invert));
+}
+
 div.figure, div.float, figure.float {
     margin-left: auto;
     margin-right: auto;
@@ -358,11 +452,11 @@ img.cdots {
 }
 
 .overline img {
-    border-top: 1px solid #000;
+    border-top: 1px solid var(--color-rule);
 }
 
 .underline img {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--color-rule);
     margin-bottom: 1pt;
 }
 
@@ -442,6 +536,8 @@ dd.enumerate-enumitem {
 div.tabular {
     text-align: center;
     padding: 0.6rem;
+    /* Over-wide tables scroll rather than break the (narrower) text column. */
+    overflow-x: auto;
 }
 
 table.tabular {
@@ -449,6 +545,8 @@ table.tabular {
     border-spacing: 0;
     margin-left: auto;
     margin-right: auto;
+    /* Align digits into columns in decision matrices / data tables. */
+    font-variant-numeric: tabular-nums;
 }
 
 div.center div.tabular, div.tabular {
@@ -465,8 +563,8 @@ td p:first-child { margin-top: 0; }
 td p:last-child { margin-bottom: 0; }
 
 table[rules] {
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+    border-left: 1px solid var(--color-rule);
+    border-right: 1px solid var(--color-rule);
 }
 
 /* Table cell padding variants */
@@ -482,7 +580,7 @@ td.td11 { padding: 0 0.3rem; }
 
 /* Table lines */
 .hline, .hline hr, .cline hr {
-    border-top: 1px solid #000;
+    border-top: 1px solid var(--color-rule);
 }
 
 .cline hr, .hline hr {
@@ -500,7 +598,7 @@ td.td11 { padding: 0 0.3rem; }
 }
 
 .hline:first-child {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--color-rule);
     border-top: none;
 }
 
@@ -515,13 +613,54 @@ div.array {
 /* Decision tables: shade the header row and first column (the states and acts),
    restoring the \rowcolor / \columncolor / \cellcolor shading tex4ht drops. */
 table.tabular td.gr, table.tabular th.gr {
-    background: #dde2e2;
+    background: color-mix(in srgb, #ccc 30%, transparent);
+}
+
+/* Decision matrices (game-theory payoff tables etc.): give the cells real
+   breathing room. The default td11 padding (0 0.3rem) leaves the shaded
+   row-header cells (R1, R2, …) as thin slivers next to the much taller column
+   headers; symmetric padding squares the shaded blocks up and de-cramps the
+   whole grid. */
+/* Faint full grid (the author prefers ruled cells over the usual minimal
+   style, for clarity) inside a rounded outer frame. All rules are drawn from
+   CSS cell borders rather than the LaTeX \hline rows, so the look is uniform
+   regardless of which tables happened to carry a final \hline. */
+table.dmatrix {
+    border-collapse: separate;   /* required for border-radius to round corners */
+    border-spacing: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;            /* clip the cell corners to the rounded frame */
+}
+
+/* Every interior line is a cell's top/left border, drawn once; the first row
+   and first column drop theirs so they don't double the outer frame. */
+table.dmatrix tr:not(.hline) td {
+    padding: 0.2em 0.75em;
+    vertical-align: middle;
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+}
+table.dmatrix tr:not(.hline) td:first-child {
+    border-left: none;
+}
+table.dmatrix tr:not(.hline):first-child td {
+    border-top: none;
+}
+
+/* The LaTeX rule rows and the stray trailing strut row (a single empty shaded
+   cell) are now redundant — the cell borders supply every line. */
+table.dmatrix tr.hline,
+table.dmatrix tr:last-child {
+    display: none;
 }
 
 /* Math display
    ========================================================================== */
 div.math-display, div.par-math-display {
     text-align: center;
+    /* Let an over-wide equation scroll rather than overflow the page. */
+    overflow-x: auto;
 }
 
 span.pmatrix img {
@@ -606,7 +745,7 @@ td.gather, div.gather-star {
 /* Boxes and frames
    ========================================================================== */
 .fbox {
-    border: 1px solid #000;
+    border: 1px solid var(--color-rule);
     padding-left: 0.2rem;
     padding-right: 0.2rem;
     text-indent: 0;
@@ -617,7 +756,7 @@ div.fbox {
 }
 
 div.center div.fbox {
-    border: 1px solid #000;
+    border: 1px solid var(--color-rule);
     clear: both;
     padding: 0 0.2rem;
     text-align: center;
@@ -625,7 +764,7 @@ div.center div.fbox {
 }
 
 .framebox-c, .framebox-l, .framebox-r {
-    border: 1px solid #000;
+    border: 1px solid var(--color-rule);
     padding: 0 0.2rem;
     text-indent: 0;
 }
@@ -636,9 +775,19 @@ div.center div.fbox {
 
 div.minipage {
     display: inline-block;
-    margin: 2rem 4rem 2rem 0;
+    margin: 1rem 0rem 1rem 0;
     vertical-align: top;
     text-align: center;
+}
+
+/* Some exercises (e.g. the three-matrix games in ch. 10) line up several
+   decision matrices as side-by-side minipages. Each matrix keeps its natural
+   width, so at full size the row overflows the content column and the last
+   matrix wraps to its own line with a wide gap above it. The matrix cells use
+   em-based padding, so shrinking the minipage font-size scales the whole grid
+   down proportionally and lets all of them sit on one row. */
+.exercise div.minipage {
+    font-size: 0.9em;
 }
 
 div.minipage p {
@@ -712,8 +861,8 @@ div.verbatiminput {
 /* Footnotes
    ========================================================================== */
 div.footnotes {
-    border-bottom: 1px solid #000;
-    border-top: 1px solid #000;
+    border-bottom: 1px solid var(--color-rule);
+    border-top: 1px solid var(--color-rule);
     font-size: 0.85rem;
     font-style: italic;
     margin-right: 15%;
@@ -873,11 +1022,19 @@ div.obeylines-v p {
     display: inline-block;
 }
 
-/* tcolorbox elements
-   ========================================================================== */
+/* tcolorbox elements — left-accent-bar callouts
+   ==========================================================================
+   Each box type sets --accent to its colour; the shared rules below build the
+   look from it: a thick coloured left bar, a soft tinted fill (the accent mixed
+   into the page background, so it works in light and dark), and a coloured
+   bold title instead of a filled heading bar. Less boxy, and harmonized. */
 .tcolorbox {
-    margin: 1.25rem 0;
-    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.2);
+    --accent: var(--color-info);
+    margin: 1.4rem 0;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 5px 5px 0;
+    background: color-mix(in srgb, var(--accent) 7%, var(--color-bg));
+    overflow: hidden;
 }
 
 .tcolorbox .lowerbox {
@@ -889,62 +1046,47 @@ div.obeylines-v p {
 }
 
 .tcolorbox > div.tcolorbox-content {
-    padding: 0.5em 1em;
+    padding: 0.5em 1.1em;
     color: var(--color-text-muted);
 }
 
-/* "Task" boxes: exercises and essay questions — filled title bar. */
-.exercise > div.tcolorbox-title,
-.essay > div.tcolorbox-title {
-    background: var(--color-task);
-    padding: 0.2rem 1.25rem;
-    color: var(--color-white);
+/* Cross-ref targets (\label) land inside the box body, below the "Exercise 2.3"
+   title. Extra scroll-margin so a jump to one reveals the title above it,
+   instead of landing on the body text with the title clipped off the top. */
+.tcolorbox a[id] {
+    scroll-margin-top: 3.5rem;
+}
+
+.tcolorbox > div.tcolorbox-title {
+    padding: 0.45em 1.1em 0;
+    color: var(--accent);
     font-weight: 700;
 }
 
-.exercise > div.tcolorbox-content,
-.essay > div.tcolorbox-content {
-    border: 1px solid var(--color-task);
+.tcolorbox > div.tcolorbox-title p {
+    margin: 0;
 }
 
-/* Example boxes: filled terracotta heading bar. */
-.example > div.tcolorbox-title {
-    background: var(--color-example);
-    padding: 0.2rem 1.25rem;
-    color: var(--color-white);
-    font-weight: 700;
+.tcolorbox > div.tcolorbox-title + div.tcolorbox-content {
+    padding-top: 0.3em;
 }
 
-.example > div.tcolorbox-content {
-    border: 1px solid var(--color-example);
-}
+/* Per-type accent colours. */
+.exercise, .essay { --accent: var(--color-task); }
+.example          { --accent: var(--color-example); }
+.genericthm       { --accent: var(--color-theorem); }
+.sources          { --accent: var(--color-sources); }
+.justabox         { --accent: var(--color-info); }
 
-/* Generic-theorem boxes: filled slate-blue heading bar. */
-.genericthm > div.tcolorbox-title {
-    background: var(--color-theorem);
-    padding: 0.2rem 1.25rem;
-    color: var(--color-white);
-    font-weight: 700;
-}
-
-.genericthm > div.tcolorbox-content {
-    border: 1px solid var(--color-theorem);
-}
-
-/* Sources boxes: filled mauve heading bar. */
-.sources > div.tcolorbox-title {
-    background: var(--color-sources);
-    padding: 0.2rem 1.25rem;
-    color: var(--color-white);
-    font-weight: 700;
-}
-
-.sources > div.tcolorbox-content {
-    border: 1px solid var(--color-sources);
-}
-
-.justabox > div.tcolorbox-content {
-    border: 1px solid var(--color-info);
+/* All callout boxes are fully framed: a soft accent-tinted border on all
+   sides, gently rounded corners, and a faint diagonal gradient fill. Box types
+   stay distinguishable by their --accent colour. */
+.exercise, .essay, .example, .genericthm, .sources, .justabox {
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--color-border));
+    border-radius: 6px;
+    background: linear-gradient(160deg,
+        color-mix(in srgb, var(--accent) 12%, var(--color-bg)),
+        color-mix(in srgb, var(--accent) 4%, var(--color-bg)));
 }
 
 .sources {

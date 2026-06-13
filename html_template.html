@@ -6,6 +6,18 @@
     <title>{{title}}</title>
     <link rel="stylesheet" type="text/css" href="bdrc.css" />
     <script>
+    // Apply a saved theme choice before first paint, to avoid a flash. With no
+    // saved choice we leave data-theme unset, so the CSS follows the OS.
+    (function() {
+        try {
+            var t = localStorage.getItem('bdrc-theme');
+            if (t === 'light' || t === 'dark') {
+                document.documentElement.setAttribute('data-theme', t);
+            }
+        } catch (e) {}
+    })();
+    </script>
+    <script>
     MathJax = {
         tex: {
             tags: "ams",
@@ -43,6 +55,33 @@
     };
 
     document.addEventListener('DOMContentLoaded', function() {
+        // Theme toggle. data-theme unset = follow OS; clicking pins a choice.
+        const themeOpts = document.querySelectorAll('.theme-opt');
+        const darkMql = window.matchMedia('(prefers-color-scheme: dark)');
+        function effectiveTheme() {
+            return document.documentElement.getAttribute('data-theme')
+                || (darkMql.matches ? 'dark' : 'light');
+        }
+        function updateToggle() {
+            const cur = effectiveTheme();
+            themeOpts.forEach(function(b) {
+                const on = b.dataset.themeChoice === cur;
+                b.classList.toggle('active', on);
+                b.setAttribute('aria-pressed', on);
+            });
+        }
+        themeOpts.forEach(function(b) {
+            b.addEventListener('click', function() {
+                const choice = b.dataset.themeChoice;
+                document.documentElement.setAttribute('data-theme', choice);
+                try { localStorage.setItem('bdrc-theme', choice); } catch (e) {}
+                updateToggle();
+            });
+        });
+        // Keep the highlight right if the OS theme changes and no choice is pinned.
+        darkMql.addEventListener('change', updateToggle);
+        updateToggle();
+
         const hamburger = document.querySelector('.hamburger');
         const dropdownContent = document.querySelector('.dropdown-content');
         hamburger.addEventListener('click', function() {
@@ -71,6 +110,10 @@
                 </div>
             </div>
             <a href="index.html">Belief, Desire, and Rational Choice</a>
+            <div class="theme-toggle" role="group" aria-label="Colour theme">
+                <button type="button" class="theme-opt" data-theme-choice="light">Light</button>
+                <button type="button" class="theme-opt" data-theme-choice="dark">Dark</button>
+            </div>
         </div>
     </header>
     <div class="content">
