@@ -498,8 +498,19 @@ def read_toc():
     toc_html = read_file(html_path + '/toc.html')
     # <span class="chapterToc">1 <a href="01-overview.html">Modelling Rational Agents</a></span>
     # <span class="sectionToc">1.1  <a href="01-overview.html#overview">Overview</a></span>
-    toc_links = re.findall(r'<span class=.(chapterToc|sectionToc).>\s*([\d.]*)\s*<a href=.([^"\']+).>(.+?)</a>', toc_html)
-    toc = [f'<a class="{level}" href="{href}">{num} {name}</a>' for level, num, href, name in toc_links]
+    # The number and the link text may be wrapped in tex4ht font-class spans
+    # (e.g. <span class="ec-lmr-10x-x-109">), so we strip inner tags below.
+    strip_tags = lambda s: re.sub(r'<[^>]+>', '', s).strip()
+    toc = []
+    for level, before, href, name in re.findall(
+            r'<span class=.(chapterToc|sectionToc).>(.*?)<a href=.([^"\']+).>(.*?)</a>',
+            toc_html, flags=re.DOTALL):
+        num, name = strip_tags(before), strip_tags(name)
+        # Chapter links should land on the page top (title bar), not the chapter
+        # heading anchor; section links keep their anchor.
+        if level == 'chapterToc':
+            href = href.split('#')[0]
+        toc.append(f'<a class="{level}" href="{href}">{num} {name}</a>')
     if len(toc) == 0:
         print("TOC not found in toc.html")
     return toc

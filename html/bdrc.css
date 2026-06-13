@@ -1035,6 +1035,7 @@ div.obeylines-v p {
     border-radius: 0 5px 5px 0;
     background: color-mix(in srgb, var(--accent) 7%, var(--color-bg));
     overflow: hidden;
+    line-height: 1.6em;
 }
 
 .tcolorbox .lowerbox {
@@ -1048,6 +1049,14 @@ div.obeylines-v p {
 .tcolorbox > div.tcolorbox-content {
     padding: 0.5em 1.1em;
     color: var(--color-text-muted);
+}
+
+/* Some boxes start with `\quad\newline` to push the body below the inline
+   title in the PDF. In HTML the title is already its own block, so that leading
+   break is pure dead space — drop it. Mid-paragraph newline breaks aren't
+   first-child, so they're unaffected. */
+.tcolorbox > div.tcolorbox-content > p:first-child > br.newline:first-child {
+    display: none;
 }
 
 /* Cross-ref targets (\label) land inside the box body, below the "Exercise 2.3"
