@@ -542,6 +542,11 @@ def fix_layout(html):
     html = re.sub(r'(<span class=.titlemark.>.+?</span>)(?:\s|\xa0|&nbsp;)*', r'\1', html)
     # remove empty table rows:
     html = re.sub(r'<tr>\s*<td[^>]*>\s*</td>\s*</tr>', '', html)
+    # tex4ht turns the \, thin space between nested quotes into a breakable
+    # space, letting the line wrap after the outer quote; use a narrow no-break
+    # space instead (keeps the thin gap, matches the PDF):
+    html = re.sub(r'([“”]) ([‘’])', '\\1 \\2', html)
+    html = re.sub(r'([‘’]) ([“”])', '\\1 \\2', html)
     return html
 
 

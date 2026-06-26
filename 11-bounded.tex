@@ -199,7 +199,7 @@ these constraints without computing expected utilities.
 
 In many decision situations, there is no need for sophisticated calculations
 because one of the acts clearly dominates the others. Whether this is the case
-depends on the agent's utility function. This suggests that wemight reduce the
+depends on the agent's utility function. This suggests that we might reduce the
 computational costs of decision-making by tweaking our utilities.
 
 For example, suppose you assign significant (sub)value to obeying orders. Doing
@@ -221,7 +221,7 @@ of your decision was an intention to go to the shop.%
 \cmnt{%
   Somewhat confusingly, according to our model, this was not a
   decision to go to the shop. That's because, at the time, going to
-  the shop was not strictly speaking an available act, since was
+  the shop was not strictly speaking an available act, since it was
   partly outside your control. Someone could have prevented you from
   leaving the house. You could have gotten into an accident while
   crossing the street. Your future self could have been seduced by the
@@ -353,7 +353,7 @@ propositions $A_1,\ldots,A_{50}$ (an absurdly small number). How large of a
 database do we need?
 
 You might think that we need 50 records for the probabilities and 50 for the
-utilities. But we generally can't compute $Cr(A \land B)$ or $\Cr(A \lor B)$
+utilities. But we generally can't compute $\Cr(A \land B)$ or $\Cr(A \lor B)$
 from $\Cr(A)$ and $\Cr(B)$. Nor can we compute $\U(A \land B)$ or $\U(A \lor B)$
 from $\U(A)$ and $\U(B)$. If we want to determine the agent's entire credence
 and utility functions (without further assumptions), we need to store at least
@@ -386,7 +386,7 @@ world and not about others, it is enough to store the agent's utility for her
 ``concerns'': the maximally consistent conjunctions of the attributes they care
 about (section \ref{sec:basic-desire}). If, for example, our robot only cares
 about the possible combinations of 20 among the 50 propositions
-$A_1,\ldots,A_n$, we only need to store $2^{20}$ values. Second, if our robot's
+$A_1,\ldots,A_{50}$, we only need to store $2^{20}$ values. Second, if our robot's
 preferences are separable with respect to these attributes, then the value of
 any combination of the 20 propositions and their negations can be determined by
 adding up relevant subvalues (section \ref{sec:additivity}). We can cut down
@@ -471,7 +471,7 @@ Instead of storing individual probabilities for each of these possibilities, it
 helps to assume that a later state (probabilistically) depends only on its
 immediate predecessor, so that $\Cr(S_3\,/\,S_1 \!\land\! S_2) = \Cr(S_3/S_2)$. This is
 known as the \textbf{Markov assumption}. It reduces the number of records we'd
-need to store from $100^{10}$ to 990,100.%
+need to store from $100^{10}$ to 90,100.%
 \cmnt{%
   It also simplifies belief updates through conditionalization. Assuming that
   sensory information only carries direct information about the present state of
@@ -523,7 +523,7 @@ brain uses to approximate conditionalization and computing expected utilities.
 Meanwhile, researchers at the intersection of psychology and economics have also
 tried to develop more realistic models of decision-making. The most influential
 of these alternatives is \textbf{prospect theory}, developed by Daniel Kahneman
-and Amon Tversky in the 1970s-1990s.
+and Amos Tversky in the 1970s-1990s.
 
 Prospect theory has to be understood on the background of a highly restricted
 version of decision theory that dominates economics. The highly restricted
@@ -867,7 +867,7 @@ computationally \emph{harder} than conditionalising a single probability
 measure. In this respect, our model has become less realistic, not more.
 
 Here is another problem. Suppose I have an urn containing 2 balls, one of which
-is white. The other is either white or red. You have no opinion about how the
+is white. The other is either white or red. You have no opinion about the
 other ball's colour: your belief state $\mathbb{C\!r}$ contains all possible
 probability assignments to the hypothesis that the other ball is white. Now I
 shuffle the urn, draw a ball, and show it to you. The ball is white. If you
@@ -899,7 +899,7 @@ proposition $H$ to which you don't assign a precise credence. Let's say your
 credence in $H$ spans the range from 0.2 to 0.8. Bet $A$ would give you
 £1.40 if $H$ and £-1 if $\neg H$. Bet $B$ would give you £-1 if $H$ and £1.40 if
 $\neg H$. Assume for simplicity that your utility is precise and proportional to
-the monetary payoff. The permissivst account then classifies both bets as
+the monetary payoff. The permissivist account then classifies both bets as
 optional: you may take them or leave them. But accepting both bets yields a
 guaranteed gain of £0.40. By refusing both bets, you would miss out on a sure
 gain.
@@ -976,7 +976,7 @@ gain.
   
   The
   \href{https://plato.stanford.edu/entries/imprecise-probabilities/}{Stanford Encyclopedia Entry ``Imprecise Probabilities''}
-  by Saemus Bradley (2019) provides a good overview of research on the topic of
+  by Seamus Bradley (2019) provides a good overview of research on the topic of
   section \ref{sec:imprecise}. The urn problem is an instance of ``belief
   inertia''.
 

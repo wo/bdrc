@@ -38,8 +38,8 @@ In 1926, Frank Ramsey pointed out that if we look at the choices an agent makes
 in a state of uncertainty then we can find out more about the agent's utility
 function than how it orders the relevant outcomes -- enough to vindicate the MEU
 Principle. Ramsey's idea was rediscovered by John von Neumann, who published a
-simpler version of it in the 1944 monograph \emph{Game Theory and Economic
-  Behaviour}, co-authored with Oskar Morgenstern. This work is widely taken to
+simpler version of it in the 1944 monograph \emph{Theory of Games and Economic
+  Behavior}, co-authored with Oskar Morgenstern. This work is widely taken to
 provide the foundations of modern expected utility theory.
 
 Before we have a closer look at von Neumann's approach, let's think a little
@@ -82,7 +82,7 @@ what underlying non-numerical facts the different numbers are meant to
 represent.
 
 The same is true for utility. The utility of a proposition for an agent is
-supposed to represents the extent to which the agent, on balance, wants the
+supposed to represent the extent to which the agent, on balance, wants the
 proposition to be true. But what non-numerical fact about an agent makes it
 correct to say that their utility for a certain proposition is 5? This question
 still needs an answer. And there is something to be said for the idea that the
@@ -127,7 +127,7 @@ the unit by assigning any number greater than zero to your left foot; it doesn't
 have to be the number 1.)
 
 Quantities like mass and length, for which only the unit of measurement is
-conventional, are said to have a \textbf{ratio scale} because even though the
+conventional, are said to have a \textbf{ratio scale}. That's because even though the
 particular numbers are conventional, ratios between them are not. If the length
 of my arm is four times the length of my pencil in centimetres, then that is
 also true in inches, feet, light years, and any other sensible system of
@@ -179,10 +179,10 @@ assignment of numbers that respects this ordering is as correct as any other. We
 could say that for you, tea has utility 3, coffee 2, and milk 1, but we could
 equally say that tea has utility 100, coffee 0, and milk -8.
 
-If the ordinalists were right, then whether an act in a decision problem
+If the ordinalists were right then whether an act in a decision problem
 maximizes expected utility would often depend on arbitrary choices in the
 measurement of utility. The MEU Principle would be indefensible.
-If, on the other hand, utility has an interval scale, then different measures of
+If, on the other hand, utility has an interval scale then different measures of
 utility never disagree on the ranking of acts in a decision problem. A ratio
 scale is not required.
 
@@ -261,7 +261,7 @@ Let's introduce some shorthand notation:
 \begin{align*}
   A \succ B &\Leftrightarrow \text{The agent prefers $A$ to $B$}.\\
   A \sim B &\Leftrightarrow \text{The agent is indifferent between $A$ and $B$.}\\
-  A \succsim B & \Leftrightarrow \text{$A \succ B$ or $A \succsim B$.}
+  A \succsim B & \Leftrightarrow \text{$A \succ B$ or $A \sim B$.}
 \end{align*}
 %
 (Note that `$\succ$', `$\sim$', and `$\succsim$' had a different meaning in
@@ -281,7 +281,7 @@ set $\U(a) = 0$ and $\U(b) = 1$. This resembles the conventional choice of using
 which it boils.
 
 \begin{exercise}{2}
-  If our agent is indifferent between all rewards, then the procedure stalls at
+  If our agent is indifferent between all rewards,  the procedure stalls at
   this step. Nonetheless, we can easily find a utility function for such an
   agent. What does it look like?
 \end{exercise}
@@ -336,7 +336,7 @@ That's because the expected utility of $L''$ is
 \]
 Since the agent is indifferent between $L''$ and $b$, which has a
 guaranteed utility of 1, the lottery must have expected utility 1. So
-$1 = \nicefrac{1}{2} \cdot U(c)$. And so $\U(c) = 2$. In general, if
+$1 = \nicefrac{1}{2} \cdot \U(c)$. And so $\U(c) = 2$. In general, if
 the agent is indifferent between $b$ and a lottery that leads to $c$
 with probability $x$ and $a$ with probability $1-x$, then
 $\U(c) = \nicefrac{1}{x}$.
@@ -385,8 +385,8 @@ the agent automatically come out as obeying the MEU Principle?
 
 Not quite. It's true that \emph{if the method works}, then the agent will
 evaluate lotteries by their expected utility, relative to the utility function
-identified by the method. But the method is not guaranteed to work. Nor does it
-settle how the agent evaluates the options in decision problems in which the
+identified by the method. But the method is not guaranteed to work. Besides, it
+does not settle how the agent evaluates the options in decision problems in which the
 relevant objective probabilities are unknown.
 
 Here is one way in which the method might fail to work. We have assumed that if
@@ -433,7 +433,7 @@ lotteries or rewards.
 \end{genericthm}
 \vspace{-5mm}
 \begin{genericthm}{Reduction (of Compound Lotteries)}
-  If a $L_1$ and $L_2$ are two (possibly compound) lotteries that lead
+  If $L_1$ and $L_2$ are two (possibly compound) lotteries that lead
   to the same rewards with the same objective probabilities, then $L_1
   \sim L_2$.
 \end{genericthm}
@@ -642,14 +642,14 @@ function $\U$ and a probability function $\Cr$ which together represent the
 agent's preferences, in the sense that (i) $A \succ B$ iff the expected utility
 of $A$, relative to $\Cr$ and $\U$, is greater than that of $B$, and (ii)
 $A \sim B$ iff $A$ and $B$ have equal expected utility. The theorem also says
-that $\Cr$ is unique and $\U$ is unique expect for the choice of zero and unit.
+that $\Cr$ is unique and $\U$ is unique except for the choice of zero and unit.
 
 What can this do for us? Ramsey's idea is that we may \emph{define} an agent's
 credence and (intrinsic) utility as whatever functions $\Cr$ and $\U$ ``make
 sense of their preferences''. By this I mean that the agent prefers some
 proposition $A$ to a proposition $B$ iff the expected utility of $A$, computed
 with $\Cr$ and $\U$, is greater than that of $B$. I also assume that in order
-for $\Cr$ to ``makes sense'' of the agent's preferences, it must conform to the
+for $\Cr$ to ``make sense'' of the agent's preferences, it must conform to the
 rules of probability.
 
 Ramsey's Representation Theorem assures us that if the agent's preferences
@@ -695,8 +695,8 @@ Later authors have improved upon Ramsey in some respects. They have come up with
 other (and generally more complicated) methods for determining credences and
 utilities from preferences. The best known of these proposals is due to Leonard
 Savage, published in his \emph{Foundations of Statistics} (1954) -- the
-second-most influential book in the history of decision theory, after \emph{Game
-  Theory and Economic Behaviour}. I won't go through Savage's method and axioms.
+second-most influential book in the history of decision theory, after \emph{Theory
+  of Games and Economic Behavior}. I won't go through Savage's method and axioms.
 Suffice it to say that his axioms still include conditions that nobody can
 seriously regard as requirements of rationality, let alone as requirements that
 anyone must meet in order to have credences and utilities.
@@ -951,10 +951,12 @@ One represents the agent's choice dispositions: whether they would choose $A$
 over $B$ in a hypothetical situation in which they face this choice. The other
 represents the agent's current ranking of rewards and gambles or lotteries:
 whether by the lights of the agent's current beliefs and desires, $A$ is better
-than $B$. Von Neumann and Ramsey have at best shown how to derive utilities and
-credences from preferences in the second sense.
+than $B$. The problems just reviewed suggest that utilities and credences aren't
+easily derived from preferences in the first sense. But they might be derivable
+from preferences in the more theoretical second sense, perhaps following the
+techniques of von Neumann and Ramsey.
 
-This could still be valuable. We might still get an interesting argument for
+This would still be valuable. We might still get an interesting argument for
 probabilism and the MEU Principle. Moreover, there is plausibly \emph{some}
 connection between preference in the second sense and choices dispositions. We
 haven't fully solved the measurement problem for credences and utilities. But
@@ -996,7 +998,7 @@ one might hope that we are at least a few steps closer.
   For a good discussion of Savage's approach and its limitations, see chapter 3
   of James Joyce, \emph{The Foundations of Causal Decision Theory} (1999). A useful,
   but mathematically heavy, survey of other representation theorems in the
-  tradition of Ramsey, Savage, and von Neumann and Morgensterm is Peter
+  tradition of Ramsey, Savage, and von Neumann and Morgenstern is Peter
   Fishburn, ``Utility and Subjective Probability'' (1994).
 
   Preference-based approaches to utility are standard in economics, but fairly
@@ -1011,7 +1013,8 @@ one might hope that we are at least a few steps closer.
   % related problems, in chapter \ref{ch:risk}.
 
   On the connection between preference and choice behaviour, see, for example,
-  chapter 3 of Daniel M.\ Hausman, \emph{Preference, Value, Choice, and Welfare}, and
+  chapter 3 of Daniel M.\ Hausman, \emph{Preference, Value, Choice, and Welfare}
+  (2012), and
   Johanna Thoma, ``In defence of revealed preference theory'' (2021).
 
   The Maurice exercise is from John Broome, \emph{Weighing Goods} (1991,

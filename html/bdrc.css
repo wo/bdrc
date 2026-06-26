@@ -78,7 +78,7 @@
     /* Layout. content-width is in rem, so it scales with --font-scale and the
        *measure* (characters per line) is set by this number alone, regardless
        of font size: chars/line ≈ content-width ÷ 0.5em. 38rem ≈ 76 chars. */
-    --content-width: 38rem;
+    --content-width: 40rem;
     --line-height: 1.7;
 
     /* Follow the OS theme by default; the toggle overrides this below. */

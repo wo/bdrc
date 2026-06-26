@@ -45,7 +45,7 @@ introspectible quantity: a special feeling of conviction people have when
 entertaining propositions. On this approach, axiom (ii) says that when agents
 entertain logically necessary propositions, they ought to experience the
 relevant sensation with maximal intensity. It is hard to see why this should be
-norm of rationality. It is also hard to see why the sensation should guide an
+a norm of rationality. It is also hard to see why the sensation should guide an
 agent's choices in line with the MEU Principle, or why it should be sensitive to
 the agent's evidence. In short, if we understand degrees of belief as measuring
 the intensity of a certain feeling, then the norms of Bayesian decision theory
@@ -115,7 +115,7 @@ payoffs, weighted by their subjective probability. Let $x$ be your degree of
 belief that it will rain tomorrow, and $1\!-\!x$ your degree of belief that it won't
 rain. The bet gives you £1 with probability $x$ and £0 with probability $1\!-\!x$.
 The expected payoff is $x \cdot \text{£1} + (1\!-\!x) \cdot \text{£0} = \text{£}x$.
-This suggests that the bet is worth £$x$, that £$x$ is the most you should
+This suggests that the bet is worth £$x$: £$x$ is the most you should
 pay for the bet.
 
 \begin{exercise}{1}
@@ -135,7 +135,7 @@ $A$ is a deal that pays £1 if $A$ is true and £0 otherwise.
 
 \begin{genericthm}{The betting interpretation}
   An agent believes a proposition $A$ to degree $x$ just in case she would buy a
-  unit bet on $A$ for up to £$x$ (and she would sell a unit bet for $A$ for £$x$
+  unit bet on $A$ for up to £$x$ (and she would sell a unit bet on $A$ for £$x$
   or more).
 \end{genericthm}
 %
@@ -219,7 +219,7 @@ The agent will then be prepared to sell a unit bet on $A$ for any price above
 £-1. What does it mean to sell a bet for £-1? It means to pay someone £1 to take
 the bet. So the agent would pay up to £1 for us to take the bet. Having sold the
 bet, she will have to pay us an additional £1 if $A$ is true. Her net loss is
-either £2 or £1, and guaranteed be at least £1. Again, the argument generalizes
+either £2 or £1, and guaranteed to be at least £1. Again, the argument generalizes
 to any degree of belief below 0.
 
 I leave the case of axiom (ii) as an exercise.
@@ -285,7 +285,7 @@ $x \leq y$, in which case $£(y\!-\!x) \geq £0$. In other words, the agent make
 the transaction only if the transaction has a non-negative expected payoff.
 Evidently, a transaction can't have a non-negative \emph{expected} payoff unless
 there is at least some possibility for it to have a non-negative payoff. This
-shows that an agent with probabilist credences can't be ``Dutch booked'' with a
+shows that an agent with probabilistic credences can't be ``Dutch booked'' with a
 single bet. What about combinations of bets? Suppose our agent buys a number of
 bets. We know that each of these transactions on its own has a non-negative
 expected payoff. We also know that the total payoff from all transactions
@@ -449,8 +449,8 @@ for the gamble.
   informally) why it would be rational for you to accept the offer.
 \end{exercise}
 
-There's a second reason why rational agents wouldn't always value bets by their
-expected payoff even if their subjective utility were adequately measured by
+There's a second reason why rational agents don't always value bets by their
+expected payoff, not even if their subjective utility is adequately measured by
 monetary payoff. The reason is that buying or selling bets can alter the
 relevant beliefs.
 
@@ -507,7 +507,7 @@ Let's call a proposition \emph{stable} if it is probabilistically independent,
 in $\beta$'s credence function, of the assumption that she buys or sells any
 particular bets. The probability axioms are supposed to be general consistency
 requirements on rational belief. Such requirements should plausibly be
-``topic-neutral'': they should hold for beliefs or every kind, not just for
+``topic-neutral'': they should hold for beliefs of every kind, not just for
 beliefs about a special subject matter. In particular, there aren't special
 consistency requirements that only pertain to stable beliefs. \emph{If an
   agent's credences over stable propositions should be probabilistic, then her
@@ -646,7 +646,7 @@ For the next assumptions, I use `$\top$' to stand for the logically
 necessary proposition (the set of all worlds) and `$\bot$' for the
 logically impossible proposition (the empty set).
 %
-\begin{genericthm}{Non-Trviality}
+\begin{genericthm}{Non-Triviality}
   $\top \succ \bot$.
 \end{genericthm}
 \vspace{-7mm}
@@ -694,7 +694,7 @@ propositions.
 Imagine we order all propositions on a line, in accordance with the agent's
 comparative judgements (which we take as primitive). Whenever the agent is more
 confident in one proposition than in another, the first goes to the right of the
-first. Whenever the agent is equally confident in two propositions, they are
+second. Whenever the agent is equally confident in two propositions, they are
 stacked on top of each other at the same point on the line. If the agent is
 reasonable, the impossible proposition $\bot$ will be at the left end, the
 necessary proposition $\top$ at the right end.
@@ -708,7 +708,7 @@ says, there will be an assignment of numbers to propositions that ``represents''
 the agent's comparative judgements in the sense that $A \succsim B$ iff the
 number assigned to $A$ is at least as great as the number assigned to $B$.
 
-The next problem is that if there is one such assignment then there are
+It's easy to see that if there is one such assignment then there are
 infinitely many, giving different numbers to propositions in between $\bot$ and
 $\top$. (For example, if $f$ represents $\succsim$ then so does the function $g$
 defined by $g(A) = f(A)^{2}$.) We need to settle on a particular assignment.
@@ -736,7 +736,7 @@ especially troublesome in this regard. The form of the assumption turns out to
 depend on whether the number of propositions is finite or infinite. In either
 case the condition is so complicated that many struggle to accept it as a basic
 norm of rationality -- let alone as a basic condition anyone must satisfy in
-order to have degrees of belief at all. Just to prove the point, here is the
+order to have degrees of belief at all. Here is the
 condition for the slightly simpler case of finitely many propositions:
 
 \begin{genericthm}{The Sixth Assumption (finite version)}

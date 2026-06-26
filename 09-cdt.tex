@@ -65,7 +65,7 @@ acts, the equation defines \textbf{evidential expected utility} ($\EU_\text{e}$)
 require causal independence, it defines \textbf{causal expected utility}
 ($\EU_\text{c}$).
 
-Before we look at examples where $EU_\text{e}$ and $EU_\text{c}$ come apart, I
+Before we look at examples where $\EU_\text{e}$ and $\EU_\text{c}$ come apart, I
 want to mention three advantages of the evidential approach.
 
 First, probabilistic independence is much better understood than causal
@@ -79,7 +79,7 @@ could keep causal notions out of our model of rational choice.
 
 A second advantage of EDT is that it is supported by an argument I gave in
 section \ref{sec:why-meu}: assuming the theory of utility from section
-\ref{sec:structure-of-utility}, one can show an act's evidential expected
+\ref{sec:structure-of-utility}, one can show that an act's evidential expected
 utility equals its utility. It will be useful to go over the argument again.
 
 In section \ref{sec:structure-of-utility}, we saw that Jeffrey's axiom is
@@ -106,7 +106,7 @@ evidentialist requirement that the states are probabilistically independent of
 the acts. Let $S_{1},\ldots,S_{n}$ be the states in this matrix. The evidential
 expected utility of an act $A$ is defined as
 \[
-  \EU_\text{e} = \U(O_{1})\Cr(S_{1}) + \ldots + \U(O_{n})\Cr(S_{n}).
+  \EU_\text{e}(A) = \U(O_{1})\Cr(S_{1}) + \ldots + \U(O_{n})\Cr(S_{n}).
 \]
 Each conjunction of an act $A$ with one of the states $S_{i}$ settles everything
 the agent cares about. So equation \eqref{eq:j2} applies. Moreover, the states
@@ -362,7 +362,7 @@ everyone should fly business class. Flying business class wouldn't \emph{make}
 you rich. Similarly for one-boxing. All the one-boxers who got a million are
 rich not because they made a great choice but because they were given great
 options. They were put in front of a blue box containing a million and a
-transparent box containing a thousand. They were, in effect, given a choice was
+transparent box containing a thousand. They were, in effect, given a choice
 between £1,001,000 and £1,000,000. It's not a great achievement that they walked
 away with a million. All the two-boxers who got a mere thousand were effectively
 given a choice between £1000 and £0.
@@ -457,7 +457,7 @@ cancer-causing gene. So $\Cr(C/S)$ is greater than $\Cr(C/\neg S)$. Let's say
 $\Cr(C/S) = 0.8$ and $\Cr(C/\neg S) = 0.2$. It follows that the evidential
 expected utility of smoking is $-9 \cdot 0.8 + 1 \cdot 0.2 = -7$, while the
 evidential expected utility of not smoking is
-$-10 \cdot 0.2 + 0 \cdot 0.2 = -2$. According to EDT, you should stop smoking.
+$-10 \cdot 0.2 + 0 \cdot 0.8 = -2$. According to EDT, you should stop smoking.
 Indeed, it should make no difference to you whether smoking causes cancer or
 merely indicates a predisposition for cancer. Either way, smoking is bad news.
 
@@ -571,7 +571,7 @@ Supposing that Germany had nuclear weapons, we infer that something prevented
 the use of the weapons -- an act of sabotage perhaps.
 
 In a probabilistic framework, $\Cr(B/A)$ is an agent's credence in $B$ on the
-indicative supposition that $A$. Let `$\Cr(B/\!/A)$' (with two dashes) denote an
+indicative supposition that $A$. Let `$\Cr(B/\!/A)$' (with two slashes) denote an
 agent's credence in $B$ on the subjunctive supposition that $A$. There is no
 simple analysis of $\Cr(B/\!/A)$ in terms of the agent's credence in $A$ and $B$
 and logical combinations of these. Whether $B$ would be the case on the
@@ -622,7 +622,7 @@ To get a feeling for how this works, let's apply it to a simple case inspired by
 Newcomb's problem. Depending on the outcome of a coin toss, a box has been
 filled with either £1,000,000 or £0. You can take the box or leave it. To
 consider the causal expected utility of taking the box, we suppose,
-subjunctively, that you take the box. We ask: how much you would get if you were
+subjunctively, that you take the box. We ask: how much would you get if you were
 to take the box?
 
 Answer: it depends on what's inside. In a world where the box contains
@@ -775,14 +775,14 @@ would get boils down to uncertainty about how much is in the box.
     forest and was going to cook it for dinner. You could tell that the
     mushroom is either a delicious \emph{paddy straw} or a poisonous
     \emph{death cap}. You advised her not to eat it. Since you left
-    before dinner, you don't know if she followed your advise, and you
+    before dinner, you don't know if she followed your advice, and you
     never asked about it. But you've seen your friend several times
     since then, so you're sure she is alive.
   \end{example}
   
   We may ask: \emph{What if your friend ate the mushroom?} If the
   mushroom was a death cap, she would no longer be alive. But your
-  friend is alive. So if she ignored your advise and ate the mushroom,
+  friend is alive. So if she ignored your advice and ate the mushroom,
   then the mushroom was almost certainly not a death cap. Accordingly,
   $\Cr(\emph{Paddy Straw}/\emph{Ate})$ is close to 0, and
   $\Cr(\emph{Survived}/\emph{Ate})$ is 1.
@@ -792,7 +792,7 @@ would get boils down to uncertainty about how much is in the box.
   cap or a paddy straw. If it was a death cap, your friend would have
   died. If it was a paddy straw, she would have survived. Let's say
   you think it is just as likely that the mushroom was a paddy straw
-  as that that it was a death cap. Your credence in the proposition
+  as that it was a death cap. Your credence in the proposition
   that your friend would have survived, if she had eaten the mushroom,
   is then \nicefrac{1}{2}.
 

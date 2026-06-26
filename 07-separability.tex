@@ -9,8 +9,8 @@ chapter, we will explore how this weighing of different aspects might work.
 
 Take a concrete example. You are looking for a flat to rent. There are two
 options. $A$ is a small and central flat that costs £800/month. $B$ is a larger
-flat in the suburbs for £600/month. You might draw up a lists of pros and cons
-for each option, and give them a weight, like so:
+flat in the suburbs for £600/month. You might draw up a list of pros and cons
+for each option, and give them a score, like so:
 
 \medskip
 \begin{center}
@@ -68,7 +68,7 @@ Let's stick with the flat example. We assume that you care about certain aspects
 of a flat: size, location, and costs. We'll call these aspects
 \textbf{attributes}. Let's assume that size, location, and costs are all the
 attributes that ultimately matter to you. Your preferences between possible
-flats is then determined by your preferences between combinations of these
+flats are then determined by your preferences between combinations of these
 attributes. If two flats perfectly agree in each of the three attributes then
 you are always indifferent between them. If you prefer one flat to another,
 that's always because you prefer the combined attributes of the first to those
@@ -109,10 +109,10 @@ represented by the following lists:
 \[
   \t{\emph{Pain}, \emph{Admired}}, \t{\neg\emph{Pain}, \emph{Admired}}, \t{\emph{Pain}, \neg\emph{Admired}}, \t{\neg\emph{Pain}, \neg\emph{Admired}}.
 \]
-Here, there are two attribute, each of which can take two value. The first
+Here, there are two attributes, each of which can take two values. The first
 attribute specifies whether you are in pain, and the answer is either yes or no.
 The second attribute similarly specifies whether you are admired. If we allowed
-for different degrees of pain, then the first attribute would have more than two
+for different degrees of pain, the first attribute would have more than two
 possible values. We could, for example, distinguish
 $\t{\emph{Little Pain}, \emph{Admired}}$ from
 $\t{\emph{Strong Pain}, \emph{Admired}}$.
@@ -156,7 +156,7 @@ attributes: that size, location, and price are equally important to you. To
 allow for different weights, we could introduce scaling factors $w_S, w_L, w_C$,
 so that
 \[
-\U(\t{40\, \m^2, \text{central}, \text{£500}}) = w_s \cdot V_{S}(40\, \m^2) +
+\U(\t{40\, \m^2, \text{central}, \text{£500}}) = w_S \cdot V_{S}(40\, \m^2) +
 w_L \cdot V_{L}(\text{central}) + w_C \cdot V_{C}(\text{£500}).
 \]
 For convenience, we will omit the weights by folding them into the subvalues. We
@@ -266,7 +266,7 @@ on the overall ranking of attribute lists.
 So assume we have preference relations $\succ$, $\succsim$, $\sim$ between lists
 of attributes. (We aren't interested in lotteries or gambles this time, only in
 complete concerns.) To continue the illustration in terms of flats, if you
-prefer a central \mbox{40 $\m^2$} flat for £500 to a central 60 $\m^2$ for £800,
+prefer a central \mbox{40 $\m^2$} flat for £500 to a central 60 $\m^2$ flat for £800,
 then we have
 \[
  \t{40 \m^2, \text{central}, \text{£500}} \succ
@@ -602,7 +602,7 @@ also plausible: whether the agent prefers a certain amount of pleasure on some
 days to a different amount of pleasure on these days should not depend on how
 much pleasure the agent has on other days. It follows by Debreu's theorem that
 the utility the agent assigns to a time stream can be determined as the sum of the
-subvalues she assign to the individual parts of the stream. That is, if $p_1$,
+subvalues she assigns to the individual parts of the stream. That is, if $p_1$,
 $p_2$, \ldots, $p_n$ are the agent's degrees of pleasure on days
 $1, 2, \ldots, n$ respectively, then there are subvalue functions
 $V_1,V_2,\ldots,V_n$ such that
@@ -630,7 +630,7 @@ a function of the form
 \U(\t{A_1,\ldots,A_n}) = V_1(A_1) + \delta \cdot V_1(A_2) +
 \delta^2 \cdot V_1(A_3) \ldots + \delta^{n-1} \cdot V_1(A_n),
 \]
-where $\delta$ is a fixed number greater than 1. The interesting thing here is
+where $\delta$ is a fixed number greater than 0. The interesting thing here is
 that the subvalue function for any time equals the subvalue function $V_1$ for
 the first time, scaled by an exponential \textbf{discounting factor} $\delta^i$.
 
@@ -651,7 +651,7 @@ preferences over time streams are fixed by two things: how much she values
 present pleasure, and how much she discounts the future. If $\delta = 1$, the
 agent values pleasure equally, no matter when it occurs. If
 $\delta = \nicefrac{1}{2}$, then one unit of pleasure tomorrow is worth half as
-much as to the agent as one unit today; the day after tomorrow it is worth a
+much to the agent as one unit today; the day after tomorrow it is worth a
 quarter; and so on.
 
 \begin{exercise}{1}
@@ -689,7 +689,7 @@ illustrate, suppose you prefer $\t{10, 0, 0, 0, \ldots}$ to
 $\t{0, 11, 0, 0, \ldots}$ because you care more about today's pleasure than
 about tomorrow's. You care less about the difference between getting pleasure in
 four days and getting it in five days, so you prefer
-$\t{0, 0, 0, 0, 11, 0, 0, \ldots}$ to $\t{0, 0, 0, 11, 10, 0, 0, \ldots}$. These
+$\t{0, 0, 0, 0, 11, 0, 0, \ldots}$ to $\t{0, 0, 0, 10, 0, 0, 0, \ldots}$. These
 preferences violate stationarity. Stationarity would imply that if you prefer
 $\t{10, 0, 0, 0, \ldots}$ to $\t{0, 11, 0, 0, \ldots}$ then you also prefer the
 first stream to the second if both are prefixed with 0, and therefore also if
@@ -730,7 +730,7 @@ agent might not (say) prefer relatively constant levels of pleasure over wildly
 fluctuating levels, or the other way round.
 
 One might argue, however, that in these cases the items in the time streams do
-not represent you basic desires, or not all of them. If, for example, you have a
+not represent your basic desires, or not all of them. If, for example, you have a
 preference for constant levels of pleasure, then your basic desires don't just
 pertain to how much pleasure you have today, how much pleasure you have
 tomorrow, and so on. You have a further basic desire: that your pleasure be
@@ -765,7 +765,7 @@ the same options for tomorrow.
 
 We could represent different sources of value by different subvalue functions.
 We might, for example, have a subvalue function $V_{c}$ that measures the extent
-to which a proposition satisfies you present cravings, and another subvalue
+to which a proposition satisfies your present cravings, and another subvalue
 function $V_{m}$ that measures to what extent it matches your moral convictions.
 Your intrinsic utility function is some kind of aggregate of these components.
 Here, too, separability is plausible. If, for example, you think that one world
@@ -1005,7 +1005,7 @@ indifferent between $L$ and $A$.
 
 The second assumption is that each individual evaluates lotteries by their
 expected (personal) utility. Let $L$ be a fair lottery between
-$\t{0,20,0,20,\ldots}$ and $\t{20,0,20,0\ldots }$. The expected personal utility
+$\t{0,20,0,20,\ldots}$ and $\t{20,0,20,0,\ldots }$. The expected personal utility
 for each individual is 10. If everyone evaluates the lottery by its expected
 personal utility, then everyone is indifferent between $L$ and
 $\t{10,10,10,10,\ldots}$. By the first assumption, it follows that the social
@@ -1053,10 +1053,10 @@ expected utility? This is the question to which we turn next.
 
   For an in-depth discussion of preferences over time streams, including
   relevant empirical results, see Shane Frederick, George Loewenstein, and Ted
-  O'Donoughue, ``Time Discounting and Time Preference: A Critical Review''
+  O'Donoghue, ``Time Discounting and Time Preference: A Critical Review''
   (2002).
 
-  A simple proof of Harsanyi's proof of utilitarianism is given in Michael D.\
+  A simple version of Harsanyi's proof of utilitarianism is given in Michael D.\
   Resnik, \emph{Choices} (1987, pp.~197-200). For a sympathetic philosophical
   evaluation, see John Broome, ``General and Personal Good: Harsanyi's
   Contribution to the Theory of Value'' (2015).

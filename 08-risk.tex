@@ -8,7 +8,7 @@ utility. It is time to put this assumption under scrutiny.
 In chapter \ref{ch:overview}, I gave a simple initial argument for the MEU
 Principle. An adequate decision rule, I said, should consider all the outcomes
 an act might bring about -- not just the best, the worst, or the most likely --
-and that it should weigh outcomes in proportion to their probability, so that
+and should weigh outcomes in proportion to their probability, so that
 more likely outcomes are given proportionally greater weight.
 
 In chapter \ref{ch:utility}, we looked at the internal structure of utility. I
@@ -25,12 +25,12 @@ $S_{i}$ should determine the relevant outcome $O_{i}$, so that $S_{i} \land A$
 entails $O_{i}$. Since outcomes have uniform utility, it follows that
 $\U(A \land S_{i}) = \U(O_{i})$, for all $i$. Thus
 \[
-  \EU(A) = \U(A \land S_{i})\cdot \Cr(S_{1}) + \ldots + \U(A \land S_{n})\cdot \Cr(S_{n}).
+  \EU(A) = \U(A \land S_{1})\cdot \Cr(S_{1}) + \ldots + \U(A \land S_{n})\cdot \Cr(S_{n}).
 \]
 
 In an adequate decision matrix, the states are independent of the acts. This suggests that $\Cr(S_{i} / A) = \Cr(S_{i})$. So
 \[
-  \EU(A) = \U(A \land S_{i})\cdot \Cr(S_{1}/A) + \ldots + \U(A \land S_{n})\cdot \Cr(S_{n}/A).
+  \EU(A) = \U(A \land S_{1})\cdot \Cr(S_{1}/A) + \ldots + \U(A \land S_{n})\cdot \Cr(S_{n}/A).
 \]
 
 In section \ref{sec:structure-of-utility}, I mentioned a ``partition
@@ -208,7 +208,7 @@ node 1. You will ``turn left'' at node 1 and right at node 2.
 
 This kind of reasoning is called \textbf{backward induction}. We'll meet it
 again in section \ref{sec:sequentialgames}, where we will see that it is not as
-harmless at it might appear.
+harmless as it might appear.
 
 \begin{exercise}{3}
   Draw a decision matrix (without utilities) for your choice at node 1.
@@ -306,12 +306,12 @@ How is this relevant to the MEU Principle? Consider a bet on a fair coin flip:
 if the coin lands heads, you get £1, otherwise you get £0. The bet costs £0.40.
 If you are offered this deal again and again, the law of large numbers entails
 that the percentage of heads will (with high probability) converge to 50\%. If
-you buy the bet each time, you can be confident that you will loose £0.40 in
+you buy the bet each time, you can be confident that you will lose £0.40 in
 about half the trials and win £0.60 in the other half. The £0.10 \emph{expected
   payoff} turns into an \emph{average payoff}. In this kind of scenario, the MEU
 Principle effectively says that you should prefer acts with greater average
 utility (and therefore greater total utility) over acts with lower average (and
-total) utility. If you face the same decision problem over and over, then you
+total) utility. If you face the same decision problem over and over,  you
 are almost certain to achieve greater total utility if you follow the MEU
 Principle than if you follow any other rule.
 
@@ -446,7 +446,7 @@ No doubt some actions that appear to display risk aversion (say, among
 professional gamblers) are really explained by the declining marginal utility of
 money. But many people prefer predictable situations in a way
 that can't be explained along these lines. The following example is due to
-Maurice Allais,
+Maurice Allais.
 
 \begin{example}(Allais's Paradox)[label=ex:allais]
   A ball is drawn from an urn containing 80 red balls, 19 green balls,
@@ -728,7 +728,7 @@ downside to our approach: it breaks von Neumann's method.
 
 Suppose, for example, we want to determine the intrinsic utility function for
 the mother in example \ref{ex:diamond}. Let $a$ and $b$ be the outcomes of
-directly giving the treat to Abby and to Ben, respectively. If the mother cares
+directly giving the treat to Abbie and to Ben, respectively. If the mother cares
 about fairness, then one relevant aspect of both $a$ and $b$ is that the treat
 is not allocated through a chance process. By von Neumann's method, we should
 now ask whether the mother prefers some other outcome $c$ to a \emph{lottery $L$
